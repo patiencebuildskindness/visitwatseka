@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sponsor the Market — Downtown Watseka Farmers Market | Visit Watseka</title>
+<meta name="description" content="Sponsor the Downtown Watseka Farmers Market. Packages from $50 to $1,000. Invest in your community and get real, tangible visibility for your business.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<style>
+  /* Sponsorship packages */
+  .packages-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+  @media (max-width: 580px) { .packages-grid { grid-template-columns: 1fr; } }
+
+  .pkg-card {
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.15s, transform 0.15s;
+  }
+  .pkg-card:hover { box-shadow: 0 4px 20px rgba(30,70,32,0.10); transform: translateY(-2px); }
+  .pkg-card.featured { border-color: var(--amber); border-width: 2px; grid-column: span 2; }
+  @media (max-width: 580px) { .pkg-card.featured { grid-column: span 1; } }
+
+  .pkg-header {
+    background: var(--green-dark);
+    padding: 1rem 1.25rem 0.75rem;
+    text-align: center;
+  }
+  .pkg-card.featured .pkg-header { background: var(--amber); }
+  .pkg-icon { font-size: 1.6rem; line-height: 1; margin-bottom: 4px; }
+  .pkg-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 2px; }
+  .pkg-price { font-size: 1.6rem; font-weight: 700; color: #fff; font-family: 'Playfair Display', serif; line-height: 1.2; }
+  .pkg-body { padding: 1rem 1.1rem; flex: 1; background: var(--paper); }
+  .pkg-benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 13.5px;
+    color: var(--ink-muted);
+    padding: 5px 0;
+    border-bottom: 1px solid var(--border);
+    line-height: 1.5;
+  }
+  .pkg-benefit:last-child { border-bottom: none; }
+  .pkg-check { color: var(--green-mid); font-weight: 700; font-size: 13px; flex-shrink: 0; margin-top: 1px; }
+  .pkg-card.featured .pkg-check { color: var(--amber); }
+
+  /* Comparison table */
+  .compare-wrap { overflow-x: auto; margin-top: 1rem; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { background: var(--green-dark); color: #fff; padding: 8px 10px; font-weight: 700; text-align: center; font-size: 12px; }
+  th:first-child { text-align: left; }
+  td { padding: 8px 10px; border-bottom: 1px solid var(--border); color: var(--ink-muted); text-align: center; }
+  td:first-child { text-align: left; font-weight: 700; color: var(--ink); }
+  tr:nth-child(even) td { background: var(--cream); }
+  .check-yes { color: var(--green-mid); font-weight: 700; font-size: 15px; }
+  .check-no { color: var(--border); font-size: 15px; }
+
+  /* Steps */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 0.75rem; }
+  @media (max-width: 580px) { .steps { grid-template-columns: 1fr; } }
+  .step { text-align: center; padding: 1rem 0.75rem; }
+  .step-num {
+    width: 36px; height: 36px; background: var(--green-dark); color: #fff;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 14px; margin: 0 auto 0.6rem;
+  }
+  .step-title { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 600; color: var(--green-dark); margin-bottom: 4px; }
+  .step p { font-size: 13px; margin: 0; color: var(--ink-muted); }
+
+  .contact-box {
+    background: var(--green-pale); border: 1.5px solid var(--green-light);
+    border-radius: 8px; padding: 1.25rem; text-align: center;
+  }
+  .contact-box .contact-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--green-dark); margin-bottom: 0.5rem; }
+  .contact-box .contact-detail { font-size: 13.5px; color: var(--ink-muted); line-height: 2; }
+  .contact-box .contact-detail a { color: var(--green-mid); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav-wrap">
+    <a href="/" class="nav-logo">
+      <img src="/images/logo.png" alt="Downtown Watseka Farmers Market Logo">
+      <div class="nav-logo-text">Visit Watseka<span>Watseka, Illinois</span></div>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/farmers-market/" class="active">Farmers' Market</a></li>
+      <li><a href="/things-to-do.html">Things to Do</a></li>
+      <li><a href="/places-to-go.html">Places to Go</a></li>
+      <li><a href="/news.html">News & Development</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="page-header">
+  <div class="page-header-badge">2026 Sponsorship Proposal</div>
+  <h1>Downtown Watseka Farmers Market</h1>
+  <h2>Invest in Your Community</h2>
+  <div class="page-header-meta">
+    <div>Season: <span>June 13 – October 24, 2026</span></div>
+    <div>Location: <span>Downtown Watseka, Illinois</span></div>
+    <div>Market Days: <span>Every Saturday · 7 AM – Noon</span></div>
+  </div>
+</div>
+
+<div class="container-narrow" style="padding-top:2rem; padding-bottom:4rem;">
+
+  <!-- About -->
+  <div class="card">
+    <div class="card-header"><h3>About the Market</h3></div>
+    <div class="card-body">
+      <p style="color:var(--ink-muted); font-size:14.5px; margin-bottom:0.85rem;">The Downtown Watseka Farmers Market is a beloved Saturday morning tradition in the heart of Iroquois County. Every week from June through October, vendors gather at <strong>121 W Walnut St</strong> to offer fresh produce, handmade goods, artisan foods, specialty items, and more.</p>
+      <p style="color:var(--ink-muted); font-size:14.5px; margin-bottom:1.25rem;">We are a <strong>family-friendly, free community event</strong> that brings neighbors together, supports local growers and makers, and keeps dollars circulating right here in Watseka.</p>
+      <div class="callout green">
+        <strong>Why it matters:</strong> With a population of roughly 5,000, Watseka doesn't have the foot traffic of a city market — but it has something more valuable. The people who shop here are your neighbors, your customers, and your advocates. Sponsoring the market puts your business in front of every one of them, every Saturday, all season long.
+      </div>
+    </div>
+  </div>
+
+  <!-- About sponsorship -->
+  <div class="card">
+    <div class="card-header"><h3>About the Sponsorship</h3></div>
+    <div class="card-body">
+      <p style="color:var(--ink-muted); font-size:14.5px; margin-bottom:0.85rem;">Sponsoring the Downtown Watseka Farmers Market is one of the most direct ways a local business can invest in the community it serves. Your sponsorship helps fund market operations, vendor support, and the ongoing effort to make Downtown Watseka a destination worth visiting every week.</p>
+      <div class="callout">
+        <strong>Our commitment to sponsors:</strong> Every sponsorship benefit we offer is one we can deliver. We keep our promises small enough to keep and meaningful enough to matter. No fine print, no surprises.
+      </div>
+    </div>
+  </div>
+
+  <!-- Packages -->
+  <div class="card">
+    <div class="card-header"><h3>2026 Sponsorship Packages</h3></div>
+    <div class="card-body">
+      <div class="packages-grid">
+        <div class="pkg-card">
+          <div class="pkg-header"><div class="pkg-icon">🌱</div><div class="pkg-name">Seedling</div><div class="pkg-price">$50</div></div>
+          <div class="pkg-body">
+            <div class="pkg-benefit"><span class="pkg-check">✓</span> Business name + logo listed on visitwatseka.com for the full season</div>
+            <div class="pkg-benefit"><span class="pkg-check">✓</span> 1 social media recognition post across our platforms</div>
+          </div>
+        </div>
+        <div class="pkg-card">
+          <div class="pkg-header"><div class="pkg-icon">🌿</div><div class="pkg-name">Sprout</div><div class="pkg-price">$100</div></div>
+          <div class="pkg-body">
+            <div class="pkg-benefit"><span class="pkg-check">✓</span> Business name + logo on visitwatseka.com for the full season</div>
+            <div class="pkg-benefit"><span class="pkg-check">✓</span> 3 social media recognition posts throughout the season</div>
+            <div class="pkg-benefit"><span class="pkg-check">✓</span> Verbal recognition during musical performances on one Saturday</div>
+          </div>
+        </div>
+        <div class="pkg-card">
+          <div class="pkg-header"><div class="pkg-icon">🌽</div><div class="pkg-name">Harvest</div><div class="pkg-price">$250</div></div>
+          <div class="pkg-body">
+            <div class="pkg-benefit"><span class="pkg-check">✓</span> Business name + logo on visitwatseka.com, full season</div>
+            <div class="pkg-benefit"><span class="pkg-check">✓</span> 5 social media recognition posts</div>
+            <div class="pkg-benefit"><span class="pkg-check">✓</span> Sponsor signage displayed at the market</div>
+            <div class="pkg-benefit"><span class="pkg-check">✓</span> Vendor booth space for 1 market date ($20 value)</div>
+            <div class="pkg-benefit"><span class="pkg-check">✓</span> Verbal recognition on two Saturdays of your choice</div>
+          </div>
+        </div>
+        <div class="pkg-card">
+          <div class="pkg-header"><div class="pkg-icon">🚜</div><div class="pkg-name">Community Anchor</div><div class="pkg-price">$500</div></div>
+          <div class="pkg-body">
+            <div class="pkg-benefit"><span class="pkg-check">✓</span> Prominent logo on visitwatseka.com, full season</div>
+            <div class="pkg-benefit"><span class="pkg-check">✓</span> 10 social media recognition posts throughout the season</div>
+            <div class="pkg-benefit"><span class="pkg-check">✓</span> Sponsor signage all season</div>
+            <div class="pkg-benefit"><span class="pkg-check">✓</span> Vendor booth space for 2 market dates ($40 value)</div>
+            <div class="pkg-benefit"><span class="pkg-check">✓</span> Verbal recognition on every date you attend</div>
+          </div>
+        </div>
+        <div class="pkg-card featured">
+          <div class="pkg-header"><div class="pkg-icon">🏡</div><div class="pkg-name">Title Sponsor</div><div class="pkg-price">$1,000</div></div>
+          <div class="pkg-body">
+            <div class="pkg-benefit"><span class="pkg-check">✓</span> <strong>"Presented by [Your Business]"</strong> on every market communication</div>
+            <div class="pkg-benefit"><span class="pkg-check">✓</span> Premier logo placement on visitwatseka.com, full season</div>
+            <div class="pkg-benefit"><span class="pkg-check">✓</span> 20+ social media posts across all platforms</div>
+            <div class="pkg-benefit"><span class="pkg-check">✓</span> Prominent sponsor signage all season</div>
+            <div class="pkg-benefit"><span class="pkg-check">✓</span> Vendor booth space for 6 market dates ($120 value)</div>
+            <div class="pkg-benefit"><span class="pkg-check">✓</span> Verbal recognition every single Saturday</div>
+            <div class="pkg-benefit"><span class="pkg-check">✓</span> First right of renewal for the 2027 season</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Comparison -->
+  <div class="card">
+    <div class="card-header"><h3>Package Comparison</h3></div>
+    <div class="card-body">
+      <div class="compare-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Benefit</th>
+              <th>🌱 $50</th>
+              <th>🌿 $100</th>
+              <th>🌽 $250</th>
+              <th>🚜 $500</th>
+              <th>🏡 $1,000</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Name on visitwatseka.com</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+            <tr><td>Logo on visitwatseka.com</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓ Premier</span></td></tr>
+            <tr><td>Social media posts</td><td>1</td><td>3</td><td>5</td><td>10</td><td>20+</td></tr>
+            <tr><td>Market signage</td><td><span class="check-no">—</span></td><td><span class="check-no">—</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+            <tr><td>Verbal recognition</td><td><span class="check-no">—</span></td><td>1 date</td><td>2 dates</td><td>All attended</td><td>Every Saturday</td></tr>
+            <tr><td>Booth space</td><td><span class="check-no">—</span></td><td><span class="check-no">—</span></td><td>1 date</td><td>2 dates</td><td>6 dates</td></tr>
+            <tr><td>"Presented by" recognition</td><td><span class="check-no">—</span></td><td><span class="check-no">—</span></td><td><span class="check-no">—</span></td><td><span class="check-no">—</span></td><td><span class="check-yes">✓</span></td></tr>
+            <tr><td>2027 renewal priority</td><td><span class="check-no">—</span></td><td><span class="check-no">—</span></td><td><span class="check-no">—</span></td><td><span class="check-no">—</span></td><td><span class="check-yes">✓</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- How to sponsor -->
+  <div class="card">
+    <div class="card-header"><h3>How to Become a Sponsor</h3></div>
+    <div class="card-body">
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-title">Choose Your Package</div><p>Select the sponsorship level that fits your goals and budget.</p></div>
+        <div class="step"><div class="step-num">2</div><div class="step-title">Get in Touch</div><p>Contact us by email or phone to confirm your package.</p></div>
+        <div class="step"><div class="step-num">3</div><div class="step-title">Make It Official</div><p>Simple agreement and payment. Cash, Check, Money Order, or Venmo.</p></div>
+      </div>
+      <div class="callout" style="margin-top:1.25rem;">
+        <strong>Deadline to guarantee season-long recognition:</strong> May 23, 2026. Sponsorships received after this date will still be honored but may have delayed signage and web placement.
+      </div>
+    </div>
+  </div>
+
+  <!-- Sponsorship Application Form -->
+  <div class="card">
+    <div class="card-header"><h3>Sponsorship Application</h3></div>
+    <div class="card-body">
+      <form action="https://formsubmit.co/dtwatsekafarmersmarket@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New Sponsorship Application - Downtown Watseka Farmers Market">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="true">
+        <input type="hidden" name="_next" value="https://visitwatseka.com/farmers-market/thank-you.html">
+        <input type="text" name="_honey" style="display:none">
+
+        <div class="field-grid">
+          <div class="field span-2">
+            <label>Business Name <span class="req">*</span></label>
+            <input type="text" name="Business Name" required placeholder="Your business name">
+          </div>
+          <div class="field">
+            <label>Contact Name <span class="req">*</span></label>
+            <input type="text" name="Contact Name" required placeholder="First & last name">
+          </div>
+          <div class="field">
+            <label>Title / Role</label>
+            <input type="text" name="Title" placeholder="e.g. Owner, Marketing Director">
+          </div>
+          <div class="field">
+            <label>Email <span class="req">*</span></label>
+            <input type="email" name="Email" required placeholder="you@business.com">
+          </div>
+          <div class="field">
+            <label>Phone <span class="req">*</span></label>
+            <input type="tel" name="Phone" required placeholder="(815) 000-0000">
+          </div>
+          <div class="field span-2">
+            <label>Business Address</label>
+            <input type="text" name="Business Address" placeholder="Street, City, State ZIP">
+          </div>
+          <div class="field span-2">
+            <label>Website</label>
+            <input type="url" name="Website" placeholder="https://yourbusiness.com">
+          </div>
+          <div class="field span-2">
+            <label>Sponsorship Package <span class="req">*</span></label>
+            <select name="Sponsorship Package" required>
+              <option value="">— Select a package —</option>
+              <option value="Seedling - $50">🌱 Seedling — $50</option>
+              <option value="Sprout - $100">🌿 Sprout — $100</option>
+              <option value="Harvest - $250">🌽 Harvest — $250</option>
+              <option value="Community Anchor - $500">🚜 Community Anchor — $500</option>
+              <option value="Title Sponsor - $1000">🏡 Title Sponsor — $1,000</option>
+            </select>
+          </div>
+          <div class="field span-2">
+            <label>Anything else you'd like us to know?</label>
+            <textarea name="Additional Notes" rows="3" placeholder="Questions, special requests, or anything else..."></textarea>
+          </div>
+        </div>
+        <div style="text-align:center; margin-top:1.5rem;">
+          <button type="submit" class="btn-submit">Submit Sponsorship Interest</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="card">
+    <div class="card-header"><h3>Contact Us</h3></div>
+    <div class="card-body">
+      <div class="contact-box">
+        <div class="contact-name">Downtown Watseka Farmers Market</div>
+        <div class="contact-detail">
+          📧 <a href="mailto:dtwatsekafarmersmarket@gmail.com">dtwatsekafarmersmarket@gmail.com</a><br>
+          📞 Market President (Yamei Rohlfs): (815) 549-2657<br>
+          📞 On-Site Manager (Angelina Pacheco): (602) 818-6709<br>
+          🌐 <a href="https://visitwatseka.com" target="_blank">visitwatseka.com</a>
+        </div>
+      </div>
+      <p style="text-align:center; margin-top:1rem; font-size:13px; color:var(--ink-muted);">We'd love to talk. Whether you're ready to commit or just want to learn more, reach out anytime.</p>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><img src="/images/logo.png" alt="Logo"><div class="footer-brand-name">Visit Watseka</div></div>
+      <p class="footer-tagline">Preserving small-town charm and growing community, one market day at a time.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/watsekafarmersmarket" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+        <a href="https://www.instagram.com/dtwatsekafarmersmarket/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Explore</div>
+      <ul class="footer-links">
+        <li><a href="/farmers-market/">Farmers' Market</a></li>
+        <li><a href="/things-to-do.html">Things to Do</a></li>
+        <li><a href="/places-to-go.html">Places to Go</a></li>
+        <li><a href="/news.html">News & Development</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Farmers' Market</div>
+      <ul class="footer-links">
+        <li><a href="/farmers-market/vendor-application.html">Vendor Application</a></li>
+        <li><a href="/farmers-market/sponsorship.html">Sponsor the Market</a></li>
+        <li><a href="/farmers-market/band-application.html">Band Application</a></li>
+        <li><a href="/farmers-market/policies.html">Policies & Procedures</a></li>
+        <li><a href="/farmers-market/vendors.html">Meet Your Vendors</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 Visit Watseka &middot; Downtown Watseka Farmers Market &middot; 501(c)(3) Nonprofit &middot; Watseka, Illinois</div>
+</footer>
+
+<script src="/js/main.js"></script>
+</body>
+</html>

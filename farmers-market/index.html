@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Farmers' Market — Downtown Watseka, Illinois | Visit Watseka</title>
+<meta name="description" content="Downtown Watseka Farmers Market — Every Saturday, June through October. Fresh produce, handmade goods, live music, and community in Downtown Watseka, Illinois. Free to attend!">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<style>
+  /* ── HERO ── */
+  .fm-hero {
+    position: relative;
+    width: 100%;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #111;
+  }
+
+  /* Slideshow */
+  .slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.4s ease-in-out;
+    will-change: opacity;
+    background-color: var(--green-dark);
+  }
+  .slide.active { opacity: 1; }
+  .slide-1 { background-image: url('/images/hero-produce.jpg'); background-position: center 60%; }
+  .slide-2 { background-image: url('/images/hero-family.jpg'); background-position: center 40%; }
+  .slide-3 { background-image: url('/images/hero-facepainting.jpg'); background-position: center 50%; }
+  .slide-4 { background-image: url('/images/hero-vendors.jpg'); background-position: center 45%; }
+  .slide-5 { background-image: url('/images/hero-elf.jpg'); background-position: center 40%; }
+
+  .fm-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      160deg,
+      rgba(20, 55, 22, 0.78) 0%,
+      rgba(30, 70, 32, 0.60) 50%,
+      rgba(15, 35, 16, 0.80) 100%
+    );
+    z-index: 1;
+  }
+
+  .fm-hero-content {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6rem 1.5rem 5rem;
+  }
+
+  .season-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(201, 125, 16, 0.90);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 30px;
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(4px);
+    animation: fadeSlideDown 0.8s ease both;
+  }
+  .season-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 50%;
+  }
+
+  .fm-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.15;
+    max-width: 820px;
+    margin-bottom: 1.25rem;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.35);
+    animation: fadeSlideDown 0.8s ease 0.15s both;
+  }
+  .fm-hero h1 em { font-style: italic; color: rgba(255, 230, 160, 0.95); }
+
+  .fm-hero-sub {
+    font-size: clamp(1rem, 2.2vw, 1.15rem);
+    font-weight: 300;
+    color: rgba(255,255,255,0.88);
+    max-width: 560px;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.3);
+    animation: fadeSlideDown 0.8s ease 0.3s both;
+  }
+
+  .fm-hero-ctas {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 3.5rem;
+    animation: fadeSlideDown 0.8s ease 0.45s both;
+  }
+
+  /* Info strip */
+  .info-strip {
+    position: relative;
+    z-index: 2;
+    background: rgba(20, 50, 22, 0.88);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    flex-wrap: wrap;
+    animation: fadeIn 1s ease 0.6s both;
+  }
+  .info-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255,255,255,0.9);
+    font-size: 13px;
+    padding: 6px 24px;
+    border-right: 1px solid rgba(255,255,255,0.15);
+  }
+  .info-item:last-child { border-right: none; }
+  .info-icon { font-size: 15px; flex-shrink: 0; }
+  .info-label {
+    color: rgba(255,255,255,0.55);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: block;
+    line-height: 1.2;
+  }
+  .info-value { font-weight: 700; color: #fff; font-size: 13px; line-height: 1.3; }
+  .info-free {
+    background: var(--amber);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+  }
+
+  /* Slide dots */
+  .slide-dots {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    gap: 8px;
+    animation: fadeIn 1s ease 0.8s both;
+  }
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.35);
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    border: none;
+    padding: 0;
+  }
+  .dot.active { background: var(--amber); transform: scale(1.3); }
+  .dot:hover { background: rgba(255,255,255,0.65); }
+
+  @media (max-width: 640px) {
+    .info-item { border-right: none; padding: 6px 16px; }
+    .info-strip { gap: 4px; }
+  }
+  @media (max-width: 500px) {
+    .fm-hero-ctas { flex-direction: column; align-items: center; }
+    .fm-hero-ctas .btn { width: 260px; justify-content: center; }
+    .slide-dots { bottom: 90px; }
+  }
+
+  /* ── VIDEO SECTION ── */
+  .video-section {
+    padding: 4rem 1.5rem;
+    background: var(--paper);
+    text-align: center;
+  }
+  .video-wrap {
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+  }
+  .video-wrap iframe {
+    width: 100%;
+    aspect-ratio: 9/16;
+    max-height: 500px;
+    border: none;
+  }
+
+  /* ── ABOUT SECTION ── */
+  .about-section {
+    padding: 4rem 1.5rem;
+    background: var(--cream);
+  }
+  .about-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  @media (max-width: 700px) {
+    .about-inner { grid-template-columns: 1fr; }
+  }
+  .about-text p {
+    font-size: 15px;
+    color: var(--ink-muted);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  .about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  .about-stat {
+    background: var(--green-pale);
+    border: 1.5px solid var(--green-light);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+  }
+  .about-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--green-dark);
+    line-height: 1.1;
+  }
+  .about-stat-label {
+    font-size: 12px;
+    color: var(--ink-muted);
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+
+  /* ── VENDOR SPOTLIGHT ── */
+  .spotlight-section {
+    padding: 4rem 1.5rem;
+    background: var(--paper);
+    text-align: center;
+  }
+  .spotlight-placeholder {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    background: var(--green-pale);
+    border: 2px dashed var(--green-light);
+    border-radius: 12px;
+  }
+  .spotlight-placeholder h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    color: var(--green-dark);
+    margin-bottom: 0.5rem;
+  }
+  .spotlight-placeholder p {
+    font-size: 14px;
+    color: var(--ink-muted);
+  }
+
+  /* ── CTAs SECTION ── */
+  .cta-section {
+    padding: 4rem 1.5rem;
+    background: var(--cream);
+  }
+  .cta-grid {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  @media (max-width: 700px) {
+    .cta-grid { grid-template-columns: 1fr; max-width: 400px; }
+  }
+  .cta-card {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: box-shadow 0.15s, transform 0.15s;
+  }
+  .cta-card:hover { box-shadow: 0 4px 20px rgba(30,70,32,0.10); transform: translateY(-2px); }
+  .cta-card-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+  .cta-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--green-dark);
+    margin-bottom: 0.5rem;
+  }
+  .cta-card p {
+    font-size: 13.5px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeSlideDown {
+    from { opacity: 0; transform: translateY(-16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header class="site-header">
+  <nav class="nav-wrap">
+    <a href="/" class="nav-logo">
+      <img src="/images/logo.png" alt="Downtown Watseka Farmers Market Logo">
+      <div class="nav-logo-text">
+        Visit Watseka
+        <span>Watseka, Illinois</span>
+      </div>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/farmers-market/" class="active">Farmers' Market</a></li>
+      <li><a href="/things-to-do.html">Things to Do</a></li>
+      <li><a href="/places-to-go.html">Places to Go</a></li>
+      <li><a href="/news.html">News & Development</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ── HERO WITH SLIDESHOW ── -->
+<section class="fm-hero">
+  <div class="slide slide-1 active"></div>
+  <div class="slide slide-2"></div>
+  <div class="slide slide-3"></div>
+  <div class="slide slide-4"></div>
+  <div class="slide slide-5"></div>
+
+  <div class="fm-hero-overlay"></div>
+
+  <div class="slide-dots">
+    <button class="dot active" data-index="0" aria-label="Slide 1"></button>
+    <button class="dot" data-index="1" aria-label="Slide 2"></button>
+    <button class="dot" data-index="2" aria-label="Slide 3"></button>
+    <button class="dot" data-index="3" aria-label="Slide 4"></button>
+    <button class="dot" data-index="4" aria-label="Slide 5"></button>
+  </div>
+
+  <div class="fm-hero-content">
+    <div class="season-badge">2026 Season Now Open</div>
+    <h1>Every Saturday Morning,<br>Downtown Watseka <em>Comes Alive.</em></h1>
+    <p class="fm-hero-sub">
+      Fresh produce, handmade goods, local food, live music, and the best neighbors you'll ever meet —
+      all in the heart of Downtown Watseka. Free to attend, every Saturday, June through October.
+    </p>
+    <div class="fm-hero-ctas">
+      <a href="/farmers-market/vendor-application.html" class="btn btn-primary">Apply to Vend</a>
+      <a href="#market-info" class="btn btn-white">Visit the Market</a>
+    </div>
+  </div>
+
+  <div class="info-strip">
+    <div class="info-item">
+      <span class="info-icon">📅</span>
+      <div>
+        <span class="info-label">Season</span>
+        <span class="info-value">June 13 – Oct 24, 2026</span>
+      </div>
+    </div>
+    <div class="info-item">
+      <span class="info-icon">⏰</span>
+      <div>
+        <span class="info-label">Hours</span>
+        <span class="info-value">Every Saturday · 7 AM – Noon</span>
+      </div>
+    </div>
+    <div class="info-item">
+      <span class="info-icon">📍</span>
+      <div>
+        <span class="info-label">Location</span>
+        <span class="info-value">121 W Walnut St, Watseka, IL</span>
+      </div>
+    </div>
+    <div class="info-item">
+      <span class="info-icon">🎟️</span>
+      <div>
+        <span class="info-label">Admission</span>
+        <span class="info-free">Always Free</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── VIDEO SECTION ── -->
+<section class="video-section" id="market-info">
+  <h2 class="section-title">See the Market in Action</h2>
+  <p class="section-subtitle">A glimpse of what Saturday mornings look like in Downtown Watseka.</p>
+  <div class="video-wrap">
+    <iframe
+      src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1294382745389802&show_text=false"
+      scrolling="no"
+      frameborder="0"
+      allowfullscreen="true"
+      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+      title="Downtown Watseka Farmers Market Video">
+    </iframe>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section class="about-section">
+  <div class="about-inner">
+    <div class="about-text">
+      <h2 class="section-title" style="text-align:left; margin-bottom:1rem;">About the Market</h2>
+      <p>
+        The Downtown Watseka Farmers Market is a beloved Saturday morning tradition in the heart of Iroquois County.
+        Every week from June through October, vendors gather at <strong>121 W Walnut St</strong> to offer fresh produce,
+        handmade goods, artisan foods, specialty items, and more — all sourced locally and crafted with care.
+      </p>
+      <p>
+        We are a <strong>family-friendly, free community event</strong> that brings neighbors together, supports local
+        growers and makers, and keeps dollars circulating right here in Watseka. Organized as a 501(c)(3) nonprofit,
+        every dollar supports the market and the community it serves.
+      </p>
+      <a href="/farmers-market/policies.html" class="btn btn-outline" style="margin-top:0.5rem;">View Policies & Procedures</a>
+    </div>
+    <div class="about-stats">
+      <div class="about-stat">
+        <div class="about-stat-num">16+</div>
+        <div class="about-stat-label">Local vendors every Saturday</div>
+      </div>
+      <div class="about-stat">
+        <div class="about-stat-num">20</div>
+        <div class="about-stat-label">Market dates in 2026</div>
+      </div>
+      <div class="about-stat">
+        <div class="about-stat-num">501(c)(3)</div>
+        <div class="about-stat-label">Nonprofit — donations tax-deductible</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── VENDOR SPOTLIGHT ── -->
+<section class="spotlight-section">
+  <h2 class="section-title">Vendor Spotlight</h2>
+  <p class="section-subtitle">Get to know the people who make the market special.</p>
+  <div class="spotlight-placeholder">
+    <h3>Coming Soon</h3>
+    <p>We'll be featuring our vendors here throughout the 2026 season. Check back soon!</p>
+  </div>
+  <div style="margin-top:1.5rem;">
+    <a href="/farmers-market/vendors.html" class="btn btn-outline">Meet Your Vendors</a>
+  </div>
+</section>
+
+<!-- ── CTAs ── -->
+<section class="cta-section">
+  <h2 class="section-title">Get Involved</h2>
+  <p class="section-subtitle">There are many ways to be part of the Downtown Watseka Farmers Market.</p>
+  <div class="cta-grid">
+    <div class="cta-card">
+      <div class="cta-card-icon">🌱</div>
+      <h3>Apply to Become a Vendor</h3>
+      <p>Sell your products at our Saturday market. Full-time and part-time options available.</p>
+      <a href="/farmers-market/vendor-application.html" class="btn btn-primary" style="font-size:12px; padding:10px 24px;">Vendor Application</a>
+    </div>
+    <div class="cta-card">
+      <div class="cta-card-icon">🤝</div>
+      <h3>Sponsor the Market</h3>
+      <p>Invest in your community with packages from $50 to $1,000. Every dollar goes to the market.</p>
+      <a href="/farmers-market/sponsorship.html" class="btn btn-secondary" style="font-size:12px; padding:10px 24px;">Sponsorship Info</a>
+    </div>
+    <div class="cta-card">
+      <div class="cta-card-icon">🎸</div>
+      <h3>Play at the Market</h3>
+      <p>Musicians and bands — bring live music to our Saturday mornings. Apply to perform.</p>
+      <a href="/farmers-market/band-application.html" class="btn btn-secondary" style="font-size:12px; padding:10px 24px;">Band Application</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">
+        <img src="/images/logo.png" alt="Logo">
+        <div class="footer-brand-name">Visit Watseka</div>
+      </div>
+      <p class="footer-tagline">
+        Preserving small-town charm and growing community, one market day at a time.
+        A project supporting Downtown Watseka, Illinois.
+      </p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/watsekafarmersmarket" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+        <a href="https://www.instagram.com/dtwatsekafarmersmarket/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Explore</div>
+      <ul class="footer-links">
+        <li><a href="/farmers-market/">Farmers' Market</a></li>
+        <li><a href="/things-to-do.html">Things to Do</a></li>
+        <li><a href="/places-to-go.html">Places to Go</a></li>
+        <li><a href="/news.html">News & Development</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Farmers' Market</div>
+      <ul class="footer-links">
+        <li><a href="/farmers-market/vendor-application.html">Vendor Application</a></li>
+        <li><a href="/farmers-market/sponsorship.html">Sponsor the Market</a></li>
+        <li><a href="/farmers-market/band-application.html">Band Application</a></li>
+        <li><a href="/farmers-market/policies.html">Policies & Procedures</a></li>
+        <li><a href="/farmers-market/vendors.html">Meet Your Vendors</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 Visit Watseka &middot; Downtown Watseka Farmers Market &middot; 501(c)(3) Nonprofit &middot; Watseka, Illinois
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+<script>
+  // Slideshow
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+  let current = 0;
+  let timer;
+
+  function goTo(index) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = index;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  function next() { goTo((current + 1) % slides.length); }
+  function startTimer() { timer = setInterval(next, 5000); }
+
+  dots.forEach(function(dot) {
+    dot.addEventListener('click', function() {
+      clearInterval(timer);
+      goTo(parseInt(dot.dataset.index));
+      startTimer();
+    });
+  });
+
+  var hero = document.querySelector('.fm-hero');
+  hero.addEventListener('mouseenter', function() { clearInterval(timer); });
+  hero.addEventListener('mouseleave', startTimer);
+  startTimer();
+</script>
+</body>
+</html>

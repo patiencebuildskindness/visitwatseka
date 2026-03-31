@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meet Your Vendors — Downtown Watseka Farmers Market | Visit Watseka</title>
+<meta name="description" content="Get to know the vendors at the Downtown Watseka Farmers Market. Full-time and part-time vendors serving the Watseka community every Saturday.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<style>
+  .vendors-coming-soon {
+    text-align: center;
+    padding: 4rem 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .vendors-coming-soon .icon { font-size: 3.5rem; margin-bottom: 1rem; }
+  .vendors-coming-soon h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    color: var(--green-dark);
+    margin-bottom: 0.75rem;
+  }
+  .vendors-coming-soon p {
+    color: var(--ink-muted);
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  /* Template structure for when vendors are added */
+  .vendor-section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--green-dark);
+    border-bottom: 2px solid var(--green-pale);
+    padding-bottom: 0.5rem;
+    margin: 2.5rem 0 1.5rem;
+  }
+
+  .vendor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .vendor-card {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: box-shadow 0.15s, transform 0.15s;
+  }
+  .vendor-card:hover { box-shadow: 0 4px 20px rgba(30,70,32,0.10); transform: translateY(-2px); }
+
+  .vendor-card-img {
+    background: var(--border);
+    aspect-ratio: 3/2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink-light);
+    font-size: 13px;
+  }
+
+  .vendor-card-body { padding: 1.25rem; }
+  .vendor-card-body h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--green-dark);
+    margin-bottom: 0.25rem;
+  }
+  .vendor-card-type {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--amber);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+  }
+  .vendor-card-body p {
+    font-size: 13.5px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav-wrap">
+    <a href="/" class="nav-logo">
+      <img src="/images/logo.png" alt="Downtown Watseka Farmers Market Logo">
+      <div class="nav-logo-text">Visit Watseka<span>Watseka, Illinois</span></div>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/farmers-market/" class="active">Farmers' Market</a></li>
+      <li><a href="/things-to-do.html">Things to Do</a></li>
+      <li><a href="/places-to-go.html">Places to Go</a></li>
+      <li><a href="/news.html">News & Development</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="page-header">
+  <div class="page-header-badge">2026 Season</div>
+  <h1>Meet Your Vendors</h1>
+  <h2>The People Who Make the Market Special</h2>
+  <div class="page-header-meta">
+    <div>Every Saturday: <span>7 AM – Noon</span></div>
+    <div>Location: <span>121 W Walnut St, Watseka, IL</span></div>
+  </div>
+</div>
+
+<div class="container-narrow" style="padding-top:2rem; padding-bottom:4rem;">
+
+  <!-- Coming soon message -->
+  <div class="vendors-coming-soon">
+    <div class="icon">🌻</div>
+    <h2>Coming Soon!</h2>
+    <p>
+      We're putting together profiles for all of our amazing vendors — both full-time and part-time.
+      Check back soon to learn their stories, see what they sell, and find your new favorites
+      before you visit the market.
+    </p>
+    <p style="font-size:13px; color:var(--ink-light);">
+      Are you a vendor? We'd love to feature you here.
+      Send your bio and a photo to <a href="mailto:dtwatsekafarmersmarket@gmail.com">dtwatsekafarmersmarket@gmail.com</a>.
+    </p>
+    <div style="margin-top:1.5rem;">
+      <a href="/farmers-market/" class="btn btn-secondary">Back to Farmers' Market</a>
+    </div>
+  </div>
+
+  <!--
+  ============================================================
+  TEMPLATE: Uncomment and duplicate these sections when
+  vendor info is ready. Replace placeholder content.
+  ============================================================
+
+  <h2 class="vendor-section-title">Full-Time Vendors</h2>
+  <div class="vendor-grid">
+    <div class="vendor-card">
+      <div class="vendor-card-img">[ Vendor Photo ]</div>
+      <div class="vendor-card-body">
+        <h3>Vendor Name</h3>
+        <div class="vendor-card-type">Fresh Produce</div>
+        <p>A short bio about the vendor, what they sell, and what makes them unique at the market.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="vendor-section-title">Part-Time Vendors</h2>
+  <div class="vendor-grid">
+    <div class="vendor-card">
+      <div class="vendor-card-img">[ Vendor Photo ]</div>
+      <div class="vendor-card-body">
+        <h3>Vendor Name</h3>
+        <div class="vendor-card-type">Handmade Crafts</div>
+        <p>A short bio about the vendor, what they sell, and what makes them unique at the market.</p>
+      </div>
+    </div>
+  </div>
+  -->
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><img src="/images/logo.png" alt="Logo"><div class="footer-brand-name">Visit Watseka</div></div>
+      <p class="footer-tagline">Preserving small-town charm and growing community, one market day at a time.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/watsekafarmersmarket" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+        <a href="https://www.instagram.com/dtwatsekafarmersmarket/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Explore</div>
+      <ul class="footer-links">
+        <li><a href="/farmers-market/">Farmers' Market</a></li>
+        <li><a href="/things-to-do.html">Things to Do</a></li>
+        <li><a href="/places-to-go.html">Places to Go</a></li>
+        <li><a href="/news.html">News & Development</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Farmers' Market</div>
+      <ul class="footer-links">
+        <li><a href="/farmers-market/vendor-application.html">Vendor Application</a></li>
+        <li><a href="/farmers-market/sponsorship.html">Sponsor the Market</a></li>
+        <li><a href="/farmers-market/band-application.html">Band Application</a></li>
+        <li><a href="/farmers-market/policies.html">Policies & Procedures</a></li>
+        <li><a href="/farmers-market/vendors.html">Meet Your Vendors</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 Visit Watseka &middot; Downtown Watseka Farmers Market &middot; 501(c)(3) Nonprofit &middot; Watseka, Illinois</div>
+</footer>
+
+<script src="/js/main.js"></script>
+</body>
+</html>

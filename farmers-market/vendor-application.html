@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vendor Application — Downtown Watseka Farmers Market | Visit Watseka</title>
+<meta name="description" content="Apply to become a vendor at the Downtown Watseka Farmers Market. Full-time and part-time options available for the 2026 season.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header class="site-header">
+  <nav class="nav-wrap">
+    <a href="/" class="nav-logo">
+      <img src="/images/logo.png" alt="Downtown Watseka Farmers Market Logo">
+      <div class="nav-logo-text">Visit Watseka<span>Watseka, Illinois</span></div>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/farmers-market/" class="active">Farmers' Market</a></li>
+      <li><a href="/things-to-do.html">Things to Do</a></li>
+      <li><a href="/places-to-go.html">Places to Go</a></li>
+      <li><a href="/news.html">News & Development</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ── PAGE HEADER ── -->
+<div class="page-header">
+  <div class="page-header-badge">Official Vendor Application</div>
+  <h1>Downtown Watseka Farmers Market</h1>
+  <h2>Vendor & Artisan Application Form</h2>
+  <div class="page-header-meta">
+    <div>Location: <span>Downtown Watseka, Illinois</span></div>
+    <div>Season: <span>Spring/Summer 2026</span></div>
+  </div>
+</div>
+
+<div class="container-narrow" style="padding-top:2rem; padding-bottom:4rem;">
+
+  <!-- Intro -->
+  <div class="callout" style="margin-bottom:2rem;">
+    <strong>Welcome!</strong> Thank you for your interest in becoming a vendor at the Downtown Watseka Farmers Market.
+    Please complete all sections of this application as fully as possible. Applications are reviewed by the market committee,
+    and you will be contacted regarding acceptance. Fields marked with <span style="color:var(--red);font-weight:700;">*</span> are required.
+  </div>
+
+  <form action="https://formsubmit.co/dtwatsekafarmersmarket@gmail.com" method="POST">
+    <!-- FormSubmit config -->
+    <input type="hidden" name="_subject" value="New Vendor Application - Downtown Watseka Farmers Market">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="true">
+    <input type="hidden" name="_next" value="https://visitwatseka.com/farmers-market/thank-you.html">
+    <input type="text" name="_honey" style="display:none">
+
+    <!-- ── SECTION 1: CONTACT ── -->
+    <div class="card">
+      <div class="card-header"><div class="card-number">1</div><h3>Contact Information</h3></div>
+      <div class="card-body">
+        <div class="field-grid">
+          <div class="field span-2">
+            <label>Business / Vendor Name <span class="req">*</span></label>
+            <input type="text" name="Business Name" placeholder="e.g. Sunny Acres Farm" required>
+          </div>
+          <div class="field">
+            <label>Primary Contact Name <span class="req">*</span></label>
+            <input type="text" name="Contact Name" placeholder="First & last name" required>
+          </div>
+          <div class="field">
+            <label>Title / Role</label>
+            <input type="text" name="Title/Role" placeholder="e.g. Owner, Manager">
+          </div>
+          <div class="field">
+            <label>Phone Number <span class="req">*</span></label>
+            <input type="tel" name="Phone" placeholder="(815) 000-0000" required>
+          </div>
+          <div class="field">
+            <label>Email Address <span class="req">*</span></label>
+            <input type="email" name="Email" placeholder="you@example.com" required>
+          </div>
+          <div class="field span-2">
+            <label>Mailing / Business Address <span class="req">*</span></label>
+            <input type="text" name="Street Address" placeholder="Street address" required>
+          </div>
+          <div class="field">
+            <label>City</label>
+            <input type="text" name="City" placeholder="City" value="Watseka">
+          </div>
+          <div class="field">
+            <label>State / ZIP</label>
+            <input type="text" name="State/ZIP" placeholder="IL  60970">
+          </div>
+          <div class="field span-2">
+            <label>Website URL</label>
+            <input type="url" name="Website" placeholder="https://yourwebsite.com">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 2: BUSINESS DETAILS ── -->
+    <div class="card">
+      <div class="card-header"><div class="card-number">2</div><h3>Business Details</h3></div>
+      <div class="card-body">
+        <div class="field-grid">
+          <div class="field">
+            <label>Years in Business <span class="req">*</span></label>
+            <input type="number" name="Years in Business" min="0" max="100" placeholder="e.g. 3" required>
+          </div>
+          <div class="field">
+            <label>Year Business Established</label>
+            <input type="number" name="Year Established" min="1900" max="2026" placeholder="e.g. 2019">
+          </div>
+          <div class="field span-2">
+            <label>Business Registration / License No.
+              <span class="hint">Illinois business license, cottage food permit, etc. (if applicable)</span>
+            </label>
+            <input type="text" name="License Number" placeholder="License or permit number">
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="field">
+          <label>Business Type — Select all that apply <span class="req">*</span></label>
+          <div class="check-group">
+            <label class="check-item"><input type="checkbox" name="Business Type" value="Fresh Produce & Vegetables"> Fresh Produce & Vegetables</label>
+            <label class="check-item"><input type="checkbox" name="Business Type" value="Fruits & Berries"> Fruits & Berries</label>
+            <label class="check-item"><input type="checkbox" name="Business Type" value="Baked Goods & Breads"> Baked Goods & Breads</label>
+            <label class="check-item"><input type="checkbox" name="Business Type" value="Prepared & Packaged Foods"> Prepared & Packaged Foods</label>
+            <label class="check-item"><input type="checkbox" name="Business Type" value="Meats, Poultry & Eggs"> Meats, Poultry & Eggs</label>
+            <label class="check-item"><input type="checkbox" name="Business Type" value="Dairy & Cheese"> Dairy & Cheese</label>
+            <label class="check-item"><input type="checkbox" name="Business Type" value="Honey & Maple Products"> Honey & Maple Products</label>
+            <label class="check-item"><input type="checkbox" name="Business Type" value="Plants, Herbs & Flowers"> Plants, Herbs & Flowers</label>
+            <label class="check-item"><input type="checkbox" name="Business Type" value="Beverages & Drinks"> Beverages & Drinks</label>
+            <label class="check-item"><input type="checkbox" name="Business Type" value="Handmade Crafts & Art"> Handmade Crafts & Art</label>
+            <label class="check-item"><input type="checkbox" name="Business Type" value="Health & Wellness"> Health & Wellness</label>
+            <label class="check-item"><input type="checkbox" name="Business Type" value="Specialty & Gourmet Foods"> Specialty & Gourmet Foods</label>
+            <label class="check-item"><input type="checkbox" name="Business Type" value="Services"> Services</label>
+            <label class="check-item"><input type="checkbox" name="Business Type" value="Other"> Other</label>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="field">
+          <label>If "Other," please describe your business type</label>
+          <input type="text" name="Business Type Other" placeholder="Describe your business category">
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 3: PRODUCTS ── -->
+    <div class="card">
+      <div class="card-header"><div class="card-number">3</div><h3>Products & Services</h3></div>
+      <div class="card-body">
+        <div class="field-grid full">
+          <div class="field">
+            <label>Product / Service Description <span class="req">*</span>
+              <span class="hint">Describe what you sell, how it's made, and what makes it unique.</span>
+            </label>
+            <textarea name="Product Description" rows="5" placeholder="e.g. We bake small-batch sourdough breads and flavored granolas using locally sourced grains..." required></textarea>
+          </div>
+          <div class="field">
+            <label>Top 5 Products or Services <span class="hint">List your primary offerings.</span></label>
+            <input type="text" name="Product 1" placeholder="1." style="margin-bottom:8px;">
+            <input type="text" name="Product 2" placeholder="2." style="margin-bottom:8px;">
+            <input type="text" name="Product 3" placeholder="3." style="margin-bottom:8px;">
+            <input type="text" name="Product 4" placeholder="4." style="margin-bottom:8px;">
+            <input type="text" name="Product 5" placeholder="5.">
+          </div>
+
+          <div class="divider" style="margin:0.75rem 0;"></div>
+
+          <div class="field">
+            <label>Are your products locally grown or produced?</label>
+            <div class="radio-row">
+              <label class="radio-item"><input type="radio" name="Locally Produced" value="Yes, 100% local"> Yes, 100% local</label>
+              <label class="radio-item"><input type="radio" name="Locally Produced" value="Mostly local"> Mostly local</label>
+              <label class="radio-item"><input type="radio" name="Locally Produced" value="Partially local"> Partially local</label>
+              <label class="radio-item"><input type="radio" name="Locally Produced" value="Not locally sourced"> Not locally sourced</label>
+            </div>
+          </div>
+          <div class="field">
+            <label>Local sourcing details <span class="hint">Where do your ingredients / materials come from?</span></label>
+            <textarea name="Local Sourcing Details" rows="3" placeholder="e.g. Grain sourced from Iroquois County farms..."></textarea>
+          </div>
+          <div class="field">
+            <label>Do you offer samples at your booth?</label>
+            <div class="radio-row">
+              <label class="radio-item"><input type="radio" name="Samples" value="Yes"> Yes</label>
+              <label class="radio-item"><input type="radio" name="Samples" value="No"> No</label>
+              <label class="radio-item"><input type="radio" name="Samples" value="Sometimes"> Sometimes</label>
+            </div>
+          </div>
+          <div class="field">
+            <label>Price range of your products</label>
+            <input type="text" name="Price Range" placeholder="e.g. $5 – $40">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 4: SOCIAL MEDIA ── -->
+    <div class="card">
+      <div class="card-header"><div class="card-number">4</div><h3>Social Media & Online Presence</h3></div>
+      <div class="card-body">
+        <div class="field-grid">
+          <div class="field">
+            <label>Facebook <span class="hint">Page or profile handle</span></label>
+            <div class="social-prefix">
+              <span class="social-at">facebook.com/</span>
+              <input type="text" name="Facebook" placeholder="yourpage">
+            </div>
+          </div>
+          <div class="field">
+            <label>Instagram</label>
+            <div class="social-prefix">
+              <span class="social-at">@</span>
+              <input type="text" name="Instagram" placeholder="yourhandle">
+            </div>
+          </div>
+          <div class="field">
+            <label>TikTok</label>
+            <div class="social-prefix">
+              <span class="social-at">@</span>
+              <input type="text" name="TikTok" placeholder="yourhandle">
+            </div>
+          </div>
+          <div class="field">
+            <label>Other Platform <span class="hint">Etsy, Pinterest, X, etc.</span></label>
+            <input type="text" name="Other Social" placeholder="Platform: handle or URL">
+          </div>
+          <div class="field span-2">
+            <label>Online Shop / Ordering Link <span class="hint">Etsy store, Square site, Shopify, etc.</span></label>
+            <input type="url" name="Online Shop URL" placeholder="https://youronlineshop.com">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 5: LOGISTICS ── -->
+    <div class="card">
+      <div class="card-header"><div class="card-number">5</div><h3>Market Logistics & Booth Requirements</h3></div>
+      <div class="card-body">
+        <div class="field-grid">
+          <div class="field">
+            <label>Booth Space Needed <span class="req">*</span></label>
+            <select name="Booth Size" required>
+              <option value="">— Select —</option>
+              <option value="10x10 Standard">10' x 10' (Standard)</option>
+              <option value="10x20 Double">10' x 20' (Double)</option>
+              <option value="Custom">Custom / Oversized (describe below)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Booth Size Notes</label>
+            <input type="text" name="Booth Notes" placeholder="Any special dimensions or setup notes">
+          </div>
+          <div class="field">
+            <label>Do you require electricity? <span class="hint">*Not guaranteed for Part Time Vendors.</span></label>
+            <div class="radio-row">
+              <label class="radio-item"><input type="radio" name="Electricity Required" value="Yes"> Yes</label>
+              <label class="radio-item"><input type="radio" name="Electricity Required" value="No"> No</label>
+            </div>
+          </div>
+          <div class="field">
+            <label>Electricity usage (if yes) <span class="hint">Describe equipment and wattage</span></label>
+            <input type="text" name="Electricity Details" placeholder="e.g. Hotplate 1200W, display refrigerator 400W">
+          </div>
+          <div class="field">
+            <label>Do you have your own tent / canopy?</label>
+            <div class="radio-row">
+              <label class="radio-item"><input type="radio" name="Own Tent" value="Yes"> Yes</label>
+              <label class="radio-item"><input type="radio" name="Own Tent" value="No"> No</label>
+            </div>
+          </div>
+          <div class="field span-2">
+            <label>Vendor Type & Fee <span class="req">*</span>
+              <span class="hint">Select the option that best describes your intended participation.</span>
+            </label>
+            <div class="radio-row" style="flex-direction:column; gap:0.6rem;">
+              <label class="radio-item" style="align-items:flex-start; gap:10px;">
+                <input type="radio" name="Vendor Type" value="Full Time - $250/season" required style="margin-top:3px;">
+                <span><strong>Full Time Vendor — $250/season</strong><br>
+                <span style="font-size:13px; color:var(--ink-muted);">Attend all market dates. Guaranteed booth space for the season.</span></span>
+              </label>
+              <label class="radio-item" style="align-items:flex-start; gap:10px;">
+                <input type="radio" name="Vendor Type" value="Part Time - $20/day">
+                <span><strong>Part Time Vendor — $20/day</strong><br>
+                <span style="font-size:13px; color:var(--ink-muted);">Single Saturday per registration. Space subject to availability. *Electricity access not guaranteed.</span></span>
+              </label>
+            </div>
+          </div>
+          <div class="field span-2">
+            <label>Dates you know you are unavailable — For Full Time Vendors</label>
+            <input type="text" name="Unavailable Dates" placeholder="e.g. July 4th weekend, August 10th">
+          </div>
+          <div class="field span-2">
+            <label>Dates interested in attending — For Part Time Vendors</label>
+            <input type="text" name="Part Time Dates" placeholder="e.g. June 7, July 19, August 2">
+          </div>
+          <div class="field span-2">
+            <label>Special setup or accommodation requests</label>
+            <textarea name="Special Requests" rows="2" placeholder="ADA accessibility, proximity to entrance, refrigeration access, etc."></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 6: EXPERIENCE ── -->
+    <div class="card">
+      <div class="card-header"><div class="card-number">6</div><h3>Previous Market Experience</h3></div>
+      <div class="card-body">
+        <div class="field-grid">
+          <div class="field span-2">
+            <label>Have you previously vended at the Downtown Watseka Farmers Market?</label>
+            <div class="radio-row">
+              <label class="radio-item"><input type="radio" name="Previous Watseka Vendor" value="Yes"> Yes</label>
+              <label class="radio-item"><input type="radio" name="Previous Watseka Vendor" value="No, first time"> No, first time</label>
+            </div>
+          </div>
+          <div class="field span-2">
+            <label>Have you vended at other farmers markets or events?</label>
+            <div class="radio-row">
+              <label class="radio-item"><input type="radio" name="Previous Other Markets" value="Yes"> Yes</label>
+              <label class="radio-item"><input type="radio" name="Previous Other Markets" value="No"> No</label>
+            </div>
+          </div>
+          <div class="field span-2">
+            <label>If yes, which markets or events? <span class="hint">List the market name, city, and approximate years attended</span></label>
+            <textarea name="Previous Markets List" rows="3" placeholder="e.g. Kankakee Farmers Market (2021–2023)..."></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 7: INSURANCE ── -->
+    <div class="card">
+      <div class="card-header"><div class="card-number">7</div><h3>Insurance & Compliance</h3></div>
+      <div class="card-body">
+        <div class="field-grid">
+          <div class="field span-2">
+            <label>Do you carry general or product liability insurance? <span class="req">*</span></label>
+            <div class="radio-row">
+              <label class="radio-item"><input type="radio" name="Insurance" value="Yes" required> Yes</label>
+              <label class="radio-item"><input type="radio" name="Insurance" value="No"> No</label>
+              <label class="radio-item"><input type="radio" name="Insurance" value="In progress"> In progress / obtaining</label>
+            </div>
+          </div>
+          <div class="divider" style="grid-column:span 2; margin:0.25rem 0;"></div>
+          <div class="field span-2">
+            <label>Applicable compliance — Check all that apply</label>
+            <div class="check-group">
+              <label class="check-item"><input type="checkbox" name="Compliance" value="Illinois Cottage Food License"> Illinois Cottage Food License</label>
+              <label class="check-item"><input type="checkbox" name="Compliance" value="Food Handler Certification"> Food Handler Certification</label>
+              <label class="check-item"><input type="checkbox" name="Compliance" value="IL Food Service Sanitation License"> IL Food Service Sanitation License</label>
+              <label class="check-item"><input type="checkbox" name="Compliance" value="USDA Organic Certification"> USDA Organic Certification</label>
+              <label class="check-item"><input type="checkbox" name="Compliance" value="IL Farmers Market Act Exemption"> IL Farmers Market Act Exemption</label>
+              <label class="check-item"><input type="checkbox" name="Compliance" value="Registered LLC / Business Entity"> Registered LLC / Business Entity</label>
+              <label class="check-item"><input type="checkbox" name="Compliance" value="None currently applicable"> None currently applicable</label>
+            </div>
+          </div>
+          <div class="field span-2">
+            <label>Additional compliance notes or certifications</label>
+            <textarea name="Compliance Notes" rows="2" placeholder="Any additional permits, certifications, or details"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 8: ABOUT YOU ── -->
+    <div class="card">
+      <div class="card-header"><div class="card-number">8</div><h3>Tell Us More</h3></div>
+      <div class="card-body">
+        <div class="field-grid full">
+          <div class="field">
+            <label>Why do you want to vend at the Downtown Watseka Farmers Market?
+              <span class="hint">We love getting to know our vendors. Share your story!</span>
+            </label>
+            <textarea name="Why Watseka" rows="4" placeholder="Tell us what draws you to our community market..."></textarea>
+          </div>
+          <div class="field">
+            <label>How did you hear about us?</label>
+            <select name="Referral Source">
+              <option value="">— Select one —</option>
+              <option value="Facebook / Social Media">Facebook / Social Media</option>
+              <option value="Friend or vendor referral">Friend or fellow vendor referral</option>
+              <option value="Website / Search engine">Website / Search engine</option>
+              <option value="Flyer or printed material">Flyer or printed material</option>
+              <option value="Local newspaper">Local newspaper</option>
+              <option value="Attended as customer">I attended the market as a customer</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Any other information you'd like us to know?</label>
+            <textarea name="Additional Info" rows="3" placeholder="Anything else that would help us understand your business or needs..."></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 9: AGREEMENT ── -->
+    <div class="card">
+      <div class="card-header"><div class="card-number">9</div><h3>Vendor Agreement & Signature</h3></div>
+      <div class="card-body">
+        <div class="agreement">
+          <p>By submitting this application, you acknowledge that you have read and agree to the
+          <a href="/farmers-market/policies.html" target="_blank">Downtown Watseka Farmers Market Vendor Rules & Regulations</a>.
+          You understand that acceptance is not guaranteed and is at the discretion of the market committee.
+          You agree to maintain your booth in a clean, safe, and professional manner throughout each market day,
+          and to comply with all applicable local, state, and federal regulations regarding the sale of your products.</p>
+          <div class="agreement-checks">
+            <label class="agree-item">
+              <input type="checkbox" name="Agree Rules" value="Yes" required>
+              I agree to abide by all Downtown Watseka Farmers Market rules and regulations.
+            </label>
+            <label class="agree-item">
+              <input type="checkbox" name="Agree Insurance" value="Yes" required>
+              I understand that liability insurance may be required and I am responsible for obtaining it prior to my first market date.
+            </label>
+            <label class="agree-item">
+              <input type="checkbox" name="Agree Accurate" value="Yes" required>
+              I certify that all information provided in this application is accurate and complete to the best of my knowledge.
+            </label>
+            <label class="agree-item">
+              <input type="checkbox" name="Agree Review" value="Yes">
+              I understand my application is subject to committee review and a fee schedule will be provided upon acceptance.
+            </label>
+          </div>
+          <div class="sig-grid">
+            <div class="field">
+              <label>Signature (type full name) <span class="req">*</span></label>
+              <input type="text" class="sig-line" name="Signature" placeholder="Your full name" required>
+            </div>
+            <div class="field">
+              <label>Printed Name <span class="req">*</span></label>
+              <input type="text" name="Printed Name" placeholder="Full legal name" required>
+            </div>
+            <div class="field">
+              <label>Date <span class="req">*</span></label>
+              <input type="date" name="Signature Date" required>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Submit -->
+    <div style="text-align:center; margin-top:2rem;">
+      <button type="submit" class="btn-submit">Submit Application</button>
+      <p style="margin-top:0.75rem; font-size:12.5px; color:var(--ink-light);">
+        Questions? Email us at <strong><a href="mailto:dtwatsekafarmersmarket@gmail.com">dtwatsekafarmersmarket@gmail.com</a></strong>
+        or find us on <a href="https://www.facebook.com/watsekafarmersmarket" target="_blank">Facebook</a>
+      </p>
+    </div>
+  </form>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><img src="/images/logo.png" alt="Logo"><div class="footer-brand-name">Visit Watseka</div></div>
+      <p class="footer-tagline">Preserving small-town charm and growing community, one market day at a time.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/watsekafarmersmarket" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+        <a href="https://www.instagram.com/dtwatsekafarmersmarket/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Explore</div>
+      <ul class="footer-links">
+        <li><a href="/farmers-market/">Farmers' Market</a></li>
+        <li><a href="/things-to-do.html">Things to Do</a></li>
+        <li><a href="/places-to-go.html">Places to Go</a></li>
+        <li><a href="/news.html">News & Development</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Farmers' Market</div>
+      <ul class="footer-links">
+        <li><a href="/farmers-market/vendor-application.html">Vendor Application</a></li>
+        <li><a href="/farmers-market/sponsorship.html">Sponsor the Market</a></li>
+        <li><a href="/farmers-market/band-application.html">Band Application</a></li>
+        <li><a href="/farmers-market/policies.html">Policies & Procedures</a></li>
+        <li><a href="/farmers-market/vendors.html">Meet Your Vendors</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 Visit Watseka &middot; Downtown Watseka Farmers Market &middot; 501(c)(3) Nonprofit &middot; Watseka, Illinois</div>
+</footer>
+
+<script src="/js/main.js"></script>
+</body>
+</html>
