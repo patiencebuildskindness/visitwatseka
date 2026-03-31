@@ -208,17 +208,19 @@
     text-align: center;
   }
   .video-wrap {
-    max-width: 600px;
+    max-width: 500px;
     margin: 0 auto;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+    background: #000;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  .video-wrap iframe {
+  .video-wrap .fb-video {
     width: 100%;
-    aspect-ratio: 9/16;
-    max-height: 500px;
-    border: none;
   }
 
   /* ── ABOUT SECTION ── */
@@ -434,18 +436,17 @@
 </section>
 
 <!-- ── VIDEO SECTION ── -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v22.0"></script>
 <section class="video-section" id="market-info">
   <h2 class="section-title">See the Market in Action</h2>
   <p class="section-subtitle">A glimpse of what Saturday mornings look like in Downtown Watseka.</p>
   <div class="video-wrap">
-    <iframe
-      src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1294382745389802&show_text=false"
-      scrolling="no"
-      frameborder="0"
-      allowfullscreen="true"
-      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-      title="Downtown Watseka Farmers Market Video">
-    </iframe>
+    <div class="fb-video" data-href="https://www.facebook.com/reel/1294382745389802" data-width="500" data-show-text="false">
+      <blockquote cite="https://www.facebook.com/reel/1294382745389802" class="fb-xfbml-parse-ignore">
+        <a href="https://www.facebook.com/reel/1294382745389802">Downtown Watseka Farmers Market</a>
+      </blockquote>
+    </div>
   </div>
 </section>
 
