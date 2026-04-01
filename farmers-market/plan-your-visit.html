@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan Your Visit — Downtown Watseka Farmers Market | Visit Watseka</title>
+<meta name="description" content="Plan your visit to the Downtown Watseka Farmers Market. Hours, location, parking, what to bring, and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<style>
+  /* ── SECTION EYEBROW ── */
+  .section-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 0.75rem;
+    justify-content: center;
+  }
+  .section-eyebrow::before,
+  .section-eyebrow::after {
+    content: '';
+    flex: 1;
+    max-width: 80px;
+    height: 1px;
+    background: var(--border);
+  }
+  .eyebrow-text {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--green-mid);
+    white-space: nowrap;
+  }
+
+  /* ── PLAN YOUR VISIT HEADER ── */
+  .visit-header {
+    text-align: center;
+    padding: 5rem 1.5rem 3rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .visit-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 700;
+    color: var(--green-dark);
+    line-height: 1.2;
+    margin-bottom: 0.6rem;
+  }
+  .visit-header p {
+    font-size: 15px;
+    color: var(--ink-muted);
+    line-height: 1.75;
+  }
+
+  /* ── QUICK INFO CARDS ── */
+  .quick-info {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1.5rem 3.5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  @media (max-width: 720px) { .quick-info { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 420px) { .quick-info { grid-template-columns: 1fr 1fr; } }
+
+  .qi-card {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem 1rem;
+    text-align: center;
+  }
+  .qi-icon { font-size: 1.75rem; display: block; margin-bottom: 0.5rem; line-height: 1; }
+  .qi-label {
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 4px;
+  }
+  .qi-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--green-dark);
+    line-height: 1.4;
+  }
+  .qi-sub {
+    font-size: 11.5px;
+    color: var(--ink-light);
+    margin-top: 3px;
+    line-height: 1.4;
+  }
+  .badge-free {
+    display: inline-block;
+    background: var(--amber);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-top: 4px;
+  }
+
+  /* ── FIRST TIMER ── */
+  .first-timer {
+    background: var(--green-dark);
+    padding: 4rem 1.5rem;
+  }
+  .first-timer-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .first-timer-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  .first-timer-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+  .first-timer-header p {
+    font-size: 14.5px;
+    color: rgba(255,255,255,0.65);
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.65;
+  }
+
+  .steps-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    position: relative;
+  }
+  @media (max-width: 680px) { .steps-row { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 380px) { .steps-row { grid-template-columns: 1fr; } }
+
+  .step-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px;
+    padding: 1.25rem 1rem;
+    text-align: center;
+    position: relative;
+  }
+  .step-number {
+    width: 32px;
+    height: 32px;
+    background: var(--amber);
+    color: #fff;
+    font-weight: 700;
+    font-size: 13px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.7rem;
+  }
+  .step-icon { font-size: 1.5rem; display: block; margin-bottom: 0.5rem; }
+  .step-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.4rem;
+  }
+  .step-desc {
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.6;
+  }
+
+  /* ── INFO GRID ── */
+  .info-grid-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  @media (max-width: 640px) { .info-grid-section { grid-template-columns: 1fr; } }
+
+  .info-card {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .info-card-header {
+    background: var(--green-dark);
+    padding: 0.75rem 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .info-card-header span { font-size: 1.1rem; }
+  .info-card-header h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #fff;
+  }
+  .info-card-body {
+    padding: 1.1rem;
+  }
+  .info-card-body p {
+    font-size: 14px;
+    color: var(--ink-muted);
+    line-height: 1.75;
+    margin-bottom: 0.6rem;
+  }
+  .info-card-body p:last-child { margin-bottom: 0; }
+  .info-card-body strong { color: var(--ink); }
+
+  .info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .info-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 13.5px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+  }
+  .info-list li .li-icon {
+    font-size: 13px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ── NEARBY ── */
+  .nearby-section {
+    background: var(--amber-pale);
+    border-top: 1px solid var(--border);
+    padding: 4rem 1.5rem;
+  }
+  .nearby-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .nearby-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .nearby-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    color: var(--green-dark);
+    margin-bottom: 0.5rem;
+  }
+  .nearby-header p {
+    font-size: 14.5px;
+    color: var(--ink-muted);
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.65;
+  }
+
+  .nearby-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  @media (max-width: 640px) { .nearby-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 380px) { .nearby-grid { grid-template-columns: 1fr; } }
+
+  .nearby-card {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: box-shadow 0.15s, transform 0.15s;
+  }
+  .nearby-card:hover {
+    box-shadow: 0 4px 16px rgba(30,70,32,0.1);
+    transform: translateY(-2px);
+  }
+  .nearby-icon { font-size: 1.5rem; line-height: 1; }
+  .nearby-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--green-dark);
+    line-height: 1.3;
+  }
+  .nearby-desc {
+    font-size: 12.5px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+  }
+  .nearby-tag {
+    display: inline-block;
+    background: var(--green-pale);
+    color: var(--green-mid);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-top: 2px;
+    align-self: flex-start;
+  }
+
+  /* ── MAP CTA ── */
+  .map-cta {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1.5rem 4rem;
+  }
+  .map-embed {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    margin-bottom: 1rem;
+  }
+  .map-embed iframe {
+    width: 100%;
+    height: 300px;
+    display: block;
+    border: none;
+  }
+  .map-address {
+    text-align: center;
+    font-size: 13.5px;
+    color: var(--ink-muted);
+  }
+  .map-address a {
+    color: var(--green-mid);
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .map-address a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header class="site-header">
+  <nav class="nav-wrap">
+    <a href="/" class="nav-logo">
+      <img src="/images/logo-farmersmarket.png" alt="Downtown Watseka Farmers Market Logo">
+      <div class="nav-logo-text">Visit Watseka<span>Watseka, Illinois</span></div>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/farmers-market/" class="active">Farmers' Market</a></li>
+      <li><a href="/things-to-do.html">Things to Do</a></li>
+      <li><a href="/places-to-go.html">Places to Go</a></li>
+      <li><a href="/news.html">News & Development</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ── HEADER ── -->
+<div class="visit-header">
+  <div class="section-eyebrow">
+    <span class="eyebrow-text">For Visitors</span>
+  </div>
+  <h2>Plan Your Visit</h2>
+  <p>Everything you need to know before you head downtown on a Saturday morning. The market is free, welcoming, and one of the best ways to spend a few hours in Watseka.</p>
+</div>
+
+<!-- ── QUICK INFO STRIP ── -->
+<div class="quick-info">
+  <div class="qi-card">
+    <span class="qi-icon">📅</span>
+    <div class="qi-label">Season</div>
+    <div class="qi-value">June 13 –<br>Oct 24, 2026</div>
+    <div class="qi-sub">Every Saturday</div>
+  </div>
+  <div class="qi-card">
+    <span class="qi-icon">⏰</span>
+    <div class="qi-label">Hours</div>
+    <div class="qi-value">7:00 AM –<br>12:00 PM</div>
+    <div class="qi-sub">Rain or shine</div>
+  </div>
+  <div class="qi-card">
+    <span class="qi-icon">📍</span>
+    <div class="qi-label">Location</div>
+    <div class="qi-value">121 W Walnut St</div>
+    <div class="qi-sub">Watseka, IL 60970</div>
+  </div>
+  <div class="qi-card">
+    <span class="qi-icon">🎟</span>
+    <div class="qi-label">Admission</div>
+    <span class="badge-free">Always Free</span>
+    <div class="qi-sub">Open to everyone</div>
+  </div>
+</div>
+
+<!-- ── FIRST TIMER GUIDE ── -->
+<section class="first-timer">
+  <div class="first-timer-inner">
+    <div class="first-timer-header">
+      <h3>First Time at the Market?</h3>
+      <p>Here's what a perfect Saturday morning in Downtown Watseka looks like.</p>
+    </div>
+    <div class="steps-row">
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <span class="step-icon">🌅</span>
+        <div class="step-title">Arrive Early</div>
+        <div class="step-desc">The best vendors and freshest produce go fast. Aim to arrive at or shortly after 7 AM for the best selection.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <span class="step-icon">🚶</span>
+        <div class="step-title">Walk the Whole Market</div>
+        <div class="step-desc">Take a full lap first before you buy — you'll want to see everything before you decide. There's always something unexpected.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <span class="step-icon">🛍</span>
+        <div class="step-title">Shop & Explore</div>
+        <div class="step-desc">Pick up fresh produce, grab a pastry or a hot breakfast, browse handmade goods, and chat with the makers behind the tables.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-number">4</div>
+        <span class="step-icon">☀️</span>
+        <div class="step-title">Stay & Enjoy</div>
+        <div class="step-desc">Live music, face painting, family activities, and good company. There's no rush — make a morning of it.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── INFO CARDS GRID ── -->
+<div class="info-grid-section">
+
+  <!-- Parking -->
+  <div class="info-card">
+    <div class="info-card-header">
+      <span>🅿️</span>
+      <h4>Parking</h4>
+    </div>
+    <div class="info-card-body">
+      <p><strong>Free parking is available</strong> throughout Downtown Watseka. Street parking is plentiful along Walnut St and surrounding blocks. Additional free parking is available at the <strong>First Trust Parking Lot</strong> on the corner of 3rd St &amp; Walnut St, and the <strong>DMV Parking Lot</strong> directly behind Silo Pub &amp; Eatery.</p>
+      <p>Please note that <strong>vehicles are not permitted in the market parking lot between 7:45 AM and 12:05 PM</strong> on market days. Plan to park in the public lot or on the street before the market opens.</p>
+    </div>
+  </div>
+
+  <!-- Restrooms -->
+  <div class="info-card">
+    <div class="info-card-header">
+      <span>🚻</span>
+      <h4>Restrooms</h4>
+    </div>
+    <div class="info-card-body">
+      <p><strong>Public restrooms are available on site</strong> for vendors and visitors throughout market hours, located inside the <strong>Silo Pub &amp; Eatery | Homestead Venue</strong> — a welcome indoor amenity on warm summer mornings.</p>
+    </div>
+  </div>
+
+  <!-- What to Bring -->
+  <div class="info-card">
+    <div class="info-card-header">
+      <span>🛒</span>
+      <h4>What to Bring</h4>
+    </div>
+    <div class="info-card-body">
+      <ul class="info-list">
+        <li><span class="li-icon">👜</span> A reusable bag or basket for your haul</li>
+        <li><span class="li-icon">💵</span> Cash is always accepted — check with your vendor ahead of time to confirm whether they take cards</li>
+        <li><span class="li-icon">🕶</span> Sunscreen &amp; sunglasses — it's an outdoor market</li>
+        <li><span class="li-icon">🧢</span> On super warm days, an umbrella, sun hat, or cap goes a long way to beat the heat</li>
+        <li><span class="li-icon">👟</span> Comfortable shoes for strolling</li>
+        <li><span class="li-icon">🐾</span> Your leashed dog — well-behaved dogs are welcome!</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Pets -->
+  <div class="info-card">
+    <div class="info-card-header">
+      <span>🐾</span>
+      <h4>Pet Policy</h4>
+    </div>
+    <div class="info-card-body">
+      <p><strong>Dogs are welcome at the market!</strong> We love four-legged visitors. Please make sure your pup is leashed and well-behaved around other people and animals.</p>
+      <p>As a courtesy to vendors and fellow visitors, please clean up after your pet and keep them from vendor tables and food areas.</p>
+    </div>
+  </div>
+
+  <!-- Accessibility -->
+  <div class="info-card" style="grid-column: span 2;">
+    <div class="info-card-header">
+      <span>♿</span>
+      <h4>Accessibility</h4>
+    </div>
+    <div class="info-card-body">
+      <p>The Downtown Watseka Farmers Market is held in an <strong>outdoor parking lot with flat, paved surfaces</strong> — accessible for wheelchairs and strollers throughout the market area. Handicap parking is available nearby. If you have specific accessibility needs or questions, please reach out to us in advance at <strong><a href="mailto:dtwatsekafarmersmarket@gmail.com">dtwatsekafarmersmarket@gmail.com</a></strong> and we'll do our best to assist.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── NEARBY ── -->
+<section class="nearby-section">
+  <div class="nearby-inner">
+    <div class="nearby-header">
+      <h3>While You're Downtown</h3>
+      <p>Make a full morning — or even a full day — out of your visit to Watseka. There's more to explore just steps from the market.</p>
+    </div>
+    <div class="nearby-grid">
+
+      <div class="nearby-card">
+        <div class="nearby-icon">🍺</div>
+        <div class="nearby-name">Silo Pub &amp; Eatery</div>
+        <div class="nearby-desc">Right next door to the market. Grab lunch or a cold one after you've done your shopping.</div>
+        <span class="nearby-tag">Food &amp; Drink</span>
+      </div>
+
+      <div class="nearby-card">
+        <div class="nearby-icon">🛍</div>
+        <div class="nearby-name">Downtown Shops &amp; Boutiques</div>
+        <div class="nearby-desc">Stroll the blocks around Walnut St and discover local shops, boutiques, and small businesses.</div>
+        <span class="nearby-tag">Shopping</span>
+      </div>
+
+      <div class="nearby-card">
+        <div class="nearby-icon">📚</div>
+        <div class="nearby-name">Watseka Public Library</div>
+        <div class="nearby-desc">A wonderful resource for the whole family — great for a quiet visit before or after the market.</div>
+        <span class="nearby-tag">Community</span>
+      </div>
+
+      <div class="nearby-card">
+        <div class="nearby-icon">🌳</div>
+        <div class="nearby-name">Local Parks &amp; Trails</div>
+        <div class="nearby-desc">Watseka has beautiful green spaces nearby — perfect for a walk or a picnic with your fresh market finds.</div>
+        <span class="nearby-tag">Outdoors</span>
+      </div>
+
+      <div class="nearby-card" style="grid-column: span 2;">
+        <div class="nearby-icon">🗺</div>
+        <div class="nearby-name">Explore All of Watseka</div>
+        <div class="nearby-desc">Watseka is the heart of Iroquois County with a rich history, welcoming community, and more to discover than you might expect. Visit <strong>visitwatseka.com</strong> for a full guide to things to do, places to eat, and events happening all year.</div>
+        <span class="nearby-tag">Visit Watseka</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── MAP ── -->
+<div class="map-cta">
+  <div style="padding: 3rem 0 1.5rem; text-align:center;">
+    <div class="section-eyebrow"><span class="eyebrow-text">Find Us</span></div>
+    <h3 style="font-family:'Playfair Display',serif; font-size:1.6rem; color:var(--green-dark); margin-bottom:0.4rem;">We're Easy to Find</h3>
+    <p style="font-size:14.5px; color:var(--ink-muted); max-width:480px; margin:0 auto 1.5rem; line-height:1.7;">Right in the heart of Downtown Watseka — between the Post Office and Silo Pub &amp; Eatery on Walnut Street.</p>
+  </div>
+  <div class="map-embed">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2985.123456789!2d-87.7360!3d40.7717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e0b1234567890%3A0xabcdef1234567890!2s121+W+Walnut+St%2C+Watseka%2C+IL+60970!5e0!3m2!1sen!2sus!4v1234567890"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Downtown Watseka Farmers Market location">
+    </iframe>
+  </div>
+  <div class="map-address">
+    <strong>Downtown Watseka Farmers Market</strong> &nbsp;&middot;&nbsp;
+    <a href="https://maps.google.com/?q=121+W+Walnut+St,+Watseka,+IL+60970" target="_blank">
+      121 W Walnut St, Watseka, IL 60970
+    </a>
+  </div>
+</div>
+
+<!-- ── CONTACT THE MARKET ── -->
+<section style="background:var(--green-pale); padding:3rem 1.5rem;">
+  <div style="max-width:600px; margin:0 auto; text-align:center;">
+    <h2 class="section-title">Contact the Farmers Market</h2>
+    <p style="color:var(--ink-muted); font-size:14px; margin-bottom:0.5rem;">📧 <a href="mailto:dtwatsekafarmersmarket@gmail.com" style="font-weight:700; color:var(--green-dark);">dtwatsekafarmersmarket@gmail.com</a></p>
+    <p class="section-subtitle">Have a question about the market? Send us a message.</p>
+    <div style="background:var(--paper); border:1px solid var(--border); border-radius:10px; padding:1.5rem; text-align:left;" id="market-contact-wrap">
+      <form id="market-contact-form" action="https://formspree.io/f/mwvwqezn" method="POST">
+        <input type="hidden" name="_subject" value="Farmers Market Contact Message">
+        <div class="field" style="margin-bottom:1rem;">
+          <label>First & Last Name <span class="req">*</span></label>
+          <input type="text" name="Name" required placeholder="Your full name">
+        </div>
+        <div class="field" style="margin-bottom:1rem;">
+          <label>Email Address <span class="req">*</span></label>
+          <input type="email" name="Email" required placeholder="you@email.com">
+        </div>
+        <div class="field" style="margin-bottom:1rem;">
+          <label>Message <span class="req">*</span></label>
+          <textarea name="Message" rows="4" required placeholder="How can we help you?"></textarea>
+        </div>
+        <div style="text-align:center;">
+          <button type="submit" class="btn-submit">Send Message</button>
+        </div>
+      </form>
+    </div>
+    <div id="market-contact-thanks" style="display:none; padding:2rem;">
+      <h3 style="font-family:'Playfair Display',serif; color:var(--green-dark); margin-bottom:0.5rem;">Thank You!</h3>
+      <p style="color:var(--ink-muted); font-size:14px;">Your message has been sent. We'll get back to you soon.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><img src="/images/logo-farmersmarket.png" alt="Logo"><div class="footer-brand-name">Visit Watseka</div></div>
+      <p class="footer-tagline">Preserving small-town charm and growing community, one market day at a time.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/watsekafarmersmarket" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+        <a href="https://www.instagram.com/dtwatsekafarmersmarket/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Explore</div>
+      <ul class="footer-links">
+        <li><a href="/farmers-market/">Farmers' Market</a></li>
+        <li><a href="/things-to-do.html">Things to Do</a></li>
+        <li><a href="/places-to-go.html">Places to Go</a></li>
+        <li><a href="/news.html">News & Development</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Farmers' Market</div>
+      <ul class="footer-links">
+        <li><a href="/farmers-market/vendor-application.html">Vendor Application</a></li>
+        <li><a href="/farmers-market/sponsorship.html">Sponsor the Market</a></li>
+        <li><a href="/farmers-market/band-application.html">Band Application</a></li>
+        <li><a href="/farmers-market/policies.html">Policies & Procedures</a></li>
+        <li><a href="/farmers-market/vendors.html">Meet Your Vendors</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 Visit Watseka &middot; Downtown Watseka Farmers Market &middot; 501(c)(3) Nonprofit &middot; Watseka, Illinois</div>
+</footer>
+
+<script src="/js/main.js"></script>
+<script>
+  var mcForm = document.getElementById('market-contact-form');
+  if (mcForm) {
+    mcForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      fetch(mcForm.action, { method:'POST', body: new FormData(mcForm), headers:{'Accept':'application/json'} })
+        .then(function(r) {
+          if (r.ok) {
+            document.getElementById('market-contact-wrap').style.display = 'none';
+            document.getElementById('market-contact-thanks').style.display = 'block';
+          } else { alert('There was a problem. Please email dtwatsekafarmersmarket@gmail.com directly.'); }
+        }).catch(function() { alert('There was a problem. Please email dtwatsekafarmersmarket@gmail.com directly.'); });
+    });
+  }
+</script>
+</body>
+</html>

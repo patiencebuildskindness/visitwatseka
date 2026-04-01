@@ -43,11 +43,12 @@ a:hover { color: var(--green-dark); }
 
 /* ── SITE HEADER / NAV ── */
 .site-header {
-  background: var(--green-dark);
+  background: var(--cream);
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-bottom: 1px solid var(--border);
 }
 
 .nav-wrap {
@@ -67,22 +68,21 @@ a:hover { color: var(--green-dark); }
   padding: 0.5rem 0;
 }
 .nav-logo img {
-  height: 70px;
+  height: 90px;
   width: auto;
-  border-radius: 4px;
 }
 .nav-logo-text {
   font-family: 'Playfair Display', serif;
-  font-size: 1.15rem;
+  font-size: 1.35rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--ink);
   line-height: 1.2;
 }
 .nav-logo-text span {
   display: block;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 400;
-  color: rgba(255,255,255,0.6);
+  color: var(--ink-muted);
   font-family: 'Lato', sans-serif;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -96,9 +96,9 @@ a:hover { color: var(--green-dark); }
 }
 .nav-links li a {
   display: block;
-  padding: 1.1rem 1rem;
-  color: rgba(255,255,255,0.85);
-  font-size: 13px;
+  padding: 1.2rem 1.1rem;
+  color: var(--ink-muted);
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -108,8 +108,8 @@ a:hover { color: var(--green-dark); }
 }
 .nav-links li a:hover,
 .nav-links li a.active {
-  color: #fff;
-  background: rgba(255,255,255,0.08);
+  color: var(--green-dark);
+  background: rgba(0,0,0,0.03);
   border-bottom-color: var(--amber);
 }
 
@@ -125,9 +125,9 @@ a:hover { color: var(--green-dark); }
 }
 .nav-toggle span {
   display: block;
-  width: 24px;
-  height: 2px;
-  background: #fff;
+  width: 26px;
+  height: 2.5px;
+  background: var(--ink);
   border-radius: 2px;
   transition: transform 0.3s, opacity 0.3s;
 }
@@ -143,20 +143,20 @@ a:hover { color: var(--green-dark); }
     top: 100%;
     left: 0;
     right: 0;
-    background: var(--green-dark);
+    background: var(--cream);
     flex-direction: column;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    border-top: 1px solid var(--border);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
   }
   .nav-links.open { display: flex; }
   .nav-links li a {
     padding: 0.9rem 1.5rem;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid var(--border);
     border-left: 3px solid transparent;
   }
   .nav-links li a:hover,
   .nav-links li a.active {
-    border-bottom: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid var(--border);
     border-left-color: var(--amber);
   }
 }
@@ -189,7 +189,7 @@ a:hover { color: var(--green-dark); }
 @media (max-width: 700px) {
   .footer-brand { justify-content: center; }
 }
-.footer-brand img { height: 60px; border-radius: 4px; }
+.footer-brand img { height: 75px; }
 .footer-brand-name {
   font-family: 'Playfair Display', serif;
   font-size: 1.1rem;
