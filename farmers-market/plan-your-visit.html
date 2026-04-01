@@ -190,8 +190,16 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
+    align-items: start;
   }
-  @media (max-width: 640px) { .info-grid-section { grid-template-columns: 1fr; } }
+  @media (max-width: 640px) {
+    .info-grid-section {
+      grid-template-columns: 1fr;
+    }
+    .info-grid-section .info-card {
+      grid-column: span 1 !important;
+    }
+  }
 
   .info-card {
     background: var(--paper);
