@@ -55,7 +55,26 @@
 | Heritage Woods of Watseka | gardant.com/heritagewoodswatseka | Facebook | Senior Living |
 | Arcadia Care Watseka | arcadialtc.com | Likely | Senior Care |
 
-**Count: ~45 businesses**
+| Imperial Hairstyling | imperialhairstyling.net | Facebook | Beauty |
+| R.P. Lumber | rplumber.com (Watseka store page) | Facebook + Instagram (corporate) | Hardware |
+| Plumb Mart | plumbmartil.com | Facebook | Plumbing Supply |
+| Family Inn Watseka | familyinnwatseka.com | Facebook | Lodging |
+| Iroquois County Genealogical Society | iroquoiscountygenealogy.org | Facebook | Nonprofit |
+| Conserv FS | conservfs.com | Facebook + Instagram | Farm Supply |
+| Watseka Public Library | watsekapubliclibrary.org | Facebook + Instagram | Library |
+| Super 8 / Watseka 24 Inn & Suites | watseka24.com + Wyndham page | None found | Lodging |
+| Sugar Creek Trading Company | sugarcreektradingcompany.com | Facebook + Instagram | Retail/Cafe |
+| Berkot's Super Foods | berkotfoods.com (Watseka store page) | Facebook + Instagram | Grocery |
+| The Head Quarters | theheadquartersbeautystudio.com | Facebook + Instagram | Beauty |
+| Casey's General Store | caseys.com (Watseka store page) | Facebook | Gas/Convenience |
+| Watseka Park District | watsekapark.org | Facebook + Twitter/X | Recreation |
+| Farm Credit Illinois | farmcreditil.com (Watseka office page) | Facebook + Instagram | Agriculture |
+| Iroquois Economic Dev Assoc | iroquoiseda.com | Facebook + Instagram | Economic Dev |
+| Watseka Theatre | watsekatheatre.com | Facebook + Instagram | Entertainment |
+| Swan Nails & Spa | basic hosted site | Facebook + Instagram | Beauty |
+| Harbor House Resale Shoppe | harborhousedv.org + online store | Facebook | Thrift/Nonprofit |
+
+**Count: ~63 businesses**
 
 ---
 
@@ -88,21 +107,14 @@
 
 ## TIER 3: HAS WEBSITE ONLY (No social media found)
 
-| Business | Website | Category |
-|----------|---------|----------|
-| Imperial Hairstyling | imperialhairstyling.net | Beauty |
-| R.P. Lumber | rplumber.com | Hardware |
-| Plumb Mart | plumbmartil.com | Plumbing Supply |
-| Family Inn Watseka | familyinnwatseka.com | Lodging |
-| Iroquois County Genealogical Society | iroquoiscountygenealogy.org | Nonprofit |
-| Conserv FS | conservfs.com | Farm Supply |
-| Fox CPA Group | listed on TaxBuzz | Accounting |
-
-**Count: ~7 businesses**
+**EMPTY** — All previously listed businesses were re-verified and moved to Tier 1.
 
 ---
 
 ## TIER 4: NO WEBSITE, NO SOCIAL MEDIA FOUND (Biggest opportunity — these businesses are invisible online)
+
+### Accounting (moved from Tier 3)
+- Fox CPA Group — 204 E Cherry St Ste 300 — no website or social found
 
 ### Restaurants & Food
 - Cuco's Family Restaurant — 117 W Walnut St — (815) 432-2286
@@ -208,8 +220,6 @@
 
 ### Lodging
 - Stone Gate Inn — 814 E Walnut St — (815) 432-1330
-- Super 8 by Wyndham — 710 W Walnut St — (815) 432-6000
-- Watseka 24 Inn & Suites
 
 ### Gas Stations
 - Watseka Shell — 1150 E Walnut St — (815) 432-6064
@@ -269,7 +279,7 @@
 - Watseka Police Department
 - Watseka Fire Department
 - US Post Office — 101 W Walnut St
-- Watseka Public Library — 201 S 4th St — (815) 432-4544
+- Watseka Senior Citizens Center — 213 E Cherry St (library moved to Tier 1)
 - Watseka Senior Citizens Center — 213 E Cherry St
 - American Red Cross — 214 E Walnut St
 - A Second Look (disability services) — 700 E Elm St
@@ -291,9 +301,9 @@
 
 | Tier | Description | Count | Opportunity |
 |------|-------------|-------|-------------|
-| **Tier 1** | Website + Social Media | ~45 | Partner/link exchange — feature on visitwatseka.com |
-| **Tier 2** | Social Media Only | ~16 | Offer free listing on visitwatseka.com as their "web presence" |
-| **Tier 3** | Website Only | ~7 | Connect via social, link from visitwatseka.com |
+| **Tier 1** | Website + Social Media | ~63 | Partner/link exchange — feature on visitwatseka.com |
+| **Tier 2** | Social Media Only | ~5 | Offer free listing on visitwatseka.com as their "web presence" |
+| **Tier 3** | Website Only | 0 | Empty after re-verification |
 | **Tier 4** | Nothing Found | ~130+ | Biggest opportunity — many are invisible online |
 
 ### Key Takeaways
