@@ -3,15 +3,341 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>History of Watseka — Visit Watseka, Illinois</title>
-<meta name="description" content="The history of Watseka, Illinois — county seat of Iroquois County. Learn about the people, places, and stories that shaped this community.">
+<title>The History of Watseka, Illinois — Visit Watseka</title>
+<meta name="description" content="The history of Watseka, Illinois — from the Potawatomi people who named this land to the stories that captured the nation's attention. County seat of Iroquois County since 1865.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
+<style>
+  :root {
+    --sepia: #8B6914;
+    --sepia-pale: #F8F2E6;
+  }
+
+  /* ── PAGE HERO ── */
+  .page-hero {
+    background: var(--green-dark);
+    padding: 5rem 1.5rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 15% 30%, rgba(255,255,255,0.04) 0%, transparent 50%),
+      radial-gradient(circle at 85% 70%, rgba(255,255,255,0.03) 0%, transparent 50%);
+  }
+  .hero-eyebrow {
+    display: inline-block;
+    background: rgba(201,125,16,0.9);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 5px 16px;
+    border-radius: 20px;
+    margin-bottom: 1.25rem;
+    position: relative;
+  }
+  .page-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 0.5rem;
+    position: relative;
+  }
+  .page-hero .tagline {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(1rem, 2.2vw, 1.25rem);
+    color: rgba(255,255,255,0.7);
+    max-width: 620px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.6;
+    position: relative;
+  }
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-top: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .hero-meta strong { color: #fff; }
+
+  /* ── TOC ── */
+  .toc-strip {
+    background: var(--sepia-pale);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 1.5rem;
+  }
+  .toc-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .toc-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    white-space: nowrap;
+  }
+  .toc-links { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+  .toc-link {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    color: var(--green-mid);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background 0.15s, border-color 0.15s;
+    white-space: nowrap;
+  }
+  .toc-link:hover { background: var(--green-pale); border-color: var(--green-light); }
+
+  /* ── CONTENT ── */
+  .content { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* ── SECTIONS ── */
+  .history-section { padding: 4rem 0 2rem; border-bottom: 1px solid var(--border); }
+  .history-section:last-of-type { border-bottom: none; }
+
+  .section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.6rem;
+  }
+  .section-tag::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 1.5px;
+    background: var(--amber);
+  }
+
+  .history-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    font-weight: 700;
+    color: var(--green-dark);
+    line-height: 1.2;
+    margin-bottom: 0.4rem;
+  }
+  .history-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--ink-light);
+    margin-bottom: 1.75rem;
+  }
+
+  .prose p {
+    font-size: 15.5px;
+    line-height: 1.85;
+    color: var(--ink-muted);
+    margin-bottom: 1.1rem;
+  }
+  .prose p:last-child { margin-bottom: 0; }
+  .prose strong { color: var(--ink); }
+  .prose em { font-style: italic; color: var(--ink); }
+
+  /* ── PULL QUOTE ── */
+  .pull-quote {
+    border-left: 4px solid var(--amber);
+    background: var(--amber-pale);
+    padding: 1.1rem 1.25rem;
+    border-radius: 0 8px 8px 0;
+    margin: 1.75rem 0;
+  }
+  .pull-quote p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    line-height: 1.65;
+    color: var(--ink-muted) !important;
+    margin: 0 !important;
+  }
+  .pull-quote cite {
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-size: 11.5px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-top: 0.6rem;
+  }
+
+  /* ── HIGHLIGHT BOX ── */
+  .highlight-box {
+    background: var(--green-pale);
+    border: 1.5px solid var(--green-light);
+    border-radius: 10px;
+    padding: 1.25rem 1.4rem;
+    margin: 1.75rem 0;
+    font-size: 14.5px;
+    color: var(--ink-muted);
+    line-height: 1.75;
+  }
+  .highlight-box strong { color: var(--green-dark); }
+  .highlight-box .hb-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--green-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  /* ── SEPIA BOX ── */
+  .sepia-box {
+    background: var(--sepia-pale);
+    border: 1px solid #D4C5A0;
+    border-radius: 8px;
+    padding: 1.1rem 1.25rem;
+    margin: 1.5rem 0;
+    font-size: 13.5px;
+    color: var(--ink-muted);
+    line-height: 1.75;
+  }
+  .sepia-box strong { color: var(--sepia); }
+
+  /* ── TIMELINE ── */
+  .timeline { margin: 2rem 0; position: relative; padding-left: 2rem; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 4px;
+    bottom: 4px;
+    width: 2px;
+    background: var(--border);
+  }
+  .tl-item { position: relative; margin-bottom: 1.25rem; }
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -1.75rem;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--amber);
+    border: 2px solid var(--paper);
+    box-shadow: 0 0 0 1.5px var(--amber);
+  }
+  .tl-year {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 2px;
+  }
+  .tl-text { font-size: 14px; color: var(--ink-muted); line-height: 1.65; }
+  .tl-text strong { color: var(--ink); }
+
+  /* ── VISIT CTA ── */
+  .visit-cta {
+    background: var(--green-dark);
+    border-radius: 10px;
+    padding: 1.75rem;
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .visit-cta-text h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 3px;
+  }
+  .visit-cta-text p { font-size: 13px; color: rgba(255,255,255,0.65); margin: 0; }
+  .btn-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--amber);
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 10px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.15s, transform 0.15s;
+  }
+  .btn-cta:hover { background: #E08C12; transform: translateY(-1px); color: #fff; }
+
+  /* ── CLOSING ── */
+  .closing-section { padding: 3rem 0 5rem; text-align: center; }
+  .closing-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    color: var(--green-dark);
+    margin-bottom: 0.75rem;
+  }
+  .closing-section p {
+    font-size: 15px;
+    color: var(--ink-muted);
+    max-width: 560px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.8;
+  }
+  .closing-ctas { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+  .section-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 2.5rem 0 0;
+  }
+  .section-divider::before,
+  .section-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .divider-icon { font-size: 1.1rem; }
+</style>
 </head>
 <body>
 
+<!-- ── HEADER ── -->
 <header class="site-header">
   <nav class="nav-wrap">
     <a href="/" class="nav-logo">
@@ -40,18 +366,208 @@
   </nav>
 </header>
 
-<div class="page-header">
-  <h1>History of Watseka</h1>
-  <h2>County Seat of Iroquois County, Illinois</h2>
+<!-- ── PAGE HERO ── -->
+<div class="page-hero">
+  <div class="hero-eyebrow">Watseka, Illinois</div>
+  <h1>A Town With Roots<br>Worth Knowing</h1>
+  <p class="tagline">From the Potawatomi people who named this land to the stories that captured the nation's attention, Watseka carries a history deeper than most towns twice its size.</p>
+  <div class="hero-meta">
+    <div>Founded: <strong>1865</strong></div>
+    <div>County Seat of: <strong>Iroquois County, IL</strong></div>
+    <div>Population: <strong>~4,679</strong></div>
+  </div>
 </div>
 
-<div class="under-construction">
-  <span class="under-construction-icon">🏛️</span>
-  <h2>Coming Soon</h2>
-  <p>We're putting together the story of Watseka — from its founding and namesake to the people and places that have shaped this community over the years. Check back soon!</p>
-  <a href="/" class="btn btn-secondary" style="margin-top:1rem;">Back to Home</a>
+<!-- ── TABLE OF CONTENTS ── -->
+<div class="toc-strip">
+  <div class="toc-inner">
+    <span class="toc-label">Jump to:</span>
+    <div class="toc-links">
+      <a href="#name" class="toc-link">The Name Watseka</a>
+      <a href="#indigenous" class="toc-link">Indigenous Peoples</a>
+      <a href="#hubbard" class="toc-link">Gurdon Hubbard</a>
+      <a href="#founding" class="toc-link">Founding of the City</a>
+      <a href="#roffhouse" class="toc-link">The Watseka Wonder</a>
+      <a href="#courthouse" class="toc-link">Courthouse Museum</a>
+    </div>
+  </div>
 </div>
 
+<div class="content">
+
+  <!-- ── THE NAME WATSEKA ── -->
+  <div class="history-section" id="name">
+    <div class="section-tag">The Name</div>
+    <h2 class="history-title">Watseka: Daughter of the Evening Star</h2>
+    <p class="history-subtitle">How a Potawatomi woman's name became the name of a city</p>
+    <div class="prose">
+      <p>The name "Watseka" is not just a place name - it is a tribute. <strong>Watchekee</strong> (also written Watch-e-kee, or Wa-che-ke) was a Potawatomi woman born around 1810 near the Kankakee River in present-day Illinois. Her name, translated from Potawatomi, means <em>"Daughter of the Evening Star"</em> - and by all accounts, she lived up to the poetry of it.</p>
+      <p>The daughter of the prominent Potawatomi leader Chief Shabbona and his wife Monashki, Watchekee grew up during a time of profound upheaval for her people. She was known throughout the region for her intelligence, her beauty, and the deep respect she commanded from both Native and settler communities alike.</p>
+
+      <div class="pull-quote">
+        <p>"She was a person of great beauty, becoming modesty, and possessed superior intelligence. She had great influence among her own people and was highly respected by the whites."</p>
+        <cite>- H.W. Beckwith, History of Iroquois County, 1880</cite>
+      </div>
+
+      <p>Watchekee's life was marked by remarkable resilience. After the Potawatomi signed the <strong>1833 Treaty of Chicago</strong>, her people were forcibly removed from their Illinois homelands westward across the Mississippi. Yet Watchekee never stopped returning. Tribal descendants estimate she walked more than <strong>6,000 miles</strong> over the course of her life, making the journey from Iowa and Kansas back to the land she loved, time and again - only to be removed each time.</p>
+      <p>In <strong>1865</strong>, the growing town of Middleport was renamed Watseka in her honor. Community leaders chose the name to recognize her kindness toward settlers and her enduring connection to the land. Today, a large mural in town depicts her face - a permanent reminder of the woman whose name this city carries.</p>
+    </div>
+  </div>
+
+  <!-- ── INDIGENOUS PEOPLES ── -->
+  <div class="history-section" id="indigenous">
+    <div class="section-tag">First Peoples</div>
+    <h2 class="history-title">The People of the Kankakee</h2>
+    <p class="history-subtitle">The Indigenous nations who called this land home long before it had a name on any map</p>
+    <div class="prose">
+      <p>Long before the first European traders arrived on the banks of the Iroquois River, this land was home to Indigenous nations who had shaped and sustained it for generations. The region that would become Iroquois County was inhabited primarily by the <strong>Potawatomi</strong> and <strong>Kickapoo</strong> peoples, with earlier presence by various groups of the Illini Confederation.</p>
+      <p>The Potawatomi, who called themselves the <em>Neshnabe</em> ("the People"), were woodland people of the Great Lakes with deep roots in the Kankakee River Valley. They were skilled hunters, farmers, and traders whose villages dotted the riverbanks and prairie edges throughout what is now northeast Illinois and northwest Indiana. Chief Tamin led the Kankakee band of Potawatomi whose territory encompassed the land on which Watseka now sits.</p>
+      <p>Watchekee's father, <strong>Chief Shabbona</strong> (meaning "Built Like a Bear"), was a significant leader and an ally of the Shawnee leader Tecumseh during the War of 1812. Despite his warrior background, Shabbona became known in his later years as a friend to settlers - on one occasion famously riding to warn frontier communities of potential hostilities, likely saving many lives.</p>
+
+      <div class="sepia-box">
+        <strong>The 1833 Treaty of Chicago</strong> - A turning point that changed everything. In 1833, the Potawatomi, Ottawa, and Chippewa nations were compelled to cede their remaining lands in Illinois and Wisconsin to the United States government. The treaty resulted in the forced removal of thousands of people from their ancestral homelands westward across the Mississippi - a trauma whose echoes are still felt by tribal descendants today. The Kickapoo had already begun leaving the region after the 1819 Treaty of Edwardsville, with most removing to Missouri, then Kansas, and eventually Oklahoma.
+      </div>
+
+      <p>The Old Courthouse Museum in Downtown Watseka houses a significant collection of Native American artifacts from the region, offering visitors a tangible connection to the people who first called this land home. The Iroquois County Genealogical Society, also housed in the museum, maintains detailed records tracing the region's full history - including its Indigenous past.</p>
+    </div>
+  </div>
+
+  <!-- ── GURDON HUBBARD ── -->
+  <div class="history-section" id="hubbard">
+    <div class="section-tag">The Fur Trade Era</div>
+    <h2 class="history-title">Gurdon Hubbard: Swift-Walker of the Prairie</h2>
+    <p class="history-subtitle">The man who built Chicago also left his mark on the land that would become Watseka</p>
+    <div class="prose">
+      <p><strong>Gurdon Saltonstall Hubbard</strong> (1802-1886) arrived in Illinois in 1818 as a teenage employee of John Jacob Astor's American Fur Company. What followed was one of the most remarkable careers in early American frontier history - and much of it unfolded right here in Iroquois County.</p>
+      <p>In the early 1820s, Hubbard established a trading post at the junction of the Iroquois River and Sugar Creek - near the very site where Watseka now stands. Operating under a trading license granted in 1822 for the Iroquois River and its tributaries, he became one of the first non-Indigenous settlers to put down roots in the region, building relationships with the Potawatomi and Kickapoo communities through trade and mutual respect.</p>
+      <p>It was here that Hubbard married <strong>Watchekee</strong>, niece of Chief Tamin, in the customs of the Potawatomi tradition. Their union, brief as it was, forged a connection between two worlds - and, though neither could have known it, planted the seed of the city's future name.</p>
+
+      <div class="pull-quote">
+        <p>"Pa-pa-ma-ta-be" - Swift-Walker. The name given to Hubbard by the Potawatomi after he walked 75 miles through the night to warn settlers of a threatened raid, arriving before dawn.</p>
+        <cite>- Potawatomi oral tradition & H.W. Beckwith, 1880</cite>
+      </div>
+
+      <p>Hubbard's trail through eastern Illinois - running from the Iroquois River northward toward Chicago - became known as <strong>Hubbard's Trace</strong>. Over time, as more settlers followed it, the trail widened into a road. That route is now <strong>Illinois Route 1</strong>, which still runs directly through Downtown Watseka today.</p>
+      <p>After leaving the fur trade, Hubbard went on to become one of the most influential figures in the development of Chicago - building the city's first stockyard, becoming its first insurance underwriter, and serving as an alderman. <strong>Hubbard Street in Chicago</strong> is named for him, as is Hubbard High School. Yet for all his Chicago legacy, it is on the banks of the Iroquois River that his story truly began.</p>
+
+      <div class="highlight-box">
+        <div class="hb-title">Did you know?</div>
+        The road running through Downtown Watseka - <strong>Illinois Route 1</strong> - follows the path of Hubbard's original trail through the Illinois prairie. When you drive through town, you're traveling a route that fur traders, Potawatomi people, and frontier settlers walked more than two centuries ago.
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FOUNDING ── -->
+  <div class="history-section" id="founding">
+    <div class="section-tag">Early History</div>
+    <h2 class="history-title">From Middleport to Watseka</h2>
+    <p class="history-subtitle">How a small trading settlement became the seat of Iroquois County</p>
+    <div class="prose">
+      <p>Iroquois County was officially organized in <strong>1833</strong>, its name drawn from the Iroquois River - so named because a band of Iroquois warriors had been attacked on its banks by Illinois Indians centuries earlier, a story recorded by Father Pierre Charlevoix as early as 1721. The county's first seat was established at the small village of Montgomery, near where Gurdon Hubbard had built his early trading post.</p>
+      <p>By mid-century, growth had shifted southward toward the Iroquois River settlement known as <strong>South Middleport</strong>. Situated along the Toledo, Peoria & Western and Chicago & Eastern Illinois railroads - and on the well-traveled Hubbard Trail - the community grew quickly as settlers poured into the rich agricultural land of the Illinois prairie.</p>
+
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-year">1818</div>
+          <div class="tl-text"><strong>Gurdon Hubbard</strong> arrives in Illinois as a fur trader, beginning trade along the Kankakee and Iroquois rivers.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">1822-23</div>
+          <div class="tl-text">Hubbard establishes a <strong>trading post</strong> at the junction of the Iroquois River and Sugar Creek - the future site of Watseka.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">1833</div>
+          <div class="tl-text"><strong>Iroquois County organized</strong> with a population of 350. County seat established at Montgomery. The 1833 Treaty of Chicago leads to forced removal of the Potawatomi from Illinois.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">1865</div>
+          <div class="tl-text">South Middleport is <strong>designated county seat</strong>, incorporated as a city, and renamed <strong>Watseka</strong> in honor of Watchekee, the Potawatomi woman and wife of Gurdon Hubbard.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">1866</div>
+          <div class="tl-text">The <strong>Iroquois County Courthouse</strong> is constructed - the Italianate building that still stands in Downtown Watseka today.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">1877-78</div>
+          <div class="tl-text">The <strong>Watseka Wonder</strong> case unfolds, drawing national attention to the small Illinois city and becoming one of the most documented paranormal cases in American history.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">1975</div>
+          <div class="tl-text">The Old Iroquois County Courthouse is <strong>listed on the National Register of Historic Places</strong>.</div>
+        </div>
+      </div>
+
+      <p>By <strong>1865</strong>, South Middleport had grown so rapidly that it was selected as the new county seat - and in a gesture of deep community respect, renamed Watseka. The city's incorporation marked the beginning of its modern era, though its roots ran far deeper into the prairie soil.</p>
+    </div>
+  </div>
+
+  <!-- ── ROFF HOUSE / WATSEKA WONDER ── -->
+  <div class="history-section" id="roffhouse">
+    <div class="section-tag">The Watseka Wonder</div>
+    <h2 class="history-title">The Case That Captivated a Nation</h2>
+    <p class="history-subtitle">In 1877, something happened in Watseka that no one - skeptic or believer - has ever fully explained</p>
+    <div class="prose">
+      <p>In the summer of <strong>1877</strong>, a thirteen-year-old girl named <strong>Mary Lurancy Vennum</strong> began suffering strange seizures. She fell into deep trances, claimed to see spirits, and spoke in voices not her own. Doctors found nothing physically wrong with her and recommended she be committed to an asylum. But before that could happen, a neighbor stepped forward with a story that would change everything.</p>
+      <p>That neighbor was <strong>Asa Roff</strong>, a prominent Watseka citizen whose own daughter, <strong>Mary Roff</strong>, had suffered identical symptoms years before - and had died in 1865. Roff convinced the Vennum family to allow a physician, <strong>Dr. E. Winchester Stevens</strong>, to examine Lurancy through hypnosis instead.</p>
+      <p>What happened next became known as <em>the Watseka Wonder</em>.</p>
+      <p>On <strong>February 1, 1878</strong>, Lurancy Vennum appeared to become possessed by the spirit of Mary Roff - a girl who had been dead for over twelve years, and whom Lurancy had never personally known. She moved into the Roff family home and, for the next <strong>fifteen weeks</strong>, lived entirely as Mary. She recognized every member of the Roff family by name. She identified objects that had belonged to Mary. She recalled childhood memories and family secrets that Lurancy Vennum could not possibly have known.</p>
+
+      <div class="pull-quote">
+        <p>"It is hard for even the most skeptical not to believe there was something supernatural about her. If she was not prompted by the spirit of Mary Roff, how could she know so much about the family - people with whom she was not acquainted, and whom she had never visited?"</p>
+        <cite>- Iroquois County Times, 1878</cite>
+      </div>
+
+      <p>On <strong>May 21, 1878</strong> - the date Lurancy had predicted weeks in advance - Mary's spirit departed. Lurancy woke, asked where she was, and went home. She recovered fully, married, raised a family, and lived to the age of 88. She is buried in California. <strong>Mary Roff is buried in Oak Hill Cemetery in Watseka.</strong></p>
+      <p>Dr. Stevens documented every detail of the case and published his account in <strong><em>The Watseka Wonder</em></strong> (1887). Psychical researcher <strong>Richard Hodgson</strong> of the American Society for Psychical Research later investigated, interviewing dozens of witnesses, and called it the best-documented case of its kind in American history. The case has since inspired novels, documentary films, plays reviewed by The New York Times, and remains a subject of serious parapsychological study to this day.</p>
+
+      <div class="highlight-box">
+        <div class="hb-title">The Roff House - Still Standing</div>
+        The Victorian Italianate home built by Asa Roff in <strong>1868</strong> still stands in Watseka today. With its long arched windows and brick exterior, it looks much as it did when Mary Roff's spirit reportedly walked its rooms once more. The house has been restored and operates as a bed and breakfast - for those who want to experience the history up close, or perhaps a little something more.
+      </div>
+    </div>
+  </div>
+
+  <!-- ── COURTHOUSE ── -->
+  <div class="history-section" id="courthouse">
+    <div class="section-tag">Historic Landmark</div>
+    <h2 class="history-title">The Old Courthouse Museum</h2>
+    <p class="history-subtitle">160 years of Iroquois County history, preserved in one remarkable building</p>
+    <div class="prose">
+      <p>Just one year after Watseka was incorporated, the cornerstone of the <strong>Iroquois County Courthouse</strong> was laid. Built in 1866 in the <em>Italianate style</em> - designed by architect C.B. Leach and constructed by A.C. Mantor - the building served as the center of county government, law, and civic life for nearly a century.</p>
+      <p>Additions were built in <strong>1881</strong> and <strong>1927</strong>. For nearly 100 years, the courthouse witnessed the full sweep of Iroquois County life: land disputes and marriages, elections and court proceedings, and the slow transformation of a frontier settlement into a thriving agricultural community.</p>
+      <p>When a new courthouse was completed in <strong>1964</strong> - funded entirely by the bequest of county resident <strong>Katherine Clifton</strong>, making it <em>the only courthouse in the United States built entirely with private funds</em> - the old building was slated for demolition. But the community pushed back. In <strong>1967</strong>, during Watseka's Centennial Celebration, the Iroquois County Historical Society organized, circulated petitions, and saved the building. It reopened as a museum that same year.</p>
+      <p>In <strong>1975</strong>, the Old Courthouse was listed on the <strong>National Register of Historic Places</strong>.</p>
+
+      <div class="highlight-box">
+        <div class="hb-title">What's Inside the Museum Today</div>
+        A visit to the Old Courthouse Museum is a genuine step back in time. Wander through recreations of a Victorian parlor, an old-time general store, a one-room schoolhouse, and a pioneer post office. Explore showcases of Native American artifacts, fossil and mineral collections, antique medical instruments, and fashion from the 1800s. The museum also houses the archives of the <strong>Iroquois County Genealogical Society</strong> - invaluable for anyone tracing family roots in the region.
+      </div>
+
+      <div class="visit-cta">
+        <div class="visit-cta-text">
+          <h4>Old Courthouse Museum</h4>
+          <p>103 W. Cherry St, Watseka, IL · Mon-Fri 10 AM-4 PM · First Sunday of the month 1-4 PM</p>
+        </div>
+        <a href="http://www.iroquoiscountyhistoricalsociety.com/" target="_blank" class="btn-cta">Plan Your Visit</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CLOSING ── -->
+  <div class="closing-section">
+    <div class="section-divider"><div class="divider-icon">🌿</div></div>
+    <br>
+    <h3>History Worth Experiencing</h3>
+    <p>Watseka's story is still being written. Come see where it began - walk the streets named for a Potawatomi woman, follow a trail laid by a Swift-Walker, and stand in a building that has witnessed 160 years of community life. The past is never far in Watseka.</p>
+    <div class="closing-ctas">
+      <a href="/" class="btn btn-secondary">Back to Visit Watseka</a>
+      <a href="http://www.iroquoiscountyhistoricalsociety.com/" target="_blank" class="btn btn-outline">Visit the Courthouse Museum</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── FOOTER ── -->
 <footer class="site-footer">
   <div class="footer-inner">
     <div>
