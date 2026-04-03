@@ -626,7 +626,7 @@
   }
 
   function next() { goTo((current + 1) % slides.length); }
-  function startTimer() { timer = setInterval(next, 5000); }
+  function startTimer() { timer = setInterval(next, 3000); }
 
   dots.forEach(function(dot) {
     dot.addEventListener('click', function() {
