@@ -7,12 +7,41 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 <title>Sponsor the Market — Downtown Watseka Farmers Market | Visit Watseka</title>
-<meta name="description" content="Sponsor the Downtown Watseka Farmers Market. Packages from $50 to $1,000. Invest in your community and get real, tangible visibility for your business.">
+<meta name="description" content="Sponsor the Downtown Watseka Farmers Market. Community Sponsor $150 or Business Sponsor $350. Invest in your community and get real, tangible visibility for your business.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
 <style>
+  /* Stat row */
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 1.25rem 0;
+  }
+  @media (max-width: 560px) { .stat-row { grid-template-columns: 1fr; } }
+  .stat-card {
+    background: var(--green-pale);
+    border: 1.5px solid var(--green-light);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+  }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--green-dark);
+    line-height: 1.1;
+  }
+  .stat-label {
+    font-size: 12px;
+    color: var(--ink-muted);
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+
   /* Sponsorship packages */
   .packages-grid {
     display: grid;
@@ -31,15 +60,12 @@
     transition: box-shadow 0.15s, transform 0.15s;
   }
   .pkg-card:hover { box-shadow: 0 4px 20px rgba(30,70,32,0.10); transform: translateY(-2px); }
-  .pkg-card.featured { border-color: var(--amber); border-width: 2px; grid-column: span 2; }
-  @media (max-width: 580px) { .pkg-card.featured { grid-column: span 1; } }
 
   .pkg-header {
     background: var(--green-dark);
     padding: 1rem 1.25rem 0.75rem;
     text-align: center;
   }
-  .pkg-card.featured .pkg-header { background: var(--amber); }
   .pkg-icon { font-size: 1.6rem; line-height: 1; margin-bottom: 4px; }
   .pkg-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 2px; }
   .pkg-price { font-size: 1.6rem; font-weight: 700; color: #fff; font-family: 'Playfair Display', serif; line-height: 1.2; }
@@ -56,7 +82,6 @@
   }
   .pkg-benefit:last-child { border-bottom: none; }
   .pkg-check { color: var(--green-mid); font-weight: 700; font-size: 13px; flex-shrink: 0; margin-top: 1px; }
-  .pkg-card.featured .pkg-check { color: var(--amber); }
 
   /* Comparison table */
   .compare-wrap { overflow-x: auto; margin-top: 1rem; }
@@ -68,6 +93,8 @@
   tr:nth-child(even) td { background: var(--cream); }
   .check-yes { color: var(--green-mid); font-weight: 700; font-size: 15px; }
   .check-no { color: var(--border); font-size: 15px; }
+  .tier-head { font-family: 'Playfair Display', serif; font-size: 11px; line-height: 1.3; }
+  .tier-price { font-weight: 700; font-size: 12px; }
 
   /* Steps */
   .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 0.75rem; }
@@ -133,26 +160,46 @@
 
 <div class="container-narrow" style="padding-top:2rem; padding-bottom:4rem;">
 
-  <!-- About -->
+  <!-- About the Market -->
   <div class="card">
     <div class="card-header"><h3>About the Market</h3></div>
     <div class="card-body">
-      <p style="color:var(--ink-muted); font-size:14.5px; margin-bottom:0.85rem;">The Downtown Watseka Farmers Market is a beloved Saturday morning tradition in the heart of Iroquois County. Every week from June through October, vendors gather at <strong>121 W Walnut St</strong> to offer fresh produce, handmade goods, artisan foods, specialty items, and more.</p>
-      <p style="color:var(--ink-muted); font-size:14.5px; margin-bottom:1.25rem;">We are a <strong>family-friendly, free community event</strong> that brings neighbors together, supports local growers and makers, and keeps dollars circulating right here in Watseka.</p>
+      <p style="color:var(--ink-muted); font-size:14.5px; margin-bottom:0.85rem;">The Downtown Watseka Farmers Market is a beloved Saturday morning tradition in the heart of Iroquois County. Every week from June through October, vendors gather at <strong>121 W Walnut St</strong> to offer fresh produce, handmade goods, artisan foods, specialty items, and more — all sourced locally and crafted with care.</p>
+      <p style="color:var(--ink-muted); font-size:14.5px; margin-bottom:0.85rem;">We are a <strong>family-friendly, free community event</strong> that brings neighbors together, supports local growers and makers, and keeps dollars circulating right here in Watseka. In a town where community connection matters more than ever, the Farmers Market is one of the few places everyone shows up.</p>
+
+      <div class="stat-row">
+        <div class="stat-card">
+          <div class="stat-num">16<span style="font-size:1.1rem;">+</span></div>
+          <div class="stat-label">Local vendors every Saturday</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">20</div>
+          <div class="stat-label">Market dates June – October 2026</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">501<span style="font-size:1rem;">(c)(3)</span></div>
+          <div class="stat-label">Nonprofit — donations are tax-deductible</div>
+        </div>
+      </div>
+
       <div class="callout green">
         <strong>Why it matters:</strong> With a population of roughly 5,000, Watseka doesn't have the foot traffic of a city market — but it has something more valuable. The people who shop here are your neighbors, your customers, and your advocates. Sponsoring the market puts your business in front of every one of them, every Saturday, all season long.
       </div>
     </div>
   </div>
 
-  <!-- About sponsorship -->
+  <!-- About the Sponsorship -->
   <div class="card">
     <div class="card-header"><h3>About the Sponsorship</h3></div>
     <div class="card-body">
       <p style="color:var(--ink-muted); font-size:14.5px; margin-bottom:0.85rem;">Sponsoring the Downtown Watseka Farmers Market is one of the most direct ways a local business can invest in the community it serves. Your sponsorship helps fund market operations, vendor support, and the ongoing effort to make Downtown Watseka a destination worth visiting every week.</p>
+      <p style="color:var(--ink-muted); font-size:14.5px; margin-bottom:0.85rem;">In return, your business receives <strong>real, tangible visibility</strong> — not an ad that gets scrolled past, but genuine recognition from a community that values businesses who show up for them.</p>
+
       <div class="callout">
         <strong>Our commitment to sponsors:</strong> Every sponsorship benefit we offer is one we can deliver. We keep our promises small enough to keep and meaningful enough to matter. No fine print, no surprises.
       </div>
+
+      <p style="color:var(--ink-muted); font-size:14.5px;">All social media recognition is distributed <strong>across our platforms</strong> — including Facebook, Instagram, and <a href="https://visitwatseka.com" style="color:var(--green-mid);">visitwatseka.com</a> — so your brand reaches the broadest possible local audience without any single channel feeling oversaturated.</p>
     </div>
   </div>
 
@@ -161,53 +208,39 @@
     <div class="card-header"><h3>2026 Sponsorship Packages</h3></div>
     <div class="card-body">
       <div class="packages-grid">
+
         <div class="pkg-card">
-          <div class="pkg-header"><div class="pkg-icon">🌱</div><div class="pkg-name">Seedling</div><div class="pkg-price">$50</div></div>
+          <div class="pkg-header">
+            <div class="pkg-icon">🌱</div>
+            <div class="pkg-name">Community Sponsor</div>
+            <div class="pkg-price">$150</div>
+          </div>
           <div class="pkg-body">
-            <div class="pkg-benefit"><span class="pkg-check">✓</span> Business name + logo listed on visitwatseka.com for the full season</div>
-            <div class="pkg-benefit"><span class="pkg-check">✓</span> 1 social media recognition post across our platforms</div>
+            <div class="pkg-benefit"><span class="pkg-check">✓</span> Your logo displayed on our community sponsor board at the market, posted all season long.</div>
+            <div class="pkg-benefit"><span class="pkg-check">✓</span> Recognition on our social media marketing page, reaching all market customers and followers.</div>
           </div>
         </div>
+
         <div class="pkg-card">
-          <div class="pkg-header"><div class="pkg-icon">🌿</div><div class="pkg-name">Sprout</div><div class="pkg-price">$100</div></div>
+          <div class="pkg-header">
+            <div class="pkg-icon">🌽</div>
+            <div class="pkg-name">Business Sponsor</div>
+            <div class="pkg-price">$350</div>
+          </div>
           <div class="pkg-body">
-            <div class="pkg-benefit"><span class="pkg-check">✓</span> Business name + logo on visitwatseka.com for the full season</div>
-            <div class="pkg-benefit"><span class="pkg-check">✓</span> 3 social media recognition posts throughout the season</div>
-            <div class="pkg-benefit"><span class="pkg-check">✓</span> Verbal recognition during musical performances on one Saturday</div>
+            <div class="pkg-benefit"><span class="pkg-check">✓</span> Your logo displayed on our community sponsor board at the market, posted all season long.</div>
+            <div class="pkg-benefit"><span class="pkg-check">✓</span> Recognition on our social media marketing page, reaching all market customers and followers.</div>
+            <div class="pkg-benefit"><span class="pkg-check">✓</span> Pick a market day to come represent your business at our market and connect directly with the community.</div>
           </div>
         </div>
-        <div class="pkg-card">
-          <div class="pkg-header"><div class="pkg-icon">🌽</div><div class="pkg-name">Harvest</div><div class="pkg-price">$250</div></div>
-          <div class="pkg-body">
-            <div class="pkg-benefit"><span class="pkg-check">✓</span> Business name + logo on visitwatseka.com, full season</div>
-            <div class="pkg-benefit"><span class="pkg-check">✓</span> 5 social media recognition posts</div>
-            <div class="pkg-benefit"><span class="pkg-check">✓</span> Sponsor signage displayed at the market</div>
-            <div class="pkg-benefit"><span class="pkg-check">✓</span> Vendor booth space for 1 market date ($20 value)</div>
-            <div class="pkg-benefit"><span class="pkg-check">✓</span> Verbal recognition on two Saturdays of your choice</div>
-          </div>
-        </div>
-        <div class="pkg-card">
-          <div class="pkg-header"><div class="pkg-icon">🚜</div><div class="pkg-name">Community Anchor</div><div class="pkg-price">$500</div></div>
-          <div class="pkg-body">
-            <div class="pkg-benefit"><span class="pkg-check">✓</span> Prominent logo on visitwatseka.com, full season</div>
-            <div class="pkg-benefit"><span class="pkg-check">✓</span> 10 social media recognition posts throughout the season</div>
-            <div class="pkg-benefit"><span class="pkg-check">✓</span> Sponsor signage all season</div>
-            <div class="pkg-benefit"><span class="pkg-check">✓</span> Vendor booth space for 2 market dates ($40 value)</div>
-            <div class="pkg-benefit"><span class="pkg-check">✓</span> Verbal recognition on every date you attend</div>
-          </div>
-        </div>
-        <div class="pkg-card featured">
-          <div class="pkg-header"><div class="pkg-icon">🏡</div><div class="pkg-name">Title Sponsor</div><div class="pkg-price">$1,000</div></div>
-          <div class="pkg-body">
-            <div class="pkg-benefit"><span class="pkg-check">✓</span> <strong>"Presented by [Your Business]"</strong> on every market communication</div>
-            <div class="pkg-benefit"><span class="pkg-check">✓</span> Premier logo placement on visitwatseka.com, full season</div>
-            <div class="pkg-benefit"><span class="pkg-check">✓</span> 20+ social media posts across all platforms</div>
-            <div class="pkg-benefit"><span class="pkg-check">✓</span> Prominent sponsor signage all season</div>
-            <div class="pkg-benefit"><span class="pkg-check">✓</span> Vendor booth space for 6 market dates ($120 value)</div>
-            <div class="pkg-benefit"><span class="pkg-check">✓</span> Verbal recognition every single Saturday</div>
-            <div class="pkg-benefit"><span class="pkg-check">✓</span> First right of renewal for the 2027 season</div>
-          </div>
-        </div>
+
+      </div>
+
+      <div style="height:1px; background:var(--border); margin:1.5rem 0;"></div>
+
+      <div class="callout green">
+        <strong>Raffle Gift Donations Also Welcome!</strong><br>
+        We gratefully accept any donations that could be used as a raffle gift at the market. All raffle gift donors will receive acknowledgment of their contribution. It's a wonderful way to support the market and get your business noticed — even if a full sponsorship isn't the right fit right now.
       </div>
     </div>
   </div>
@@ -221,22 +254,31 @@
           <thead>
             <tr>
               <th>Benefit</th>
-              <th>🌱 $50</th>
-              <th>🌿 $100</th>
-              <th>🌽 $250</th>
-              <th>🚜 $500</th>
-              <th>🏡 $1,000</th>
+              <th><span class="tier-head">🌱 Community Sponsor</span><br><span class="tier-price">$150</span></th>
+              <th><span class="tier-head">🌽 Business Sponsor</span><br><span class="tier-price">$350</span></th>
             </tr>
           </thead>
           <tbody>
-            <tr><td>Name on visitwatseka.com</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
-            <tr><td>Logo on visitwatseka.com</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓ Premier</span></td></tr>
-            <tr><td>Social media posts</td><td>1</td><td>3</td><td>5</td><td>10</td><td>20+</td></tr>
-            <tr><td>Market signage</td><td><span class="check-no">—</span></td><td><span class="check-no">—</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
-            <tr><td>Verbal recognition</td><td><span class="check-no">—</span></td><td>1 date</td><td>2 dates</td><td>All attended</td><td>Every Saturday</td></tr>
-            <tr><td>Booth space</td><td><span class="check-no">—</span></td><td><span class="check-no">—</span></td><td>1 date</td><td>2 dates</td><td>6 dates</td></tr>
-            <tr><td>"Presented by" recognition</td><td><span class="check-no">—</span></td><td><span class="check-no">—</span></td><td><span class="check-no">—</span></td><td><span class="check-no">—</span></td><td><span class="check-yes">✓</span></td></tr>
-            <tr><td>2027 renewal priority</td><td><span class="check-no">—</span></td><td><span class="check-no">—</span></td><td><span class="check-no">—</span></td><td><span class="check-no">—</span></td><td><span class="check-yes">✓</span></td></tr>
+            <tr>
+              <td>Logo on community sponsor board at the market</td>
+              <td><span class="check-yes">✓</span> All season</td>
+              <td><span class="check-yes">✓</span> All season</td>
+            </tr>
+            <tr>
+              <td>Social media marketing recognition</td>
+              <td><span class="check-yes">✓</span></td>
+              <td><span class="check-yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>Pick a market day to represent your business</td>
+              <td><span class="check-no">—</span></td>
+              <td><span class="check-yes">✓</span> 1 market date</td>
+            </tr>
+            <tr>
+              <td>Raffle gift donation option</td>
+              <td><span class="check-yes">✓</span> Available</td>
+              <td><span class="check-yes">✓</span> Available</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -248,9 +290,9 @@
     <div class="card-header"><h3>How to Become a Sponsor</h3></div>
     <div class="card-body">
       <div class="steps">
-        <div class="step"><div class="step-num">1</div><div class="step-title">Choose Your Package</div><p>Select the sponsorship level that fits your goals and budget.</p></div>
-        <div class="step"><div class="step-num">2</div><div class="step-title">Get in Touch</div><p>Contact us by email or phone to confirm your package.</p></div>
-        <div class="step"><div class="step-num">3</div><div class="step-title">Make It Official</div><p>Simple agreement and payment. Cash, Check, Money Order, or Venmo.</p></div>
+        <div class="step"><div class="step-num">1</div><div class="step-title">Choose Your Package</div><p>Select the sponsorship level that fits your business goals and budget. Every dollar goes directly toward making the market better for our entire community.</p></div>
+        <div class="step"><div class="step-num">2</div><div class="step-title">Get in Touch</div><p>Contact us by email or phone to confirm your package and reserve your spot. We're happy to answer any questions and find the right fit for your business.</p></div>
+        <div class="step"><div class="step-num">3</div><div class="step-title">Make It Official</div><p>We'll send over a simple sponsorship agreement and payment instructions. Accepted via Cash, Check, Money Order, or Venmo. You're in!</p></div>
       </div>
       <div class="callout" style="margin-top:1.25rem;">
         <strong>Deadline to guarantee season-long recognition:</strong> May 23, 2026. Sponsorships received after this date will still be honored but may have delayed signage and web placement.
@@ -298,11 +340,9 @@
             <label>Sponsorship Package <span class="req">*</span></label>
             <select name="Sponsorship Package" required>
               <option value="">— Select a package —</option>
-              <option value="Seedling - $50">🌱 Seedling — $50</option>
-              <option value="Sprout - $100">🌿 Sprout — $100</option>
-              <option value="Harvest - $250">🌽 Harvest — $250</option>
-              <option value="Community Anchor - $500">🚜 Community Anchor — $500</option>
-              <option value="Title Sponsor - $1000">🏡 Title Sponsor — $1,000</option>
+              <option value="Community Sponsor - $150">🌱 Community Sponsor — $150</option>
+              <option value="Business Sponsor - $350">🌽 Business Sponsor — $350</option>
+              <option value="Raffle Gift Donation">Raffle Gift Donation</option>
             </select>
           </div>
           <div class="field span-2">
@@ -330,7 +370,7 @@
           🌐 <a href="https://visitwatseka.com" target="_blank">visitwatseka.com</a>
         </div>
       </div>
-      <p style="text-align:center; margin-top:1rem; font-size:13px; color:var(--ink-muted);">We'd love to talk. Whether you're ready to commit or just want to learn more, reach out anytime.</p>
+      <p style="text-align:center; margin-top:1rem; font-size:13px; color:var(--ink-muted);">We'd love to talk. Whether you're ready to commit or just want to learn more, reach out anytime — we are happy to answer questions and find a sponsorship arrangement that works for your business.</p>
     </div>
   </div>
 </div>
