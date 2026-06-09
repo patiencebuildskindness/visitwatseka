@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<title>Explore Iroquois County &mdash; Visit Watseka, Illinois</title>
+<meta name="description" content="Discover Watseka Area Chamber of Commerce businesses across Iroquois County and beyond — Gilman, Milford, Clifton, Cissna Park, Crescent City, Sheldon, and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --green-dark: #1E4620; --green-mid: #2D6A30; --green-light: #4A9E4F;
+    --green-pale: #EAF3DE; --amber: #C97D10; --amber-pale: #FEF3DC;
+    --cream: #FAFAF6; --paper: #FFFFFF; --ink: #1A1A18;
+    --ink-muted: #4A4A44; --ink-light: #7A7A72; --border: #D8D8CC;
+    --gold: #B8960C; --gold-pale: #FDF8E1;
+  }
+  body { font-family: 'Lato', sans-serif; background: var(--cream); color: var(--ink); line-height: 1.7; }
+
+  /* BACK BAR */
+  .back-bar { background: var(--paper); border-bottom: 1px solid var(--border); padding: .75rem 1.5rem; }
+  .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: var(--green-mid); text-decoration: none; }
+  .back-link:hover { color: var(--green-dark); }
+
+  /* HERO */
+  .page-hero { background: var(--green-dark); padding: 5rem 1.5rem 4rem; text-align: center; position: relative; overflow: hidden; }
+  .page-hero::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle at 20% 30%, rgba(255,255,255,.04) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255,255,255,.03) 0%, transparent 50%); }
+  .hero-eyebrow { display: inline-block; background: rgba(201,125,16,.9); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; padding: 5px 16px; border-radius: 20px; margin-bottom: 1.25rem; position: relative; }
+  .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem,5vw,3.5rem); font-weight: 700; color: #fff; line-height: 1.15; margin-bottom: .6rem; position: relative; }
+  .page-hero .tagline { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1rem,2vw,1.2rem); color: rgba(255,255,255,.7); max-width: 600px; margin: 0 auto; line-height: 1.65; position: relative; }
+
+  /* SEARCH BAR */
+  .search-section { background: var(--paper); border-bottom: 1px solid var(--border); padding: 1.25rem 1.5rem; position: sticky; top: 106px; z-index: 90; box-shadow: 0 2px 8px rgba(0,0,0,.05); }
+  .search-inner { max-width: 1060px; margin: 0 auto; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+  .search-wrap { position: relative; flex: 1; min-width: 200px; max-width: 400px; }
+  .search-input { width: 100%; padding: 9px 14px 9px 36px; border: 1.5px solid var(--border); border-radius: 8px; font-family: 'Lato', sans-serif; font-size: 14px; color: var(--ink); background: var(--cream); transition: border-color .15s; }
+  .search-input:focus { outline: none; border-color: var(--green-mid); background: #fff; }
+  .search-icon { position: absolute; left: 11px; top: 50%; transform: translateY(-50%); font-size: 14px; color: var(--ink-light); pointer-events: none; }
+  .result-count { font-size: 13px; color: var(--ink-light); }
+
+  /* MAIN */
+  .main-wrap { max-width: 1060px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+  /* CHAMBER BADGE */
+  .chamber-badge { display: inline-flex; align-items: center; gap: 4px; background: var(--gold-pale); border: 1px solid #D4A800; color: var(--gold); font-size: 10px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; padding: 2px 8px; border-radius: 20px; white-space: nowrap; }
+  .chamber-badge::before { content: '\2605'; font-size: 9px; }
+  .chamber-key { background: var(--gold-pale); border: 1px solid #D4A800; border-radius: 8px; padding: .65rem 1rem; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--ink-muted); margin-bottom: 2rem; }
+
+  /* TOWN SECTION */
+  .town-section { background: var(--paper); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 1.75rem; transition: box-shadow .2s; }
+  .town-section:hover { box-shadow: 0 4px 20px rgba(30,70,32,.1); }
+  .town-section.hidden { display: none; }
+
+  /* TOWN HEADER */
+  .town-header { display: grid; grid-template-columns: 260px 1fr; min-height: 190px; }
+  @media (max-width: 680px) { .town-header { grid-template-columns: 1fr; } }
+
+  /* TOWN PHOTO PLACEHOLDER */
+  .town-photo { position: relative; display: flex; align-items: flex-end; justify-content: flex-start; padding: .75rem; overflow: hidden; min-height: 160px; }
+  .town-photo-label { font-size: 10px; color: rgba(255,255,255,.55); background: rgba(0,0,0,.3); padding: 3px 8px; border-radius: 20px; backdrop-filter: blur(4px); }
+  /* Photo placeholder gradients per town — swap with background-image: url(...) when photos are ready */
+  .town-gilman   { background: linear-gradient(160deg, #1A4A0A 0%, #3A8A1A 100%); }
+  .town-milford  { background: linear-gradient(160deg, #0D3A6A 0%, #1A6AAA 100%); }
+  .town-clifton  { background: linear-gradient(160deg, #4A2A0D 0%, #8B5E2A 100%); }
+  .town-cissna   { background: linear-gradient(160deg, #2A0A4A 0%, #6A2A9A 100%); }
+  .town-crescent { background: linear-gradient(160deg, #6A1A00 0%, #C04010 100%); }
+  .town-sheldon  { background: linear-gradient(160deg, #0D4A4A 0%, #1A9A9A 100%); }
+  .town-danforth { background: linear-gradient(160deg, #3A2A0A 0%, #7A6A1A 100%); }
+  .town-iroquois { background: linear-gradient(160deg, #1A3A1A 0%, #2D6A30 100%); }
+  .town-gibson   { background: linear-gradient(160deg, #0A1A3A 0%, #1A3A7A 100%); }
+  .town-kankakee { background: linear-gradient(160deg, #1A1A2A 0%, #3A3A6A 100%); }
+  .town-bradley  { background: linear-gradient(160deg, #1A3A1A 0%, #3A7A2A 100%); }
+  .town-kentland { background: linear-gradient(160deg, #3A1A1A 0%, #7A2A2A 100%); }
+  .town-regional { background: linear-gradient(160deg, #2A2A2A 0%, #5A5A5A 100%); }
+
+  /* TOWN INFO */
+  .town-info { padding: 1.5rem 1.75rem; display: flex; flex-direction: column; justify-content: center; gap: .5rem; }
+  .town-meta { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-light); }
+  .town-name { font-family: 'Playfair Display', serif; font-size: clamp(1.3rem,3vw,1.9rem); font-weight: 700; color: var(--green-dark); line-height: 1.2; }
+  .town-desc { font-size: 13.5px; color: var(--ink-muted); line-height: 1.7; max-width: 560px; }
+  .town-footer-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .75rem; margin-top: .25rem; }
+  .town-count { font-size: 12px; font-weight: 700; color: var(--ink-light); }
+
+  /* TOGGLE BUTTON */
+  .town-toggle-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--green-dark); border: none; color: #fff; font-family: 'Lato', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; padding: 8px 18px; border-radius: 6px; cursor: pointer; transition: background .15s; }
+  .town-toggle-btn:hover { background: var(--green-mid); }
+  .town-toggle-btn.open { background: var(--amber); }
+  .town-toggle-btn.open:hover { background: #E08C12; }
+  .toggle-chevron { width: 9px; height: 9px; border-right: 2px solid #fff; border-bottom: 2px solid #fff; transform: rotate(45deg); margin-top: -3px; transition: transform .2s; }
+  .town-toggle-btn.open .toggle-chevron { transform: rotate(225deg); margin-top: 3px; }
+
+  /* BUSINESSES LIST */
+  .town-businesses { max-height: 0; overflow: hidden; transition: max-height .45s ease; border-top: 0; }
+  .town-businesses.open { max-height: 4000px; border-top: 1px solid var(--border); }
+  .dir-member-list { display: grid; grid-template-columns: repeat(2,1fr); gap: 0; padding: .5rem 0; }
+  @media (max-width: 560px) { .dir-member-list { grid-template-columns: 1fr; } }
+
+  /* MEMBER ROW */
+  .dir-member { display: flex; align-items: center; gap: 10px; padding: .65rem 1.25rem; border-bottom: 1px solid var(--border); }
+  .dir-member:nth-last-child(-n+2) { border-bottom: none; }
+  @media (max-width: 560px) { .dir-member:last-child { border-bottom: none; } .dir-member:nth-last-child(2) { border-bottom: 1px solid var(--border); } }
+  .dir-avatar { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 1.5px solid var(--border); background: var(--cream); }
+  .dir-avatar-init { width: 42px; height: 42px; border-radius: 50%; background: var(--green-pale); border: 1.5px solid var(--green-light); display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 900; color: var(--green-mid); flex-shrink: 0; text-transform: uppercase; }
+  .dir-member-info { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0; }
+  .dir-member-name { font-weight: 700; font-size: 13.5px; color: var(--ink); }
+  .dir-member-cat { font-size: 11px; color: var(--ink-light); font-style: italic; }
+  .dir-member-addr { font-size: 11.5px; color: var(--ink-light); }
+  .dir-member-links { display: flex; gap: 4px; margin-top: 3px; flex-wrap: wrap; }
+
+  /* LINKS */
+  .biz-link { display: inline-flex; align-items: center; font-size: 11px; font-weight: 700; padding: 2px 9px; border-radius: 20px; text-decoration: none; border: 1px solid; transition: background .15s; }
+  .biz-link.web { background: var(--green-pale); color: var(--green-dark); border-color: var(--green-light); }
+  .biz-link.web:hover { background: var(--green-light); color: #fff; }
+  .biz-link.fb { background: #E8F0FB; color: #1877F2; border-color: #A8C0F0; }
+  .biz-link.fb:hover { background: #1877F2; color: #fff; }
+  .biz-link.ig { background: #FDE8F5; color: #C13584; border-color: #F0A8D8; }
+  .biz-link.ig:hover { background: #C13584; color: #fff; }
+
+  /* FOOTER */
+  .footer-cta { background: var(--amber); padding: 2.5rem 1.5rem; text-align: center; }
+  .footer-cta h3 { font-family: 'Playfair Display', serif; font-size: clamp(1.2rem,2.5vw,1.6rem); font-style: italic; color: #fff; margin-bottom: 1rem; max-width: 580px; margin-left: auto; margin-right: auto; }
+  .cta-btns { display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 6px; font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; padding: 11px 26px; border-radius: 6px; text-decoration: none; transition: background .15s, transform .15s; border: 2px solid transparent; cursor: pointer; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-white { background: #fff; color: var(--amber); }
+  .btn-white:hover { background: #fff9f0; }
+  .btn-outline-white { background: transparent; color: #fff; border-color: rgba(255,255,255,.6); }
+  .btn-outline-white:hover { background: rgba(255,255,255,.1); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav-wrap">
+    <a href="/" class="nav-logo">
+      <img src="/images/logo-visitwatseka.png" alt="Visit Watseka Logo">
+      <div class="nav-logo-text">Visit Watseka<span>Watseka, Illinois</span></div>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/farmers-market/">Farmers' Market</a>
+        <ul class="nav-dropdown">
+          <li><a href="/farmers-market/plan-your-visit.html">Plan Your Visit</a></li>
+          <li><a href="/farmers-market/faq.html">Vendor FAQ</a></li>
+          <li><a href="/farmers-market/vendor-application.html">Vendor Application</a></li>
+          <li><a href="/farmers-market/sponsorship.html">Sponsor the Market</a></li>
+          <li><a href="/farmers-market/band-application.html">Band Application</a></li>
+          <li><a href="/farmers-market/policies.html">Policies & Procedures</a></li>
+          <li><a href="/farmers-market/vendors.html">Meet Your Vendors</a></li>
+        </ul>
+      </li>
+      <li><a href="/things-to-do.html">Things to Do</a></li>
+      <li><a href="/places-to-go.html">Places to Go</a></li>
+      <li><a href="/news.html">News & Development</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="back-bar">
+  <a href="places-to-go.html" class="back-link">&#8592; Back to Places to Go</a>
+</div>
+
+<div class="page-hero">
+  <div class="hero-eyebrow">Iroquois County, Illinois</div>
+  <h1>Explore the County</h1>
+  <p class="tagline">Great businesses, local restaurants, and community gems spread across Iroquois County &mdash; all worth the drive from Watseka.</p>
+</div>
+
+<div class="search-section">
+  <div class="search-inner">
+    <div class="search-wrap">
+      <span class="search-icon">&#128269;</span>
+      <input type="text" class="search-input" id="biz-search" placeholder="Search by business, town, or type...">
+    </div>
+    <span class="result-count" id="result-count"></span>
+  </div>
+</div>
+
+<div class="main-wrap">
+  <div class="chamber-key">
+    <span class="chamber-badge">Chamber Member</span>
+    <span>All listings are members of the Watseka Area Chamber of Commerce.</span>
+  </div>
+
+  <div id="towns-list">
+  <div class="town-section" data-town="gilman" data-name="gilman">
+
+    <div class="town-header">
+      <div class="town-photo town-gilman">
+        <div class="town-photo-label">Photo coming soon</div>
+      </div>
+      <div class="town-info">
+        <div class="town-meta">Iroquois County, IL</div>
+        <h2 class="town-name">Gilman</h2>
+        <p class="town-desc">A welcoming small city along Route 24 with a thriving antique and retail scene, deep agricultural roots, and a tight-knit community that punches well above its size.</p>
+        <div class="town-footer-row">
+          <span class="town-count">9 Chamber businesses</span>
+          <button class="town-toggle-btn" data-town="gilman">
+            <span class="toggle-label">View Businesses</span>
+            <span class="toggle-chevron"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="town-businesses" id="biz-gilman">
+      <div class="dir-member-list">
+        <div class="dir-member">
+          <img class="dir-avatar" src="https://graph.facebook.com/100057326804877/picture?type=square&width=60&height=60" alt="Antiques & More on 24" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="dir-avatar-init" style="display:none">A</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">Antiques & More on 24</span>
+            <span class="dir-member-cat">Antiques & Resale</span>
+            <span class="dir-member-addr">126 S Main St.</span>
+            <div class="dir-member-links"><a href="https://www.facebook.com/p/Antiques-More-on-24-100057326804877"  class="biz-link fb"  target="_blank">FB</a><a href="https://www.instagram.com/antiquesandmoreon24"  class="biz-link ig"  target="_blank">IG</a></div>
+          </div>
+        </div>
+        <div class="dir-member">
+          <img class="dir-avatar" src="https://graph.facebook.com/GilmanAutoSalesTowing/picture?type=square&width=60&height=60" alt="Gilman Auto Sales & Towing" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="dir-avatar-init" style="display:none">G</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">Gilman Auto Sales & Towing</span>
+            <span class="dir-member-cat">Automotive</span>
+            <span class="dir-member-addr">410 US Hwy 24 W</span>
+            <div class="dir-member-links"><a href="https://www.gilmanautosales.com" class="biz-link web" target="_blank">Web</a><a href="https://www.facebook.com/GilmanAutoSalesTowing"  class="biz-link fb"  target="_blank">FB</a></div>
+          </div>
+        </div>
+        <div class="dir-member">
+          <img class="dir-avatar" src="https://graph.facebook.com/gilmanhealthcare/picture?type=square&width=60&height=60" alt="Gilman Health Care Center" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="dir-avatar-init" style="display:none">G</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">Gilman Health Care Center</span>
+            <span class="dir-member-cat">Senior Living</span>
+            <span class="dir-member-addr">1390 S. Crescent</span>
+            <div class="dir-member-links"><a href="https://www.gilmanhealthcare.com" class="biz-link web" target="_blank">Web</a><a href="https://www.facebook.com/gilmanhealthcare"  class="biz-link fb"  target="_blank">FB</a></div>
+          </div>
+        </div>
+        <div class="dir-member">
+          <img class="dir-avatar" src="https://graph.facebook.com/heritagefsinc/picture?type=square&width=60&height=60" alt="Heritage FS Inc." loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="dir-avatar-init" style="display:none">H</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">Heritage FS Inc.</span>
+            <span class="dir-member-cat">Agriculture</span>
+            <span class="dir-member-addr">1381 S. Crescent St.</span>
+            <div class="dir-member-links"><a href="https://www.heritagefs.com" class="biz-link web" target="_blank">Web</a><a href="https://www.facebook.com/heritagefsinc"  class="biz-link fb"  target="_blank">FB</a><a href="https://www.instagram.com/heritagefsinc"  class="biz-link ig"  target="_blank">IG</a></div>
+          </div>
+        </div>
+        <div class="dir-member">
+          <img class="dir-avatar" src="https://graph.facebook.com/insideoutgilman/picture?type=square&width=60&height=60" alt="Inside Out Gilman" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="dir-avatar-init" style="display:none">I</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">Inside Out Gilman</span>
+            <span class="dir-member-cat">Antiques & Resale</span>
+            <span class="dir-member-addr">226 N. Central</span>
+            <div class="dir-member-links"><a href="https://www.insideoutgilman.com" class="biz-link web" target="_blank">Web</a><a href="https://www.facebook.com/insideoutgilman"  class="biz-link fb"  target="_blank">FB</a></div>
+          </div>
+        </div>
+        <div class="dir-member">
+          <img class="dir-avatar" src="https://graph.facebook.com/JanellsJems/picture?type=square&width=60&height=60" alt="Janell's Jems & Co." loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="dir-avatar-init" style="display:none">J</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">Janell's Jems & Co.</span>
+            <span class="dir-member-cat">Retail & Boutique</span>
+            <span class="dir-member-addr">410 E Crescent St.</span>
+            <div class="dir-member-links"><a href="https://www.facebook.com/JanellsJems"  class="biz-link fb"  target="_blank">FB</a><a href="https://www.instagram.com/janellsjems"  class="biz-link ig"  target="_blank">IG</a></div>
+          </div>
+        </div>
+        <div class="dir-member">
+          <img class="dir-avatar" src="https://graph.facebook.com/61557748568730/picture?type=square&width=60&height=60" alt="State Farm - Kristen Vogel" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="dir-avatar-init" style="display:none">S</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">State Farm - Kristen Vogel</span>
+            <span class="dir-member-cat">Insurance</span>
+            <span class="dir-member-addr">105 E Crescent</span>
+            <div class="dir-member-links"><a href="https://www.mysfagentkristen.com" class="biz-link web" target="_blank">Web</a><a href="https://www.facebook.com/p/Kristen-Vogel-State-Farm-Agent-61557748568730"  class="biz-link fb"  target="_blank">FB</a></div>
+          </div>
+        </div>
+        <div class="dir-member">
+          <div class="dir-avatar-init">T</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">The Gathering / Front Porch Cafe</span>
+            <span class="dir-member-cat">Antiques & Cafe</span>
+            <span class="dir-member-addr">931 S. Crescent St.</span>
+            
+          </div>
+        </div>
+        <div class="dir-member">
+          <img class="dir-avatar" src="https://graph.facebook.com/wheelerauction/picture?type=square&width=60&height=60" alt="Wheeler Auctions & Real Estate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="dir-avatar-init" style="display:none">W</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">Wheeler Auctions & Real Estate</span>
+            <span class="dir-member-cat">Real Estate & Auctions</span>
+            <span class="dir-member-addr">1175 E. Hwy 24</span>
+            <div class="dir-member-links"><a href="https://www.wheelerauctions.com" class="biz-link web" target="_blank">Web</a><a href="https://www.facebook.com/wheelerauction"  class="biz-link fb"  target="_blank">FB</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="town-section" data-town="milford" data-name="milford">
+
+    <div class="town-header">
+      <div class="town-photo town-milford">
+        <div class="town-photo-label">Photo coming soon</div>
+      </div>
+      <div class="town-info">
+        <div class="town-meta">Iroquois County, IL</div>
+        <h2 class="town-name">Milford</h2>
+        <p class="town-desc">A charming village in eastern Iroquois County with a strong agricultural heritage and local businesses that have served the surrounding farming community for generations.</p>
+        <div class="town-footer-row">
+          <span class="town-count">3 Chamber businesses</span>
+          <button class="town-toggle-btn" data-town="milford">
+            <span class="toggle-label">View Businesses</span>
+            <span class="toggle-chevron"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="town-businesses" id="biz-milford">
+      <div class="dir-member-list">
+        <div class="dir-member">
+          <img class="dir-avatar" src="https://graph.facebook.com/cjsboutiqueandcoffeebar/picture?type=square&width=60&height=60" alt="C.J.'s Boutique & Coffee Bar" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="dir-avatar-init" style="display:none">C</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">C.J.'s Boutique & Coffee Bar</span>
+            <span class="dir-member-cat">Boutique & Cafe</span>
+            <span class="dir-member-addr">101 E. Jones</span>
+            <div class="dir-member-links"><a href="https://www.cjsclosetjamboree.com" class="biz-link web" target="_blank">Web</a><a href="https://www.facebook.com/cjsboutiqueandcoffeebar"  class="biz-link fb"  target="_blank">FB</a><a href="https://www.instagram.com/cjsboutiqueandcoffeebar"  class="biz-link ig"  target="_blank">IG</a></div>
+          </div>
+        </div>
+        <div class="dir-member">
+          <div class="dir-avatar-init">M</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">Milford Building & Loan Association</span>
+            <span class="dir-member-cat">Banking</span>
+            <span class="dir-member-addr">131 E. Jones St.</span>
+            
+          </div>
+        </div>
+        <div class="dir-member">
+          <img class="dir-avatar" src="https://graph.facebook.com/100084465063729/picture?type=square&width=60&height=60" alt="Woodby's Restaurant & Catering" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="dir-avatar-init" style="display:none">W</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">Woodby's Restaurant & Catering</span>
+            <span class="dir-member-cat">Restaurant</span>
+            <span class="dir-member-addr">500 S. Chicago</span>
+            <div class="dir-member-links"><a href="https://www.facebook.com/p/WoodbysCatering-100084465063729"  class="biz-link fb"  target="_blank">FB</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="town-section" data-town="clifton" data-name="clifton">
+
+    <div class="town-header">
+      <div class="town-photo town-clifton">
+        <div class="town-photo-label">Photo coming soon</div>
+      </div>
+      <div class="town-info">
+        <div class="town-meta">Iroquois County, IL</div>
+        <h2 class="town-name">Clifton</h2>
+        <p class="town-desc">A small rural community along the eastern corridor of Iroquois County, known for its friendly atmosphere and locally owned businesses serving the surrounding countryside.</p>
+        <div class="town-footer-row">
+          <span class="town-count">2 Chamber businesses</span>
+          <button class="town-toggle-btn" data-town="clifton">
+            <span class="toggle-label">View Businesses</span>
+            <span class="toggle-chevron"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="town-businesses" id="biz-clifton">
+      <div class="dir-member-list">
+        <div class="dir-member">
+          <img class="dir-avatar" src="https://graph.facebook.com/RWPropertyServices/picture?type=square&width=60&height=60" alt="RW Property Services" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="dir-avatar-init" style="display:none">R</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">RW Property Services</span>
+            <span class="dir-member-cat">Agriculture & Property</span>
+            <span class="dir-member-addr">2960 N 1100 E Rd.</span>
+            <div class="dir-member-links"><a href="https://www.rwpropertyservice.com" class="biz-link web" target="_blank">Web</a><a href="https://www.facebook.com/RWPropertyServices"  class="biz-link fb"  target="_blank">FB</a></div>
+          </div>
+        </div>
+        <div class="dir-member">
+          <img class="dir-avatar" src="https://graph.facebook.com/longbranchlerable/picture?type=square&width=60&height=60" alt="The Longbranch" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="dir-avatar-init" style="display:none">T</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">The Longbranch</span>
+            <span class="dir-member-cat">Restaurant & Bar</span>
+            <span class="dir-member-addr">2713 N 1500 E Road</span>
+            <div class="dir-member-links"><a href="https://www.longbranchlerable.com" class="biz-link web" target="_blank">Web</a><a href="https://www.facebook.com/longbranchlerable"  class="biz-link fb"  target="_blank">FB</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="town-section" data-town="cissna" data-name="cissna park">
+
+    <div class="town-header">
+      <div class="town-photo town-cissna">
+        <div class="town-photo-label">Photo coming soon</div>
+      </div>
+      <div class="town-info">
+        <div class="town-meta">Iroquois County, IL</div>
+        <h2 class="town-name">Cissna Park</h2>
+        <p class="town-desc">A close-knit community in east-central Iroquois County with deep roots in the Mennonite and farming traditions that have shaped this corner of Illinois for over a century.</p>
+        <div class="town-footer-row">
+          <span class="town-count">2 Chamber businesses</span>
+          <button class="town-toggle-btn" data-town="cissna">
+            <span class="toggle-label">View Businesses</span>
+            <span class="toggle-chevron"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="town-businesses" id="biz-cissna">
+      <div class="dir-member-list">
+        <div class="dir-member">
+          <div class="dir-avatar-init">B</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">Brenna Hildenbrand - Country Financial</span>
+            <span class="dir-member-cat">Insurance</span>
+            <span class="dir-member-addr">107 N. 2nd St.</span>
+            <div class="dir-member-links"><a href="https://countryfinancial.com/brenna.hildenbrand" class="biz-link web" target="_blank">Web</a></div>
+          </div>
+        </div>
+        <div class="dir-member">
+          <img class="dir-avatar" src="https://graph.facebook.com/101CountryWHPO/picture?type=square&width=60&height=60" alt="WHPO 101 Country" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="dir-avatar-init" style="display:none">W</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">WHPO 101 Country</span>
+            <span class="dir-member-cat">Radio</span>
+            <span class="dir-member-addr">912 S Dixie Hwy</span>
+            <div class="dir-member-links"><a href="https://www.whporadio.com" class="biz-link web" target="_blank">Web</a><a href="https://www.facebook.com/101CountryWHPO"  class="biz-link fb"  target="_blank">FB</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="town-section" data-town="crescent" data-name="crescent city">
+
+    <div class="town-header">
+      <div class="town-photo town-crescent">
+        <div class="town-photo-label">Photo coming soon</div>
+      </div>
+      <div class="town-info">
+        <div class="town-meta">Iroquois County, IL</div>
+        <h2 class="town-name">Crescent City</h2>
+        <p class="town-desc">A rural community south of Watseka near the Kankakee County border, home to local craftspeople, agricultural businesses, and a creative advertising heritage.</p>
+        <div class="town-footer-row">
+          <span class="town-count">4 Chamber businesses</span>
+          <button class="town-toggle-btn" data-town="crescent">
+            <span class="toggle-label">View Businesses</span>
+            <span class="toggle-chevron"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="town-businesses" id="biz-crescent">
+      <div class="dir-member-list">
+        <div class="dir-member">
+          <img class="dir-avatar" src="https://graph.facebook.com/CarleyCreative-146433216019239/picture?type=square&width=60&height=60" alt="Carley Advertising Specialties" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="dir-avatar-init" style="display:none">C</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">Carley Advertising Specialties</span>
+            <span class="dir-member-cat">Advertising</span>
+            <span class="dir-member-addr">301 N Colfax</span>
+            <div class="dir-member-links"><a href="https://www.facebook.com/CarleyCreative-146433216019239"  class="biz-link fb"  target="_blank">FB</a></div>
+          </div>
+        </div>
+        <div class="dir-member">
+          <div class="dir-avatar-init">C</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">CGS Firearms</span>
+            <span class="dir-member-cat">Retail</span>
+            <span class="dir-member-addr">203 Main St.</span>
+            
+          </div>
+        </div>
+        <div class="dir-member">
+          <img class="dir-avatar" src="https://graph.facebook.com/100063765012027/picture?type=square&width=60&height=60" alt="Iroquois County Ag 4-H Club Fair" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="dir-avatar-init" style="display:none">I</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">Iroquois County Ag 4-H Club Fair</span>
+            <span class="dir-member-cat">Nonprofit & Fair</span>
+            
+            <div class="dir-member-links"><a href="https://www.iroquoiscofair.com" class="biz-link web" target="_blank">Web</a><a href="https://www.facebook.com/p/Iroquois-County-4-H-and-Agriculture-Fair-100063765012027"  class="biz-link fb"  target="_blank">FB</a></div>
+          </div>
+        </div>
+        <div class="dir-member">
+          <img class="dir-avatar" src="https://graph.facebook.com/100063839142019/picture?type=square&width=60&height=60" alt="Morrison Benoit Construction" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="dir-avatar-init" style="display:none">M</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">Morrison Benoit Construction</span>
+            <span class="dir-member-cat">Construction</span>
+            <span class="dir-member-addr">304 S. Church St.</span>
+            <div class="dir-member-links"><a href="https://www.facebook.com/p/Morrison-Benoit-Construction-100063839142019"  class="biz-link fb"  target="_blank">FB</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="town-section" data-town="sheldon" data-name="sheldon">
+
+    <div class="town-header">
+      <div class="town-photo town-sheldon">
+        <div class="town-photo-label">Photo coming soon</div>
+      </div>
+      <div class="town-info">
+        <div class="town-meta">Iroquois County, IL</div>
+        <h2 class="town-name">Sheldon</h2>
+        <p class="town-desc">A quiet village in southern Iroquois County surrounded by some of the most productive farmland in Illinois, with community organizations and farm-direct businesses serving the area.</p>
+        <div class="town-footer-row">
+          <span class="town-count">2 Chamber businesses</span>
+          <button class="town-toggle-btn" data-town="sheldon">
+            <span class="toggle-label">View Businesses</span>
+            <span class="toggle-chevron"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="town-businesses" id="biz-sheldon">
+      <div class="dir-member-list">
+        <div class="dir-member">
+          <img class="dir-avatar" src="https://graph.facebook.com/100064280871357/picture?type=square&width=60&height=60" alt="ABRA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="dir-avatar-init" style="display:none">A</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">ABRA</span>
+            <span class="dir-member-cat">Nonprofit</span>
+            <span class="dir-member-addr">107 N 4th St.</span>
+            <div class="dir-member-links"><a href="https://www.facebook.com/people/ABRA-of-Sheldon/100064280871357"  class="biz-link fb"  target="_blank">FB</a></div>
+          </div>
+        </div>
+        <div class="dir-member">
+          <div class="dir-avatar-init">T</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">The CaddyShack</span>
+            <span class="dir-member-cat">Farm Meats</span>
+            <span class="dir-member-addr">2601 E 1700 N Rd.</span>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="town-section" data-town="danforth" data-name="danforth">
+
+    <div class="town-header">
+      <div class="town-photo town-danforth">
+        <div class="town-photo-label">Photo coming soon</div>
+      </div>
+      <div class="town-info">
+        <div class="town-meta">Iroquois County, IL</div>
+        <h2 class="town-name">Danforth</h2>
+        <p class="town-desc">A peaceful rural community in northern Iroquois County, home to Prairieview Lutheran Homes — one of the region's most respected senior living organizations.</p>
+        <div class="town-footer-row">
+          <span class="town-count">1 Chamber business</span>
+          <button class="town-toggle-btn" data-town="danforth">
+            <span class="toggle-label">View Businesses</span>
+            <span class="toggle-chevron"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="town-businesses" id="biz-danforth">
+      <div class="dir-member-list">
+        <div class="dir-member">
+          <img class="dir-avatar" src="https://graph.facebook.com/prairieviewlutheran/picture?type=square&width=60&height=60" alt="Prairieview Lutheran Homes" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="dir-avatar-init" style="display:none">P</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">Prairieview Lutheran Homes</span>
+            <span class="dir-member-cat">Senior Living</span>
+            <span class="dir-member-addr">403 N. 4th St.</span>
+            <div class="dir-member-links"><a href="https://www.prairieviewlutheran.com" class="biz-link web" target="_blank">Web</a><a href="https://www.facebook.com/prairieviewlutheran"  class="biz-link fb"  target="_blank">FB</a><a href="https://www.instagram.com/prairieviewlutheranhomes"  class="biz-link ig"  target="_blank">IG</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="town-section" data-town="iroquois" data-name="iroquois">
+
+    <div class="town-header">
+      <div class="town-photo town-iroquois">
+        <div class="town-photo-label">Photo coming soon</div>
+      </div>
+      <div class="town-info">
+        <div class="town-meta">Iroquois County, IL</div>
+        <h2 class="town-name">Iroquois</h2>
+        <p class="town-desc">A small village named for the river that flows through it — a favorite among anglers, outdoor enthusiasts, and anyone looking for a quiet slice of small-town Illinois life.</p>
+        <div class="town-footer-row">
+          <span class="town-count">1 Chamber business</span>
+          <button class="town-toggle-btn" data-town="iroquois">
+            <span class="toggle-label">View Businesses</span>
+            <span class="toggle-chevron"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="town-businesses" id="biz-iroquois">
+      <div class="dir-member-list">
+        <div class="dir-member">
+          <img class="dir-avatar" src="https://graph.facebook.com/100028285316974/picture?type=square&width=60&height=60" alt="Iroquois Cafe" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="dir-avatar-init" style="display:none">I</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">Iroquois Cafe</span>
+            <span class="dir-member-cat">Restaurant</span>
+            <span class="dir-member-addr">101 S. Main Street</span>
+            <div class="dir-member-links"><a href="https://www.facebook.com/p/Iroquois-Cafe-100028285316974"  class="biz-link fb"  target="_blank">FB</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="town-section" data-town="gibson" data-name="gibson city">
+
+    <div class="town-header">
+      <div class="town-photo town-gibson">
+        <div class="town-photo-label">Photo coming soon</div>
+      </div>
+      <div class="town-info">
+        <div class="town-meta">Ford County, IL</div>
+        <h2 class="town-name">Gibson City</h2>
+        <p class="town-desc">A vibrant small city just over the Ford County line, Gibson City is home to Gibson Area Hospital, a major regional healthcare provider serving patients from across the area.</p>
+        <div class="town-footer-row">
+          <span class="town-count">1 Chamber business</span>
+          <button class="town-toggle-btn" data-town="gibson">
+            <span class="toggle-label">View Businesses</span>
+            <span class="toggle-chevron"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="town-businesses" id="biz-gibson">
+      <div class="dir-member-list">
+        <div class="dir-member">
+          <img class="dir-avatar" src="https://graph.facebook.com/GAHHS/picture?type=square&width=60&height=60" alt="Gibson Area Hospital & Health Services" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="dir-avatar-init" style="display:none">G</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">Gibson Area Hospital & Health Services</span>
+            <span class="dir-member-cat">Hospital</span>
+            <span class="dir-member-addr">1120 N. Melvin St.</span>
+            <div class="dir-member-links"><a href="https://www.gibsonhospital.org" class="biz-link web" target="_blank">Web</a><a href="https://www.facebook.com/GAHHS"  class="biz-link fb"  target="_blank">FB</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="town-section" data-town="kankakee" data-name="kankakee area">
+
+    <div class="town-header">
+      <div class="town-photo town-kankakee">
+        <div class="town-photo-label">Photo coming soon</div>
+      </div>
+      <div class="town-info">
+        <div class="town-meta">Kankakee County, IL</div>
+        <h2 class="town-name">Kankakee Area</h2>
+        <p class="town-desc">The regional hub to the north, Kankakee offers major retail, professional services, and regional organizations that serve communities throughout Kankakee and Iroquois counties.</p>
+        <div class="town-footer-row">
+          <span class="town-count">4 Chamber businesses</span>
+          <button class="town-toggle-btn" data-town="kankakee">
+            <span class="toggle-label">View Businesses</span>
+            <span class="toggle-chevron"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="town-businesses" id="biz-kankakee">
+      <div class="dir-member-list">
+        <div class="dir-member">
+          <img class="dir-avatar" src="https://graph.facebook.com/100064005493718/picture?type=square&width=60&height=60" alt="FASTSIGNS of Kankakee" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="dir-avatar-init" style="display:none">F</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">FASTSIGNS of Kankakee</span>
+            <span class="dir-member-cat">Signs & Advertising</span>
+            <span class="dir-member-addr">601 N. 5th Ave.</span>
+            <div class="dir-member-links"><a href="https://www.fastsigns.com/590" class="biz-link web" target="_blank">Web</a><a href="https://www.facebook.com/p/FASTSIGNS-100064005493718"  class="biz-link fb"  target="_blank">FB</a></div>
+          </div>
+        </div>
+        <div class="dir-member">
+          <img class="dir-avatar" src="https://graph.facebook.com/HertzFMKankakee/picture?type=square&width=60&height=60" alt="Hertz Farm Management" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="dir-avatar-init" style="display:none">H</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">Hertz Farm Management</span>
+            <span class="dir-member-cat">Agriculture</span>
+            <span class="dir-member-addr">200 E. Court St.</span>
+            <div class="dir-member-links"><a href="https://www.hertz.ag" class="biz-link web" target="_blank">Web</a><a href="https://www.facebook.com/HertzFMKankakee"  class="biz-link fb"  target="_blank">FB</a></div>
+          </div>
+        </div>
+        <div class="dir-member">
+          <img class="dir-avatar" src="https://graph.facebook.com/61582065553648/picture?type=square&width=60&height=60" alt="Kankakee-Iroquois-Ford Assoc. of Realtors" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="dir-avatar-init" style="display:none">K</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">Kankakee-Iroquois-Ford Assoc. of Realtors</span>
+            <span class="dir-member-cat">Real Estate</span>
+            <span class="dir-member-addr">200 E. Court St.</span>
+            <div class="dir-member-links"><a href="https://www.kfarealtors.com" class="biz-link web" target="_blank">Web</a><a href="https://www.facebook.com/people/Kankakee-Iroquois-Ford-Association-of-Realtors/61582065553648"  class="biz-link fb"  target="_blank">FB</a></div>
+          </div>
+        </div>
+        <div class="dir-member">
+          <img class="dir-avatar" src="https://graph.facebook.com/PremierGlassSpecialists/picture?type=square&width=60&height=60" alt="Premier Glass Co." loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="dir-avatar-init" style="display:none">P</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">Premier Glass Co.</span>
+            <span class="dir-member-cat">Construction</span>
+            <span class="dir-member-addr">167 S. Schyler</span>
+            <div class="dir-member-links"><a href="https://premiergci.com" class="biz-link web" target="_blank">Web</a><a href="https://www.facebook.com/PremierGlassSpecialists"  class="biz-link fb"  target="_blank">FB</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="town-section" data-town="bradley" data-name="bradley">
+
+    <div class="town-header">
+      <div class="town-photo town-bradley">
+        <div class="town-photo-label">Photo coming soon</div>
+      </div>
+      <div class="town-info">
+        <div class="town-meta">Kankakee County, IL</div>
+        <h2 class="town-name">Bradley</h2>
+        <p class="town-desc">A growing suburban community adjacent to Kankakee, Bradley is home to expanding services and education programs that benefit residents throughout the region.</p>
+        <div class="town-footer-row">
+          <span class="town-count">2 Chamber businesses</span>
+          <button class="town-toggle-btn" data-town="bradley">
+            <span class="toggle-label">View Businesses</span>
+            <span class="toggle-chevron"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="town-businesses" id="biz-bradley">
+      <div class="dir-member-list">
+        <div class="dir-member">
+          <div class="dir-avatar-init">A</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">Advanced Computer Specialists</span>
+            <span class="dir-member-cat">Technology</span>
+            <span class="dir-member-addr">115 S. Kennedy Dr.</span>
+            <div class="dir-member-links"><a href="https://acsweb.biz" class="biz-link web" target="_blank">Web</a></div>
+          </div>
+        </div>
+        <div class="dir-member">
+          <div class="dir-avatar-init">B</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">Birth to Five Illinois Region 32</span>
+            <span class="dir-member-cat">Education & Childcare</span>
+            <span class="dir-member-addr">450 N. Kenzie Ave.</span>
+            <div class="dir-member-links"><a href="https://www.birthtofiveil.com/region32" class="biz-link web" target="_blank">Web</a><a href="https://www.facebook.com/groups/birthtofiveilregion32"  class="biz-link fb"  target="_blank">FB</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="town-section" data-town="kentland" data-name="kentland">
+
+    <div class="town-header">
+      <div class="town-photo town-kentland">
+        <div class="town-photo-label">Photo coming soon</div>
+      </div>
+      <div class="town-info">
+        <div class="town-meta">Indiana</div>
+        <h2 class="town-name">Kentland</h2>
+        <p class="town-desc">Just across the state line, Kentland, Indiana is home to Autumn Trace — a highly regarded senior living community serving residents from both sides of the Illinois-Indiana border.</p>
+        <div class="town-footer-row">
+          <span class="town-count">1 Chamber business</span>
+          <button class="town-toggle-btn" data-town="kentland">
+            <span class="toggle-label">View Businesses</span>
+            <span class="toggle-chevron"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="town-businesses" id="biz-kentland">
+      <div class="dir-member-list">
+        <div class="dir-member">
+          <img class="dir-avatar" src="https://graph.facebook.com/autumntracekentland/picture?type=square&width=60&height=60" alt="Autumn Trace" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="dir-avatar-init" style="display:none">A</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">Autumn Trace</span>
+            <span class="dir-member-cat">Senior Living</span>
+            <span class="dir-member-addr">500 N. Ade St.</span>
+            <div class="dir-member-links"><a href="https://www.autumntracecommunities.com/community/kentland" class="biz-link web" target="_blank">Web</a><a href="https://www.facebook.com/autumntracekentland"  class="biz-link fb"  target="_blank">FB</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="town-section" data-town="regional" data-name="regional & statewide partners">
+
+    <div class="town-header">
+      <div class="town-photo town-regional">
+        <div class="town-photo-label">Photo coming soon</div>
+      </div>
+      <div class="town-info">
+        <div class="town-meta">Multiple locations</div>
+        <h2 class="town-name">Regional & Statewide Partners</h2>
+        <p class="town-desc">Chamber members who serve Iroquois County and beyond from offices across Illinois and neighboring states — connecting our community to regional resources, services, and infrastructure.</p>
+        <div class="town-footer-row">
+          <span class="town-count">11 Chamber businesses</span>
+          <button class="town-toggle-btn" data-town="regional">
+            <span class="toggle-label">View Businesses</span>
+            <span class="toggle-chevron"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="town-businesses" id="biz-regional">
+      <div class="dir-member-list">
+        <div class="dir-member">
+          <img class="dir-avatar" src="https://graph.facebook.com/CommunityFoundationKankakeeRiverValley/picture?type=square&width=60&height=60" alt="Community Foundation K3 River Valley" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="dir-avatar-init" style="display:none">C</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">Community Foundation K3 River Valley</span>
+            <span class="dir-member-cat">Nonprofit</span>
+            <span class="dir-member-addr">Kankakee</span>
+            <div class="dir-member-links"><a href="https://cfkrv.org" class="biz-link web" target="_blank">Web</a><a href="https://www.facebook.com/CommunityFoundationKankakeeRiverValley"  class="biz-link fb"  target="_blank">FB</a></div>
+          </div>
+        </div>
+        <div class="dir-member">
+          <div class="dir-avatar-init">C</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">Conxxus (fiber internet)</span>
+            <span class="dir-member-cat">Telecom</span>
+            
+            <div class="dir-member-links"><a href="https://www.conxxusfiber.com" class="biz-link web" target="_blank">Web</a></div>
+          </div>
+        </div>
+        <div class="dir-member">
+          <img class="dir-avatar" src="https://graph.facebook.com/IKANROE/picture?type=square&width=60&height=60" alt="Iroquois-Kankakee R.O.E." loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="dir-avatar-init" style="display:none">I</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">Iroquois-Kankakee R.O.E.</span>
+            <span class="dir-member-cat">Education</span>
+            <span class="dir-member-addr">1 Stuart Drive, Kankakee</span>
+            <div class="dir-member-links"><a href="https://www.i-kan.org" class="biz-link web" target="_blank">Web</a><a href="https://www.facebook.com/IKANROE"  class="biz-link fb"  target="_blank">FB</a></div>
+          </div>
+        </div>
+        <div class="dir-member">
+          <img class="dir-avatar" src="https://graph.facebook.com/janimarieproductions/picture?type=square&width=60&height=60" alt="Jani Marie Films" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="dir-avatar-init" style="display:none">J</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">Jani Marie Films</span>
+            <span class="dir-member-cat">Media & Film</span>
+            
+            <div class="dir-member-links"><a href="https://www.janimariefilms.mypixieset.com" class="biz-link web" target="_blank">Web</a><a href="https://www.facebook.com/janimarieproductions"  class="biz-link fb"  target="_blank">FB</a></div>
+          </div>
+        </div>
+        <div class="dir-member">
+          <div class="dir-avatar-init">L</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">Louis Creek Solar, LLC</span>
+            <span class="dir-member-cat">Solar Energy</span>
+            <span class="dir-member-addr">Chicago, IL</span>
+            <div class="dir-member-links"><a href="https://www.louiscreeksolar.com" class="biz-link web" target="_blank">Web</a></div>
+          </div>
+        </div>
+        <div class="dir-member">
+          <div class="dir-avatar-init">M</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">Mediacom Business</span>
+            <span class="dir-member-cat">Telecom</span>
+            
+            <div class="dir-member-links"><a href="https://www.mediacombusiness.com" class="biz-link web" target="_blank">Web</a></div>
+          </div>
+        </div>
+        <div class="dir-member">
+          <div class="dir-avatar-init">N</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">Nicor Gas</span>
+            <span class="dir-member-cat">Utilities</span>
+            
+            <div class="dir-member-links"><a href="https://www.nicorgas.com" class="biz-link web" target="_blank">Web</a></div>
+          </div>
+        </div>
+        <div class="dir-member">
+          <div class="dir-avatar-init">R</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">Republic Services</span>
+            <span class="dir-member-cat">Waste Management</span>
+            <span class="dir-member-addr">Danville, IL</span>
+            <div class="dir-member-links"><a href="https://www.republicservices.com" class="biz-link web" target="_blank">Web</a></div>
+          </div>
+        </div>
+        <div class="dir-member">
+          <div class="dir-avatar-init">S</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">Scout Clean Energy</span>
+            <span class="dir-member-cat">Energy</span>
+            <span class="dir-member-addr">Boulder, CO</span>
+            <div class="dir-member-links"><a href="https://www.scoutcleanenergy.com" class="biz-link web" target="_blank">Web</a></div>
+          </div>
+        </div>
+        <div class="dir-member">
+          <img class="dir-avatar" src="https://graph.facebook.com/SenatorChrisBalkema/picture?type=square&width=60&height=60" alt="State Senator Chris Balkema" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="dir-avatar-init" style="display:none">S</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">State Senator Chris Balkema</span>
+            <span class="dir-member-cat">State Senator</span>
+            <span class="dir-member-addr">Channahon, IL</span>
+            <div class="dir-member-links"><a href="https://senatorchrisbalkema.com" class="biz-link web" target="_blank">Web</a><a href="https://www.facebook.com/SenatorChrisBalkema"  class="biz-link fb"  target="_blank">FB</a></div>
+          </div>
+        </div>
+        <div class="dir-member">
+          <div class="dir-avatar-init">W</div>
+          <div class="dir-member-info">
+            <span class="dir-member-name">WVLI / WFAV / WIVR Milner Media</span>
+            <span class="dir-member-cat">Radio</span>
+            <span class="dir-member-addr">Bourbonnais, IL</span>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+  <p style="font-size:12px;color:var(--ink-light);margin-top:1.5rem;font-style:italic;">
+    Source: Watseka Area Chamber of Commerce 2026. To update your listing, email
+    <a href="mailto:contact@visitwatseka.com" style="color:var(--green-mid)">contact@visitwatseka.com</a>.
+  </p>
+</div>
+
+<div class="footer-cta">
+  <h3>"Iroquois County is bigger than you think &mdash; and worth exploring."</h3>
+  <div class="cta-btns">
+    <a href="places-to-go.html" class="btn btn-white">Back to Places to Go</a>
+    <a href="/" class="btn btn-outline-white">Visit Watseka Home</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><img src="/images/logo-visitwatseka.png" alt="Logo"><div class="footer-brand-name">Visit Watseka</div></div>
+      <p class="footer-tagline">Preserving small-town charm and growing community, one day at a time.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/profile.php?id=61574346598973" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+        <a href="https://www.instagram.com/dtwatsekafarmersmarket/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Explore</div>
+      <ul class="footer-links">
+        <li><a href="/farmers-market/">Farmers' Market</a></li>
+        <li><a href="/things-to-do.html">Things to Do</a></li>
+        <li><a href="/places-to-go.html">Places to Go</a></li>
+        <li><a href="/news.html">News & Development</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Farmers' Market</div>
+      <ul class="footer-links">
+        <li><a href="/farmers-market/vendor-application.html">Vendor Application</a></li>
+        <li><a href="/farmers-market/sponsorship.html">Sponsor the Market</a></li>
+        <li><a href="/farmers-market/band-application.html">Band Application</a></li>
+        <li><a href="/farmers-market/policies.html">Policies & Procedures</a></li>
+        <li><a href="/farmers-market/vendors.html">Meet Your Vendors</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 Visit Watseka &middot; Downtown Watseka Farmers Market &middot; 501(c)(3) Nonprofit &middot; Watseka, Illinois</div>
+</footer>
+
+
+<script>
+  // Toggle business list per town
+  document.querySelectorAll('.town-toggle-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tid = btn.dataset.town;
+      const biz = document.getElementById('biz-' + tid);
+      const isOpen = biz.classList.contains('open');
+      biz.classList.toggle('open', !isOpen);
+      btn.classList.toggle('open', !isOpen);
+      btn.querySelector('.toggle-label').textContent = isOpen ? 'View Businesses' : 'Hide Businesses';
+    });
+  });
+
+  // Search — filter towns and their businesses
+  const townSections = Array.from(document.querySelectorAll('.town-section'));
+
+  function updateCount() {
+    const vis = townSections.filter(s => !s.classList.contains('hidden')).length;
+    document.getElementById('result-count').textContent = vis + ' town' + (vis !== 1 ? 's' : '');
+  }
+
+  document.getElementById('biz-search').addEventListener('input', function() {
+    const q = this.value.toLowerCase().trim();
+    townSections.forEach(section => {
+      const members = section.querySelectorAll('.dir-member');
+      let anyMatch = false;
+      const townName = section.dataset.name || '';
+
+      members.forEach(m => {
+        const name = (m.querySelector('.dir-member-name') || {}).textContent || '';
+        const cat  = (m.querySelector('.dir-member-cat')  || {}).textContent || '';
+        const addr = (m.querySelector('.dir-member-addr') || {}).textContent || '';
+        const match = !q || name.toLowerCase().includes(q) || cat.toLowerCase().includes(q) || addr.toLowerCase().includes(q) || townName.includes(q);
+        m.style.display = match ? '' : 'none';
+        if (match) anyMatch = true;
+      });
+
+      section.classList.toggle('hidden', q ? !anyMatch : false);
+
+      if (q && anyMatch) {
+        const tid = section.dataset.town;
+        document.getElementById('biz-' + tid).classList.add('open');
+        section.querySelector('.town-toggle-btn').classList.add('open');
+        section.querySelector('.toggle-label').textContent = 'Hide Businesses';
+      } else if (!q) {
+        const tid = section.dataset.town;
+        document.getElementById('biz-' + tid).classList.remove('open');
+        section.querySelector('.town-toggle-btn').classList.remove('open');
+        section.querySelector('.toggle-label').textContent = 'View Businesses';
+        members.forEach(m => m.style.display = '');
+      }
+    });
+    updateCount();
+  });
+
+  updateCount();
+</script>
+<script src="/js/main.js"></script>
+</body>
+</html>
