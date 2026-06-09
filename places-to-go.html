@@ -148,7 +148,8 @@
   .cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 1rem; }
   @media (max-width: 860px) { .cat-grid { grid-template-columns: repeat(3, 1fr); } }
   @media (max-width: 600px) { .cat-grid { grid-template-columns: repeat(2, 1fr); } }
-  .cat-tile { background: var(--paper); border: 1px solid var(--border); border-radius: 10px; padding: 0.85rem 0.9rem; cursor: pointer; text-align: left; display: flex; flex-direction: column; justify-content: space-between; gap: 8px; min-height: 86px; font-family: 'Lato', sans-serif; transition: transform 0.15s, box-shadow 0.15s, background 0.15s, border-color 0.15s; }
+  .cat-grid:not(.show-all) .cat-more { display: none; }
+  .cat-tile { background: var(--paper); border: 1px solid var(--border); border-radius: 10px; padding: 0.85rem 0.9rem; cursor: pointer; text-align: left; display: flex; flex-direction: column; justify-content: center; min-height: 60px; font-family: 'Lato', sans-serif; transition: transform 0.15s, box-shadow 0.15s, background 0.15s, border-color 0.15s; }
   .cat-tile:hover { border-color: var(--green-light); box-shadow: 0 4px 14px rgba(30,70,32,0.1); transform: translateY(-2px); }
   .cat-tile.active { background: var(--green-dark); border-color: var(--green-dark); }
   .cat-tile-name { font-family: 'Playfair Display', serif; font-size: 0.98rem; font-weight: 700; color: var(--green-dark); line-height: 1.25; }
@@ -390,36 +391,36 @@
     <input type="text" class="dir-search" id="dir-search" placeholder="Search Watseka businesses...">
   </div>
   <div id="directory-list">
-    <div class="cat-grid">
-      <button class="cat-tile" data-target="catp-0"><span class="cat-tile-name">Restaurants, Cafes &amp; Bars</span><span class="cat-tile-count">6</span></button>
-      <button class="cat-tile" data-target="catp-1"><span class="cat-tile-name">Retail &amp; Boutiques</span><span class="cat-tile-count">6</span></button>
-      <button class="cat-tile" data-target="catp-2"><span class="cat-tile-name">Florists &amp; Gifts</span><span class="cat-tile-count">3</span></button>
-      <button class="cat-tile" data-target="catp-3"><span class="cat-tile-name">Grocery</span><span class="cat-tile-count">2</span></button>
-      <button class="cat-tile" data-target="catp-4"><span class="cat-tile-name">Beauty &amp; Wellness</span><span class="cat-tile-count">4</span></button>
-      <button class="cat-tile" data-target="catp-5"><span class="cat-tile-name">Event Venues</span><span class="cat-tile-count">3</span></button>
-      <button class="cat-tile" data-target="catp-6"><span class="cat-tile-name">Home Improvement, Hardware &amp; Farm Supply</span><span class="cat-tile-count">4</span></button>
-      <button class="cat-tile" data-target="catp-7"><span class="cat-tile-name">Automotive</span><span class="cat-tile-count">10</span></button>
-      <button class="cat-tile" data-target="catp-8"><span class="cat-tile-name">Banks &amp; ATM</span><span class="cat-tile-count">4</span></button>
-      <button class="cat-tile" data-target="catp-9"><span class="cat-tile-name">Insurance &amp; Financial Advisors</span><span class="cat-tile-count">8</span></button>
-      <button class="cat-tile" data-target="catp-10"><span class="cat-tile-name">Accounting, Tax &amp; Legal</span><span class="cat-tile-count">5</span></button>
-      <button class="cat-tile" data-target="catp-11"><span class="cat-tile-name">Real Estate, Title &amp; Development</span><span class="cat-tile-count">4</span></button>
-      <button class="cat-tile" data-target="catp-12"><span class="cat-tile-name">Healthcare &amp; Medical</span><span class="cat-tile-count">7</span></button>
-      <button class="cat-tile" data-target="catp-13"><span class="cat-tile-name">Dental &amp; Orthodontics</span><span class="cat-tile-count">2</span></button>
-      <button class="cat-tile" data-target="catp-14"><span class="cat-tile-name">Senior Living &amp; Long-Term Care</span><span class="cat-tile-count">2</span></button>
-      <button class="cat-tile" data-target="catp-15"><span class="cat-tile-name">Manufacturing &amp; Industrial</span><span class="cat-tile-count">4</span></button>
-      <button class="cat-tile" data-target="catp-16"><span class="cat-tile-name">Construction, Excavation &amp; Trades</span><span class="cat-tile-count">6</span></button>
-      <button class="cat-tile" data-target="catp-17"><span class="cat-tile-name">Agriculture &amp; Farm Services</span><span class="cat-tile-count">4</span></button>
-      <button class="cat-tile" data-target="catp-18"><span class="cat-tile-name">Media, Advertising &amp; Signs</span><span class="cat-tile-count">6</span></button>
-      <button class="cat-tile" data-target="catp-19"><span class="cat-tile-name">Art, Design &amp; Creative</span><span class="cat-tile-count">2</span></button>
-      <button class="cat-tile" data-target="catp-20"><span class="cat-tile-name">Education &amp; Childcare</span><span class="cat-tile-count">3</span></button>
-      <button class="cat-tile" data-target="catp-21"><span class="cat-tile-name">Funeral &amp; Memorial</span><span class="cat-tile-count">3</span></button>
-      <button class="cat-tile" data-target="catp-22"><span class="cat-tile-name">Government &amp; Public Agencies</span><span class="cat-tile-count">6</span></button>
-      <button class="cat-tile" data-target="catp-23"><span class="cat-tile-name">Nonprofits &amp; Social Services</span><span class="cat-tile-count">6</span></button>
-      <button class="cat-tile" data-target="catp-24"><span class="cat-tile-name">Churches &amp; Faith</span><span class="cat-tile-count">4</span></button>
-      <button class="cat-tile" data-target="catp-25"><span class="cat-tile-name">Civic, Fraternal &amp; Community Orgs</span><span class="cat-tile-count">12</span></button>
-      <button class="cat-tile" data-target="catp-26"><span class="cat-tile-name">Services &amp; Other</span><span class="cat-tile-count">3</span></button>
+    <div class="cat-grid" id="cat-grid">
+      <button class="cat-tile" data-target="catp-0"><span class="cat-tile-name">Restaurants, Cafes &amp; Bars</span></button>
+      <button class="cat-tile" data-target="catp-1"><span class="cat-tile-name">Retail &amp; Boutiques</span></button>
+      <button class="cat-tile" data-target="catp-2"><span class="cat-tile-name">Florists &amp; Gifts</span></button>
+      <button class="cat-tile" data-target="catp-3"><span class="cat-tile-name">Grocery</span></button>
+      <button class="cat-tile" data-target="catp-4"><span class="cat-tile-name">Beauty &amp; Wellness</span></button>
+      <button class="cat-tile" data-target="catp-5"><span class="cat-tile-name">Event Venues</span></button>
+      <button class="cat-tile cat-more" data-target="catp-6"><span class="cat-tile-name">Home Improvement, Hardware &amp; Farm Supply</span></button>
+      <button class="cat-tile" data-target="catp-7"><span class="cat-tile-name">Automotive</span></button>
+      <button class="cat-tile cat-more" data-target="catp-8"><span class="cat-tile-name">Banks &amp; ATM</span></button>
+      <button class="cat-tile cat-more" data-target="catp-9"><span class="cat-tile-name">Insurance &amp; Financial Advisors</span></button>
+      <button class="cat-tile cat-more" data-target="catp-10"><span class="cat-tile-name">Accounting, Tax &amp; Legal</span></button>
+      <button class="cat-tile cat-more" data-target="catp-11"><span class="cat-tile-name">Real Estate, Title &amp; Development</span></button>
+      <button class="cat-tile" data-target="catp-12"><span class="cat-tile-name">Healthcare &amp; Medical</span></button>
+      <button class="cat-tile cat-more" data-target="catp-13"><span class="cat-tile-name">Dental &amp; Orthodontics</span></button>
+      <button class="cat-tile cat-more" data-target="catp-14"><span class="cat-tile-name">Senior Living &amp; Long-Term Care</span></button>
+      <button class="cat-tile cat-more" data-target="catp-15"><span class="cat-tile-name">Manufacturing &amp; Industrial</span></button>
+      <button class="cat-tile cat-more" data-target="catp-16"><span class="cat-tile-name">Construction, Excavation &amp; Trades</span></button>
+      <button class="cat-tile cat-more" data-target="catp-17"><span class="cat-tile-name">Agriculture &amp; Farm Services</span></button>
+      <button class="cat-tile cat-more" data-target="catp-18"><span class="cat-tile-name">Media, Advertising &amp; Signs</span></button>
+      <button class="cat-tile cat-more" data-target="catp-19"><span class="cat-tile-name">Art, Design &amp; Creative</span></button>
+      <button class="cat-tile cat-more" data-target="catp-20"><span class="cat-tile-name">Education &amp; Childcare</span></button>
+      <button class="cat-tile cat-more" data-target="catp-21"><span class="cat-tile-name">Funeral &amp; Memorial</span></button>
+      <button class="cat-tile cat-more" data-target="catp-22"><span class="cat-tile-name">Government &amp; Public Agencies</span></button>
+      <button class="cat-tile cat-more" data-target="catp-23"><span class="cat-tile-name">Nonprofits &amp; Social Services</span></button>
+      <button class="cat-tile cat-more" data-target="catp-24"><span class="cat-tile-name">Churches &amp; Faith</span></button>
+      <button class="cat-tile cat-more" data-target="catp-25"><span class="cat-tile-name">Civic, Fraternal &amp; Community Orgs</span></button>
+      <button class="cat-tile cat-more" data-target="catp-26"><span class="cat-tile-name">Services &amp; Other</span></button>
     </div>
-    <button class="cat-viewall" id="cat-viewall" data-target="all">View All 129 Businesses</button>
+    <button class="cat-viewall" id="cat-toggle">View All Categories</button>
     <div id="cat-panels">
       <p class="cat-hint" id="cat-hint">Choose a category above to see its businesses &mdash; or view them all.</p>
       <div class="cat-panel" id="catp-0"><div class="cat-panel-head">Restaurants, Cafes &amp; Bars</div><div class="dir-member-list">
@@ -1153,33 +1154,34 @@
   });
 
   (function(){
+    var grid = document.getElementById('cat-grid');
     var tiles = Array.prototype.slice.call(document.querySelectorAll('.cat-tile'));
-    var viewall = document.getElementById('cat-viewall');
+    var toggle = document.getElementById('cat-toggle');
     var panels = Array.prototype.slice.call(document.querySelectorAll('.cat-panel'));
     var hint = document.getElementById('cat-hint');
     var search = document.getElementById('dir-search');
-    function clearActive(){ tiles.forEach(function(t){ t.classList.remove('active'); }); viewall.classList.remove('active'); }
     function showOne(id, tile){
-      clearActive(); tile.classList.add('active'); hint.style.display = 'none';
+      tiles.forEach(function(t){ t.classList.remove('active'); });
+      tile.classList.add('active'); hint.style.display = 'none';
       panels.forEach(function(p){ p.classList.toggle('active', p.id === id); });
       var el = document.getElementById(id);
       if (el) { var y = el.getBoundingClientRect().top + window.pageYOffset - 120; window.scrollTo({ top: y, behavior: 'smooth' }); }
     }
-    function showAll(){
-      clearActive(); viewall.classList.add('active'); hint.style.display = 'none';
-      panels.forEach(function(p){ p.classList.add('active'); });
-    }
     tiles.forEach(function(t){ t.addEventListener('click', function(){ showOne(t.getAttribute('data-target'), t); }); });
-    viewall.addEventListener('click', showAll);
+    toggle.addEventListener('click', function(){
+      var open = grid.classList.toggle('show-all');
+      toggle.textContent = open ? 'Show Fewer Categories' : 'View All Categories';
+    });
     search.addEventListener('input', function(){
       var q = this.value.toLowerCase().trim();
       if (!q){
-        clearActive();
+        tiles.forEach(function(t){ t.classList.remove('active'); });
         panels.forEach(function(p){ p.classList.remove('active'); p.querySelectorAll('.dir-member').forEach(function(m){ m.style.display = ''; }); });
-        hint.style.display = '';
-        return;
+        grid.classList.remove('show-all'); toggle.textContent = 'View All Categories';
+        hint.style.display = ''; return;
       }
-      clearActive(); hint.style.display = 'none';
+      tiles.forEach(function(t){ t.classList.remove('active'); });
+      grid.classList.add('show-all'); toggle.textContent = 'Show Fewer Categories'; hint.style.display = 'none';
       panels.forEach(function(p){
         var any = false;
         p.querySelectorAll('.dir-member').forEach(function(m){
