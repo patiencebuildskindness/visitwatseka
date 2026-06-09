@@ -273,24 +273,34 @@
     background: var(--paper);
     text-align: center;
   }
-  .spotlight-placeholder {
-    max-width: 600px;
+  .spotlight-card {
+    max-width: 880px;
     margin: 0 auto;
-    padding: 3rem 2rem;
-    background: var(--green-pale);
-    border: 2px dashed var(--green-light);
-    border-radius: 12px;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2rem;
+    align-items: center;
+    text-align: left;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.75rem;
+    box-shadow: 0 6px 28px rgba(30,70,32,0.08);
   }
-  .spotlight-placeholder h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.25rem;
-    color: var(--green-dark);
-    margin-bottom: 0.5rem;
+  @media (max-width: 640px) {
+    .spotlight-card { grid-template-columns: 1fr; gap: 1.25rem; padding: 1.25rem; text-align: center; }
   }
-  .spotlight-placeholder p {
-    font-size: 14px;
-    color: var(--ink-muted);
+  .spotlight-photo img { width: 100%; height: auto; border-radius: 10px; display: block; }
+  .spotlight-type {
+    font-size: 12px; font-weight: 700; color: var(--amber);
+    text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem;
   }
+  .spotlight-name {
+    font-family: 'Playfair Display', serif; font-size: 1.55rem; font-weight: 700;
+    color: var(--green-dark); line-height: 1.2; margin-bottom: 0.8rem;
+  }
+  .spotlight-body p { font-size: 14.5px; color: var(--ink-muted); line-height: 1.7; margin-bottom: 0.8rem; }
+  .spotlight-offerings { font-weight: 700; color: var(--green-dark); font-size: 14px; margin-bottom: 0; }
 
   /* ── CTAs SECTION ── */
   .cta-section {
@@ -488,9 +498,17 @@
 <section class="spotlight-section">
   <h2 class="section-title">Vendor Spotlight</h2>
   <p class="section-subtitle">Get to know the people who make the market special.</p>
-  <div class="spotlight-placeholder">
-    <h3>Coming Soon</h3>
-    <p>We'll be featuring our vendors here throughout the 2026 season. Check back soon!</p>
+  <div class="spotlight-card">
+    <div class="spotlight-photo">
+      <img src="/images/vendors/caddyshack-meat-store.jpg" alt="Robert &amp; Holly Rice's CaddyShack Meat Store" loading="lazy">
+    </div>
+    <div class="spotlight-body">
+      <div class="spotlight-type">Local Farm Meats &middot; Sheldon, IL</div>
+      <h3 class="spotlight-name">Robert &amp; Holly Rice's CaddyShack Meat Store</h3>
+      <p>We're excited to welcome back Robert &amp; Holly Rice's CaddyShack Meat Store! This family raises and processes their own beef and pork right here &mdash; pasture-raised and brought straight from their farm to your plate.</p>
+      <p>Find them at the market <strong>every Saturday, 7 AM&ndash;Noon, starting June 13th</strong>.</p>
+      <p class="spotlight-offerings">Pasture-raised beef &middot; pork &middot; and more</p>
+    </div>
   </div>
   <div style="margin-top:1.5rem;">
     <a href="/farmers-market/vendors.html" class="btn btn-outline">Meet Your Vendors</a>
