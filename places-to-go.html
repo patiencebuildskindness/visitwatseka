@@ -144,6 +144,25 @@
   .footer-cta { background: var(--amber); padding: 2.5rem 1.5rem; text-align: center; }
   .footer-cta h3 { font-family: 'Playfair Display', serif; font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-style: italic; color: #fff; margin-bottom: 1rem; max-width: 580px; margin-left: auto; margin-right: auto; }
   .cta-btns { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+  /* Category tile directory */
+  .cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 1rem; }
+  @media (max-width: 860px) { .cat-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 600px) { .cat-grid { grid-template-columns: repeat(2, 1fr); } }
+  .cat-tile { background: var(--paper); border: 1px solid var(--border); border-radius: 10px; padding: 0.85rem 0.9rem; cursor: pointer; text-align: left; display: flex; flex-direction: column; justify-content: space-between; gap: 8px; min-height: 86px; font-family: 'Lato', sans-serif; transition: transform 0.15s, box-shadow 0.15s, background 0.15s, border-color 0.15s; }
+  .cat-tile:hover { border-color: var(--green-light); box-shadow: 0 4px 14px rgba(30,70,32,0.1); transform: translateY(-2px); }
+  .cat-tile.active { background: var(--green-dark); border-color: var(--green-dark); }
+  .cat-tile-name { font-family: 'Playfair Display', serif; font-size: 0.98rem; font-weight: 700; color: var(--green-dark); line-height: 1.25; }
+  .cat-tile.active .cat-tile-name { color: #fff; }
+  .cat-tile-count { font-size: 11px; font-weight: 700; color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.05em; }
+  .cat-tile.active .cat-tile-count { color: rgba(255,255,255,0.8); }
+  .cat-viewall { display: block; width: 100%; margin: 0 0 1.5rem; background: var(--amber); color: #fff; border: none; border-radius: 8px; padding: 0.85rem 1rem; font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; cursor: pointer; transition: background 0.15s; }
+  .cat-viewall:hover { background: #E08C12; }
+  .cat-viewall.active { background: var(--green-dark); }
+  .cat-hint { text-align: center; color: var(--ink-light); font-style: italic; font-size: 13.5px; padding: 1.25rem 0; }
+  .cat-panel { display: none; }
+  .cat-panel.active { display: block; }
+  .cat-panel-head { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; color: var(--green-dark); margin: 1.25rem 0 0.4rem; padding-bottom: 0.4rem; border-bottom: 2px solid var(--border); }
+  .cat-panel .dir-member-list { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; }
 </style>
 </head>
 <body>
@@ -371,10 +390,39 @@
     <input type="text" class="dir-search" id="dir-search" placeholder="Search Watseka businesses...">
   </div>
   <div id="directory-list">
-
-    <div class="dir-category">
-      <button class="dir-cat-btn"><div class="dir-cat-left"><span class="dir-cat-name">Restaurants, Cafes &amp; Bars</span><span class="dir-cat-count">6</span></div><div class="dir-chevron"></div></button>
-      <div class="dir-members"><div class="dir-member-list">
+    <div class="cat-grid">
+      <button class="cat-tile" data-target="catp-0"><span class="cat-tile-name">Restaurants, Cafes &amp; Bars</span><span class="cat-tile-count">6</span></button>
+      <button class="cat-tile" data-target="catp-1"><span class="cat-tile-name">Retail &amp; Boutiques</span><span class="cat-tile-count">6</span></button>
+      <button class="cat-tile" data-target="catp-2"><span class="cat-tile-name">Florists &amp; Gifts</span><span class="cat-tile-count">3</span></button>
+      <button class="cat-tile" data-target="catp-3"><span class="cat-tile-name">Grocery</span><span class="cat-tile-count">2</span></button>
+      <button class="cat-tile" data-target="catp-4"><span class="cat-tile-name">Beauty &amp; Wellness</span><span class="cat-tile-count">4</span></button>
+      <button class="cat-tile" data-target="catp-5"><span class="cat-tile-name">Event Venues</span><span class="cat-tile-count">3</span></button>
+      <button class="cat-tile" data-target="catp-6"><span class="cat-tile-name">Home Improvement, Hardware &amp; Farm Supply</span><span class="cat-tile-count">4</span></button>
+      <button class="cat-tile" data-target="catp-7"><span class="cat-tile-name">Automotive</span><span class="cat-tile-count">10</span></button>
+      <button class="cat-tile" data-target="catp-8"><span class="cat-tile-name">Banks &amp; ATM</span><span class="cat-tile-count">4</span></button>
+      <button class="cat-tile" data-target="catp-9"><span class="cat-tile-name">Insurance &amp; Financial Advisors</span><span class="cat-tile-count">8</span></button>
+      <button class="cat-tile" data-target="catp-10"><span class="cat-tile-name">Accounting, Tax &amp; Legal</span><span class="cat-tile-count">5</span></button>
+      <button class="cat-tile" data-target="catp-11"><span class="cat-tile-name">Real Estate, Title &amp; Development</span><span class="cat-tile-count">4</span></button>
+      <button class="cat-tile" data-target="catp-12"><span class="cat-tile-name">Healthcare &amp; Medical</span><span class="cat-tile-count">7</span></button>
+      <button class="cat-tile" data-target="catp-13"><span class="cat-tile-name">Dental &amp; Orthodontics</span><span class="cat-tile-count">2</span></button>
+      <button class="cat-tile" data-target="catp-14"><span class="cat-tile-name">Senior Living &amp; Long-Term Care</span><span class="cat-tile-count">2</span></button>
+      <button class="cat-tile" data-target="catp-15"><span class="cat-tile-name">Manufacturing &amp; Industrial</span><span class="cat-tile-count">4</span></button>
+      <button class="cat-tile" data-target="catp-16"><span class="cat-tile-name">Construction, Excavation &amp; Trades</span><span class="cat-tile-count">6</span></button>
+      <button class="cat-tile" data-target="catp-17"><span class="cat-tile-name">Agriculture &amp; Farm Services</span><span class="cat-tile-count">4</span></button>
+      <button class="cat-tile" data-target="catp-18"><span class="cat-tile-name">Media, Advertising &amp; Signs</span><span class="cat-tile-count">6</span></button>
+      <button class="cat-tile" data-target="catp-19"><span class="cat-tile-name">Art, Design &amp; Creative</span><span class="cat-tile-count">2</span></button>
+      <button class="cat-tile" data-target="catp-20"><span class="cat-tile-name">Education &amp; Childcare</span><span class="cat-tile-count">3</span></button>
+      <button class="cat-tile" data-target="catp-21"><span class="cat-tile-name">Funeral &amp; Memorial</span><span class="cat-tile-count">3</span></button>
+      <button class="cat-tile" data-target="catp-22"><span class="cat-tile-name">Government &amp; Public Agencies</span><span class="cat-tile-count">6</span></button>
+      <button class="cat-tile" data-target="catp-23"><span class="cat-tile-name">Nonprofits &amp; Social Services</span><span class="cat-tile-count">6</span></button>
+      <button class="cat-tile" data-target="catp-24"><span class="cat-tile-name">Churches &amp; Faith</span><span class="cat-tile-count">4</span></button>
+      <button class="cat-tile" data-target="catp-25"><span class="cat-tile-name">Civic, Fraternal &amp; Community Orgs</span><span class="cat-tile-count">12</span></button>
+      <button class="cat-tile" data-target="catp-26"><span class="cat-tile-name">Services &amp; Other</span><span class="cat-tile-count">3</span></button>
+    </div>
+    <button class="cat-viewall" id="cat-viewall" data-target="all">View All 129 Businesses</button>
+    <div id="cat-panels">
+      <p class="cat-hint" id="cat-hint">Choose a category above to see its businesses &mdash; or view them all.</p>
+      <div class="cat-panel" id="catp-0"><div class="cat-panel-head">Restaurants, Cafes &amp; Bars</div><div class="dir-member-list">
         <div class="dir-member">
         <img class="dir-avatar" src="/images/avatars/bookish-book-cafe-wine-bar.jpg" alt="Bookish Book Cafe &amp; Wine Bar" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="dir-avatar-init" style="display:none">B</div>
@@ -405,11 +453,7 @@
         <div class="dir-member-info"><span class="dir-member-name">The Topper</span><span class="chamber-star" title="Chamber Member">&#9733; Chamber Member</span><span class="dir-member-addr">1898 N. State Rt. 1</span><div class="dir-member-links"><a href="https://www.facebook.com/p/TheTopper-100084199903215" class="biz-link fb" target="_blank">FB</a></div>
       </div></div>
       </div></div>
-    </div>
-
-    <div class="dir-category">
-      <button class="dir-cat-btn"><div class="dir-cat-left"><span class="dir-cat-name">Retail &amp; Boutiques</span><span class="dir-cat-count">6</span></div><div class="dir-chevron"></div></button>
-      <div class="dir-members"><div class="dir-member-list">
+      <div class="cat-panel" id="catp-1"><div class="cat-panel-head">Retail &amp; Boutiques</div><div class="dir-member-list">
         <div class="dir-member">
         <img class="dir-avatar" src="/images/avatars/all-american-athletics.jpg" alt="All American Athletics" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="dir-avatar-init" style="display:none">A</div>
@@ -438,11 +482,7 @@
         <div class="dir-member-info"><span class="dir-member-name">Tater's Master Bait &amp; Tackle</span><span class="chamber-star" title="Chamber Member">&#9733; Chamber Member</span><span class="dir-member-addr">405 Kessinger Place</span><div class="dir-member-links"><a href="https://www.facebook.com/p/Taters-Master-Bait-Tackle-100092255034707" class="biz-link fb" target="_blank">FB</a></div>
       </div></div>
       </div></div>
-    </div>
-
-    <div class="dir-category">
-      <button class="dir-cat-btn"><div class="dir-cat-left"><span class="dir-cat-name">Florists &amp; Gifts</span><span class="dir-cat-count">3</span></div><div class="dir-chevron"></div></button>
-      <div class="dir-members"><div class="dir-member-list">
+      <div class="cat-panel" id="catp-2"><div class="cat-panel-head">Florists &amp; Gifts</div><div class="dir-member-list">
         <div class="dir-member">
         <div class="dir-avatar-init">J</div>
         <div class="dir-member-info"><span class="dir-member-name">Joyful Blooms</span><span class="chamber-star" title="Chamber Member">&#9733; Chamber Member</span><span class="dir-member-addr">810 S. Belmont Ave.</span></div>
@@ -458,11 +498,7 @@
         <div class="dir-member-info"><span class="dir-member-name">The Tilted Tulip</span><span class="chamber-star" title="Chamber Member">&#9733; Chamber Member</span><div class="dir-member-links"><a href="https://www.facebook.com/p/The-Tilted-Tulip-100076069698827" class="biz-link fb" target="_blank">FB</a></div>
       </div></div>
       </div></div>
-    </div>
-
-    <div class="dir-category">
-      <button class="dir-cat-btn"><div class="dir-cat-left"><span class="dir-cat-name">Grocery</span><span class="dir-cat-count">2</span></div><div class="dir-chevron"></div></button>
-      <div class="dir-members"><div class="dir-member-list">
+      <div class="cat-panel" id="catp-3"><div class="cat-panel-head">Grocery</div><div class="dir-member-list">
         <div class="dir-member">
         <img class="dir-avatar" src="/images/avatars/berkot-s-super-foods.jpg" alt="Berkot&#x27;s Super Foods" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="dir-avatar-init" style="display:none">B</div>
@@ -474,11 +510,7 @@
         <div class="dir-member-info"><span class="dir-member-name">Mary's Emporium</span><span class="chamber-star" title="Chamber Member">&#9733; Chamber Member</span><span class="dir-member-addr">132 W. Walnut St.</span><div class="dir-member-links"><a href="https://www.facebook.com/groups/2038501793041585" class="biz-link fb" target="_blank">FB</a></div>
       </div></div>
       </div></div>
-    </div>
-
-    <div class="dir-category">
-      <button class="dir-cat-btn"><div class="dir-cat-left"><span class="dir-cat-name">Beauty &amp; Wellness</span><span class="dir-cat-count">4</span></div><div class="dir-chevron"></div></button>
-      <div class="dir-members"><div class="dir-member-list">
+      <div class="cat-panel" id="catp-4"><div class="cat-panel-head">Beauty &amp; Wellness</div><div class="dir-member-list">
         <div class="dir-member">
         <img class="dir-avatar" src="/images/avatars/above-family-grooming.jpg" alt="Above Family Grooming" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="dir-avatar-init" style="display:none">A</div>
@@ -499,11 +531,7 @@
         <div class="dir-member-info"><span class="dir-member-name">XO Nail Salon</span><span class="chamber-star" title="Chamber Member">&#9733; Chamber Member</span><span class="dir-member-addr">129 E. Walnut St.</span><div class="dir-member-links"><a href="https://www.facebook.com/p/XO-Nail-Salon-LLC-61556881866960" class="biz-link fb" target="_blank">FB</a></div>
       </div></div>
       </div></div>
-    </div>
-
-    <div class="dir-category">
-      <button class="dir-cat-btn"><div class="dir-cat-left"><span class="dir-cat-name">Event Venues</span><span class="dir-cat-count">3</span></div><div class="dir-chevron"></div></button>
-      <div class="dir-members"><div class="dir-member-list">
+      <div class="cat-panel" id="catp-5"><div class="cat-panel-head">Event Venues</div><div class="dir-member-list">
         <div class="dir-member">
         <img class="dir-avatar" src="/images/avatars/homestead-venue.jpg" alt="Homestead Venue" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="dir-avatar-init" style="display:none">H</div>
@@ -519,11 +547,7 @@
         <div class="dir-member-info"><span class="dir-member-name">Shewami Country Club</span><span class="chamber-star" title="Chamber Member">&#9733; Chamber Member</span><span class="dir-member-addr">1726 N 2850 E Road</span><div class="dir-member-links"><a href="https://www.facebook.com/Shewami1923" class="biz-link fb" target="_blank">FB</a></div>
       </div></div>
       </div></div>
-    </div>
-
-    <div class="dir-category">
-      <button class="dir-cat-btn"><div class="dir-cat-left"><span class="dir-cat-name">Home Improvement, Hardware &amp; Farm Supply</span><span class="dir-cat-count">4</span></div><div class="dir-chevron"></div></button>
-      <div class="dir-members"><div class="dir-member-list">
+      <div class="cat-panel" id="catp-6"><div class="cat-panel-head">Home Improvement, Hardware &amp; Farm Supply</div><div class="dir-member-list">
         <div class="dir-member">
         <img class="dir-avatar" src="/images/avatars/kingdon-s-home-center-inc.jpg" alt="Kingdon&#x27;s Home Center Inc" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="dir-avatar-init" style="display:none">K</div>
@@ -544,11 +568,7 @@
         <div class="dir-member-info"><span class="dir-member-name">Runnings</span><span class="chamber-star" title="Chamber Member">&#9733; Chamber Member</span><span class="dir-member-addr">1200 E. Walnut St.</span><div class="dir-member-links"><a href="https://www.runnings.com" class="biz-link web" target="_blank">Web</a></div>
       </div></div>
       </div></div>
-    </div>
-
-    <div class="dir-category">
-      <button class="dir-cat-btn"><div class="dir-cat-left"><span class="dir-cat-name">Automotive</span><span class="dir-cat-count">10</span></div><div class="dir-chevron"></div></button>
-      <div class="dir-members"><div class="dir-member-list">
+      <div class="cat-panel" id="catp-7"><div class="cat-panel-head">Automotive</div><div class="dir-member-list">
         <div class="dir-member">
         <img class="dir-avatar" src="/images/avatars/c-c-best-one-tire-and-auto-care.jpg" alt="C &amp; C Best-One Tire and Auto Care" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="dir-avatar-init" style="display:none">C</div>
@@ -597,11 +617,7 @@
         <div class="dir-member-info"><span class="dir-member-name">Watseka Suzuki Honda Kawasaki</span><span class="chamber-star" title="Chamber Member">&#9733; Chamber Member</span><span class="dir-member-addr">196 N Jefferson St</span><div class="dir-member-links"><a href="https://www.atvsandmotorcycles.com" class="biz-link web" target="_blank">Web</a><a href="https://www.facebook.com/watseka.kawasaki" class="biz-link fb" target="_blank">FB</a><a href="https://www.instagram.com/watsekasuzukihondakawasaki" class="biz-link ig" target="_blank">IG</a></div>
       </div></div>
       </div></div>
-    </div>
-
-    <div class="dir-category">
-      <button class="dir-cat-btn"><div class="dir-cat-left"><span class="dir-cat-name">Banks &amp; ATM</span><span class="dir-cat-count">4</span></div><div class="dir-chevron"></div></button>
-      <div class="dir-members"><div class="dir-member-list">
+      <div class="cat-panel" id="catp-8"><div class="cat-panel-head">Banks &amp; ATM</div><div class="dir-member-list">
         <div class="dir-member">
         <img class="dir-avatar" src="/images/avatars/first-financial-bank.jpg" alt="First Financial Bank" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="dir-avatar-init" style="display:none">F</div>
@@ -623,11 +639,7 @@
         <div class="dir-member-info"><span class="dir-member-name">Prospect Bank</span><span class="chamber-star" title="Chamber Member">&#9733; Chamber Member</span><span class="dir-member-addr">141 Veterans Parkway</span><div class="dir-member-links"><a href="https://www.bankprospect.com" class="biz-link web" target="_blank">Web</a><a href="https://www.facebook.com/ProspectBankWatseka" class="biz-link fb" target="_blank">FB</a></div>
       </div></div>
       </div></div>
-    </div>
-
-    <div class="dir-category">
-      <button class="dir-cat-btn"><div class="dir-cat-left"><span class="dir-cat-name">Insurance &amp; Financial Advisors</span><span class="dir-cat-count">8</span></div><div class="dir-chevron"></div></button>
-      <div class="dir-members"><div class="dir-member-list">
+      <div class="cat-panel" id="catp-9"><div class="cat-panel-head">Insurance &amp; Financial Advisors</div><div class="dir-member-list">
         <div class="dir-member">
         <img class="dir-avatar" src="/images/avatars/arends-hogan-walker-ahw.jpg" alt="Arends Hogan Walker (AHW)" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="dir-avatar-init" style="display:none">A</div>
@@ -667,11 +679,7 @@
         <div class="dir-member-info"><span class="dir-member-name">Tim Santefort - Country Financial</span><span class="chamber-star" title="Chamber Member">&#9733; Chamber Member</span><span class="dir-member-addr">123 S. Fourth St.</span><div class="dir-member-links"><a href="https://www.countryfinancial.com/tim.santefort" class="biz-link web" target="_blank">Web</a></div>
       </div></div>
       </div></div>
-    </div>
-
-    <div class="dir-category">
-      <button class="dir-cat-btn"><div class="dir-cat-left"><span class="dir-cat-name">Accounting, Tax &amp; Legal</span><span class="dir-cat-count">5</span></div><div class="dir-chevron"></div></button>
-      <div class="dir-members"><div class="dir-member-list">
+      <div class="cat-panel" id="catp-10"><div class="cat-panel-head">Accounting, Tax &amp; Legal</div><div class="dir-member-list">
         <div class="dir-member">
         <div class="dir-avatar-init">F</div>
         <div class="dir-member-info"><span class="dir-member-name">Fox CPA Group Ltd</span><span class="chamber-star" title="Chamber Member">&#9733; Chamber Member</span><span class="dir-member-addr">740 E. Walnut St.</span></div>
@@ -696,11 +704,7 @@
         <div class="dir-member-info"><span class="dir-member-name">Ladies of Justice by LegalShield</span><span class="chamber-star" title="Chamber Member">&#9733; Chamber Member</span><span class="dir-member-addr">1695 Blue Bell Bend Rd.</span><div class="dir-member-links"><a href="https://www.jacquealford.ladiesofjustice.com" class="biz-link web" target="_blank">Web</a><a href="https://www.facebook.com/jacquealfordloj" class="biz-link fb" target="_blank">FB</a></div>
       </div></div>
       </div></div>
-    </div>
-
-    <div class="dir-category">
-      <button class="dir-cat-btn"><div class="dir-cat-left"><span class="dir-cat-name">Real Estate, Title &amp; Development</span><span class="dir-cat-count">4</span></div><div class="dir-chevron"></div></button>
-      <div class="dir-members"><div class="dir-member-list">
+      <div class="cat-panel" id="catp-11"><div class="cat-panel-head">Real Estate, Title &amp; Development</div><div class="dir-member-list">
         <div class="dir-member">
         <div class="dir-avatar-init">I</div>
         <div class="dir-member-info"><span class="dir-member-name">Iroquois Title Company</span><span class="chamber-star" title="Chamber Member">&#9733; Chamber Member</span><span class="dir-member-addr">101 E Cherry St</span><div class="dir-member-links"><a href="https://www.iroquoistitle.com" class="biz-link web" target="_blank">Web</a></div>
@@ -720,11 +724,7 @@
         <div class="dir-member-info"><span class="dir-member-name">Smith's Real Estate Services</span><span class="chamber-star" title="Chamber Member">&#9733; Chamber Member</span><span class="dir-member-addr">535 E. Walnut St.</span><div class="dir-member-links"><a href="https://www.rlsmithsells.com" class="biz-link web" target="_blank">Web</a><a href="https://www.facebook.com/smithsrealestate" class="biz-link fb" target="_blank">FB</a></div>
       </div></div>
       </div></div>
-    </div>
-
-    <div class="dir-category">
-      <button class="dir-cat-btn"><div class="dir-cat-left"><span class="dir-cat-name">Healthcare &amp; Medical</span><span class="dir-cat-count">7</span></div><div class="dir-chevron"></div></button>
-      <div class="dir-members"><div class="dir-member-list">
+      <div class="cat-panel" id="catp-12"><div class="cat-panel-head">Healthcare &amp; Medical</div><div class="dir-member-list">
         <div class="dir-member">
         <img class="dir-avatar" src="/images/avatars/chittick-family-eye-care.jpg" alt="Chittick Family Eye Care" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="dir-avatar-init" style="display:none">C</div>
@@ -759,11 +759,7 @@
         <div class="dir-member-info"><span class="dir-member-name">Robinson Chiropractic of Watseka</span><span class="chamber-star" title="Chamber Member">&#9733; Chamber Member</span><span class="dir-member-addr">625 S. 5th St., Suite A</span><div class="dir-member-links"><a href="https://www.facebook.com/robchirowats" class="biz-link fb" target="_blank">FB</a></div>
       </div></div>
       </div></div>
-    </div>
-
-    <div class="dir-category">
-      <button class="dir-cat-btn"><div class="dir-cat-left"><span class="dir-cat-name">Dental &amp; Orthodontics</span><span class="dir-cat-count">2</span></div><div class="dir-chevron"></div></button>
-      <div class="dir-members"><div class="dir-member-list">
+      <div class="cat-panel" id="catp-13"><div class="cat-panel-head">Dental &amp; Orthodontics</div><div class="dir-member-list">
         <div class="dir-member">
         <img class="dir-avatar" src="/images/avatars/ortho-aesthetics-llc.jpg" alt="Ortho-Aesthetics, LLC" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="dir-avatar-init" style="display:none">O</div>
@@ -775,11 +771,7 @@
         <div class="dir-member-info"><span class="dir-member-name">Rose Orthodontics</span><span class="chamber-star" title="Chamber Member">&#9733; Chamber Member</span><span class="dir-member-addr">316 E Lincoln Ave</span><div class="dir-member-links"><a href="https://www.facebook.com/MartinAndRoseDDS" class="biz-link fb" target="_blank">FB</a><a href="https://www.instagram.com/roseorthodontics_" class="biz-link ig" target="_blank">IG</a></div>
       </div></div>
       </div></div>
-    </div>
-
-    <div class="dir-category">
-      <button class="dir-cat-btn"><div class="dir-cat-left"><span class="dir-cat-name">Senior Living &amp; Long-Term Care</span><span class="dir-cat-count">2</span></div><div class="dir-chevron"></div></button>
-      <div class="dir-members"><div class="dir-member-list">
+      <div class="cat-panel" id="catp-14"><div class="cat-panel-head">Senior Living &amp; Long-Term Care</div><div class="dir-member-list">
         <div class="dir-member">
         <img class="dir-avatar" src="/images/avatars/arcadia-of-watseka.jpg" alt="Arcadia of Watseka" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="dir-avatar-init" style="display:none">A</div>
@@ -791,11 +783,7 @@
         <div class="dir-member-info"><span class="dir-member-name">Heritage Woods of Watseka</span><span class="chamber-star" title="Chamber Member">&#9733; Chamber Member</span><span class="dir-member-addr">577 E Martin Ave</span><div class="dir-member-links"><a href="https://www.bma-mgmt.com" class="biz-link web" target="_blank">Web</a><a href="https://www.facebook.com/HeritageWoodsofWatseka" class="biz-link fb" target="_blank">FB</a></div>
       </div></div>
       </div></div>
-    </div>
-
-    <div class="dir-category">
-      <button class="dir-cat-btn"><div class="dir-cat-left"><span class="dir-cat-name">Manufacturing &amp; Industrial</span><span class="dir-cat-count">4</span></div><div class="dir-chevron"></div></button>
-      <div class="dir-members"><div class="dir-member-list">
+      <div class="cat-panel" id="catp-15"><div class="cat-panel-head">Manufacturing &amp; Industrial</div><div class="dir-member-list">
         <div class="dir-member">
         <img class="dir-avatar" src="/images/avatars/alliance-polysacks-usa.jpg" alt="Alliance Polysacks USA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="dir-avatar-init" style="display:none">A</div>
@@ -815,11 +803,7 @@
         <div class="dir-member-info"><span class="dir-member-name">T &amp; D Metal Products, LLC</span><span class="chamber-star" title="Chamber Member">&#9733; Chamber Member</span><span class="dir-member-addr">602 E. Walnut St.</span><div class="dir-member-links"><a href="https://www.tdmetal.com" class="biz-link web" target="_blank">Web</a><a href="https://www.facebook.com/TDMetalproducts" class="biz-link fb" target="_blank">FB</a></div>
       </div></div>
       </div></div>
-    </div>
-
-    <div class="dir-category">
-      <button class="dir-cat-btn"><div class="dir-cat-left"><span class="dir-cat-name">Construction, Excavation &amp; Trades</span><span class="dir-cat-count">6</span></div><div class="dir-chevron"></div></button>
-      <div class="dir-members"><div class="dir-member-list">
+      <div class="cat-panel" id="catp-16"><div class="cat-panel-head">Construction, Excavation &amp; Trades</div><div class="dir-member-list">
         <div class="dir-member">
         <div class="dir-avatar-init">C</div>
         <div class="dir-member-info"><span class="dir-member-name">Clark Premier Plumbing &amp; Heating</span><span class="chamber-star" title="Chamber Member">&#9733; Chamber Member</span><span class="dir-member-addr">329 W. Walnut St.</span><div class="dir-member-links"><a href="https://www.facebook.com/391015537770615" class="biz-link fb" target="_blank">FB</a></div>
@@ -847,11 +831,7 @@
         <div class="dir-member-info"><span class="dir-member-name">Weber Plumbing &amp; Heating</span><span class="chamber-star" title="Chamber Member">&#9733; Chamber Member</span><span class="dir-member-addr">105 N. Second St.</span></div>
       </div>
       </div></div>
-    </div>
-
-    <div class="dir-category">
-      <button class="dir-cat-btn"><div class="dir-cat-left"><span class="dir-cat-name">Agriculture &amp; Farm Services</span><span class="dir-cat-count">4</span></div><div class="dir-chevron"></div></button>
-      <div class="dir-members"><div class="dir-member-list">
+      <div class="cat-panel" id="catp-17"><div class="cat-panel-head">Agriculture &amp; Farm Services</div><div class="dir-member-list">
         <div class="dir-member">
         <img class="dir-avatar" src="/images/avatars/farm-credit-illinois.jpg" alt="Farm Credit Illinois" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="dir-avatar-init" style="display:none">F</div>
@@ -871,11 +851,7 @@
         <div class="dir-member-info"><span class="dir-member-name">McCullough Implement Co.</span><span class="chamber-star" title="Chamber Member">&#9733; Chamber Member</span><span class="dir-member-addr">1966 N State Rt 1</span><div class="dir-member-links"><a href="https://www.mcagplus.com" class="biz-link web" target="_blank">Web</a><a href="https://www.facebook.com/McAgPlusWatseka" class="biz-link fb" target="_blank">FB</a></div>
       </div></div>
       </div></div>
-    </div>
-
-    <div class="dir-category">
-      <button class="dir-cat-btn"><div class="dir-cat-left"><span class="dir-cat-name">Media, Advertising &amp; Signs</span><span class="dir-cat-count">6</span></div><div class="dir-chevron"></div></button>
-      <div class="dir-members"><div class="dir-member-list">
+      <div class="cat-panel" id="catp-18"><div class="cat-panel-head">Media, Advertising &amp; Signs</div><div class="dir-member-list">
         <div class="dir-member">
         <img class="dir-avatar" src="/images/avatars/center-street-productions.jpg" alt="Center Street Productions" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="dir-avatar-init" style="display:none">C</div>
@@ -906,11 +882,7 @@
         <div class="dir-member-info"><span class="dir-member-name">Watseka Sign</span><span class="chamber-star" title="Chamber Member">&#9733; Chamber Member</span><span class="dir-member-addr">2175 N. State Rt. 1</span><div class="dir-member-links"><a href="https://www.watsekasign.com" class="biz-link web" target="_blank">Web</a><a href="https://www.facebook.com/signswithpride" class="biz-link fb" target="_blank">FB</a></div>
       </div></div>
       </div></div>
-    </div>
-
-    <div class="dir-category">
-      <button class="dir-cat-btn"><div class="dir-cat-left"><span class="dir-cat-name">Art, Design &amp; Creative</span><span class="dir-cat-count">2</span></div><div class="dir-chevron"></div></button>
-      <div class="dir-members"><div class="dir-member-list">
+      <div class="cat-panel" id="catp-19"><div class="cat-panel-head">Art, Design &amp; Creative</div><div class="dir-member-list">
         <div class="dir-member">
         <div class="dir-avatar-init">B</div>
         <div class="dir-member-info"><span class="dir-member-name">B&amp;Company Designs Inc.</span><span class="chamber-star" title="Chamber Member">&#9733; Chamber Member</span><span class="dir-member-addr">214 E. Walnut</span><div class="dir-member-links"><a href="https://www.facebook.com/B-Company-Designs-Inc-129658227217480" class="biz-link fb" target="_blank">FB</a></div>
@@ -920,11 +892,7 @@
         <div class="dir-member-info"><span class="dir-member-name">Ingram Atelier</span><span class="chamber-star" title="Chamber Member">&#9733; Chamber Member</span><span class="dir-member-addr">203 1/2 E. Walnut St.</span></div>
       </div>
       </div></div>
-    </div>
-
-    <div class="dir-category">
-      <button class="dir-cat-btn"><div class="dir-cat-left"><span class="dir-cat-name">Education &amp; Childcare</span><span class="dir-cat-count">3</span></div><div class="dir-chevron"></div></button>
-      <div class="dir-members"><div class="dir-member-list">
+      <div class="cat-panel" id="catp-20"><div class="cat-panel-head">Education &amp; Childcare</div><div class="dir-member-list">
         <div class="dir-member">
         <img class="dir-avatar" src="/images/avatars/iroquois-county-cusd-9.jpg" alt="Iroquois County CUSD #9" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="dir-avatar-init" style="display:none">I</div>
@@ -941,11 +909,7 @@
         <div class="dir-member-info"><span class="dir-member-name">Little Bright Learning Center</span><span class="chamber-star" title="Chamber Member">&#9733; Chamber Member</span><span class="dir-member-addr">102 N. Fourth St.</span><div class="dir-member-links"><a href="https://www.facebook.com/p/Little-Bright-Learning-Center-61570358261007" class="biz-link fb" target="_blank">FB</a></div>
       </div></div>
       </div></div>
-    </div>
-
-    <div class="dir-category">
-      <button class="dir-cat-btn"><div class="dir-cat-left"><span class="dir-cat-name">Funeral &amp; Memorial</span><span class="dir-cat-count">3</span></div><div class="dir-chevron"></div></button>
-      <div class="dir-members"><div class="dir-member-list">
+      <div class="cat-panel" id="catp-21"><div class="cat-panel-head">Funeral &amp; Memorial</div><div class="dir-member-list">
         <div class="dir-member">
         <img class="dir-avatar" src="/images/avatars/baier-funeral-home.jpg" alt="Baier Funeral Home" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="dir-avatar-init" style="display:none">B</div>
@@ -961,11 +925,7 @@
         <div class="dir-member-info"><span class="dir-member-name">Mueller Monument</span><span class="chamber-star" title="Chamber Member">&#9733; Chamber Member</span><span class="dir-member-addr">118 S Second St</span><div class="dir-member-links"><a href="https://www.muellermonument.com" class="biz-link web" target="_blank">Web</a><a href="https://www.facebook.com/people/Mueller-Monument-Works/100064589952987" class="biz-link fb" target="_blank">FB</a></div>
       </div></div>
       </div></div>
-    </div>
-
-    <div class="dir-category">
-      <button class="dir-cat-btn"><div class="dir-cat-left"><span class="dir-cat-name">Government &amp; Public Agencies</span><span class="dir-cat-count">6</span></div><div class="dir-chevron"></div></button>
-      <div class="dir-members"><div class="dir-member-list">
+      <div class="cat-panel" id="catp-22"><div class="cat-panel-head">Government &amp; Public Agencies</div><div class="dir-member-list">
         <div class="dir-member">
         <div class="dir-avatar-init">C</div>
         <div class="dir-member-info"><span class="dir-member-name">City of Watseka</span><span class="chamber-star" title="Chamber Member">&#9733; Chamber Member</span><span class="dir-member-addr">201 Brianna Drive</span><div class="dir-member-links"><a href="https://www.watsekacity.com" class="biz-link web" target="_blank">Web</a></div>
@@ -996,11 +956,7 @@
         <div class="dir-member-info"><span class="dir-member-name">Watseka Public Library</span><span class="chamber-star" title="Chamber Member">&#9733; Chamber Member</span><span class="dir-member-addr">201 S Fourth St</span><div class="dir-member-links"><a href="https://www.watsekalibrary.org" class="biz-link web" target="_blank">Web</a><a href="https://www.facebook.com/Watsekapubliclibrary" class="biz-link fb" target="_blank">FB</a></div>
       </div></div>
       </div></div>
-    </div>
-
-    <div class="dir-category">
-      <button class="dir-cat-btn"><div class="dir-cat-left"><span class="dir-cat-name">Nonprofits &amp; Social Services</span><span class="dir-cat-count">6</span></div><div class="dir-chevron"></div></button>
-      <div class="dir-members"><div class="dir-member-list">
+      <div class="cat-panel" id="catp-23"><div class="cat-panel-head">Nonprofits &amp; Social Services</div><div class="dir-member-list">
         <div class="dir-member">
         <img class="dir-avatar" src="/images/avatars/child-network.jpg" alt="Child Network" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="dir-avatar-init" style="display:none">C</div>
@@ -1031,11 +987,7 @@
         <div class="dir-member-info"><span class="dir-member-name">The Arc of Iroquois County</span><span class="chamber-star" title="Chamber Member">&#9733; Chamber Member</span><span class="dir-member-addr">700 E Elm St</span><div class="dir-member-links"><a href="https://www.thearcirq.org" class="biz-link web" target="_blank">Web</a><a href="https://www.facebook.com/p/The-Arc-of-Iroquois-County-61558068226506" class="biz-link fb" target="_blank">FB</a></div>
       </div></div>
       </div></div>
-    </div>
-
-    <div class="dir-category">
-      <button class="dir-cat-btn"><div class="dir-cat-left"><span class="dir-cat-name">Churches &amp; Faith</span><span class="dir-cat-count">4</span></div><div class="dir-chevron"></div></button>
-      <div class="dir-members"><div class="dir-member-list">
+      <div class="cat-panel" id="catp-24"><div class="cat-panel-head">Churches &amp; Faith</div><div class="dir-member-list">
         <div class="dir-member">
         <img class="dir-avatar" src="/images/avatars/first-christian-church.jpg" alt="First Christian Church" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="dir-avatar-init" style="display:none">F</div>
@@ -1056,11 +1008,7 @@
         <div class="dir-member-info"><span class="dir-member-name">Watseka First United Methodist</span><span class="chamber-star" title="Chamber Member">&#9733; Chamber Member</span><span class="dir-member-addr">301 S. 4th St.</span><div class="dir-member-links"><a href="https://www.facebook.com/p/First-United-Methodist-Church-Watseka-100066836922843" class="biz-link fb" target="_blank">FB</a></div>
       </div></div>
       </div></div>
-    </div>
-
-    <div class="dir-category">
-      <button class="dir-cat-btn"><div class="dir-cat-left"><span class="dir-cat-name">Civic, Fraternal &amp; Community Orgs</span><span class="dir-cat-count">12</span></div><div class="dir-chevron"></div></button>
-      <div class="dir-members"><div class="dir-member-list">
+      <div class="cat-panel" id="catp-25"><div class="cat-panel-head">Civic, Fraternal &amp; Community Orgs</div><div class="dir-member-list">
         <div class="dir-member">
         <img class="dir-avatar" src="/images/avatars/american-legion-post-23.jpg" alt="American Legion Post #23" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="dir-avatar-init" style="display:none">A</div>
@@ -1117,11 +1065,7 @@
         <div class="dir-member-info"><span class="dir-member-name">Watseka Youth Baseball League</span><span class="chamber-star" title="Chamber Member">&#9733; Chamber Member</span></div>
       </div>
       </div></div>
-    </div>
-
-    <div class="dir-category">
-      <button class="dir-cat-btn"><div class="dir-cat-left"><span class="dir-cat-name">Services &amp; Other</span><span class="dir-cat-count">3</span></div><div class="dir-chevron"></div></button>
-      <div class="dir-members"><div class="dir-member-list">
+      <div class="cat-panel" id="catp-26"><div class="cat-panel-head">Services &amp; Other</div><div class="dir-member-list">
         <div class="dir-member">
         <img class="dir-avatar" src="/images/avatars/crouse-canine.jpg" alt="Crouse Canine" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="dir-avatar-init" style="display:none">C</div>
@@ -1139,9 +1083,7 @@
       </div></div>
       </div></div>
     </div>
-
-  </div>
-  <p style="font-size:12px;color:var(--ink-light);margin-top:1.5rem;font-style:italic;">Source: Watseka Area Chamber of Commerce Membership Directory 2026. To update your listing, email <a href="mailto:contact@visitwatseka.com" style="color:var(--green-mid)">contact@visitwatseka.com</a>.</p>
+  </div><p style="font-size:12px;color:var(--ink-light);margin-top:1.5rem;font-style:italic;">Source: Watseka Area Chamber of Commerce Membership Directory 2026. To update your listing, email <a href="mailto:contact@visitwatseka.com" style="color:var(--green-mid)">contact@visitwatseka.com</a>.</p>
 </div>
 
 <!-- EXPLORE THE COUNTY -->
@@ -1210,32 +1152,46 @@
     });
   });
 
-  document.querySelectorAll('.dir-cat-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const cat = btn.closest('.dir-category');
-      const isOpen = cat.classList.contains('open');
-      document.querySelectorAll('.dir-category').forEach(c => c.classList.remove('open'));
-      if (!isOpen) cat.classList.add('open');
-    });
-  });
-
-  document.getElementById('dir-search').addEventListener('input', function() {
-    const q = this.value.toLowerCase().trim();
-    document.querySelectorAll('.dir-category').forEach(cat => {
-      const members = cat.querySelectorAll('.dir-member');
-      let catVisible = false;
-      members.forEach(m => {
-        const name = (m.querySelector('.dir-member-name') || {}).textContent || '';
-        const addr = (m.querySelector('.dir-member-addr') || {}).textContent || '';
-        const match = !q || name.toLowerCase().includes(q) || addr.toLowerCase().includes(q);
-        m.style.display = match ? '' : 'none';
-        if (match) catVisible = true;
+  (function(){
+    var tiles = Array.prototype.slice.call(document.querySelectorAll('.cat-tile'));
+    var viewall = document.getElementById('cat-viewall');
+    var panels = Array.prototype.slice.call(document.querySelectorAll('.cat-panel'));
+    var hint = document.getElementById('cat-hint');
+    var search = document.getElementById('dir-search');
+    function clearActive(){ tiles.forEach(function(t){ t.classList.remove('active'); }); viewall.classList.remove('active'); }
+    function showOne(id, tile){
+      clearActive(); tile.classList.add('active'); hint.style.display = 'none';
+      panels.forEach(function(p){ p.classList.toggle('active', p.id === id); });
+      var el = document.getElementById(id);
+      if (el) { var y = el.getBoundingClientRect().top + window.pageYOffset - 120; window.scrollTo({ top: y, behavior: 'smooth' }); }
+    }
+    function showAll(){
+      clearActive(); viewall.classList.add('active'); hint.style.display = 'none';
+      panels.forEach(function(p){ p.classList.add('active'); });
+    }
+    tiles.forEach(function(t){ t.addEventListener('click', function(){ showOne(t.getAttribute('data-target'), t); }); });
+    viewall.addEventListener('click', showAll);
+    search.addEventListener('input', function(){
+      var q = this.value.toLowerCase().trim();
+      if (!q){
+        clearActive();
+        panels.forEach(function(p){ p.classList.remove('active'); p.querySelectorAll('.dir-member').forEach(function(m){ m.style.display = ''; }); });
+        hint.style.display = '';
+        return;
+      }
+      clearActive(); hint.style.display = 'none';
+      panels.forEach(function(p){
+        var any = false;
+        p.querySelectorAll('.dir-member').forEach(function(m){
+          var name = (m.querySelector('.dir-member-name') || {}).textContent || '';
+          var addr = (m.querySelector('.dir-member-addr') || {}).textContent || '';
+          var ok = name.toLowerCase().indexOf(q) > -1 || addr.toLowerCase().indexOf(q) > -1;
+          m.style.display = ok ? '' : 'none'; if (ok) any = true;
+        });
+        p.classList.toggle('active', any);
       });
-      cat.style.display = catVisible ? '' : 'none';
-      if (q && catVisible) cat.classList.add('open');
-      if (!q) { document.querySelectorAll('.dir-category').forEach(c => c.classList.remove('open')); }
     });
-  });
+  })();
 </script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
