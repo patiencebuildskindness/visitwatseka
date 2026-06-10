@@ -1,0 +1,24 @@
+# --- Keep non-website / sensitive files OUT of the public GitHub Pages site ---
+# This repo auto-publishes to visitwatseka.com, so anything committed here is
+# PUBLIC. The entries below are local working files that must never publish.
+
+# Separate project that lives in this folder (has its own site + CNAME)
+Watseka Community Renewal/
+
+# Sensitive nonprofit documents (member PII, grant paperwork)
+Membership Renewal List*.pdf
+*Grant*Summary*.pdf
+GRANT APP*.pdf
+
+# Working scratch: screenshots, archives, design exports
+Screenshot *.png
+*.zip
+
+# Local-only working files (NOT published, and NOT backed up to GitHub)
+archive/
+.claude/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*~
