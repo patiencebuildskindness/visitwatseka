@@ -90,6 +90,43 @@
     color: var(--ink-muted);
     line-height: 1.6;
   }
+
+  /* ── Weekly vendor lineup ── */
+  .lineup-feature { text-align: center; max-width: 640px; margin: 0 auto; }
+  .lineup-date {
+    display: inline-block;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--amber); margin-bottom: 0.6rem;
+  }
+  .lineup-feature h2 {
+    font-family: 'Playfair Display', serif; font-size: 1.65rem; font-weight: 700;
+    color: var(--green-dark); margin-bottom: 0.5rem;
+  }
+  .lineup-feature .lineup-intro {
+    color: var(--ink-muted); font-size: 14.5px; line-height: 1.7;
+    margin: 0 auto 1.75rem; max-width: 520px;
+  }
+  .lineup-poster {
+    display: inline-block; line-height: 0;
+    border-radius: 12px; overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 30px rgba(30,70,32,0.18);
+  }
+  .lineup-poster img { display: block; width: 100%; max-width: 460px; height: auto; }
+  .lineup-names {
+    list-style: none; padding: 0; margin: 2.25rem auto 0; max-width: 540px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem 1.75rem; text-align: left;
+  }
+  .lineup-names li {
+    font-size: 14.5px; color: var(--ink); line-height: 1.4;
+    padding-left: 1.3rem; position: relative;
+  }
+  .lineup-names li::before { content: "🌽"; position: absolute; left: 0; font-size: 12px; top: 1px; }
+  .lineup-vendor-cta {
+    margin-top: 2.5rem; padding-top: 1.75rem; border-top: 1px solid var(--border);
+    font-size: 13px; color: var(--ink-light); line-height: 1.7;
+  }
+  @media (max-width: 480px) { .lineup-names { grid-template-columns: 1fr; max-width: 280px; } }
 </style>
 </head>
 <body>
@@ -134,20 +171,47 @@
 
 <div class="container-narrow" style="padding-top:2rem; padding-bottom:4rem;">
 
-  <!-- Coming soon message -->
-  <div class="vendors-coming-soon">
-    <div class="icon">🌻</div>
-    <h2>Coming Soon!</h2>
-    <p>
-      We're putting together profiles for all of our amazing vendors — both full-time and part-time.
-      Check back soon to learn their stories, see what they sell, and find your new favorites
-      before you visit the market.
+  <!-- This week's vendor lineup -->
+  <div class="lineup-feature">
+    <span class="lineup-date">Saturday, June 13, 2026 &middot; 7 AM – Noon</span>
+    <h2>This Saturday's Vendor Lineup</h2>
+    <p class="lineup-intro">
+      Here's who you'll find at the Downtown Watseka Farmers Market this Saturday —
+      from fresh produce and meats to sweets, handmade crafts, and gifts.
+      Come early for the best picks!
     </p>
-    <p style="font-size:13px; color:var(--ink-light);">
-      Are you a vendor? We'd love to feature you here.
-      Send your bio and a photo to <a href="mailto:dtwatsekafarmersmarket@gmail.com">dtwatsekafarmersmarket@gmail.com</a>.
+
+    <div class="lineup-poster">
+      <img src="/images/vendor-lineup-2026-06-13.jpg"
+           alt="Downtown Watseka Farmers Market vendor lineup for Saturday, June 13, 2026: Middleport Gardens, C.S.W. Farms, CaddyShack Meat Store, Sugar Creek Trading Co., Sweet Victory Farm, Sam's Sweets & Treats, Avrey's Dessert Delights, O'Gypsy, Knights of the Cake Table, The Holistic Crone, Timber & Sparkle, The Arc, Watseka Rocks, Tallow & Tend, Cookeiing's Accessories, and Maggy's Gift Shop.">
+    </div>
+
+    <ul class="lineup-names">
+      <li>Middleport Gardens</li>
+      <li>C.S.W. Farms</li>
+      <li>CaddyShack Meat Store</li>
+      <li>Sugar Creek Trading Co.</li>
+      <li>Sweet Victory Farm</li>
+      <li>Sam's Sweets &amp; Treats</li>
+      <li>Avrey's Dessert Delights</li>
+      <li>O'Gypsy</li>
+      <li>Knights of the Cake Table</li>
+      <li>The Holistic Crone</li>
+      <li>Timber &amp; Sparkle</li>
+      <li>The Arc</li>
+      <li>Watseka Rocks</li>
+      <li>Tallow &amp; Tend</li>
+      <li>Cookeiing's Accessories</li>
+      <li>Maggy's Gift Shop</li>
+    </ul>
+
+    <p class="lineup-vendor-cta">
+      The lineup changes week to week. Are you a vendor who'd like to join us?
+      Email <a href="mailto:dtwatsekafarmersmarket@gmail.com">dtwatsekafarmersmarket@gmail.com</a>
+      or <a href="/farmers-market/vendor-application.html">apply to become a vendor</a>.
     </p>
-    <div style="margin-top:1.5rem;">
+
+    <div style="margin-top:1.75rem;">
       <a href="/farmers-market/" class="btn btn-secondary">Back to Farmers' Market</a>
     </div>
   </div>
