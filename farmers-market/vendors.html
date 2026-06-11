@@ -172,11 +172,9 @@
     background: var(--paper); border: 1px solid var(--border);
     border-radius: 12px; padding: 1.5rem; margin-top: 1.25rem;
   }
-  .music-act-avatar {
-    flex-shrink: 0; width: 76px; height: 76px; border-radius: 50%;
-    background: var(--green-dark); color: #fff;
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.5rem;
+  .music-act-photo {
+    flex-shrink: 0; width: 120px; height: auto; display: block;
+    border-radius: 10px; border: 1px solid var(--border);
   }
   .music-act-body h3 {
     font-family: 'Playfair Display', serif; font-size: 1.25rem;
@@ -265,7 +263,7 @@
     <span class="lineup-date">Live Music &middot; Saturday, June 13, 2026</span>
     <h2 class="section-title">This Saturday's Live Music</h2>
     <div class="music-act">
-      <div class="music-act-avatar" aria-hidden="true">JG</div>
+      <img class="music-act-photo" src="/images/jobey-grant.jpg" alt="Jobey Grant, singer/songwriter" width="120" loading="lazy">
       <div class="music-act-body">
         <h3>Jobey Grant</h3>
         <div class="music-act-tag">Singer / Songwriter</div>
