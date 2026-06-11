@@ -121,12 +121,47 @@
     font-size: 14.5px; color: var(--ink); line-height: 1.4;
     padding-left: 1.3rem; position: relative;
   }
-  .lineup-names li::before { content: "🌽"; position: absolute; left: 0; font-size: 12px; top: 1px; }
+  .lineup-names li::before {
+    content: ""; position: absolute; left: 0; top: 0.5em;
+    width: 6px; height: 6px; border-radius: 50%; background: var(--green-mid);
+  }
   .lineup-vendor-cta {
     margin-top: 2.5rem; padding-top: 1.75rem; border-top: 1px solid var(--border);
     font-size: 13px; color: var(--ink-light); line-height: 1.7;
   }
   @media (max-width: 480px) { .lineup-names { grid-template-columns: 1fr; max-width: 280px; } }
+
+  /* ── What you'll find at the market ── */
+  .find-market {
+    background: var(--green-pale);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem 1.75rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+  .find-market .section-title { margin-bottom: 0.4rem; }
+  .find-market .section-subtitle { margin-bottom: 0; }
+  .find-list {
+    list-style: none; padding: 0;
+    margin: 1.5rem auto 0; max-width: 560px;
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem 2rem; text-align: left;
+  }
+  .find-list li {
+    font-size: 14.5px; color: var(--ink); line-height: 1.45;
+    padding-left: 1.25rem; position: relative;
+  }
+  .find-list li::before {
+    content: ""; position: absolute; left: 0; top: 0.55em;
+    width: 6px; height: 6px; border-radius: 50%; background: var(--green-mid);
+  }
+  .find-list li strong { color: var(--green-dark); font-weight: 700; }
+  .find-more {
+    margin: 1.5rem 0 0; font-family: 'Playfair Display', serif;
+    font-style: italic; color: var(--green-dark); font-size: 1.05rem;
+  }
+  @media (max-width: 520px) { .find-list { grid-template-columns: 1fr; max-width: 280px; } }
 </style>
 </head>
 <body>
@@ -170,6 +205,31 @@
 </div>
 
 <div class="container-narrow" style="padding-top:2rem; padding-bottom:4rem;">
+
+  <!-- What you'll find at the market -->
+  <section class="find-market">
+    <h2 class="section-title">What You'll Find at the Market</h2>
+    <p class="section-subtitle">A rotating mix of fresh food, handmade goods, and local finds — here's a taste of what's waiting for you each Saturday.</p>
+    <ul class="find-list">
+      <li>Freshly prepared food &amp; drinks</li>
+      <li>Local honey</li>
+      <li>Flowers</li>
+      <li>Eggs</li>
+      <li>Locally raised meats</li>
+      <li>Widest selection of jams &amp; jellies</li>
+      <li>Premium dog treats</li>
+      <li><strong>FREE</strong> pup cups</li>
+      <li>Sweet treats &amp; baked goods</li>
+      <li>Natural beeswax &amp; tallow skincare</li>
+      <li>Beaded sunbathers</li>
+      <li>Resin art</li>
+      <li>Tumblers</li>
+      <li>Wood crafts (boards, coasters)</li>
+      <li>America 250 T-shirts</li>
+      <li>Gift items</li>
+    </ul>
+    <p class="find-more">…and more!</p>
+  </section>
 
   <!-- This week's vendor lineup -->
   <div class="lineup-feature">
