@@ -18,6 +18,9 @@ Screenshot *.png
 archive/
 .claude/
 
+# Work-in-progress page drafts (kept private until ready to publish)
+_drafts/
+
 # OS / editor cruft
 .DS_Store
 Thumbs.db
