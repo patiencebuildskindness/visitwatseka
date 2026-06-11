@@ -191,9 +191,18 @@
     font-size: 13px; font-weight: 700;
     padding: 0.4rem 0.9rem; border-radius: 999px;
   }
+  .music-act-links { margin-top: 0.9rem; display: flex; gap: 0.6rem; flex-wrap: wrap; }
+  .music-act-links a {
+    font-size: 13px; font-weight: 700; color: var(--green-dark);
+    text-decoration: none; border: 1px solid var(--border);
+    padding: 0.4rem 0.95rem; border-radius: 999px;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .music-act-links a:hover { background: var(--green-pale); border-color: var(--green-mid); }
   @media (max-width: 480px) {
     .music-act { flex-direction: column; text-align: center; }
     .music-act-body { text-align: center; }
+    .music-act-links { justify-content: center; }
   }
 </style>
 </head>
@@ -275,6 +284,10 @@
         <div class="music-act-tag">Singer / Songwriter</div>
         <p>Originally from Watseka and now based in Carbondale, IL, Jobey Grant performs classic and modern country, folk, and a growing collection of original songs.</p>
         <p class="music-act-time">Performing 9:30 AM – 11:30 AM</p>
+        <p class="music-act-links">
+          <a href="https://www.jobeygrantmusic.com" target="_blank" rel="noopener">Website</a>
+          <a href="https://www.facebook.com/share/1C4euVJLbT/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
+        </p>
       </div>
     </div>
   </section>
