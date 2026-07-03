@@ -545,7 +545,7 @@
     <div class="music-modal-body">
       <span class="music-modal-eyebrow">Live Music This Saturday</span>
       <h2 id="music-modal-title">BellerBoy</h2>
-      <p class="music-modal-sub">Young Performer &middot; 9:30 – 10:30 AM</p>
+      <p class="music-modal-sub">Young Performer &middot; Saturday, July 4th &middot; 9:30 – 10:30 AM</p>
       <p class="music-modal-text">Noah (BellerBoy) is a 10-year-old singer who loves performing and sharing music with others. He has been performing on stage for a year and a half. His favorite band is Imagine Dragons, and he loves to put his own creative spin on popular songs. He's excited to be here!</p>
       <p class="music-modal-socials">
         Follow along:
@@ -562,6 +562,8 @@
   (function () {
     var modal = document.getElementById('music-popup');
     if (!modal) return;
+    // Stop showing the popup once the event has passed (Sunday, July 5, 2026 onward).
+    if (new Date() >= new Date(2026, 6, 5)) return;
     var KEY = 'musicPopupDismissed-2026-bellerboy-v1';
     try { if (sessionStorage.getItem(KEY)) return; } catch (e) {}
 
