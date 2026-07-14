@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Hubbard Trail Days — Digital Passport | Visit Watseka</title>
+<meta name="description" content="Collect a digital stamp at each downtown Watseka shop during Hubbard Trail Days and unlock prize-drawing tiers.">
+<!-- Unlisted while in development: keep out of search engines and don't link to this page from the site nav. -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --green-dark:#1E4620; --green-mid:#2D6A30; --green-light:#4A9E4F;
+    --green-pale:#EAF3DE; --amber:#C97D10; --cream:#FAF7EF; --paper:#fff;
+    --ink:#1A1A18; --ink-muted:#4A4A44; --ink-light:#7A7A72; --border:#E1E0D5;
+    --gold:#C9971A; --cover-gold:#E7C56E;
+  }
+  html{-webkit-text-size-adjust:100%}
+  body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--ink);line-height:1.5;
+       padding-bottom:calc(2rem + env(safe-area-inset-bottom));}
+  .wrap{max-width:680px;margin:0 auto;padding:0 1rem}
+
+  /* header */
+  header{background:var(--green-dark);color:var(--cover-gold);text-align:center;
+         padding:calc(1.1rem + env(safe-area-inset-top)) 1rem 1.1rem;
+         border-bottom:3px solid var(--gold);position:relative;overflow:hidden}
+  header::before{content:'';position:absolute;inset:0;
+    background-image:radial-gradient(circle at 20% 15%,rgba(231,197,110,.08),transparent 45%),
+                     radial-gradient(circle at 82% 85%,rgba(231,197,110,.06),transparent 45%)}
+  header>*{position:relative}
+  header .kick{font-size:10px;font-weight:900;letter-spacing:.24em;text-transform:uppercase;opacity:.85}
+  header h1{font-family:'Playfair Display',serif;font-weight:700;font-size:30px;line-height:1.02;margin:.35rem 0 .15rem}
+  header .sub{font-family:'Playfair Display',serif;font-style:italic;font-size:14px;opacity:.85}
+
+  /* progress */
+  .status{background:var(--paper);border:1px solid var(--border);border-radius:14px;
+          margin:1.1rem 0;padding:1rem 1.1rem;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+  .count{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:.55rem}
+  .count b{font-family:'Playfair Display',serif;font-size:28px;color:var(--green-dark);font-weight:700}
+  .count b small{font-size:16px;color:var(--ink-light);font-weight:400}
+  .count .next{font-size:12.5px;color:var(--ink-muted);text-align:right;max-width:55%}
+  .bar{height:12px;background:var(--green-pale);border-radius:99px;overflow:hidden;position:relative}
+  .bar>i{position:absolute;inset:0 100% 0 0;background:linear-gradient(90deg,var(--green-mid),var(--green-light));
+         border-radius:99px;transition:right .5s cubic-bezier(.22,1,.36,1)}
+  .bar .ticks{position:absolute;inset:0;pointer-events:none}
+  .bar .ticks span{position:absolute;top:0;bottom:0;width:2px;background:rgba(255,255,255,.7)}
+
+  /* tiers */
+  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin:.9rem 0}
+  .tier{border:1.5px solid var(--border);border-radius:12px;background:var(--paper);
+        padding:.6rem .4rem;text-align:center;position:relative;transition:.3s}
+  .tier .medal{font-size:20px;line-height:1;filter:grayscale(1);opacity:.4}
+  .tier .tname{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--ink-muted);margin:.2rem 0 .05rem}
+  .tier .treq{font-size:10.5px;color:var(--ink-light);letter-spacing:.02em}
+  .tier.on{border-color:var(--gold);background:#FFFDF5;box-shadow:0 3px 12px rgba(201,151,26,.18)}
+  .tier.on .medal{filter:none;opacity:1}
+  .tier.on .tname{color:var(--green-dark)}
+  .tier.on::after{content:'✓';position:absolute;top:5px;right:7px;font-size:11px;font-weight:900;color:var(--green-mid)}
+
+  /* redemption */
+  .redeem{background:linear-gradient(160deg,#20492A,#153619);color:#fff;border-radius:16px;
+          padding:1.15rem 1.15rem;margin:1rem 0;text-align:center;border:1px solid rgba(231,197,110,.4);
+          box-shadow:0 6px 20px rgba(0,0,0,.16)}
+  .redeem .badge{display:inline-block;background:rgba(231,197,110,.16);border:1px solid rgba(231,197,110,.5);
+          color:var(--cover-gold);border-radius:99px;padding:5px 15px;font-size:11px;font-weight:900;
+          letter-spacing:.14em;text-transform:uppercase;margin-bottom:.55rem}
+  .redeem h2{font-family:'Playfair Display',serif;font-weight:700;font-size:22px;margin-bottom:.3rem;color:var(--cover-gold)}
+  .redeem p{font-size:13px;color:rgba(255,255,255,.9);line-height:1.5;max-width:30ch;margin:0 auto}
+  .redeem p b{color:#fff}
+  .redeem .stamp-of{margin-top:.55rem;font-size:11px;color:rgba(255,255,255,.6)}
+
+  /* section label */
+  .seclab{font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;
+          color:var(--amber);margin:1.4rem 0 .5rem}
+
+  /* grid of stamps */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.7rem}
+  .cell{text-align:center}
+  .art{aspect-ratio:3/4;border-radius:10px;overflow:hidden;position:relative;
+       display:flex;align-items:center;justify-content:center}
+  .cell.todo .art{border:2px dashed var(--green-light);background:
+       repeating-linear-gradient(45deg,rgba(74,158,79,.05) 0 10px,transparent 10px 20px)}
+  .cell.todo .n{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:rgba(45,106,48,.28)}
+  .cell.todo .scan{position:absolute;bottom:8px;left:0;right:0;font-size:9px;letter-spacing:.06em;
+       text-transform:uppercase;color:var(--ink-light)}
+  .cell.done .art{box-shadow:0 3px 10px rgba(0,0,0,.14);animation:pop .45s cubic-bezier(.22,1.4,.5,1) both}
+  .cell.done .art img{width:100%;height:100%;object-fit:cover;display:block}
+  .cell.done .chk{position:absolute;top:6px;right:6px;width:24px;height:24px;border-radius:50%;
+       background:var(--green-mid);color:#fff;font-size:14px;font-weight:900;
+       display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(0,0,0,.3)}
+  .cap{font-size:11.5px;font-weight:700;color:var(--ink);margin-top:.35rem;line-height:1.2}
+  .cell.todo .cap{color:var(--ink-muted)}
+  @keyframes pop{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
+
+  /* email capture */
+  .signup{background:var(--paper);border:1px solid var(--border);border-radius:14px;padding:1rem 1.1rem;margin:1.4rem 0}
+  .signup h3{font-family:'Playfair Display',serif;font-size:17px;color:var(--green-dark);margin-bottom:.15rem}
+  .signup p{font-size:12.5px;color:var(--ink-muted);margin-bottom:.6rem}
+  .signup form{display:flex;gap:.5rem;flex-wrap:wrap}
+  .signup input{flex:1;min-width:160px;border:1px solid var(--border);border-radius:9px;padding:.6rem .7rem;font:inherit;font-size:15px}
+  .signup button,.btn{background:var(--green-mid);color:#fff;border:none;border-radius:9px;
+       padding:.6rem 1rem;font:inherit;font-weight:700;cursor:pointer;font-size:14px}
+  .signup button:active,.btn:active{transform:translateY(1px)}
+  .signup .ok{font-size:13px;color:var(--green-mid);font-weight:700}
+
+  /* toast */
+  .toast{position:fixed;left:50%;bottom:calc(1rem + env(safe-area-inset-bottom));transform:translate(-50%,140%);
+       background:var(--green-dark);color:#fff;border:1px solid rgba(231,197,110,.5);border-radius:14px;
+       padding:.7rem .9rem;display:flex;align-items:center;gap:.7rem;box-shadow:0 8px 26px rgba(0,0,0,.28);
+       z-index:50;transition:transform .45s cubic-bezier(.22,1,.36,1);max-width:calc(100% - 2rem)}
+  .toast.show{transform:translate(-50%,0)}
+  .toast img{width:38px;height:51px;object-fit:cover;border-radius:5px;flex:none}
+  .toast .tt{font-size:11px;color:var(--cover-gold);font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+  .toast .tn{font-family:'Playfair Display',serif;font-size:16px;font-weight:700}
+
+  /* tier celebration overlay */
+  .cheer{position:fixed;inset:0;background:rgba(21,54,25,.82);z-index:60;display:none;
+       align-items:center;justify-content:center;padding:1.5rem;text-align:center;backdrop-filter:blur(2px)}
+  .cheer.show{display:flex}
+  .cheer .card{background:var(--cream);border-radius:20px;padding:1.8rem 1.5rem;max-width:340px;
+       border:2px solid var(--gold);box-shadow:0 20px 60px rgba(0,0,0,.4);animation:pop .5s both}
+  .cheer .m{font-size:52px;line-height:1}
+  .cheer h2{font-family:'Playfair Display',serif;font-size:26px;color:var(--green-dark);margin:.4rem 0 .1rem}
+  .cheer .sub{font-size:13px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--amber)}
+  .cheer p{font-size:13.5px;color:var(--ink-muted);margin:.6rem 0 1rem}
+  .cheer .btn{background:var(--green-mid);padding:.65rem 1.4rem;border-radius:99px}
+
+  /* footer / demo */
+  footer{text-align:center;margin-top:2rem;color:var(--ink-light);font-size:12px}
+  footer a{color:var(--green-mid)}
+  details.demo{max-width:680px;margin:1.4rem auto 0;background:#FBEFD8;border:1px dashed var(--amber);
+       border-radius:12px;padding:.5rem .9rem;font-size:13px;color:#6a4a12}
+  details.demo summary{cursor:pointer;font-weight:700}
+  details.demo .row{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.6rem}
+  details.demo button{background:#fff;border:1px solid var(--amber);color:#6a4a12;border-radius:8px;
+       padding:.45rem .8rem;font:inherit;font-weight:700;cursor:pointer}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="kick">Downtown Watseka Trail Crawl</div>
+    <h1>Hubbard Trail Days</h1>
+    <div class="sub">Digital Passport</div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="status">
+    <div class="count">
+      <b id="cnum">0<small>/20 stamps</small></b>
+      <div class="next" id="cnext">Scan a shop’s code to collect your first stamp.</div>
+    </div>
+    <div class="bar"><i id="cbar"></i><div class="ticks" id="cticks"></div></div>
+  </div>
+
+  <div class="tiers" id="tiers"></div>
+
+  <div id="redeemSlot"></div>
+
+  <div class="seclab">Your 20 Stops — collect them all</div>
+  <div class="grid" id="grid"></div>
+
+  <div class="signup" id="signup">
+    <h3>Not ready to stop crawling?</h3>
+    <p>Leave your email and we’ll tell you when the next Downtown Watseka Trail Crawl rolls around.</p>
+    <form id="suForm">
+      <input type="email" id="suEmail" placeholder="you@email.com" required>
+      <button type="submit">Keep me posted</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>Prefer paper? Grab a printed passport at the <b>Santa House</b> in the First&nbsp;Trust parking lot.</p>
+    <p style="margin-top:.4rem"><a href="index.html">← Visit Watseka</a></p>
+  </footer>
+</main>
+
+<details class="demo">
+  <summary>🔧 Demo &amp; testing controls (hide before the real event)</summary>
+  <p style="margin-top:.5rem">Use these to show the flow without scanning QR codes.</p>
+  <div class="row">
+    <button onclick="demoNext()">Collect next stamp</button>
+    <button onclick="demoTo(10)">Jump to 10</button>
+    <button onclick="demoTo(15)">Jump to 15</button>
+    <button onclick="demoTo(20)">Collect all 20</button>
+    <button onclick="demoReset()">Reset passport</button>
+  </div>
+</details>
+
+<div class="toast" id="toast"><img id="toastImg" alt=""><div><div class="tt">Stamp collected</div><div class="tn" id="toastName"></div></div></div>
+
+<div class="cheer" id="cheer"><div class="card">
+  <div class="m" id="cheerM">🎉</div>
+  <div class="sub" id="cheerSub">Tier unlocked</div>
+  <h2 id="cheerH">Trail Walker</h2>
+  <p id="cheerP"></p>
+  <button class="btn" onclick="document.getElementById('cheer').classList.remove('show')">Keep collecting</button>
+</div></div>
+
+<script>
+(function(){
+  "use strict";
+  var SHOPS = [
+    {id:'bookish',name:'Bookish'},
+    {id:'sugar-creek',name:'Sugar Creek Trading Co.'},
+    {id:'this-n-that',name:'This-N-That'},
+    {id:'marys-emporium',name:"Mary’s Emporium"},
+    {id:'silo-pub',name:'The Silo Pub & Eatery'},
+    {id:'harbor-house',name:'Harbor House'},
+    {id:'simply-country',name:'Simply Country'},
+    {id:'chittick',name:'Chittick Eyewear'},
+    {id:'headquarters',name:'The Headquarters'},
+    {id:'massey',name:'Massey Designs'},
+    {id:'xo-nails',name:'XO Nail Salon'},
+    {id:'fitness-24',name:'Fitness 24'},
+    {id:'milkweed',name:'Milkweed'},
+    {id:'ingram',name:'Ingram Atelier'},
+    {id:'above-grooming',name:'Above Family Grooming'},
+    {id:'mycloset',name:'MyCloset2Yourz'},
+    {id:'edward-jones',name:'Edward Jones'},
+    {id:'wgfa',name:'WGFA'},
+    {id:'first-trust',name:'First Trust'},
+    {id:'spleodar',name:'Spleodar Follaine'}
+  ];
+  var COLORS = ['red','blue','gold'];
+  var TIERS = [
+    {n:10,name:'Trail Walker',medal:'🥉'},
+    {n:15,name:'Pathfinder',medal:'🥈'},
+    {n:20,name:'Trailblazer',medal:'🥇'}
+  ];
+  var KEY='htd_passport_v1';
+  var byId={}; SHOPS.forEach(function(s,i){s.color=COLORS[i%3];s.idx=i;byId[s.id]=s;});
+
+  function load(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch(e){return{}}}
+  function save(){localStorage.setItem(KEY,JSON.stringify(state))}
+  var state=load(); if(!Array.isArray(state.collected))state.collected=[];
+  var has={}; state.collected.forEach(function(id){has[id]=1});
+
+  function tierFor(c){var t=null;TIERS.forEach(function(x){if(c>=x.n)t=x});return t}
+  function $(id){return document.getElementById(id)}
+
+  function render(){
+    var c=state.collected.length;
+    $('cnum').innerHTML=c+'<small>/20 stamps</small>';
+    $('cbar').style.right=(100-(c/20*100))+'%';
+    // ticks at each tier
+    $('cticks').innerHTML=TIERS.map(function(t){return '<span style="left:'+(t.n/20*100)+'%"></span>'}).join('');
+    // next message
+    var nextT=TIERS.filter(function(t){return c<t.n})[0];
+    $('cnext').textContent = nextT ? ((nextT.n-c)+' more to '+nextT.name+' ('+nextT.n+' stamps)')
+                                   : 'All 20 collected — top tier unlocked!';
+    // tiers
+    $('tiers').innerHTML=TIERS.map(function(t){
+      var on=c>=t.n?' on':'';
+      return '<div class="tier'+on+'"><div class="medal">'+t.medal+'</div>'+
+             '<div class="tname">'+t.name+'</div><div class="treq">'+t.n+' stamps</div></div>';
+    }).join('');
+    // redemption
+    var earned=tierFor(c);
+    $('redeemSlot').innerHTML = earned ? (
+      '<div class="redeem"><div class="badge">'+earned.medal+' Tier '+(TIERS.indexOf(earned)+1)+' earned</div>'+
+      '<h2>You’re a '+earned.name+'!</h2>'+
+      '<p>Show this screen at the <b>Santa House</b> — First&nbsp;Trust parking lot — to claim your <b>'+earned.name+'</b> drawing entry.</p>'+
+      '<div class="stamp-of">'+c+' of 20 stamps collected</div></div>'
+    ) : '';
+    // grid
+    $('grid').innerHTML=SHOPS.map(function(s){
+      if(has[s.id]){
+        return '<div class="cell done"><div class="art"><img src="images/stamp-'+s.color+'.jpg" alt="'+s.name+' stamp"><div class="chk">✓</div></div><div class="cap">'+s.name+'</div></div>';
+      }
+      return '<div class="cell todo"><div class="art"><span class="n">'+(s.idx+1)+'</span><span class="scan">scan to collect</span></div><div class="cap">'+s.name+'</div></div>';
+    }).join('');
+  }
+
+  function collect(id,announce){
+    var s=byId[id]; if(!s||has[id])return false;
+    has[id]=1; state.collected.push(id); save();
+    var before=state.collected.length-1, after=state.collected.length;
+    render();
+    if(announce){ toast(s); }
+    // tier crossed? (only auto-celebrate on a real/announced scan; demo "jump" buttons cheer once at the end)
+    var bt=tierFor(before), at=tierFor(after);
+    if(announce && at && at!==bt){ setTimeout(function(){cheer(at,after)}, 700); }
+    return true;
+  }
+
+  var toastT;
+  function toast(s){
+    $('toastImg').src='images/stamp-'+s.color+'.jpg';
+    $('toastName').textContent=s.name;
+    var el=$('toast'); el.classList.add('show');
+    clearTimeout(toastT); toastT=setTimeout(function(){el.classList.remove('show')},2600);
+  }
+  function cheer(t,count){
+    $('cheerM').textContent=t.medal; $('cheerH').textContent=t.name;
+    $('cheerSub').textContent='Tier '+(TIERS.indexOf(t)+1)+' unlocked · '+t.n+' stamps';
+    $('cheerP').textContent = (count>=20)
+      ? 'You collected every stamp on the trail. Show this at the Santa House to enter the top drawing!'
+      : 'Show this at the Santa House to enter the '+t.name+' drawing — or keep going for a bigger tier.';
+    $('cheer').classList.add('show');
+  }
+
+  // email capture — stored locally for the prototype.
+  // TODO: point this at a form endpoint (Formspree / Google Form) to collect emails for real.
+  $('suForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    state.email=$('suEmail').value; save();
+    $('signup').innerHTML='<h3>Thanks! 🌲</h3><p class="ok">We’ll be in touch about the next Trail Crawl.</p>';
+  });
+
+  // demo helpers (exposed globally for the buttons)
+  window.demoNext=function(){var s=SHOPS.filter(function(x){return !has[x.id]})[0]; if(s)collect(s.id,true);};
+  window.demoTo=function(n){for(var i=0;i<SHOPS.length && state.collected.length<n;i++){if(!has[SHOPS[i].id])collect(SHOPS[i].id,false);} render(); var t=tierFor(state.collected.length); if(t)cheer(t,state.collected.length);};
+  window.demoReset=function(){state={collected:[]};has={};save();render();};
+
+  // handle a scan: ?s=<id>
+  var params=new URLSearchParams(location.search);
+  var sid=params.get('s');
+  render();
+  if(sid){
+    var ok=collect(sid,true);
+    if(!ok && !byId[sid]){ /* unknown code — ignore silently */ }
+    // strip the param so a refresh doesn't look like a re-scan
+    history.replaceState(null,'',location.pathname);
+  }
+})();
+</script>
+</body>
+</html>
