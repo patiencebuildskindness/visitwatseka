@@ -140,7 +140,8 @@
   /* footer / demo */
   footer{text-align:center;margin-top:2rem;color:var(--ink-light);font-size:12px}
   footer a{color:var(--green-mid)}
-  details.demo{display:none;max-width:680px;margin:1.4rem auto 0;background:#FBEFD8;border:1px dashed var(--amber);
+  /* TEMPORARY: demo controls visible by default for phone testing. Re-add `display:none;` here to hide before the real event. */
+  details.demo{max-width:680px;margin:1.4rem auto 0;background:#FBEFD8;border:1px dashed var(--amber);
        border-radius:12px;padding:.5rem .9rem;font-size:13px;color:#6a4a12}
   details.demo summary{cursor:pointer;font-weight:700}
   details.demo .row{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.6rem}
@@ -192,7 +193,7 @@
   </footer>
 </main>
 
-<details class="demo">
+<details class="demo" open>
   <summary>🔧 Demo &amp; testing controls (hide before the real event)</summary>
   <p style="margin-top:.5rem">Use these to show the flow without scanning QR codes.</p>
   <div class="row">
