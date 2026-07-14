@@ -132,7 +132,7 @@
   /* footer / demo */
   footer{text-align:center;margin-top:2rem;color:var(--ink-light);font-size:12px}
   footer a{color:var(--green-mid)}
-  details.demo{max-width:680px;margin:1.4rem auto 0;background:#FBEFD8;border:1px dashed var(--amber);
+  details.demo{display:none;max-width:680px;margin:1.4rem auto 0;background:#FBEFD8;border:1px dashed var(--amber);
        border-radius:12px;padding:.5rem .9rem;font-size:13px;color:#6a4a12}
   details.demo summary{cursor:pointer;font-weight:700}
   details.demo .row{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.6rem}
@@ -322,6 +322,11 @@
 
   // handle a scan: ?s=<id>
   var params=new URLSearchParams(location.search);
+  // Demo controls stay hidden for real visitors. Add ?demo=1 to reveal them (sticks on this device); ?demo=0 hides again.
+  var dparam=params.get('demo');
+  if(dparam==='1')localStorage.setItem('htd_demo','1');
+  if(dparam==='0')localStorage.removeItem('htd_demo');
+  if(localStorage.getItem('htd_demo')==='1'){var dd=document.querySelector('details.demo');if(dd){dd.style.display='block';dd.open=true;}}
   var sid=params.get('s');
   render();
   if(sid){
