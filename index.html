@@ -541,17 +541,13 @@
 <div id="music-popup" class="music-modal" role="dialog" aria-modal="true" aria-labelledby="music-modal-title">
   <div class="music-modal-card">
     <button class="music-modal-close" aria-label="Close">&times;</button>
-    <img class="music-modal-photo" src="/images/kellerboy.jpg" alt="Noah, BellerBoy — young singer">
+    <img class="music-modal-photo" src="/images/jani-marie.jpg" alt="Jani Marie — local singer-songwriter performing with her guitar">
     <div class="music-modal-body">
       <span class="music-modal-eyebrow">Live Music This Saturday</span>
-      <h2 id="music-modal-title">BellerBoy</h2>
-      <p class="music-modal-sub">Young Performer &middot; Saturday, July 4th &middot; 9:30 – 10:30 AM</p>
-      <p class="music-modal-text">Noah (BellerBoy) is a 10-year-old singer who loves performing and sharing music with others. He has been performing on stage for a year and a half. His favorite band is Imagine Dragons, and he loves to put his own creative spin on popular songs. He's excited to be here!</p>
-      <p class="music-modal-socials">
-        Follow along:
-        <span>YouTube: <a href="https://www.youtube.com/@bellerboy" target="_blank" rel="noopener">@bellerboy</a></span>
-        <span>Instagram: <a href="https://www.instagram.com/bellerboyfamily" target="_blank" rel="noopener">@bellerboyfamily</a></span>
-      </p>
+      <h2 id="music-modal-title">Jani Marie</h2>
+      <p class="music-modal-sub">Singer-Songwriter &middot; Saturday, July 25 &middot; 8 – 10 AM</p>
+      <p class="music-modal-text">Local musician Jani Marie is getting back into performing after six years — playing your favorite folk, singer-songwriter, and disco-turned-country tunes. Stop by and hear <em>Wagon Wheel</em>, <em>Dancing Queen</em>, <em>Ring of Fire</em>, and many more of your favorites!</p>
+      <p class="music-modal-text"><strong>Stick around after!</strong> At 10 AM, Watseka Community Renewal will announce the winning design for the new Downtown mural.</p>
       <a href="/farmers-market/vendors.html#live-music" class="music-modal-btn">Learn More</a>
     </div>
   </div>
@@ -562,9 +558,9 @@
   (function () {
     var modal = document.getElementById('music-popup');
     if (!modal) return;
-    // Stop showing the popup once the event has passed (Sunday, July 5, 2026 onward).
-    if (new Date() >= new Date(2026, 6, 5)) return;
-    var KEY = 'musicPopupDismissed-2026-bellerboy-v1';
+    // Stop showing the popup once the event has passed (Sunday, July 26, 2026 onward).
+    if (new Date() >= new Date(2026, 6, 26)) return;
+    var KEY = 'musicPopupDismissed-2026-janimarie-v1';
     try { if (sessionStorage.getItem(KEY)) return; } catch (e) {}
 
     function closeModal() {
