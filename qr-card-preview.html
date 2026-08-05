@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hubbard Trail Days — QR Card Preview</title>
+<!-- Unlisted preview page: not linked from the site nav, kept out of search engines. -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --green-dark:#1E4620; --green-mid:#2D6A30; --green-pale:#EAF3DE;
+    --amber:#C97D10; --gold:#C9971A; --gold-pale:#FDF8E1; --cover-gold:#E7C56E;
+    --cream:#FAF7EF; --paper:#FFFFFF; --ink:#1A1A18; --ink-muted:#4A4A44;
+    --ink-light:#7A7A72; --border:#E1E0D5;
+  }
+  body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--ink);
+       line-height:1.5;padding-bottom:2.5rem;-webkit-text-size-adjust:100%}
+  .wrap{max-width:640px;margin:0 auto;padding:0 1rem}
+
+  header{background:var(--green-dark);color:var(--cover-gold);text-align:center;
+         padding:1.4rem 1rem;border-bottom:3px solid var(--gold)}
+  header .kick{font-size:10px;font-weight:900;letter-spacing:.24em;text-transform:uppercase;opacity:.85}
+  header h1{font-family:'Playfair Display',serif;font-weight:700;font-size:28px;margin:.35rem 0 .1rem}
+  header .sub{font-family:'Playfair Display',serif;font-style:italic;font-size:14px;opacity:.85}
+
+  .intro{background:#fff;border:1px solid var(--border);border-left:5px solid var(--gold);
+         border-radius:12px;padding:1rem 1.2rem;margin:1.3rem 0;font-size:14.5px;color:var(--ink-muted)}
+  .intro b{color:var(--ink)}
+
+  /* ===== THE CARD (proportions match the 4.25 x 6.4in print master) ===== */
+  .cardwrap{display:flex;justify-content:center;margin:1.5rem 0}
+  .card{--w:min(90vw,376px);width:var(--w);font-size:calc(var(--w)/25.5);
+        background:var(--paper);color:var(--ink);border-radius:.62em;overflow:hidden;
+        display:flex;flex-direction:column;
+        box-shadow:0 .1em .45em rgba(0,0,0,.13),0 .5em 1.5em rgba(0,0,0,.16)}
+
+  .card .band{background:var(--green-dark);color:var(--cover-gold);text-align:center;
+              padding:.62em .8em .58em;position:relative;overflow:hidden}
+  .card .band::before{content:'';position:absolute;inset:0;background-image:
+    radial-gradient(circle at 22% 20%,rgba(231,197,110,.09),transparent 48%),
+    radial-gradient(circle at 80% 82%,rgba(231,197,110,.07),transparent 48%)}
+  .card .band>*{position:relative}
+  .card .band .k{font-size:.5em;font-weight:900;letter-spacing:.22em;text-transform:uppercase;opacity:.8}
+  .card .band .t{font-family:'Playfair Display',serif;font-weight:700;font-size:1.16em;line-height:1.05;margin-top:.1em}
+
+  .card .main{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;
+              padding:.9em 1.1em .5em}
+  .card .shop{font-family:'Playfair Display',serif;font-weight:700;color:var(--green-dark);
+              font-size:1.68em;line-height:1.02}
+  .card .stop{font-size:.54em;color:var(--ink-light);letter-spacing:.14em;text-transform:uppercase;margin-top:.3em}
+  .card .qr{width:10.3em;height:10.3em;margin:.62em 0 .42em;background:#fff}
+  .card .qr img{width:100%;height:100%;display:block}
+  .card .cta{font-weight:900;color:var(--green-mid);font-size:.84em}
+  .card .url{font-size:.54em;color:var(--ink-light);letter-spacing:.08em;margin-top:.18em}
+
+  .card .fact{margin-top:auto;background:var(--gold-pale);border-top:.09em solid var(--amber);
+              padding:.7em 1.1em .78em;text-align:center}
+  .card .fact .lbl{font-size:.5em;font-weight:900;letter-spacing:.2em;text-transform:uppercase;color:var(--amber)}
+  .card .fact .txt{font-size:.68em;color:var(--ink-muted);line-height:1.5;margin-top:.34em}
+  .card .fact .txt b{color:var(--green-dark)}
+  .card .fact .tie{font-family:'Playfair Display',serif;font-style:italic;font-size:.68em;
+                   color:var(--green-mid);margin-top:.42em;line-height:1.35}
+  .card .fact .prints{font-size:.66em;letter-spacing:.34em;color:var(--amber);opacity:.55;margin-top:.34em}
+
+  .notes{background:var(--green-pale);border-radius:12px;padding:1rem 1.2rem;font-size:14px;color:var(--ink-muted)}
+  .notes h2{font-family:'Playfair Display',serif;font-weight:700;color:var(--green-dark);
+            font-size:17px;margin-bottom:.5rem}
+  .notes ul{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+  .notes li{padding-left:1.1rem;position:relative;line-height:1.55}
+  .notes li::before{content:'';position:absolute;left:0;top:.55em;width:5px;height:5px;
+                    border-radius:50%;background:var(--amber)}
+  .notes b{color:var(--green-dark)}
+
+  footer{text-align:center;margin-top:1.6rem;color:var(--ink-light);font-size:13px}
+  footer a{color:var(--green-mid);font-weight:700}
+</style>
+</head>
+<body>
+<header>
+  <div class="kick">Downtown Watseka Trail Crawl</div>
+  <h1>Hubbard Trail Days</h1>
+  <div class="sub">QR card preview</div>
+</header>
+
+<main class="wrap">
+
+  <div class="intro">
+    <p><b>An example only.</b> This is one shop&rsquo;s scan card, <b>Bookish</b>, shown at the proportions it prints, to see how a piece of local history sits alongside the code. The scan code is the same one already on the print-and-cut sheet.</p>
+  </div>
+
+  <div class="cardwrap">
+    <div class="card">
+
+      <div class="band">
+        <div class="k">Downtown Watseka Trail Crawl</div>
+        <div class="t">Hubbard Trail Days</div>
+      </div>
+
+      <div class="main">
+        <div class="shop">Bookish</div>
+        <div class="stop">Stop 1 of 20</div>
+        <div class="qr"><img src="images/qr/bookish.png" alt="Scan code that adds the Bookish stamp to a digital passport"></div>
+        <div class="cta">Scan for your stamp</div>
+        <div class="url">visitwatseka.com/passport</div>
+      </div>
+
+      <div class="fact">
+        <div class="lbl">Trail Fact No. 1</div>
+        <div class="txt">Gurdon Hubbard once walked <b>seventy-five miles through the night</b> to warn settlers of a threatened raid, arriving before dawn. The Potawatomi named him <b>Pa-pa-ma-ta-be</b>, or <b>Swift-Walker</b>.</div>
+        <div class="tie">The trail he wore north is now Route 1, the road just outside this door.</div>
+        <div class="prints">&bull; &bull; &bull; &bull; &bull;</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="notes">
+    <h2>What this is showing</h2>
+    <ul>
+      <li>Each of the twenty shops would carry <b>a different fact</b>, so walking the whole trail collects twenty pieces of the story instead of the same card twenty times.</li>
+      <li>At <b>4.25 by 6.4 inches</b> this needs an easel or a stand. It can be reworked as a folded table tent, or shrunk to two per sheet.</li>
+      <li>Facts come from the history already on the site: the 1822 trading licence, the Sugar Creek post, Watchekee&rsquo;s six thousand miles, the 1865 renaming.</li>
+    </ul>
+  </div>
+
+  <footer>
+    <p>Digital passport: <a href="passport.html">visitwatseka.com/passport.html</a></p>
+  </footer>
+
+</main>
+</body>
+</html>
