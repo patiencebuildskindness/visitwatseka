@@ -541,13 +541,13 @@
 <div id="music-popup" class="music-modal" role="dialog" aria-modal="true" aria-labelledby="music-modal-title">
   <div class="music-modal-card">
     <button class="music-modal-close" aria-label="Close">&times;</button>
-    <img class="music-modal-photo" src="/images/jani-marie.jpg" alt="Jani Marie — local singer-songwriter performing with her guitar">
+    <img class="music-modal-photo" src="/images/stacy-beam.jpg" alt="Stacy Beam, singer-songwriter from Watseka, Illinois">
     <div class="music-modal-body">
       <span class="music-modal-eyebrow">Live Music This Saturday</span>
-      <h2 id="music-modal-title">Jani Marie</h2>
-      <p class="music-modal-sub">Singer-Songwriter &middot; Saturday, July 25 &middot; 8 – 10 AM</p>
-      <p class="music-modal-text">Local musician Jani Marie is getting back into performing after six years — playing your favorite folk, singer-songwriter, and disco-turned-country tunes. Stop by and hear <em>Wagon Wheel</em>, <em>Dancing Queen</em>, <em>Ring of Fire</em>, and many more of your favorites!</p>
-      <p class="music-modal-text"><strong>Stick around after!</strong> At 10 AM, Watseka Community Renewal will announce the winning design for the new Downtown mural.</p>
+      <h2 id="music-modal-title">Stacy Beam</h2>
+      <p class="music-modal-sub">Singer-Songwriter &middot; Saturday, August 8 &middot; 9:30 – 11:30 AM</p>
+      <p class="music-modal-text">Stacy Beam, a singer/songwriter from Watseka, Illinois, brings a variety of music to the stage, covering many genres from the late 1900&rsquo;s through present day, as well as her own works, written through the eyes of experience.</p>
+      <p class="music-modal-text"><em>&ldquo;My setlist is like a mood ring, it changes based on the vibes&rdquo;</em></p>
       <a href="/farmers-market/vendors.html#live-music" class="music-modal-btn">Learn More</a>
     </div>
   </div>
@@ -558,9 +558,9 @@
   (function () {
     var modal = document.getElementById('music-popup');
     if (!modal) return;
-    // Stop showing the popup once the event has passed (Sunday, July 26, 2026 onward).
-    if (new Date() >= new Date(2026, 6, 26)) return;
-    var KEY = 'musicPopupDismissed-2026-janimarie-v1';
+    // Stop showing the popup once the event has passed (Sunday, August 9, 2026 onward).
+    if (new Date() >= new Date(2026, 7, 9)) return;
+    var KEY = 'musicPopupDismissed-2026-stacybeam-v1';
     try { if (sessionStorage.getItem(KEY)) return; } catch (e) {}
 
     function closeModal() {
