@@ -14,6 +14,15 @@ GRANT APP*.pdf
 Screenshot *.png
 *.zip
 
+# Full-size source art dropped in the site root (posters, vendor photos, etc).
+# These are the originals straight out of Canva and run 15-30 MB each, far too
+# big to publish. The web-ready copies live in images/ and are NOT affected by
+# these rules, because the leading slash anchors them to the repo root only.
+/*.png
+/*.jpg
+/*.jpeg
+/StacyBeam
+
 # Local-only working files (NOT published, and NOT backed up to GitHub)
 archive/
 .claude/
