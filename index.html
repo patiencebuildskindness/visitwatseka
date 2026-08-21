@@ -541,13 +541,16 @@
 <div id="music-popup" class="music-modal" role="dialog" aria-modal="true" aria-labelledby="music-modal-title">
   <div class="music-modal-card">
     <button class="music-modal-close" aria-label="Close">&times;</button>
-    <img class="music-modal-photo" src="/images/stacy-beam.jpg" alt="Stacy Beam, singer-songwriter from Watseka, Illinois">
+    <img class="music-modal-photo" src="/images/jobey-grant.jpg" alt="Jobey Grant, singer/songwriter">
     <div class="music-modal-body">
       <span class="music-modal-eyebrow">Live Music This Saturday</span>
-      <h2 id="music-modal-title">Stacy Beam</h2>
-      <p class="music-modal-sub">Singer-Songwriter &middot; Saturday, August 8 &middot; 9:30 – 11:30 AM</p>
-      <p class="music-modal-text">Stacy Beam, a singer/songwriter from Watseka, Illinois, brings a variety of music to the stage, covering many genres from the late 1900&rsquo;s through present day, as well as her own works, written through the eyes of experience.</p>
-      <p class="music-modal-text"><em>&ldquo;My setlist is like a mood ring, it changes based on the vibes&rdquo;</em></p>
+      <h2 id="music-modal-title">Jobey Grant</h2>
+      <p class="music-modal-sub">Singer / Songwriter &middot; Saturday, August 22 &middot; 9:30 – 11:30 AM</p>
+      <p class="music-modal-text">Originally from Watseka and now based in Carbondale, IL, Jobey Grant performs classic and modern country, folk, and a growing collection of original songs. Join us at the Downtown Watseka Farmers Market this Saturday, August 22 (7 AM – Noon) for his set from 9:30 to 11:30 AM.</p>
+      <p class="music-modal-socials">
+        <a href="https://www.jobeygrantmusic.com" target="_blank" rel="noopener">jobeygrantmusic.com</a>
+        <a href="https://www.facebook.com/share/1C4euVJLbT/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
+      </p>
       <a href="/farmers-market/vendors.html#live-music" class="music-modal-btn">Learn More</a>
     </div>
   </div>
@@ -558,9 +561,9 @@
   (function () {
     var modal = document.getElementById('music-popup');
     if (!modal) return;
-    // Stop showing the popup once the event has passed (Sunday, August 9, 2026 onward).
-    if (new Date() >= new Date(2026, 7, 9)) return;
-    var KEY = 'musicPopupDismissed-2026-stacybeam-v1';
+    // Stop showing the popup once the event has passed (Sunday, August 23, 2026 onward).
+    if (new Date() >= new Date(2026, 7, 23)) return;
+    var KEY = 'musicPopupDismissed-2026-08-22-jobeygrant-v1';
     try { if (sessionStorage.getItem(KEY)) return; } catch (e) {}
 
     function closeModal() {
