@@ -7,7 +7,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 <title>Vendor Application — Downtown Watseka Farmers Market | Visit Watseka</title>
-<meta name="description" content="Apply to become a vendor at the Downtown Watseka Farmers Market. Full-time and part-time options available for the 2026 season.">
+<meta name="description" content="Apply to become a vendor at the Downtown Watseka Farmers Market. Applications are open for the Winter Market 2026/2027 season, held the third Saturday of the month from November through April.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
@@ -51,11 +51,21 @@
   <h2>Vendor & Artisan Application Form</h2>
   <div class="page-header-meta">
     <div>Location: <span>Downtown Watseka, Illinois</span></div>
-    <div>Season: <span>Spring/Summer 2026</span></div>
+    <div>Now accepting: <span>Winter Market 2026/2027</span></div>
   </div>
 </div>
 
 <div class="container-narrow" style="padding-top:2rem; padding-bottom:4rem;">
+
+  <!-- Winter market announcement -->
+  <div class="callout green" style="margin-bottom:1.25rem;">
+    <strong>Winter Market 2026/2027 applications are now open.</strong>
+    The Winter Farmers Market runs the <strong>third Saturday of the month, November through April</strong>:
+    Nov 21, Dec 19, Jan 16, Feb 20, Mar 20, and Apr 17. Spaces are <strong>$25 each, first come first served</strong>,
+    or apply as a full season vendor for <strong>$150</strong> to hold your space for all six dates.
+    Held indoors at <strong>The Homestead Venue, 9 AM &ndash; 1 PM</strong>.
+    Select your option in <a href="#vendor-type">Section 5</a> below.
+  </div>
 
   <!-- Intro -->
   <div class="callout" style="margin-bottom:2rem;">
@@ -289,13 +299,29 @@
               <label class="radio-item"><input type="radio" name="Own Tent" value="No"> No</label>
             </div>
           </div>
-          <div class="field span-2">
+          <div class="field span-2" id="vendor-type">
             <label>Vendor Type & Fee <span class="req">*</span>
               <span class="hint">Select the option that best describes your intended participation.</span>
             </label>
+
+            <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--amber); margin:0.35rem 0 0.6rem;">Winter Market 2026/2027 &middot; Now Open</div>
             <div class="radio-row" style="flex-direction:column; gap:0.6rem;">
               <label class="radio-item" style="align-items:flex-start; gap:10px;">
-                <input type="radio" name="Vendor Type" value="Full Time - $250/season" required style="margin-top:3px;">
+                <input type="radio" name="Vendor Type" value="Winter Full Season - $150" required style="margin-top:3px;">
+                <span><strong>Winter Full Season Vendor — $150</strong><br>
+                <span style="font-size:13px; color:var(--ink-muted);">All six winter dates, November through April, indoors at The Homestead Venue, 9 AM &ndash; 1 PM. Holds your space for the season. Table and two chairs are provided.</span></span>
+              </label>
+              <label class="radio-item" style="align-items:flex-start; gap:10px;">
+                <input type="radio" name="Vendor Type" value="Winter Single Date - $25/space">
+                <span><strong>Winter Single Date — $25 per space</strong><br>
+                <span style="font-size:13px; color:var(--ink-muted);">First come, first served. Pick the dates you want below. Table and two chairs are provided.</span></span>
+              </label>
+            </div>
+
+            <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--amber); margin:1.25rem 0 0.6rem;">Summer Market 2026 &middot; Season Ends October 24</div>
+            <div class="radio-row" style="flex-direction:column; gap:0.6rem;">
+              <label class="radio-item" style="align-items:flex-start; gap:10px;">
+                <input type="radio" name="Vendor Type" value="Full Time - $250/season">
                 <span><strong>Full Time Vendor — $250/season</strong><br>
                 <span style="font-size:13px; color:var(--ink-muted);">Attend all market dates. Guaranteed booth space for the season.</span></span>
               </label>
@@ -304,19 +330,28 @@
                 <span><strong>Part Time Vendor — $20/day</strong><br>
                 <span style="font-size:13px; color:var(--ink-muted);">Single Saturday per registration. Space subject to availability. *Electricity access not guaranteed.</span></span>
               </label>
-              <label class="radio-item" style="align-items:flex-start; gap:10px;">
-                <input type="radio" name="Vendor Type" value="Winter Farmers Market - $25/April 18th">
-                <span><strong>Winter Farmers Market — $25/April 18th</strong><br>
-                <span style="font-size:13px; color:var(--ink-muted);">Table and two chairs are provided.</span></span>
-              </label>
+            </div>
+          </div>
+
+          <div class="field span-2">
+            <label>Winter dates you'd like — For Winter Single Date vendors
+              <span class="hint">Third Saturday of the month. Spaces are $25 each, first come first served.</span>
+            </label>
+            <div class="check-group">
+              <label class="check-item"><input type="checkbox" name="Winter Dates" value="November 21, 2026"> Nov 21, 2026</label>
+              <label class="check-item"><input type="checkbox" name="Winter Dates" value="December 19, 2026"> Dec 19, 2026</label>
+              <label class="check-item"><input type="checkbox" name="Winter Dates" value="January 16, 2027"> Jan 16, 2027</label>
+              <label class="check-item"><input type="checkbox" name="Winter Dates" value="February 20, 2027"> Feb 20, 2027</label>
+              <label class="check-item"><input type="checkbox" name="Winter Dates" value="March 20, 2027"> Mar 20, 2027</label>
+              <label class="check-item"><input type="checkbox" name="Winter Dates" value="April 17, 2027"> Apr 17, 2027</label>
             </div>
           </div>
           <div class="field span-2">
-            <label>Dates you know you are unavailable — For Full Time Vendors</label>
+            <label>Dates you know you are unavailable — For Full Season Vendors</label>
             <input type="text" name="Unavailable Dates" placeholder="e.g. July 4th weekend, August 10th">
           </div>
           <div class="field span-2">
-            <label>Dates interested in attending — For Part Time Vendors</label>
+            <label>Dates interested in attending — For Summer Part Time Vendors</label>
             <input type="text" name="Part Time Dates" placeholder="e.g. June 7, July 19, August 2">
           </div>
           <div class="field span-2">

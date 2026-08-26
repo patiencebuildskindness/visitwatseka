@@ -347,6 +347,37 @@
     margin-bottom: 1.25rem;
   }
 
+  /* ── WINTER MARKET ANNOUNCEMENT ── */
+  .winter-banner {
+    background: var(--green-pale);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 2.25rem 1.5rem;
+    text-align: center;
+  }
+  .winter-banner-inner { max-width: 720px; margin: 0 auto; }
+  .winter-banner-eyebrow {
+    display: inline-block;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--amber); margin-bottom: 0.6rem;
+  }
+  .winter-banner h2 {
+    font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700;
+    color: var(--green-dark); margin-bottom: 0.6rem;
+  }
+  .winter-banner p {
+    font-size: 14.5px; color: var(--ink-muted); line-height: 1.7;
+    max-width: 560px; margin: 0 auto 1rem;
+  }
+  .winter-dates {
+    list-style: none; padding: 0; margin: 0 auto 1.5rem;
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem;
+  }
+  .winter-dates li {
+    background: var(--paper); border: 1px solid var(--border); border-radius: 999px;
+    padding: 0.35rem 0.9rem; font-size: 13px; font-weight: 700; color: var(--green-dark);
+  }
+
   /* ── ANIMATIONS ── */
   @keyframes fadeSlideDown {
     from { opacity: 0; transform: translateY(-16px); }
@@ -458,6 +489,28 @@
   </div>
 </section>
 
+<!-- ── WINTER MARKET ANNOUNCEMENT ── -->
+<section class="winter-banner">
+  <div class="winter-banner-inner">
+    <span class="winter-banner-eyebrow">Now Accepting Applications</span>
+    <h2>Winter Market 2026/2027</h2>
+    <p>
+      The Winter Farmers Market runs the third Saturday of the month, November through April,
+      indoors at The Homestead Venue from 9 AM to 1 PM. Spaces are $25 each, first come first served,
+      or reserve your space for all six dates as a full season vendor for $150.
+    </p>
+    <ul class="winter-dates">
+      <li>Nov 21</li>
+      <li>Dec 19</li>
+      <li>Jan 16</li>
+      <li>Feb 20</li>
+      <li>Mar 20</li>
+      <li>Apr 17</li>
+    </ul>
+    <a href="/farmers-market/vendor-application.html" class="btn btn-primary">Apply for the Winter Market</a>
+  </div>
+</section>
+
 <!-- ── VIDEO SECTION ── -->
 <section class="video-section" id="market-info">
   <h2 class="section-title">See the Market in Action</h2>
@@ -531,7 +584,7 @@
     <div class="cta-card">
       <div class="cta-card-icon">🌱</div>
       <h3>Apply to Become a Vendor</h3>
-      <p>Sell your products at our Saturday market. Full-time and part-time options available.</p>
+      <p>Sell your products at our Saturday market. Winter Market 2026/2027 applications are open now.</p>
       <a href="/farmers-market/vendor-application.html" class="btn btn-primary" style="font-size:12px; padding:10px 24px;">Vendor Application</a>
     </div>
     <div class="cta-card">
