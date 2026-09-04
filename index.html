@@ -350,6 +350,77 @@
     transition: background 0.15s;
   }
   .promo-modal-close:hover { background: #fff; }
+
+  /* ── Video popup variant (Hubbard Trail Days promo) ── */
+  .promo-modal--video .promo-modal-card {
+    flex-direction: column;
+    max-width: 940px;
+    background: #12240F;
+    color: #F4F1E4;
+  }
+  .promo-video-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    flex-shrink: 0;
+  }
+  .promo-video-frame video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #000;
+  }
+  .promo-video-play {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    background: rgba(15, 35, 16, 0.30);
+    transition: background 0.2s ease;
+  }
+  .promo-video-play:hover { background: rgba(15, 35, 16, 0.14); }
+  .promo-video-play span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 86px;
+    height: 86px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease;
+  }
+  .promo-video-play:hover span { transform: scale(1.07); }
+  .promo-video-play svg { margin-left: 5px; }
+  .promo-modal--video .promo-modal-body {
+    padding: 1.4rem 1.75rem 1.6rem;
+    text-align: center;
+    align-items: center;
+    flex: 0 0 auto;
+  }
+  .promo-modal--video .promo-modal-eyebrow { color: #E7C56E; }
+  .promo-modal--video .promo-modal-body h2 { color: #F4F1E4; margin: 0.15rem 0 0; }
+  .promo-modal--video .promo-modal-sub { color: #CFE0C2; margin: 0.3rem 0 0; }
+  .promo-modal--video .promo-modal-close {
+    background: rgba(255, 255, 255, 0.86);
+    z-index: 3;
+  }
+  @media (max-width: 700px) {
+    .promo-modal--video .promo-modal-card {
+      height: auto;
+      max-height: 100vh;
+      justify-content: center;
+    }
+    .promo-video-play span { width: 68px; height: 68px; }
+    .promo-modal--video .promo-modal-body { padding: 1.1rem 1.2rem 1.3rem; }
+  }
   @media (max-width: 700px) {
     .promo-modal { padding: 0; }
     .promo-modal-card {
@@ -542,6 +613,28 @@
 </footer>
 
 <!-- ── PROMO POPUP (homepage — safe to remove after the campaign) ── -->
+<!-- ── HUBBARD TRAIL DAYS VIDEO POPUP ── -->
+<div id="htd-video-popup" class="promo-modal promo-modal--video" role="dialog" aria-modal="true" aria-labelledby="htd-video-title">
+  <div class="promo-modal-card">
+    <button class="promo-modal-close" aria-label="Close">&times;</button>
+    <div class="promo-video-frame">
+      <video id="htd-promo-video" controls playsinline preload="none"
+             poster="/images/hubbard-trail-days-promo-poster.jpg">
+        <source src="/videos/hubbard-trail-days-promo.mp4" type="video/mp4">
+        Your browser cannot play this video.
+      </video>
+      <button class="promo-video-play" aria-label="Play the Hubbard Trail Days promo video">
+        <span><svg width="30" height="34" viewBox="0 0 30 34" aria-hidden="true"><path d="M0 0l30 17L0 34z" fill="#1E4620"/></svg></span>
+      </button>
+    </div>
+    <div class="promo-modal-body">
+      <span class="promo-modal-eyebrow">Downtown Watseka Trail Crawl</span>
+      <h2 id="htd-video-title">Hubbard Trail Days</h2>
+      <p class="promo-modal-sub">Saturday, September 12 &middot; 11 AM to 5 PM &middot; Downtown Watseka</p>
+    </div>
+  </div>
+</div>
+
 <div id="promo-popup" class="promo-modal" role="dialog" aria-modal="true" aria-labelledby="promo-modal-title">
   <div class="promo-modal-card">
     <button class="promo-modal-close" aria-label="Close">&times;</button>
@@ -564,17 +657,32 @@
 <script src="/js/main.js"></script>
 <script>
   (function () {
-    var modal = document.getElementById('promo-popup');
+    // Two popups share one slot. Hubbard Trail Days runs until the day after the
+    // event, then the winter market promo takes over. They never both fire.
+    var HTD_END    = new Date(2026, 8, 13);   // Sun Sep 13, 2026
+    var WINTER_END = new Date(2026, 10, 22);  // Sun Nov 22, 2026
+    var now = new Date();
+
+    var modal, KEY, delay = 5000;
+    if (now < HTD_END) {
+      modal = document.getElementById('htd-video-popup');
+      KEY = 'promoPopupDismissed-2026-htd-video-v1';
+      delay = 2500;
+    } else if (now < WINTER_END) {
+      modal = document.getElementById('promo-popup');
+      KEY = 'promoPopupDismissed-2026-wintermarket-v1';
+    }
     if (!modal) return;
-    // Stop showing the popup after the first winter market (Sunday, November 22, 2026 onward).
-    if (new Date() >= new Date(2026, 10, 22)) return;
-    var KEY = 'promoPopupDismissed-2026-wintermarket-v1';
     try { if (sessionStorage.getItem(KEY)) return; } catch (e) {}
+
+    var video = modal.querySelector('video');
+    var playBtn = modal.querySelector('.promo-video-play');
 
     function closeModal() {
       modal.classList.remove('show');
       document.body.classList.remove('promo-modal-open');
       document.removeEventListener('keydown', onKey);
+      if (video) { try { video.pause(); } catch (e) {} }
       try { sessionStorage.setItem(KEY, '1'); } catch (e) {}
     }
     function onKey(e) { if (e.key === 'Escape') closeModal(); }
@@ -583,7 +691,17 @@
       modal.classList.add('show');
       document.body.classList.add('promo-modal-open');
       document.addEventListener('keydown', onKey);
-    }, 5000);
+    }, delay);
+
+    if (playBtn && video) {
+      playBtn.addEventListener('click', function () {
+        playBtn.style.display = 'none';
+        video.play();
+      });
+      video.addEventListener('pause', function () {
+        if (video.currentTime === 0) playBtn.style.display = '';
+      });
+    }
 
     modal.querySelector('.promo-modal-close').addEventListener('click', closeModal);
     modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
