@@ -50,3 +50,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+/* ── Hubbard Trail Days event bar ──────────────────────────
+   Removes itself the day after the event so it does not need
+   to be hand-stripped from every page later. */
+(function () {
+  var EVENT_OVER = new Date(2026, 8, 13); // Sun Sep 13, 2026
+  if (new Date() < EVENT_OVER) return;
+  document.addEventListener('DOMContentLoaded', function () {
+    var bars = document.querySelectorAll('.htd-bar');
+    for (var i = 0; i < bars.length; i++) bars[i].remove();
+  });
+})();

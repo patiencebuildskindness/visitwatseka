@@ -761,3 +761,45 @@ textarea { resize: vertical; min-height: 90px; }
   padding: 5px 16px;
   border-radius: 20px;
 }
+
+/* ── Hubbard Trail Days event bar (auto-hidden after the event by main.js) ── */
+.htd-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.1rem;
+  padding: 0.7rem 1.5rem;
+  background: linear-gradient(100deg, #12240F 0%, var(--green-dark) 60%, #24491F 100%);
+  color: #F4F1E4;
+  text-decoration: none;
+  text-align: center;
+  border-bottom: 2px solid #E7C56E;
+  transition: filter 0.15s;
+}
+.htd-bar:hover { filter: brightness(1.14); color: #F4F1E4; }
+.htd-bar-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.18rem;
+  color: #E7C56E;
+  line-height: 1.1;
+}
+.htd-bar-when { font-size: 0.9rem; letter-spacing: 0.03em; color: #CFE0C2; }
+.htd-bar-cta {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 0.34rem 0.9rem;
+  border: 1px solid #E7C56E;
+  border-radius: 999px;
+  color: #E7C56E;
+  white-space: nowrap;
+}
+@media (max-width: 700px) {
+  .htd-bar { padding: 0.65rem 1rem; gap: 0.25rem 0.7rem; }
+  .htd-bar-when { font-size: 0.82rem; width: 100%; }
+  .htd-bar-cta { font-size: 0.66rem; padding: 0.28rem 0.75rem; }
+}
