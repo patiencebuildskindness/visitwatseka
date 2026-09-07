@@ -96,9 +96,10 @@ a:hover { color: var(--green-dark); }
 }
 .nav-links li a {
   display: block;
-  padding: 1.2rem 1.1rem;
+  padding: 1.2rem 0.85rem;
   color: var(--ink-muted);
   font-size: 15px;
+  white-space: nowrap;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -168,7 +169,7 @@ a:hover { color: var(--green-dark); }
 .nav-toggle.open span:nth-child(2) { opacity: 0; }
 .nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
-@media (max-width: 860px) {
+@media (max-width: 1220px) {
   .nav-toggle { display: flex; }
   .nav-links {
     display: none;
@@ -803,4 +804,39 @@ textarea { resize: vertical; min-height: 90px; }
   .htd-bar { padding: 0.65rem 1rem; gap: 0.25rem 0.7rem; }
   .htd-bar-when { font-size: 0.82rem; width: 100%; }
   .htd-bar-cta { font-size: 0.66rem; padding: 0.28rem 0.75rem; }
+}
+
+/* ── Nav search (expands from a magnifier so it costs almost no nav width) ── */
+.nav-search { position: relative; display: flex; align-items: center; margin-left: 0.4rem; }
+.nav-search-btn {
+  display: flex; align-items: center; justify-content: center;
+  width: 38px; height: 38px; padding: 0; cursor: pointer;
+  background: none; border: 1px solid transparent; border-radius: 50%;
+  color: var(--ink-muted); transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.nav-search-btn:hover, .nav-search.open .nav-search-btn {
+  background: rgba(0,0,0,0.04); color: var(--green-dark); border-color: var(--border);
+}
+.nav-search-form {
+  position: absolute; right: 0; top: calc(100% + 6px);
+  display: flex; opacity: 0; visibility: hidden; transform: translateY(-6px);
+  transition: opacity 0.18s, visibility 0.18s, transform 0.18s;
+  background: var(--paper); border: 1px solid var(--border); border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(26,26,24,0.14); padding: 0.4rem; z-index: 300;
+}
+.nav-search.open .nav-search-form { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-search-form input {
+  width: 250px; border: 0; outline: 0; background: none;
+  font-family: 'Lato', sans-serif; font-size: 15px; color: var(--ink); padding: 0.45rem 0.6rem;
+}
+.nav-search-form input::placeholder { color: var(--ink-light); }
+.nav-search-form button {
+  border: 0; border-radius: 8px; cursor: pointer; padding: 0.45rem 0.9rem;
+  background: var(--green-dark); color: #fff; font-weight: 700; font-size: 13px;
+}
+@media (max-width: 1220px) {
+  .nav-search { order: 2; margin-left: auto; margin-right: 0.35rem; }
+  .nav-toggle { order: 3; }
+  .nav-search-form { right: -0.5rem; }
+  .nav-search-form input { width: min(58vw, 250px); }
 }

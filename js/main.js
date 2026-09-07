@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!dropdown) return;
     var mainLink = li.querySelector(':scope > a');
     mainLink.addEventListener('click', function(e) {
-      if (window.innerWidth <= 860) {
+      if (window.innerWidth <= 1220) {
         e.preventDefault();
         li.classList.toggle('dropdown-open');
       }
@@ -62,3 +62,41 @@ document.addEventListener('DOMContentLoaded', function() {
     for (var i = 0; i < bars.length; i++) bars[i].remove();
   });
 })();
+
+/* ── Nav search ────────────────────────────────────────────
+   The form posts to /places-to-go.html?q=, so it still works
+   with JavaScript off. This only handles opening the box. */
+document.addEventListener('DOMContentLoaded', function () {
+  var wrap = document.querySelector('.nav-search');
+  if (!wrap) return;
+  var btn = wrap.querySelector('.nav-search-btn');
+  var input = wrap.querySelector('input[name="q"]');
+
+  function setOpen(open) {
+    wrap.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (open) input.focus();
+  }
+  btn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    setOpen(!wrap.classList.contains('open'));
+  });
+  document.addEventListener('click', function (e) {
+    if (!wrap.contains(e.target)) setOpen(false);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && wrap.classList.contains('open')) { setOpen(false); btn.focus(); }
+  });
+});
+
+/* Apply ?q= on the directory page so nav searches land on results. */
+document.addEventListener('DOMContentLoaded', function () {
+  var box = document.getElementById('dir-search');
+  if (!box) return;
+  var q = new URLSearchParams(location.search).get('q');
+  if (!q) return;
+  box.value = q;
+  box.dispatchEvent(new Event('input'));
+  var sec = box.closest('section') || box;
+  window.scrollTo({ top: sec.getBoundingClientRect().top + window.pageYOffset - 90, behavior: 'auto' });
+});
