@@ -770,31 +770,32 @@ textarea { resize: vertical; min-height: 90px; }
   flex-wrap: wrap;
   gap: 0.4rem 1.1rem;
   padding: 0.7rem 1.5rem;
-  background: linear-gradient(100deg, #12240F 0%, var(--green-dark) 60%, #24491F 100%);
-  color: #F4F1E4;
+  background: linear-gradient(100deg, #C97D10 0%, var(--amber-light) 55%, #D2830D 100%);
+  color: #2E1F06;
   text-decoration: none;
   text-align: center;
-  border-bottom: 2px solid #E7C56E;
+  border-bottom: 2px solid var(--green-dark);
   transition: filter 0.15s;
 }
-.htd-bar:hover { filter: brightness(1.14); color: #F4F1E4; }
+.htd-bar:hover { filter: brightness(1.07); color: #2E1F06; }
 .htd-bar-title {
   font-family: 'Playfair Display', serif;
   font-style: italic;
   font-weight: 700;
   font-size: 1.18rem;
-  color: #E7C56E;
+  color: var(--green-dark);
   line-height: 1.1;
 }
-.htd-bar-when { font-size: 0.9rem; letter-spacing: 0.03em; color: #CFE0C2; }
+.htd-bar-when { font-size: 0.9rem; letter-spacing: 0.03em; color: #3A2A08; }
 .htd-bar-cta {
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   padding: 0.34rem 0.9rem;
-  border: 1px solid #E7C56E;
+  border: 1px solid var(--green-dark);
   border-radius: 999px;
+  background: var(--green-dark);
   color: #E7C56E;
   white-space: nowrap;
 }
