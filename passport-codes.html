@@ -55,12 +55,7 @@
   </footer>
 </main>
 <script>
-  var SHOPS=[["bookish","Bookish"],["sugar-creek","Sugar Creek Trading Co."],["this-n-that","This-N-That"],
-  ["marys-emporium","Mary’s Emporium"],["silo-pub","The Silo Pub & Eatery"],["harbor-house","Harbor House"],
-  ["simply-country","Simply Country"],["chittick","Chittick Eyewear"],["headquarters","The Headquarters"],
-  ["massey","Massey Designs"],["xo-nails","XO Nail Salon"],["fitness-24","Fitness 24"],["milkweed","Milkweed"],
-  ["ingram","Ingram Atelier"],["above-grooming","Above Family Grooming"],["mycloset","MyCloset2Yourz"],
-  ["edward-jones","Edward Jones"],["wgfa","WGFA"],["first-trust","First Trust"],["spleodar","Spleodar Follaine"]];
+  var SHOPS=[["bookish","Bookish"],["sugar-creek","Sugar Creek Trading Co"],["simply-country","Simply Country"],["xo-nails","XO Nail Salon"],["harbor-house","Harbor House"],["above-grooming","Above Family Grooming"],["mycloset","MyClozet2Yourz"],["wgfa","W.G.F.A."],["the-hub","The Hub"],["la-potosina","La Potosina"],["trios","Trios Steakhouse"],["massey","Massey Design"],["silo-pub","The Silo Pub & Eatery"],["spleodar","Spleodar Follaine"],["griswold","Griswold Feed"],["first-trust","The First Trust & Savings Bank"],["gray-farms","Gray Farms"],["ingram","Ingram Atelier"],["traditions","Traditions"],["illiana","Illiana Backyard"]];
   document.getElementById('grid').innerHTML=SHOPS.map(function(s,i){
     return '<div class="card"><div class="shop">'+s[1]+'</div><div class="stop">Stop '+(i+1)+' of 20</div>'+
       '<div class="qr"><img src="images/qr/'+s[0]+'.png" alt="QR code for '+s[1]+'" loading="lazy"></div>'+

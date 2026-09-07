@@ -228,25 +228,25 @@
   "use strict";
   var SHOPS = [
     {id:'bookish',name:'Bookish'},
-    {id:'sugar-creek',name:'Sugar Creek Trading Co.'},
-    {id:'this-n-that',name:'This-N-That'},
-    {id:'marys-emporium',name:"Mary’s Emporium"},
-    {id:'silo-pub',name:'The Silo Pub & Eatery'},
-    {id:'harbor-house',name:'Harbor House'},
+    {id:'sugar-creek',name:'Sugar Creek Trading Co'},
     {id:'simply-country',name:'Simply Country'},
-    {id:'chittick',name:'Chittick Eyewear'},
-    {id:'headquarters',name:'The Headquarters'},
-    {id:'massey',name:'Massey Designs'},
     {id:'xo-nails',name:'XO Nail Salon'},
-    {id:'fitness-24',name:'Fitness 24'},
-    {id:'milkweed',name:'Milkweed'},
-    {id:'ingram',name:'Ingram Atelier'},
+    {id:'harbor-house',name:'Harbor House'},
     {id:'above-grooming',name:'Above Family Grooming'},
-    {id:'mycloset',name:'MyCloset2Yourz'},
-    {id:'edward-jones',name:'Edward Jones'},
-    {id:'wgfa',name:'WGFA'},
-    {id:'first-trust',name:'First Trust'},
-    {id:'spleodar',name:'Spleodar Follaine'}
+    {id:'mycloset',name:'MyClozet2Yourz'},
+    {id:'wgfa',name:'W.G.F.A.'},
+    {id:'the-hub',name:'The Hub'},
+    {id:'la-potosina',name:'La Potosina'},
+    {id:'trios',name:'Trios Steakhouse'},
+    {id:'massey',name:'Massey Design'},
+    {id:'silo-pub',name:'The Silo Pub & Eatery'},
+    {id:'spleodar',name:'Spleodar Follaine'},
+    {id:'griswold',name:'Griswold Feed'},
+    {id:'first-trust',name:'The First Trust & Savings Bank'},
+    {id:'gray-farms',name:'Gray Farms'},
+    {id:'ingram',name:'Ingram Atelier'},
+    {id:'traditions',name:'Traditions'},
+    {id:'illiana',name:'Illiana Backyard'}
   ];
   var COLORS = ['red','blue','gold'];
   var TIERS = [
@@ -254,7 +254,7 @@
     {n:15,name:'Pathfinder',medal:'🥈'},
     {n:20,name:'Trailblazer',medal:'🥇'}
   ];
-  var EVENT='htd-2026';            // ← bump this (e.g. 'htd-2027') to reset EVERY visitor's stamps for the next event
+  var EVENT='htd-2026b';            // ← bump this (e.g. 'htd-2027') to reset EVERY visitor's stamps for the next event
   var KEY='htd_passport_'+EVENT;
   var byId={}; SHOPS.forEach(function(s,i){s.color=COLORS[i%3];s.idx=i;byId[s.id]=s;});
 
