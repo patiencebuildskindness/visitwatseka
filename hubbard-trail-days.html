@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<title>Hubbard Trail Days &mdash; September 12, 2026 | Downtown Watseka, Illinois</title>
+<meta name="description" content="Hubbard Trail Days is a free downtown trail crawl and sidewalk sale in Watseka, Illinois on Saturday, September 12, 2026, 11 AM to 5 PM. Collect stamps from 20 shops, enter the prize drawings, and bring the kids to the free Kids Zone.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<style>
+  .htd-hero {
+    background: linear-gradient(160deg, #12240F 0%, var(--green-dark) 55%, #24491F 100%);
+    color: #F4F1E4; text-align: center; padding: 5.5rem 1.5rem 5rem;
+  }
+  .htd-hero .eyebrow {
+    font-size: .78rem; font-weight: 700; letter-spacing: .24em;
+    text-transform: uppercase; color: #E7C56E;
+  }
+  .htd-hero h1 {
+    font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700;
+    font-size: clamp(2.8rem, 8vw, 5rem); line-height: 1.02; color: #E7C56E;
+    margin: .6rem 0 .2rem;
+  }
+  .htd-hero .sub { font-size: 1.15rem; color: #CFE0C2; margin-bottom: 1.8rem; }
+  .htd-datebar {
+    display: inline-flex; flex-wrap: wrap; justify-content: center; align-items: center;
+    gap: 1.4rem; border-top: 1px solid rgba(231,197,110,.45);
+    border-bottom: 1px solid rgba(231,197,110,.45); padding: 1rem 1.6rem; margin-bottom: 1.8rem;
+  }
+  .htd-datebar span { font-size: 1.05rem; letter-spacing: .06em; }
+  .htd-datebar b { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #E7C56E; }
+
+  .htd-wrap { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
+  .htd-section { padding: 4rem 0; }
+  .htd-section.alt { background: var(--green-pale); }
+  .htd-section.paper { background: var(--cream); }
+
+  .htd-video { max-width: 900px; margin: 0 auto; }
+  .htd-video video {
+    width: 100%; display: block; border-radius: 14px; background: #000;
+    box-shadow: 0 18px 50px rgba(0,0,0,.22);
+  }
+
+  .htd-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+  .htd-step { background: var(--paper); border: 1px solid var(--border); border-radius: 14px; padding: 1.8rem 1.6rem; }
+  .htd-step .n {
+    display: flex; align-items: center; justify-content: center; width: 44px; height: 44px;
+    border-radius: 50%; background: var(--green-dark); color: #E7C56E;
+    font-family: 'Playfair Display', serif; font-size: 1.35rem; margin-bottom: .9rem;
+  }
+  .htd-step h3 { font-family: 'Playfair Display', serif; color: var(--green-dark); font-size: 1.25rem; margin-bottom: .4rem; }
+  .htd-step p { color: var(--ink-muted); font-size: .98rem; }
+
+  .htd-two { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 1.8rem; margin-top: 2.5rem; }
+  .htd-card { background: var(--paper); border: 1px solid var(--border); border-left: 5px solid var(--amber); border-radius: 14px; padding: 2rem 1.8rem; }
+  .htd-card.green { border-left-color: var(--green-mid); }
+  .htd-card h3 { font-family: 'Playfair Display', serif; color: var(--green-dark); font-size: 1.45rem; margin-bottom: .3rem; }
+  .htd-card .tag { font-size: .74rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--amber); }
+  .htd-card p { color: var(--ink-muted); margin-top: .7rem; }
+  .htd-card .btn { margin-top: 1.2rem; }
+
+  .htd-tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 1.4rem; margin-top: 2.5rem; }
+  .htd-tier { text-align: center; background: var(--paper); border: 1px solid var(--border); border-radius: 14px; padding: 1.8rem 1.2rem; }
+  .htd-tier .medal { font-size: 2.2rem; }
+  .htd-tier h3 { font-family: 'Playfair Display', serif; color: var(--green-dark); font-size: 1.3rem; margin: .4rem 0 .2rem; }
+  .htd-tier p { color: var(--ink-light); font-size: .93rem; }
+
+  .htd-stamps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 2rem; margin-top: 2.5rem; }
+  .htd-stamp { text-align: center; }
+  .htd-stamp img { width: 100%; max-width: 220px; height: auto; border-radius: 6px; box-shadow: 0 10px 26px rgba(0,0,0,.16); }
+  .htd-stamp figcaption { margin-top: .9rem; font-size: .92rem; color: var(--ink-muted); line-height: 1.5; }
+  .htd-stamp figcaption strong { display: block; font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--green-dark); margin-bottom: .25rem; }
+
+
+  .htd-kids { background: var(--green-dark); color: #F4F1E4; border-radius: 18px; padding: 2.8rem 2.2rem; }
+  .htd-kids h2 { font-family: 'Playfair Display', serif; color: #E7C56E; font-size: clamp(1.9rem,4vw,2.6rem); margin-bottom: .3rem; }
+  .htd-kids .where { color: #CFE0C2; margin-bottom: 1.6rem; }
+  .htd-kids ul { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: .9rem; }
+  .htd-kids li { background: rgba(255,255,255,.07); border-radius: 10px; padding: .9rem 1.1rem; font-size: .98rem; }
+  .htd-kids li b { color: #E7C56E; }
+
+
+  .htd-tba {
+    text-align: center; margin-top: 2.2rem;
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: clamp(1.35rem, 3vw, 1.9rem); color: var(--green-mid);
+  }
+
+  /* expandable business list */
+  .htd-bizlist { margin-top: 2.2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(330px,1fr)); gap: .75rem; align-items: start; }
+  .htd-biz { background: var(--paper); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+  .htd-biz[open] { border-color: var(--green-mid); box-shadow: 0 6px 20px rgba(0,0,0,.07); }
+  .htd-biz summary {
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    padding: .95rem 1.15rem; cursor: pointer; list-style: none;
+    font-weight: 700; color: var(--green-dark);
+  }
+  .htd-biz summary::-webkit-details-marker { display: none; }
+  .htd-biz summary:hover { background: rgba(0,0,0,.025); }
+  .htd-biz-stop { font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-light); flex-shrink: 0; }
+  .htd-biz summary::after {
+    content: '+'; font-size: 1.3rem; line-height: 1; color: var(--green-mid); flex-shrink: 0;
+  }
+  .htd-biz[open] summary::after { content: '\2212'; }
+  .htd-biz-body { padding: 0 1.15rem 1.15rem; border-top: 1px solid var(--border); padding-top: .95rem; }
+  .htd-biz-meta { display: flex; flex-wrap: wrap; gap: .3rem 1rem; font-size: .9rem; margin-bottom: .55rem; }
+  .htd-biz-addr { color: var(--ink-muted); }
+  .htd-biz-phone { color: var(--green-mid); font-weight: 700; }
+  .htd-biz-desc { font-size: .93rem; color: var(--ink-muted); margin-bottom: .7rem; }
+  .htd-biz-fact { background: var(--amber-pale); border-radius: 8px; padding: .8rem .9rem; font-size: .9rem; color: var(--ink-muted); line-height: 1.55; }
+  .htd-biz-fact .lbl { display: block; font-size: .68rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--amber); margin-bottom: .35rem; }
+  .htd-biz-fact b { color: var(--green-dark); }
+  .htd-biz-fact em { display: block; margin-top: .5rem; font-family: 'Playfair Display', serif; color: var(--green-mid); }
+
+  .htd-history p { color: var(--ink-muted); margin-bottom: 1.1rem; }
+  .htd-history b { color: var(--green-dark); }
+
+  @media (max-width: 600px) {
+    .htd-hero { padding: 4rem 1.2rem 3.5rem; }
+    .htd-datebar { gap: .8rem; flex-direction: column; }
+    .htd-kids { padding: 2rem 1.3rem; border-radius: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav-wrap">
+    <a href="/" class="nav-logo">
+      <img src="/images/logo-visitwatseka.png" alt="Downtown Watseka Farmers Market Logo">
+      <div class="nav-logo-text">
+        Visit Watseka
+        <span>Watseka, Illinois</span>
+      </div>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/farmers-market/">Farmers' Market</a>
+        <ul class="nav-dropdown">
+          <li><a href="/farmers-market/plan-your-visit.html">Plan Your Visit</a></li>
+          <li><a href="/farmers-market/faq.html">Vendor FAQ</a></li>
+          <li><a href="/farmers-market/vendor-application.html">Vendor Application</a></li>
+          <li><a href="/farmers-market/sponsorship.html">Sponsor the Market</a></li>
+          <li><a href="/farmers-market/band-application.html">Band Application</a></li>
+          <li><a href="/farmers-market/policies.html">Policies & Procedures</a></li>
+          <li><a href="/farmers-market/vendors.html">Meet Your Vendors</a></li>
+        </ul>
+      </li>
+      <li><a href="/things-to-do.html">Things to Do</a></li>
+        <li><a href="/hubbard-trail-days.html" class="active">Hubbard Trail Days</a></li>
+      <li><a href="/places-to-go.html">Places to Go</a></li>
+      <li><a href="/news.html">News & Development</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="htd-hero">
+  <div class="htd-wrap">
+    <div class="eyebrow">Downtown Watseka Trail Crawl &amp; Sidewalk Sale</div>
+    <h1>Hubbard Trail Days</h1>
+    <p class="sub">Retrace the path that built our town, one shop and one stamp at a time.</p>
+    <div class="htd-datebar">
+      <span><b>Saturday, September 12, 2026</b></span>
+      <span><b>11 AM &ndash; 5 PM</b></span>
+      <span><b>Downtown Watseka</b></span>
+    </div>
+  </div>
+</section>
+
+<section class="htd-section">
+  <div class="htd-wrap">
+    <h2 class="section-title">A shopping day built on a history lesson</h2>
+    <p class="section-subtitle">Carry a passport from shop to shop, collect a stamp at every stop, and work your way toward the prize drawings. Along the way you find out whose trail you have been walking your whole life. No lecture, no admission, just twenty good reasons to walk the street.</p>
+
+    <div class="htd-video">
+      <video controls playsinline preload="none" poster="/images/hubbard-trail-days-promo-poster.jpg">
+        <source src="/videos/hubbard-trail-days-promo.mp4" type="video/mp4">
+        Your browser cannot play this video.
+      </video>
+    </div>
+  </div>
+</section>
+
+<section class="htd-section alt">
+  <div class="htd-wrap">
+    <h2 class="section-title">Two Ways to Play</h2>
+    <p class="section-subtitle">Paper or phone, your choice. Both count exactly the same.</p>
+    <div class="htd-steps">
+      <div class="htd-step">
+        <div class="n">1</div>
+        <h3>Get your passport</h3>
+        <p>Pick up a paper passport at the Santa House, or use the digital one on your phone. Both count exactly the same.</p>
+      </div>
+      <div class="htd-step">
+        <div class="n">2</div>
+        <h3>Collect your stamps</h3>
+        <p>Step inside each participating shop, look around, and ask for your stamp. Every stamp counts toward a drawing.</p>
+      </div>
+      <div class="htd-step">
+        <div class="n">3</div>
+        <h3>Turn it in and win</h3>
+        <p>Bring your passport back to the Santa House. A volunteer checks your stamps and enters you on the spot.</p>
+      </div>
+    </div>
+    <div class="htd-two">
+      <div class="htd-card green">
+        <span class="tag">On Paper</span>
+        <h3>The printed passport</h3>
+        <p>Pick one up at the <b>Santa House in the First Trust parking lot</b>. That is also where you finish: bring your stamped passport back, and a volunteer will tell you which drawing you have earned and take your entry right there. The passport is yours to keep.</p>
+      </div>
+      <div class="htd-card">
+        <span class="tag">On Your Phone</span>
+        <h3>The digital passport</h3>
+        <p>Would rather not carry a booklet? Open the digital passport and <b>scan the QR code at the counter of any participating business</b> to collect that stamp automatically. Same twenty stops, same stamps, same drawings.</p>
+        <a href="/passport.html" class="btn btn-primary">Open the Digital Passport</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="htd-section">
+  <div class="htd-wrap">
+    <h2 class="section-title">The more stamps, the better the drawing</h2>
+    <p class="section-subtitle">Three tiers, based on how many stamps you gather. Drawings are held in the days following the event and winners are contacted directly.</p>
+    <div class="htd-tiers">
+      <div class="htd-tier"><div class="medal">&#129353;</div><h3>Trail Walker</h3><p>10 stamps</p></div>
+      <div class="htd-tier"><div class="medal">&#129352;</div><h3>Pathfinder</h3><p>15 stamps</p></div>
+      <div class="htd-tier"><div class="medal">&#129351;</div><h3>Trailblazer</h3><p>All 20 stamps</p></div>
+    </div>
+    <p class="htd-tba">Prizes to be announced.</p>
+  </div>
+</section>
+
+<section class="htd-section alt">
+  <div class="htd-wrap">
+    <h2 class="section-title">Collect Them All</h2>
+    <p class="section-subtitle">Every stamp in your passport carries a face from Watseka&rsquo;s history. Collect the set and you collect the story.</p>
+    <div class="htd-stamps">
+        <figure class="htd-stamp">
+          <img src="/images/stamp-watchekee.jpg" alt="Watchekee collectible stamp" loading="lazy">
+          <figcaption><strong>Watchekee</strong>&ldquo;Daughter of the Evening Star.&rdquo; The Potawatomi woman this town is named for, who walked back to this land again and again after her people were removed west.</figcaption>
+        </figure>
+        <figure class="htd-stamp">
+          <img src="/images/stamp-hubbard.jpg" alt="Gurdon Hubbard collectible stamp" loading="lazy">
+          <figcaption><strong>Gurdon Hubbard</strong>The young fur trader the Potawatomi called <em>Pa-pa-ma-ta-be</em>, Swift-Walker. The path he wore north is now Illinois Route 1, running through our downtown.</figcaption>
+        </figure>
+        <figure class="htd-stamp">
+          <img src="/images/stamp-clifton.jpg" alt="Katherine Clifton collectible stamp" loading="lazy">
+          <figcaption><strong>Katherine Clifton</strong>Her bequest paid for the Iroquois County courthouse in 1964, believed to be the only courthouse in the country built entirely with private money.</figcaption>
+        </figure>
+        <figure class="htd-stamp">
+          <img src="/images/stamp-bacon.jpg" alt="Henry Bacon collectible stamp" loading="lazy">
+          <figcaption><strong>Henry Bacon</strong>Born in Watseka in 1866. He grew up to design the Lincoln Memorial in Washington, dedicated in 1922.</figcaption>
+        </figure>
+    </div>
+  </div>
+</section>
+
+<section class="htd-section paper">
+  <div class="htd-wrap">
+    <h2 class="section-title">Participating businesses</h2>
+    <p class="section-subtitle">Every one of these is a stamp stop. Many will also have tables out front for the sidewalk sale, so the whole street becomes a marketplace for the day.</p>
+    <div class="htd-bizlist">
+      <details class="htd-biz">
+        <summary><span class="htd-biz-name">Bookish</span><span class="htd-biz-stop">Stop 1</span></summary>
+        <div class="htd-biz-body">
+        <div class="htd-biz-meta"><span class="htd-biz-addr">131 E. Walnut St.</span><a class="htd-biz-phone" href="tel:+18153834152">(815) 383-4152</a></div>
+        <p class="htd-biz-desc">A one-of-a-kind combination of books and wine — the perfect cozy spot to browse, sip, and settle in for a while.</p>
+          <div class="htd-biz-fact"><span class="lbl">Trail Fact No. 1</span>Gurdon Hubbard once walked <b>seventy-five miles through the night</b> to warn settlers of a threatened raid, arriving before dawn. The Potawatomi named him <b>Pa-pa-ma-ta-be</b>, or <b>Swift-Walker</b>.<em>The trail he wore north is now Route 1, the road just outside this door.</em></div>
+        </div>
+      </details>
+      <details class="htd-biz">
+        <summary><span class="htd-biz-name">Sugar Creek Trading Co</span><span class="htd-biz-stop">Stop 2</span></summary>
+        <div class="htd-biz-body">
+        <div class="htd-biz-meta"><span class="htd-biz-addr">127 E Walnut St.</span><a class="htd-biz-phone" href="tel:+18156444474">(815) 644-4474</a></div>
+          <div class="htd-biz-fact"><span class="lbl">Trail Fact No. 2</span>In the early <b>1820s</b> Hubbard set up a trading post where the <b>Iroquois River meets Sugar Creek</b>. His license, granted in <b>1822</b>, covered the Iroquois River and all its tributaries.<em>The creek this shop is named for is the reason there is a town here at all.</em></div>
+        </div>
+      </details>
+      <details class="htd-biz">
+        <summary><span class="htd-biz-name">Simply Country</span><span class="htd-biz-stop">Stop 3</span></summary>
+        <div class="htd-biz-body">
+        <div class="htd-biz-meta"><span class="htd-biz-addr">106 E. Walnut St.</span><a class="htd-biz-phone" href="tel:+12174951790">(217) 495-1790</a></div>
+        <p class="htd-biz-desc">A charming shop with a country aesthetic — gifts, home decor, and unique finds for every occasion.</p>
+          <div class="htd-biz-fact"><span class="lbl">Trail Fact No. 3</span>Hubbard came west in <b>1818</b> as a sixteen-year-old clerk for the <b>American Fur Company</b>. He never left Illinois again, and died in Chicago in <b>1886</b>.<em>He was younger than most of the people walking this street today.</em></div>
+        </div>
+      </details>
+      <details class="htd-biz">
+        <summary><span class="htd-biz-name">XO Nail Salon</span><span class="htd-biz-stop">Stop 4</span></summary>
+        <div class="htd-biz-body">
+        <div class="htd-biz-meta"><span class="htd-biz-addr">129 E. Walnut St.</span><a class="htd-biz-phone" href="tel:+18153837112">(815) 383-7112</a></div>
+          <div class="htd-biz-fact"><span class="lbl">Trail Fact No. 4</span><b>Watchekee</b>, the woman this town is named for, was born around <b>1810</b> near the Kankakee River. Her name comes down to us as <b>Daughter of the Evening Star</b>.<em>Say the name of this town out loud and you are saying hers.</em></div>
+        </div>
+      </details>
+      <details class="htd-biz">
+        <summary><span class="htd-biz-name">Harbor House</span><span class="htd-biz-stop">Stop 5</span></summary>
+        <div class="htd-biz-body">
+        <div class="htd-biz-meta"><span class="htd-biz-addr">100 E Walnut St</span><a class="htd-biz-phone" href="tel:+18154323525">(815) 432-3525</a></div>
+        <p class="htd-biz-desc">A nonprofit resale shop supporting the Harbor House mission — great finds at great prices while giving back to the community.</p>
+          <div class="htd-biz-fact"><span class="lbl">Trail Fact No. 5</span>Watchekee was the daughter of <b>Shabbona</b> and <b>Monashki</b>. Shabbona was a Potawatomi leader and warrior respected across the region, and his name is said to mean <b>Built Like a Bear</b>.<em>Her father counseled peace when war would have been the easier choice.</em></div>
+        </div>
+      </details>
+      <details class="htd-biz">
+        <summary><span class="htd-biz-name">Above Family Grooming</span><span class="htd-biz-stop">Stop 6</span></summary>
+        <div class="htd-biz-body">
+        <div class="htd-biz-meta"><span class="htd-biz-addr">203 E. Walnut St.</span><a class="htd-biz-phone" href="tel:+18153861671">(815) 386-1671</a></div>
+          <div class="htd-biz-fact"><span class="lbl">Trail Fact No. 6</span>Watchekee married Gurdon Hubbard <b>here in 1826</b>, in the Potawatomi tradition. The marriage lasted only a few years and ended by mutual agreement, but her story reached far past it.<em>He got a street in Chicago. She got the whole town.</em></div>
+        </div>
+      </details>
+      <details class="htd-biz">
+        <summary><span class="htd-biz-name">MyClozet2Yourz</span><span class="htd-biz-stop">Stop 7</span></summary>
+        <div class="htd-biz-body">
+        <div class="htd-biz-meta"><span class="htd-biz-addr">102 S. Fourth St.</span></div>
+        <p class="htd-biz-desc">MyClozet2yourz is dedicated to making our customers look good for Less.</p>
+          <div class="htd-biz-fact"><span class="lbl">Trail Fact No. 7</span>The <b>1833 Treaty of Chicago</b> forced the Potawatomi off this land and west across the Mississippi. Watchekee was removed with her people to reservations in <b>Iowa and Kansas</b>.<em>Everything on this street sits on ground that was taken by treaty.</em></div>
+        </div>
+      </details>
+      <details class="htd-biz">
+        <summary><span class="htd-biz-name">W.G.F.A.</span><span class="htd-biz-stop">Stop 8</span></summary>
+        <div class="htd-biz-body">
+        <div class="htd-biz-meta"><span class="htd-biz-addr">Pop-up in the Kids Zone</span></div>
+          <div class="htd-biz-fact"><span class="lbl">Trail Fact No. 8</span>Watchekee never accepted the leaving. She walked back to this country again and again from the reservations. Her descendants estimate she covered more than <b>six thousand miles on foot</b>.<em>You are walking a few blocks of a trail she walked for a lifetime.</em></div>
+        </div>
+      </details>
+      <details class="htd-biz">
+        <summary><span class="htd-biz-name">The Hub</span><span class="htd-biz-stop">Stop 9</span></summary>
+        <div class="htd-biz-body">
+        <div class="htd-biz-meta"><span class="htd-biz-addr">114 N. 3rd St., Watseka</span><a class="htd-biz-phone" href="tel:+18157851015">(815) 785-1015</a></div>
+          <div class="htd-biz-fact"><span class="lbl">Trail Fact No. 9</span>In <b>1865</b> the village of <b>South Middleport</b> was made the county seat, incorporated as a city, and renamed <b>Watseka</b> in her honor.<em>The town changed its name to remember a woman it had helped drive out.</em></div>
+        </div>
+      </details>
+      <details class="htd-biz">
+        <summary><span class="htd-biz-name">La Potosina</span><span class="htd-biz-stop">Stop 10</span></summary>
+        <div class="htd-biz-body">
+        <div class="htd-biz-meta"><span class="htd-biz-addr">200 W. Walnut St., Watseka</span><a class="htd-biz-phone" href="tel:+18154324500">(815) 432-4500</a></div>
+          <div class="htd-biz-fact"><span class="lbl">Trail Fact No. 10</span>In <b>1840</b> Watchekee was baptized and given the name <b>Josette</b>. She married <b>Francis Xavier Bergeron</b>, a French Canadian she met on one of her long walks back east.<em>Her descendants are the ones who counted up all those miles.</em></div>
+        </div>
+      </details>
+      <details class="htd-biz">
+        <summary><span class="htd-biz-name">Trios Steakhouse</span><span class="htd-biz-stop">Stop 11</span></summary>
+        <div class="htd-biz-body">
+        <div class="htd-biz-meta"><span class="htd-biz-addr">1140 E. Walnut St.</span><a class="htd-biz-phone" href="tel:+18154321116">(815) 432-1116</a></div>
+        <p class="htd-biz-desc">Watseka&#x27;s newest steakhouse and bar — premium cut steaks, burgers, pastas, and specialty drinks, with specials all week long. Perfect for date night, family gatherings, or game day.</p>
+          <div class="htd-biz-fact"><span class="lbl">Trail Fact No. 11</span>Hubbard went on to build <b>Chicago's first stockyard</b> and to serve as an alderman of the city. Chicago still has a <b>Hubbard Street</b> and a <b>Hubbard High School</b>.<em>The cattle trade that fed Chicago started with a boy on this river.</em></div>
+        </div>
+      </details>
+      <details class="htd-biz">
+        <summary><span class="htd-biz-name">Massey Design</span><span class="htd-biz-stop">Stop 12</span></summary>
+        <div class="htd-biz-body">
+        <div class="htd-biz-meta"><span class="htd-biz-addr">116 E. Walnut St.</span><a class="htd-biz-phone" href="tel:+18156444642">(815) 644-4642</a></div>
+        <p class="htd-biz-desc">Custom apparel, graphic design, and branded merchandise for businesses and organizations throughout Iroquois County.</p>
+          <div class="htd-biz-fact"><span class="lbl">Trail Fact No. 12</span>The path Hubbard wore north toward Chicago became known as <b>Hubbard's Trace</b>. Settlers followed it, it widened into a road, and that road is now <b>Illinois Route 1</b>.<em>A footpath became a highway without ever moving.</em></div>
+        </div>
+      </details>
+      <details class="htd-biz">
+        <summary><span class="htd-biz-name">The Silo Pub &amp; Eatery</span><span class="htd-biz-stop">Stop 13</span></summary>
+        <div class="htd-biz-body">
+        <div class="htd-biz-meta"><span class="htd-biz-addr">117 W. Walnut St.</span><a class="htd-biz-phone" href="tel:+18154501461">(815) 450-1461</a></div>
+        <p class="htd-biz-desc">A Downtown Watseka staple right next door to the Farmers Market. Great food, cold drinks, and a warm welcome any day of the week.</p>
+          <div class="htd-biz-fact"><span class="lbl">Trail Fact No. 13</span><b>Iroquois County</b> was organized in <b>1833</b> with a population of just <b>350</b> people. Its first county seat was not here at all, but at a settlement called <b>Montgomery</b>.<em>Three hundred and fifty people in the entire county. Look around.</em></div>
+        </div>
+      </details>
+      <details class="htd-biz">
+        <summary><span class="htd-biz-name">Spleodar Follaine</span><span class="htd-biz-stop">Stop 14</span></summary>
+        <div class="htd-biz-body">
+        <div class="htd-biz-meta"><span class="htd-biz-addr">127 1/2 E. Walnut St.</span><a class="htd-biz-phone" href="tel:+18153519854">(815) 351-9854</a></div>
+          <div class="htd-biz-fact"><span class="lbl">Trail Fact No. 14</span>Before the treaties this country belonged to the <b>Potawatomi</b> and the <b>Kickapoo</b>, and before them to peoples of the <b>Illini Confederation</b>. <b>Chief Tamin</b> led the Kankakee band.<em>The Hubbard Trail is one thread. There are a great many others.</em></div>
+        </div>
+      </details>
+      <details class="htd-biz">
+        <summary><span class="htd-biz-name">Griswold Feed</span><span class="htd-biz-stop">Stop 15</span></summary>
+        <div class="htd-biz-body">
+        <div class="htd-biz-meta"><span class="htd-biz-addr">119 E. Cherry St.</span><a class="htd-biz-phone" href="tel:+18154114279">(815) 411-4279</a></div>
+          <div class="htd-biz-fact"><span class="lbl">Trail Fact No. 15</span>Watseka grew where two railroads crossed, the <b>Toledo, Peoria &amp; Western</b> and the <b>Chicago &amp; Eastern Illinois</b>.<em>The trail made the town. The rails are what kept it.</em></div>
+        </div>
+      </details>
+      <details class="htd-biz">
+        <summary><span class="htd-biz-name">The First Trust &amp; Savings Bank</span><span class="htd-biz-stop">Stop 16</span></summary>
+        <div class="htd-biz-body">
+        <div class="htd-biz-meta"><span class="htd-biz-addr">120 E Walnut St</span><a class="htd-biz-phone" href="tel:+18154322494">(815) 432-2494</a></div>
+          <div class="htd-biz-fact"><span class="lbl">Trail Fact No. 16</span>When the Iroquois County courthouse was rebuilt in <b>1964</b>, it was paid for entirely by a bequest from <b>Katherine Clifton</b>, believed to be the only courthouse in the country built wholly with private money.<em>One woman's will bought a county its courthouse.</em></div>
+        </div>
+      </details>
+      <details class="htd-biz">
+        <summary><span class="htd-biz-name">Gray Farms</span><span class="htd-biz-stop">Stop 17</span></summary>
+        <div class="htd-biz-body">
+        <div class="htd-biz-meta"><span class="htd-biz-addr">Pop-up at 127 E. Walnut St., Watseka</span></div>
+          <div class="htd-biz-fact"><span class="lbl">Trail Fact No. 17</span>The old <b>Iroquois County courthouse</b> laid its cornerstone in <b>1866</b>, an Italianate building by architect <b>C.B. Leach</b>. It joined the <b>National Register of Historic Places</b> in 1975.<em>It went up the year after the town took Watchekee's name.</em></div>
+        </div>
+      </details>
+      <details class="htd-biz">
+        <summary><span class="htd-biz-name">Ingram Atelier</span><span class="htd-biz-stop">Stop 18</span></summary>
+        <div class="htd-biz-body">
+        <div class="htd-biz-meta"><span class="htd-biz-addr">203 1/2 E. Walnut St.</span></div>
+        <p class="htd-biz-desc">A father-and-daughter gallery in downtown Watseka specializing in original art — creating art for all.</p>
+          <div class="htd-biz-fact"><span class="lbl">Trail Fact No. 18</span>In <b>1878</b> Watseka drew national attention for the case called <b>The Watseka Wonder</b>, when thirteen-year-old <b>Lurancy Vennum</b> appeared to take on the personality of a girl who had died years before.<em>For a while this quiet town was the strangest place in America.</em></div>
+        </div>
+      </details>
+      <details class="htd-biz">
+        <summary><span class="htd-biz-name">Traditions</span><span class="htd-biz-stop">Stop 19</span></summary>
+        <div class="htd-biz-body">
+        <div class="htd-biz-meta"><span class="htd-biz-addr">104 W. Walnut St., Watseka</span><a class="htd-biz-phone" href="tel:+18156440499">(815) 644-0499</a></div>
+          <div class="htd-biz-fact"><span class="lbl">Trail Fact No. 19</span><b>Asa Roff</b> built his house here in <b>1868</b>, brick and Italianate with tall arched windows. It is still standing, and today it takes in guests.<em>The same rooms, a hundred and fifty years of different people.</em></div>
+        </div>
+      </details>
+      <details class="htd-biz">
+        <summary><span class="htd-biz-name">Illiana Backyard</span><span class="htd-biz-stop">Stop 20</span></summary>
+        <div class="htd-biz-body">
+        <div class="htd-biz-meta"><span class="htd-biz-addr">800 E. Walnut St., Watseka</span><a class="htd-biz-phone" href="tel:+18154321100">(815) 432-1100</a></div>
+          <div class="htd-biz-fact"><span class="lbl">Trail Fact No. 20</span>Every storefront on this street sits on a <b>two-hundred-year-old trade route</b>. The fur trade, the settlers, the railroad and the highway all came through on the same line.<em>You have walked the whole trail now. Welcome to the end of it.</em></div>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="htd-section">
+  <div class="htd-wrap">
+    <div class="htd-kids">
+      <h2>Free Kids Zone</h2>
+      <p class="where">On Third Street, between Walnut and Oak.</p>
+      <ul>
+        <li><b>The Hub</b> is open for kids and teens, with tunes and snow cones.</li>
+        <li><b>W.G.F.A.</b> is sponsoring free popsicles.</li>
+        <li><b>Harbor House</b> has free chalk.</li>
+        <li><b>Perfect Pawz</b> has free dog treats, plus a color-your-own bandana for your pet.</li>
+        <li><b>A firetruck</b> everyone can climb up to and take photos with.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="htd-section paper htd-history">
+  <div class="htd-wrap">
+    <span class="section-eyebrow">Why &ldquo;Hubbard&rdquo;</span>
+    <h2 class="section-title">The trail beneath your feet</h2>
+    <p>Two hundred years ago a young fur trader named <b>Gurdon Hubbard</b> set up a trading post where the Iroquois River meets Sugar Creek, the ground Downtown Watseka stands on today. The Potawatomi called him <b>Pa-pa-ma-ta-be</b>, or Swift-Walker, after he covered seventy-five miles on foot through the night to warn settlers of a threatened raid, arriving before dawn.</p>
+    <p>The path he wore north toward Chicago became known as <b>Hubbard&rsquo;s Trace</b>. Settlers followed it, it widened into a road, and that road is now <b>Illinois Route 1</b>, still running straight through our downtown. Every storefront here sits on a two-hundred-year-old trade route.</p>
+    <p>But our town does not carry his name. It carries hers. <b>Watchekee</b>, &ldquo;Daughter of the Evening Star,&rdquo; was a Potawatomi woman and the daughter of the respected leader Shabbona. She married Hubbard here in 1826. After the 1833 Treaty of Chicago forced her people west, she walked back to this land again and again, thousands of miles over a lifetime of removals. In <b>1865</b>, Middleport was renamed <b>Watseka</b> in her honor.</p>
+    <p>Most people here, visitors and lifelong residents alike, have never heard that story. Come collect it one stamp at a time.</p>
+  </div>
+</section>
+
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">
+        <img src="/images/logo-visitwatseka.png" alt="Logo">
+        <div class="footer-brand-name">Visit Watseka</div>
+      </div>
+      <p class="footer-tagline">
+        Preserving small-town charm and growing community, one day at a time.
+        A project supporting Downtown Watseka, Illinois.
+      </p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/watsekafarmersmarket" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+        <a href="https://www.instagram.com/dtwatsekafarmersmarket/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Explore</div>
+      <ul class="footer-links">
+        <li><a href="/farmers-market/">Farmers' Market</a>
+        <ul class="nav-dropdown">
+          <li><a href="/farmers-market/plan-your-visit.html">Plan Your Visit</a></li>
+          <li><a href="/farmers-market/faq.html">Vendor FAQ</a></li>
+          <li><a href="/farmers-market/vendor-application.html">Vendor Application</a></li>
+          <li><a href="/farmers-market/sponsorship.html">Sponsor the Market</a></li>
+          <li><a href="/farmers-market/band-application.html">Band Application</a></li>
+          <li><a href="/farmers-market/policies.html">Policies & Procedures</a></li>
+          <li><a href="/farmers-market/vendors.html">Meet Your Vendors</a></li>
+        </ul>
+      </li>
+        <li><a href="/things-to-do.html">Things to Do</a></li>
+        <li><a href="/hubbard-trail-days.html">Hubbard Trail Days</a></li>
+        <li><a href="/places-to-go.html">Places to Go</a></li>
+        <li><a href="/news.html">News & Development</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Farmers' Market</div>
+      <ul class="footer-links">
+        <li><a href="/farmers-market/vendor-application.html">Vendor Application</a></li>
+        <li><a href="/farmers-market/sponsorship.html">Sponsor the Market</a></li>
+        <li><a href="/farmers-market/band-application.html">Band Application</a></li>
+        <li><a href="/farmers-market/policies.html">Policies & Procedures</a></li>
+        <li><a href="/farmers-market/vendors.html">Meet Your Vendors</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 Visit Watseka &middot; Downtown Watseka Farmers Market &middot; 501(c)(3) Nonprofit &middot; Watseka, Illinois
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+</body>
+</html>
