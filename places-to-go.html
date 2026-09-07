@@ -1342,26 +1342,37 @@
       var open = grid.classList.toggle('show-all');
       toggle.textContent = open ? 'Show Fewer Categories' : 'View All Categories';
     });
+    var HINT_DEFAULT = hint.textContent;
     search.addEventListener('input', function(){
-      var q = this.value.toLowerCase().trim();
+      var raw = this.value.trim();
+      var q = raw.toLowerCase();
       if (!q){
         tiles.forEach(function(t){ t.classList.remove('active'); });
         panels.forEach(function(p){ p.classList.remove('active'); p.querySelectorAll('.dir-member').forEach(function(m){ m.style.display = ''; }); });
         grid.classList.remove('show-all'); toggle.textContent = 'View All Categories';
-        hint.style.display = ''; return;
+        grid.style.display = ''; toggle.style.display = '';
+        hint.textContent = HINT_DEFAULT; hint.style.display = ''; return;
       }
       tiles.forEach(function(t){ t.classList.remove('active'); });
-      grid.classList.add('show-all'); toggle.textContent = 'Show Fewer Categories'; hint.style.display = 'none';
+      // Keep the category tiles out of the way while searching, otherwise the grid
+      // expands and pushes the actual results below the fold.
+      grid.style.display = 'none'; toggle.style.display = 'none';
+      grid.classList.remove('show-all'); toggle.textContent = 'View All Categories';
+      var total = 0;
       panels.forEach(function(p){
         var any = false;
         p.querySelectorAll('.dir-member').forEach(function(m){
           var name = (m.querySelector('.dir-member-name') || {}).textContent || '';
           var addr = (m.querySelector('.dir-member-addr') || {}).textContent || '';
           var ok = name.toLowerCase().indexOf(q) > -1 || addr.toLowerCase().indexOf(q) > -1;
-          m.style.display = ok ? '' : 'none'; if (ok) any = true;
+          m.style.display = ok ? '' : 'none'; if (ok) { any = true; total++; }
         });
         p.classList.toggle('active', any);
       });
+      hint.style.display = '';
+      hint.textContent = total
+        ? total + (total === 1 ? ' business' : ' businesses') + ' found'
+        : 'No businesses match \u201C' + raw + '\u201D.';
     });
   })();
 </script>
