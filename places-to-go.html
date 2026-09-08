@@ -128,8 +128,13 @@
   .county-cta { background: var(--green-dark); padding: 3.5rem 1.5rem; text-align: center; }
   .county-cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; color: #fff; margin-bottom: 0.6rem; }
   .county-cta p { font-size: 14.5px; color: rgba(255,255,255,0.7); max-width: 520px; margin: 0 auto 1.5rem; line-height: 1.7; }
-  .county-towns { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.75rem; }
-  .county-town-pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.85); font-size: 12px; padding: 4px 12px; border-radius: 20px; }
+  .fb-fallback { display: block; margin-top: 0.75rem; text-align: center; font-size: 13px;
+    font-weight: 700; color: var(--green-mid); text-decoration: none; }
+  .fb-fallback:hover { text-decoration: underline; }
+  .county-towns { display: flex; gap: 0.35rem 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.9rem; }
+  .county-town-pill { background: none; border: 0; padding: 0; border-radius: 0;
+    font-family: 'Playfair Display', serif; font-weight: 700;
+    font-size: clamp(1.2rem, 2.6vw, 1.75rem); color: #E7C56E; line-height: 1.25; }
 
   /* BUTTONS */
   .btn { display: inline-flex; align-items: center; gap: 6px; font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 11px 26px; border-radius: 6px; text-decoration: none; transition: background 0.15s, transform 0.15s; border: 2px solid transparent; cursor: pointer; }
@@ -1305,7 +1310,9 @@
         feedCol.style.display = '';
         embed.innerHTML = '<iframe src="' + fbPluginUrl(fb) + '" scrolling="no" frameborder="0" allowfullscreen="true" ' +
                           'allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" loading="lazy" ' +
-                          'title="Latest Facebook posts"></iframe>';
+                          'title="Latest Facebook posts"></iframe>' +
+                          '<a class="fb-fallback" href="' + fb + '" target="_blank" rel="noopener">' +
+                          'Feed not showing? Open their Facebook page &rarr;</a>';
       } else {
         feedCol.style.display = 'none';
         embed.innerHTML = '';
