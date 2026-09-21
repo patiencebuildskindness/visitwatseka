@@ -6,8 +6,15 @@
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-<title>Hubbard Trail Days &mdash; September 12, 2026 | Downtown Watseka, Illinois</title>
-<meta name="description" content="Hubbard Trail Days is a free downtown trail crawl and sidewalk sale in Watseka, Illinois on Saturday, September 12, 2026, 11 AM to 5 PM. Collect stamps from 20 shops, enter the prize drawings, and bring the kids to the free Kids Zone.">
+<title>Hubbard Trail Days 2026 &mdash; Photo Gallery &amp; Recap | Downtown Watseka, Illinois</title>
+<meta name="description" content="Photos and a recap of Hubbard Trail Days, the free downtown trail crawl and sidewalk sale held in Watseka, Illinois on Saturday, September 12, 2026. See the gallery, the twenty stamp stops, and the supporters and donors who made the day possible.">
+<link rel="canonical" href="https://visitwatseka.com/hubbard-trail-days.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hubbard Trail Days 2026 &mdash; Photo Gallery &amp; Recap">
+<meta property="og:description" content="Twenty stops, one downtown, and a street full of neighbours. See the photos from September 12, 2026.">
+<meta property="og:image" content="https://visitwatseka.com/images/htd-2026/share.jpg">
+<meta property="og:url" content="https://visitwatseka.com/hubbard-trail-days.html">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
@@ -125,6 +132,140 @@
     .htd-datebar { gap: .8rem; flex-direction: column; }
     .htd-kids { padding: 2rem 1.3rem; border-radius: 12px; }
   }
+  /* ── 2026 RECAP: photo hero, gallery, supporters ── */
+  .htd-hero--photo {
+    position: relative; isolation: isolate; overflow: hidden;
+    padding: 6rem 1.5rem 5rem; background: #12240F;
+  }
+  .htd-hero--photo::before {
+    content: ''; position: absolute; inset: 0; z-index: -2;
+    background: url('/images/htd-2026/hero.jpg') center 38% / cover no-repeat;
+    transform: scale(1.03);
+  }
+  .htd-hero--photo::after {
+    content: ''; position: absolute; inset: 0; z-index: -1;
+    background: linear-gradient(175deg, rgba(18,36,15,.80) 0%, rgba(30,70,32,.88) 55%, rgba(18,36,15,.94) 100%);
+  }
+  .htd-hero .thanks {
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: clamp(1.15rem, 2.6vw, 1.5rem); color: #F4F1E4;
+    max-width: 44ch; margin: 0 auto 1.8rem;
+  }
+  .htd-stats {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem 2.6rem;
+    border-top: 1px solid rgba(231,197,110,.45); border-bottom: 1px solid rgba(231,197,110,.45);
+    padding: 1.1rem 1.4rem; margin: 0 auto 2rem; max-width: 760px;
+  }
+  .htd-stats div { text-align: center; }
+  .htd-stats b {
+    display: block; font-family: 'Playfair Display', serif; font-size: 1.75rem;
+    line-height: 1.15; color: #E7C56E;
+  }
+  .htd-stats span {
+    font-size: .72rem; font-weight: 700; letter-spacing: .17em;
+    text-transform: uppercase; color: #CFE0C2;
+  }
+  .htd-hero-cta { display: flex; flex-wrap: wrap; gap: .8rem; justify-content: center; }
+  .htd-hero-cta a {
+    display: inline-block; padding: .85rem 1.9rem; border-radius: 6px;
+    font-weight: 700; letter-spacing: .04em; font-size: .95rem; transition: all .18s;
+  }
+  .htd-hero-cta .gold { background: #E7C56E; color: #2E1F06; }
+  .htd-hero-cta .gold:hover { background: #C97D10; color: #fff; transform: translateY(-2px); }
+  .htd-hero-cta .ghost { border: 1px solid rgba(244,241,228,.55); color: #F4F1E4; }
+  .htd-hero-cta .ghost:hover { background: rgba(244,241,228,.12); color: #fff; transform: translateY(-2px); }
+
+  .htd-recap { display: grid; grid-template-columns: 1.15fr .85fr; gap: 3rem; align-items: start; margin-top: 2.5rem; }
+  .htd-recap p { color: var(--ink-muted); margin-bottom: 1.1rem; }
+  .htd-recap b { color: var(--green-dark); }
+  .htd-recap figure img { border-radius: 14px; box-shadow: 0 16px 40px rgba(0,0,0,.18); }
+  .htd-recap figcaption {
+    margin-top: .8rem; font-size: .88rem; color: var(--ink-light);
+    font-family: 'Playfair Display', serif; font-style: italic;
+  }
+  @media (max-width: 800px) { .htd-recap { grid-template-columns: 1fr; gap: 2rem; } }
+
+  /* gallery */
+  .htd-gallery { columns: 4 210px; column-gap: .75rem; margin-top: 2.5rem; }
+  .htd-shot {
+    display: block; width: 100%; margin: 0 0 .75rem; padding: 0; border: 0;
+    background: var(--green-pale); border-radius: 10px; overflow: hidden;
+    cursor: zoom-in; break-inside: avoid; line-height: 0;
+    box-shadow: 0 4px 14px rgba(0,0,0,.09); transition: transform .18s, box-shadow .18s;
+  }
+  .htd-shot:hover, .htd-shot:focus-visible { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0,0,0,.2); outline: none; }
+  .htd-shot:focus-visible { box-shadow: 0 0 0 3px var(--amber), 0 12px 28px rgba(0,0,0,.2); }
+  .htd-shot img { width: 100%; height: auto; }
+  .htd-credit { text-align: center; margin-top: 1.8rem; font-size: .93rem; color: var(--ink-muted); }
+  .htd-credit a { font-weight: 700; border-bottom: 1px solid rgba(45,106,48,.35); }
+  .htd-credit a:hover { border-bottom-color: var(--green-dark); }
+
+  /* lightbox */
+  body.htd-lb-open { overflow: hidden; }
+  .htd-lb {
+    position: fixed; inset: 0; z-index: 2000; display: none;
+    background: rgba(12,20,10,.95); padding: 3.2rem 1rem 3.6rem;
+    align-items: center; justify-content: center;
+  }
+  .htd-lb.show { display: flex; }
+  .htd-lb img {
+    max-width: 100%; max-height: 100%; width: auto; height: auto;
+    border-radius: 6px; box-shadow: 0 20px 60px rgba(0,0,0,.6);
+  }
+  .htd-lb-btn {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    width: 52px; height: 52px; border-radius: 50%; border: 0; cursor: pointer;
+    background: rgba(244,241,228,.14); color: #F4F1E4; font-size: 1.6rem; line-height: 1;
+    display: flex; align-items: center; justify-content: center; transition: background .15s;
+  }
+  .htd-lb-btn:hover { background: rgba(244,241,228,.3); }
+  .htd-lb-prev { left: 1rem; } .htd-lb-next { right: 1rem; }
+  .htd-lb-close {
+    position: absolute; top: 1rem; right: 1rem; width: 44px; height: 44px;
+    border-radius: 50%; border: 0; cursor: pointer; font-size: 1.7rem; line-height: 1;
+    background: rgba(244,241,228,.14); color: #F4F1E4;
+  }
+  .htd-lb-close:hover { background: rgba(244,241,228,.3); }
+  .htd-lb-count {
+    position: absolute; bottom: 1.1rem; left: 0; right: 0; text-align: center;
+    color: #CFE0C2; font-size: .85rem; letter-spacing: .12em; text-transform: uppercase;
+  }
+
+  /* supporters */
+  .htd-supgrid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 1.6rem 1.2rem; margin-top: 2.5rem;
+  }
+  @media (max-width: 860px) { .htd-supgrid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 560px) { .htd-supgrid { grid-template-columns: repeat(2, 1fr); gap: 1.2rem .9rem; } }
+  .htd-sup { text-align: center; }
+  .htd-sup-mark {
+    display: flex; align-items: center; justify-content: center;
+    height: 110px; padding: .9rem; background: var(--paper);
+    border: 1px solid var(--border); border-radius: 12px;
+  }
+  .htd-sup-mark img { max-height: 100%; max-width: 100%; width: auto; object-fit: contain; }
+  .htd-sup figcaption {
+    margin-top: .6rem; font-size: .84rem; font-weight: 700;
+    color: var(--green-dark); line-height: 1.35;
+  }
+  .htd-thanks-note {
+    margin-top: 2.6rem; background: var(--paper); border: 1px solid var(--border);
+    border-left: 5px solid var(--amber); border-radius: 14px; padding: 1.6rem 1.8rem;
+    color: var(--ink-muted);
+  }
+  .htd-thanks-note b { color: var(--green-dark); }
+
+  @media (max-width: 600px) {
+    .htd-hero--photo { padding: 4.2rem 1.2rem 3.6rem; }
+    .htd-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.1rem .8rem; }
+    .htd-stats b { font-size: 1.5rem; }
+    .htd-stats span { font-size: .66rem; letter-spacing: .13em; }
+    .htd-gallery { columns: 2 140px; column-gap: .5rem; }
+    .htd-shot { margin-bottom: .5rem; }
+    .htd-lb { padding: 3.4rem .5rem 3.4rem; }
+    .htd-lb-btn { width: 42px; height: 42px; }
+  }
 </style>
 </head>
 <body>
@@ -171,15 +312,21 @@
 </nav>
 </header>
 
-<section class="htd-hero">
+<section class="htd-hero htd-hero--photo">
   <div class="htd-wrap">
-    <div class="eyebrow">Downtown Watseka Trail Crawl &amp; Sidewalk Sale</div>
+    <div class="eyebrow">Saturday, September 12, 2026 &middot; Downtown Watseka</div>
     <h1>Hubbard Trail Days</h1>
-    <p class="sub">Retrace the path that built our town, one shop and one stamp at a time.</p>
-    <div class="htd-datebar">
-      <span><b>Saturday, September 12, 2026</b></span>
-      <span><b>11 AM &ndash; 5 PM</b></span>
-      <span><b>Downtown Watseka</b></span>
+    <p class="sub">Twenty stops, one downtown, and a street full of neighbours.</p>
+    <p class="thanks">Thank you for filling our sidewalks. Here is what the day looked like.</p>
+    <div class="htd-stats">
+      <div><b>20</b><span>Stamp stops</span></div>
+      <div><b>6</b><span>Hours on the trail</span></div>
+      <div><b>16</b><span>Supporters &amp; donors</span></div>
+      <div><b>80</b><span>Photos</span></div>
+    </div>
+    <div class="htd-hero-cta">
+      <a class="gold" href="#gallery">View the Photo Gallery</a>
+      <a class="ghost" href="#supporters">Supporters &amp; Donors</a>
     </div>
   </div>
 </section>
@@ -187,96 +334,382 @@
 <section class="htd-section">
   <div class="htd-wrap">
     <h2 class="section-title">A shopping day built on a history lesson</h2>
-    <p class="section-subtitle">Carry a passport from shop to shop, collect a stamp at every stop, and work your way toward the prize drawings. Along the way you find out whose trail you have been walking your whole life. No lecture, no admission, just twenty good reasons to walk the street.</p>
+    <p class="section-subtitle">On the second Saturday of September, Downtown Watseka handed out passports and asked people to walk. Twenty shops, twenty stamps, and a two-hundred-year-old trade route running right down the middle of it.</p>
+    <div class="htd-recap">
+      <div>
+        <p>Hubbard Trail Days ran from <b>11 AM to 5 PM on Saturday, September 12, 2026</b>. Passports came from the Santa House in the First Trust parking lot, or straight from a phone, and every participating business along the way had a stamp waiting at the counter.</p>
+        <p>Tables came out onto the sidewalk and stayed there all day. There were flowers in buckets on Walnut Street, chalk on the pavement, a prize wheel outside Harbor House, popcorn, snow cones, free popsicles from W.G.F.A., and a fire truck the kids were allowed to climb. Shops that are usually quiet on a Saturday afternoon had lines at the register.</p>
+        <p>Stamped passports came back to the Santa House, where volunteers counted them and entered people into the drawings on the spot: <b>ten stamps, fifteen stamps, or the full twenty</b>. The drawings were held in the days that followed and <b>winners were contacted directly</b>.</p>
+        <p>None of it was ticketed and none of it was gated. It was a free day downtown, paid for by the businesses and neighbours listed further down this page.</p>
+      </div>
+      <figure>
+        <img src="/images/htd-2026/full/htd-2026-61.jpg" alt="A visitor holding up a Hubbard Trail Days passport filled with collected stamps" width="1800" height="1200" loading="lazy" decoding="async">
+        <figcaption>A full passport, twenty stamps and twenty stories.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
 
-    <div class="htd-video">
-      <video controls playsinline preload="none" poster="/images/hubbard-trail-days-promo-poster.jpg">
-        <source src="/videos/hubbard-trail-days-promo.mp4" type="video/mp4">
-        Your browser cannot play this video.
-      </video>
+<section class="htd-section alt" id="gallery">
+  <div class="htd-wrap">
+    <h2 class="section-title">The Photo Gallery</h2>
+    <p class="section-subtitle">Eighty photographs from the day, taken all along the trail. Click any photo to see it full size, then use the arrows or your keyboard to move through the set.</p>
+    <div class="htd-gallery" id="htd-gallery">
+      <button class="htd-shot" type="button" data-i="1" aria-label="Open photo 1 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-01.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 1">
+      </button>
+      <button class="htd-shot" type="button" data-i="2" aria-label="Open photo 2 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-02.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 2">
+      </button>
+      <button class="htd-shot" type="button" data-i="3" aria-label="Open photo 3 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-03.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 3">
+      </button>
+      <button class="htd-shot portrait" type="button" data-i="4" aria-label="Open photo 4 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-04.jpg" width="1200" height="1800" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 4">
+      </button>
+      <button class="htd-shot portrait" type="button" data-i="5" aria-label="Open photo 5 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-05.jpg" width="1200" height="1800" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 5">
+      </button>
+      <button class="htd-shot" type="button" data-i="6" aria-label="Open photo 6 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-06.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 6">
+      </button>
+      <button class="htd-shot portrait" type="button" data-i="7" aria-label="Open photo 7 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-07.jpg" width="1200" height="1800" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 7">
+      </button>
+      <button class="htd-shot portrait" type="button" data-i="8" aria-label="Open photo 8 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-08.jpg" width="1200" height="1800" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 8">
+      </button>
+      <button class="htd-shot portrait" type="button" data-i="9" aria-label="Open photo 9 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-09.jpg" width="1200" height="1800" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 9">
+      </button>
+      <button class="htd-shot" type="button" data-i="10" aria-label="Open photo 10 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-10.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 10">
+      </button>
+      <button class="htd-shot" type="button" data-i="11" aria-label="Open photo 11 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-11.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 11">
+      </button>
+      <button class="htd-shot portrait" type="button" data-i="12" aria-label="Open photo 12 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-12.jpg" width="1200" height="1800" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 12">
+      </button>
+      <button class="htd-shot portrait" type="button" data-i="13" aria-label="Open photo 13 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-13.jpg" width="1200" height="1800" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 13">
+      </button>
+      <button class="htd-shot" type="button" data-i="14" aria-label="Open photo 14 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-14.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 14">
+      </button>
+      <button class="htd-shot" type="button" data-i="15" aria-label="Open photo 15 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-15.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 15">
+      </button>
+      <button class="htd-shot" type="button" data-i="16" aria-label="Open photo 16 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-16.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 16">
+      </button>
+      <button class="htd-shot" type="button" data-i="17" aria-label="Open photo 17 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-17.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 17">
+      </button>
+      <button class="htd-shot" type="button" data-i="18" aria-label="Open photo 18 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-18.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 18">
+      </button>
+      <button class="htd-shot portrait" type="button" data-i="19" aria-label="Open photo 19 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-19.jpg" width="1200" height="1800" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 19">
+      </button>
+      <button class="htd-shot" type="button" data-i="20" aria-label="Open photo 20 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-20.jpg" width="1800" height="1211" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 20">
+      </button>
+      <button class="htd-shot" type="button" data-i="21" aria-label="Open photo 21 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-21.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 21">
+      </button>
+      <button class="htd-shot" type="button" data-i="22" aria-label="Open photo 22 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-22.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 22">
+      </button>
+      <button class="htd-shot" type="button" data-i="23" aria-label="Open photo 23 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-23.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 23">
+      </button>
+      <button class="htd-shot portrait" type="button" data-i="24" aria-label="Open photo 24 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-24.jpg" width="1200" height="1800" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 24">
+      </button>
+      <button class="htd-shot portrait" type="button" data-i="25" aria-label="Open photo 25 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-25.jpg" width="1200" height="1800" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 25">
+      </button>
+      <button class="htd-shot portrait" type="button" data-i="26" aria-label="Open photo 26 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-26.jpg" width="1200" height="1800" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 26">
+      </button>
+      <button class="htd-shot portrait" type="button" data-i="27" aria-label="Open photo 27 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-27.jpg" width="1200" height="1800" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 27">
+      </button>
+      <button class="htd-shot portrait" type="button" data-i="28" aria-label="Open photo 28 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-28.jpg" width="1200" height="1800" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 28">
+      </button>
+      <button class="htd-shot" type="button" data-i="29" aria-label="Open photo 29 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-29.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 29">
+      </button>
+      <button class="htd-shot" type="button" data-i="30" aria-label="Open photo 30 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-30.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 30">
+      </button>
+      <button class="htd-shot portrait" type="button" data-i="31" aria-label="Open photo 31 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-31.jpg" width="1243" height="1800" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 31">
+      </button>
+      <button class="htd-shot" type="button" data-i="32" aria-label="Open photo 32 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-32.jpg" width="1800" height="1209" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 32">
+      </button>
+      <button class="htd-shot" type="button" data-i="33" aria-label="Open photo 33 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-33.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 33">
+      </button>
+      <button class="htd-shot" type="button" data-i="34" aria-label="Open photo 34 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-34.jpg" width="1800" height="1246" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 34">
+      </button>
+      <button class="htd-shot" type="button" data-i="35" aria-label="Open photo 35 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-35.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 35">
+      </button>
+      <button class="htd-shot" type="button" data-i="36" aria-label="Open photo 36 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-36.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 36">
+      </button>
+      <button class="htd-shot portrait" type="button" data-i="37" aria-label="Open photo 37 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-37.jpg" width="1303" height="1800" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 37">
+      </button>
+      <button class="htd-shot" type="button" data-i="38" aria-label="Open photo 38 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-38.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 38">
+      </button>
+      <button class="htd-shot" type="button" data-i="39" aria-label="Open photo 39 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-39.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 39">
+      </button>
+      <button class="htd-shot" type="button" data-i="40" aria-label="Open photo 40 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-40.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 40">
+      </button>
+      <button class="htd-shot" type="button" data-i="41" aria-label="Open photo 41 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-41.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 41">
+      </button>
+      <button class="htd-shot" type="button" data-i="42" aria-label="Open photo 42 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-42.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 42">
+      </button>
+      <button class="htd-shot" type="button" data-i="43" aria-label="Open photo 43 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-43.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 43">
+      </button>
+      <button class="htd-shot portrait" type="button" data-i="44" aria-label="Open photo 44 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-44.jpg" width="1200" height="1800" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 44">
+      </button>
+      <button class="htd-shot" type="button" data-i="45" aria-label="Open photo 45 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-45.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 45">
+      </button>
+      <button class="htd-shot" type="button" data-i="46" aria-label="Open photo 46 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-46.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 46">
+      </button>
+      <button class="htd-shot" type="button" data-i="47" aria-label="Open photo 47 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-47.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 47">
+      </button>
+      <button class="htd-shot" type="button" data-i="48" aria-label="Open photo 48 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-48.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 48">
+      </button>
+      <button class="htd-shot" type="button" data-i="49" aria-label="Open photo 49 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-49.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 49">
+      </button>
+      <button class="htd-shot" type="button" data-i="50" aria-label="Open photo 50 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-50.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 50">
+      </button>
+      <button class="htd-shot" type="button" data-i="51" aria-label="Open photo 51 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-51.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 51">
+      </button>
+      <button class="htd-shot portrait" type="button" data-i="52" aria-label="Open photo 52 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-52.jpg" width="1200" height="1800" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 52">
+      </button>
+      <button class="htd-shot" type="button" data-i="53" aria-label="Open photo 53 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-53.jpg" width="1800" height="1176" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 53">
+      </button>
+      <button class="htd-shot" type="button" data-i="54" aria-label="Open photo 54 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-54.jpg" width="1800" height="1224" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 54">
+      </button>
+      <button class="htd-shot" type="button" data-i="55" aria-label="Open photo 55 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-55.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 55">
+      </button>
+      <button class="htd-shot" type="button" data-i="56" aria-label="Open photo 56 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-56.jpg" width="1800" height="1208" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 56">
+      </button>
+      <button class="htd-shot portrait" type="button" data-i="57" aria-label="Open photo 57 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-57.jpg" width="1200" height="1800" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 57">
+      </button>
+      <button class="htd-shot" type="button" data-i="58" aria-label="Open photo 58 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-58.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 58">
+      </button>
+      <button class="htd-shot" type="button" data-i="59" aria-label="Open photo 59 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-59.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 59">
+      </button>
+      <button class="htd-shot portrait" type="button" data-i="60" aria-label="Open photo 60 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-60.jpg" width="1177" height="1800" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 60">
+      </button>
+      <button class="htd-shot" type="button" data-i="61" aria-label="Open photo 61 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-61.jpg" width="1800" height="1113" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 61">
+      </button>
+      <button class="htd-shot portrait" type="button" data-i="62" aria-label="Open photo 62 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-62.jpg" width="1216" height="1800" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 62">
+      </button>
+      <button class="htd-shot" type="button" data-i="63" aria-label="Open photo 63 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-63.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 63">
+      </button>
+      <button class="htd-shot" type="button" data-i="64" aria-label="Open photo 64 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-64.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 64">
+      </button>
+      <button class="htd-shot portrait" type="button" data-i="65" aria-label="Open photo 65 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-65.jpg" width="1227" height="1800" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 65">
+      </button>
+      <button class="htd-shot" type="button" data-i="66" aria-label="Open photo 66 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-66.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 66">
+      </button>
+      <button class="htd-shot" type="button" data-i="67" aria-label="Open photo 67 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-67.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 67">
+      </button>
+      <button class="htd-shot" type="button" data-i="68" aria-label="Open photo 68 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-68.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 68">
+      </button>
+      <button class="htd-shot" type="button" data-i="69" aria-label="Open photo 69 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-69.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 69">
+      </button>
+      <button class="htd-shot" type="button" data-i="70" aria-label="Open photo 70 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-70.jpg" width="1800" height="1193" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 70">
+      </button>
+      <button class="htd-shot" type="button" data-i="71" aria-label="Open photo 71 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-71.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 71">
+      </button>
+      <button class="htd-shot" type="button" data-i="72" aria-label="Open photo 72 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-72.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 72">
+      </button>
+      <button class="htd-shot" type="button" data-i="73" aria-label="Open photo 73 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-73.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 73">
+      </button>
+      <button class="htd-shot" type="button" data-i="74" aria-label="Open photo 74 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-74.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 74">
+      </button>
+      <button class="htd-shot" type="button" data-i="75" aria-label="Open photo 75 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-75.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 75">
+      </button>
+      <button class="htd-shot" type="button" data-i="76" aria-label="Open photo 76 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-76.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 76">
+      </button>
+      <button class="htd-shot" type="button" data-i="77" aria-label="Open photo 77 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-77.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 77">
+      </button>
+      <button class="htd-shot portrait" type="button" data-i="78" aria-label="Open photo 78 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-78.jpg" width="1196" height="1800" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 78">
+      </button>
+      <button class="htd-shot" type="button" data-i="79" aria-label="Open photo 79 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-79.jpg" width="1800" height="1217" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 79">
+      </button>
+      <button class="htd-shot portrait" type="button" data-i="80" aria-label="Open photo 80 of 80">
+        <img src="/images/htd-2026/thumb/htd-2026-80.jpg" width="1200" height="1800" loading="lazy" decoding="async" alt="Hubbard Trail Days 2026 in Downtown Watseka, photo 80">
+      </button>
+    </div>
+    <p class="htd-credit">Photographs by <a href="https://www.janimariefilms.mypixieset.com" target="_blank" rel="noopener">Jani Marie Films &amp; Photos</a>, <a href="tel:+18153832088">(815) 383-2088</a>, shot for Visit Watseka on Hubbard Trail Days, Saturday, September 12, 2026.</p>
+  </div>
+</section>
+
+<section class="htd-section" id="supporters">
+  <div class="htd-wrap">
+    <h2 class="section-title">Mile Markers</h2>
+    <p class="section-subtitle">Our supporters and donors. Hubbard Trail Days cost visitors nothing, which only works because these businesses, organisations and neighbours paid for the printing, the prizes and the extras that filled the street.</p>
+    <div class="htd-supgrid">
+      <figure class="htd-sup">
+        <div class="htd-sup-mark"><img src="/images/sponsors/bookish.png" alt="Bookish" loading="lazy"></div>
+        <figcaption>Bookish</figcaption>
+      </figure>
+      <figure class="htd-sup">
+        <div class="htd-sup-mark"><img src="/images/sponsors/sugar-creek.png" alt="Sugar Creek Trading Co." loading="lazy"></div>
+        <figcaption>Sugar Creek Trading Co.</figcaption>
+      </figure>
+      <figure class="htd-sup">
+        <div class="htd-sup-mark"><img src="/images/sponsors/first-trust.png" alt="The First Trust & Savings Bank" loading="lazy"></div>
+        <figcaption>The First Trust &amp; Savings Bank</figcaption>
+      </figure>
+      <figure class="htd-sup">
+        <div class="htd-sup-mark"><img src="/images/sponsors/flower-social.png" alt="The Flower Social" loading="lazy"></div>
+        <figcaption>The Flower Social</figcaption>
+      </figure>
+      <figure class="htd-sup">
+        <div class="htd-sup-mark"><img src="/images/sponsors/headquarters.png" alt="The Head Quarters" loading="lazy"></div>
+        <figcaption>The Head Quarters</figcaption>
+      </figure>
+      <figure class="htd-sup">
+        <div class="htd-sup-mark"><img src="/images/sponsors/party-pop.png" alt="Party Pop" loading="lazy"></div>
+        <figcaption>Party Pop</figcaption>
+      </figure>
+      <figure class="htd-sup">
+        <div class="htd-sup-mark"><img src="/images/sponsors/silo.png" alt="The Silo Pub & Eatery" loading="lazy"></div>
+        <figcaption>The Silo Pub &amp; Eatery</figcaption>
+      </figure>
+      <figure class="htd-sup">
+        <div class="htd-sup-mark"><img src="/images/sponsors/mycloset.png" alt="MyClozet2Yourz" loading="lazy"></div>
+        <figcaption>MyClozet2Yourz</figcaption>
+      </figure>
+      <figure class="htd-sup">
+        <div class="htd-sup-mark"><img src="/images/sponsors/massey.png" alt="Massey Design" loading="lazy"></div>
+        <figcaption>Massey Design</figcaption>
+      </figure>
+      <figure class="htd-sup">
+        <div class="htd-sup-mark"><img src="/images/sponsors/center-street.png" alt="Center Street Production" loading="lazy"></div>
+        <figcaption>Center Street Production</figcaption>
+      </figure>
+      <figure class="htd-sup">
+        <div class="htd-sup-mark"><img src="/images/sponsors/city.png" alt="City of Watseka" loading="lazy"></div>
+        <figcaption>City of Watseka</figcaption>
+      </figure>
+      <figure class="htd-sup">
+        <div class="htd-sup-mark"><img src="/images/sponsors/harbor-house.png" alt="Harbor House" loading="lazy"></div>
+        <figcaption>Harbor House</figcaption>
+      </figure>
+      <figure class="htd-sup">
+        <div class="htd-sup-mark"><img src="/images/sponsors/tjs.png" alt="TJ’s Signs" loading="lazy"></div>
+        <figcaption>TJ&rsquo;s Signs</figcaption>
+      </figure>
+      <figure class="htd-sup">
+        <div class="htd-sup-mark"><img src="/images/sponsors/playplace.png" alt="Children’s Sensory Play Place" loading="lazy"></div>
+        <figcaption>Children&rsquo;s Sensory Play Place</figcaption>
+      </figure>
+      <figure class="htd-sup">
+        <div class="htd-sup-mark"><img src="/images/sponsors/wgfa.png" alt="W.G.F.A." loading="lazy"></div>
+        <figcaption>W.G.F.A.</figcaption>
+      </figure>
+      <figure class="htd-sup">
+        <div class="htd-sup-mark"><img src="/images/sponsors/the-hub.png" alt="The Hub" loading="lazy"></div>
+        <figcaption>The Hub</figcaption>
+      </figure>
+    </div>
+    <div class="htd-thanks-note">
+      <p><b>And every stamp stop.</b> All twenty participating businesses opened their doors, kept a stamp at the counter and handled a day of foot traffic, free of charge. They are listed further down this page. Thank you as well to the volunteers who staffed the Santa House, counted stamps and ran the Kids Zone, and to <b>Perfect Pawz</b> for the dog treats and bandanas.</p>
     </div>
   </div>
 </section>
 
 <section class="htd-section alt">
   <div class="htd-wrap">
-    <h2 class="section-title">Two Ways to Play</h2>
-    <p class="section-subtitle">Paper or phone, your choice. Both count exactly the same.</p>
+    <h2 class="section-title">How the trail worked</h2>
+    <p class="section-subtitle">Paper or phone, it counted the same. Here is the shape of the day, kept on the page for anyone planning to walk it with us next time.</p>
     <div class="htd-steps">
       <div class="htd-step">
         <div class="n">1</div>
-        <h3>Get your passport</h3>
-        <p>Pick up a paper passport at the Santa House, or use the digital one on your phone. Both count exactly the same.</p>
+        <h3>Pick up a passport</h3>
+        <p>Paper passports were handed out at the Santa House in the First Trust parking lot. A digital passport did the same job from a phone.</p>
       </div>
       <div class="htd-step">
         <div class="n">2</div>
-        <h3>Collect your stamps</h3>
-        <p>Step inside each participating shop, look around, and ask for your stamp. Every stamp counts toward a drawing.</p>
+        <h3>Collect the stamps</h3>
+        <p>Walkers stepped into each participating shop, looked around, and asked for the stamp. Twenty stops, twenty different stamps.</p>
       </div>
       <div class="htd-step">
         <div class="n">3</div>
-        <h3>Turn it in and win</h3>
-        <p>Bring your passport back to the Santa House. A volunteer checks your stamps and enters you on the spot.</p>
+        <h3>Turn it in</h3>
+        <p>Stamped passports came back to the Santa House. A volunteer counted them and entered each walker in the drawing they had earned.</p>
       </div>
     </div>
-    <div class="htd-two">
-      <div class="htd-card green">
-        <span class="tag">On Paper</span>
-        <h3>The printed passport</h3>
-        <p>Pick one up at the <b>Santa House in the First Trust parking lot</b>. That is also where you finish: bring your stamped passport back, and a volunteer will tell you which drawing you have earned and take your entry right there. The passport is yours to keep.</p>
-      </div>
-      <div class="htd-card">
-        <span class="tag">On Your Phone</span>
-        <h3>The digital passport</h3>
-        <p>Would rather not carry a booklet? Open the digital passport and <b>scan the QR code at the counter of any participating business</b> to collect that stamp automatically. Same twenty stops, same stamps, same drawings.</p>
-        <a href="/passport.html" class="btn btn-primary">Open the Digital Passport</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="htd-section">
-  <div class="htd-wrap">
-    <h2 class="section-title">The more stamps, the better the drawing</h2>
-    <p class="section-subtitle">Three tiers, based on how many stamps you gather. Drawings are held in the days following the event and winners are contacted directly.</p>
     <div class="htd-tiers">
       <div class="htd-tier"><div class="medal">&#129353;</div><h3>Trail Walker</h3><p>10 stamps</p></div>
       <div class="htd-tier"><div class="medal">&#129352;</div><h3>Pathfinder</h3><p>15 stamps</p></div>
       <div class="htd-tier"><div class="medal">&#129351;</div><h3>Trailblazer</h3><p>All 20 stamps</p></div>
     </div>
-    <p class="htd-tba">Prizes to be announced.</p>
-  </div>
-</section>
-
-<section class="htd-section alt">
-  <div class="htd-wrap">
-    <h2 class="section-title">Collect Them All</h2>
-    <p class="section-subtitle">Every stamp in your passport carries a face from Watseka&rsquo;s history. Collect the set and you collect the story.</p>
-    <div class="htd-stamps">
-        <figure class="htd-stamp">
-          <img src="/images/stamp-watchekee.jpg" alt="Watchekee collectible stamp" loading="lazy">
-          <figcaption><strong>Watchekee</strong>&ldquo;Daughter of the Evening Star.&rdquo; The Potawatomi woman this town is named for, who walked back to this land again and again after her people were removed west.</figcaption>
-        </figure>
-        <figure class="htd-stamp">
-          <img src="/images/stamp-hubbard.jpg" alt="Gurdon Hubbard collectible stamp" loading="lazy">
-          <figcaption><strong>Gurdon Hubbard</strong>The young fur trader the Potawatomi called <em>Pa-pa-ma-ta-be</em>, Swift-Walker. The path he wore north is now Illinois Route 1, running through our downtown.</figcaption>
-        </figure>
-        <figure class="htd-stamp">
-          <img src="/images/stamp-clifton.jpg" alt="Katherine Clifton collectible stamp" loading="lazy">
-          <figcaption><strong>Katherine Clifton</strong>Her bequest paid for the Iroquois County courthouse in 1964, believed to be the only courthouse in the country built entirely with private money.</figcaption>
-        </figure>
-        <figure class="htd-stamp">
-          <img src="/images/stamp-bacon.jpg" alt="Henry Bacon collectible stamp" loading="lazy">
-          <figcaption><strong>Henry Bacon</strong>Born in Watseka in 1866. He grew up to design the Lincoln Memorial in Washington, dedicated in 1922.</figcaption>
-        </figure>
-    </div>
+    <p class="htd-tba">Drawings held after the event. Winners contacted directly.</p>
   </div>
 </section>
 
 <section class="htd-section paper">
   <div class="htd-wrap">
-    <h2 class="section-title">Participating businesses</h2>
-    <p class="section-subtitle">Every one of these is a stamp stop. Many will also have tables out front for the sidewalk sale, so the whole street becomes a marketplace for the day.</p>
+    <h2 class="section-title">The twenty stops</h2>
+    <p class="section-subtitle">Every one of these was a stamp stop. Many also had tables out front for the sidewalk sale, and for one Saturday the whole street was a marketplace. The trail facts below are the ones that travelled with each stamp.</p>
     <div class="htd-bizlist">
       <details class="htd-biz">
         <summary><span class="htd-biz-name">Bookish</span><span class="htd-biz-stop">Stop 1</span></summary>
@@ -433,15 +866,53 @@
 <section class="htd-section">
   <div class="htd-wrap">
     <div class="htd-kids">
-      <h2>Free Kids Zone</h2>
-      <p class="where">On Third Street, between Walnut and Oak.</p>
+      <h2>The Free Kids Zone</h2>
+      <p class="where">It ran all day on Third Street, between Walnut and Oak.</p>
       <ul>
-        <li><b>The Hub</b> is open for kids and teens, with tunes and snow cones.</li>
-        <li><b>W.G.F.A.</b> is sponsoring free popsicles.</li>
-        <li><b>Harbor House</b> has free chalk.</li>
-        <li><b>Perfect Pawz</b> has free dog treats, plus a color-your-own bandana for your pet.</li>
-        <li><b>A firetruck</b> everyone can climb up to and take photos with.</li>
+        <li><b>The Hub</b> opened up for kids and teens, with tunes and snow cones.</li>
+        <li><b>W.G.F.A.</b> handed out free popsicles.</li>
+        <li><b>Harbor House</b> brought free chalk, and the pavement showed it.</li>
+        <li><b>Perfect Pawz</b> had free dog treats and colour-your-own bandanas for the dogs on the trail.</li>
+        <li><b>A fire truck</b> everyone was allowed to climb up into for photos.</li>
       </ul>
+    </div>
+  </div>
+</section>
+
+<section class="htd-section paper">
+  <div class="htd-wrap">
+    <h2 class="section-title">Collect Them All</h2>
+    <p class="section-subtitle">Every stamp in the passport carried a face from Watseka&rsquo;s history. Collect the set and you collected the story.</p>
+    <div class="htd-stamps">
+        <figure class="htd-stamp">
+          <img src="/images/stamp-watchekee.jpg" alt="Watchekee collectible stamp" loading="lazy">
+          <figcaption><strong>Watchekee</strong>&ldquo;Daughter of the Evening Star.&rdquo; The Potawatomi woman this town is named for, who walked back to this land again and again after her people were removed west.</figcaption>
+        </figure>
+        <figure class="htd-stamp">
+          <img src="/images/stamp-hubbard.jpg" alt="Gurdon Hubbard collectible stamp" loading="lazy">
+          <figcaption><strong>Gurdon Hubbard</strong>The young fur trader the Potawatomi called <em>Pa-pa-ma-ta-be</em>, Swift-Walker. The path he wore north is now Illinois Route 1, running through our downtown.</figcaption>
+        </figure>
+        <figure class="htd-stamp">
+          <img src="/images/stamp-clifton.jpg" alt="Katherine Clifton collectible stamp" loading="lazy">
+          <figcaption><strong>Katherine Clifton</strong>Her bequest paid for the Iroquois County courthouse in 1964, believed to be the only courthouse in the country built entirely with private money.</figcaption>
+        </figure>
+        <figure class="htd-stamp">
+          <img src="/images/stamp-bacon.jpg" alt="Henry Bacon collectible stamp" loading="lazy">
+          <figcaption><strong>Henry Bacon</strong>Born in Watseka in 1866. He grew up to design the Lincoln Memorial in Washington, dedicated in 1922.</figcaption>
+        </figure>
+    </div>
+  </div>
+</section>
+
+<section class="htd-section alt">
+  <div class="htd-wrap">
+    <h2 class="section-title">The invitation</h2>
+    <p class="section-subtitle">The film that went around town in the weeks before the trail opened, kept here for the record.</p>
+    <div class="htd-video">
+      <video controls playsinline preload="none" poster="/images/hubbard-trail-days-promo-poster.jpg">
+        <source src="/videos/hubbard-trail-days-promo.mp4" type="video/mp4">
+        Your browser cannot play this video.
+      </video>
     </div>
   </div>
 </section>
@@ -452,10 +923,9 @@
     <p>Two hundred years ago a young fur trader named <b>Gurdon Hubbard</b> set up a trading post where the Iroquois River meets Sugar Creek, the ground Downtown Watseka stands on today. The Potawatomi called him <b>Pa-pa-ma-ta-be</b>, or Swift-Walker, after he covered seventy-five miles on foot through the night to warn settlers of a threatened raid, arriving before dawn.</p>
     <p>The path he wore north toward Chicago became known as <b>Hubbard&rsquo;s Trace</b>. Settlers followed it, it widened into a road, and that road is now <b>Illinois Route 1</b>, still running straight through our downtown. Every storefront here sits on a two-hundred-year-old trade route.</p>
     <p>But our town does not carry his name. It carries hers. <b>Watchekee</b>, &ldquo;Daughter of the Evening Star,&rdquo; was a Potawatomi woman and the daughter of the respected leader Shabbona. She married Hubbard here in 1826. After the 1833 Treaty of Chicago forced her people west, she walked back to this land again and again, thousands of miles over a lifetime of removals. In <b>1865</b>, Middleport was renamed <b>Watseka</b> in her honor.</p>
-    <p>Most people here, visitors and lifelong residents alike, have never heard that story. Come collect it one stamp at a time.</p>
+    <p>Most people here, visitors and lifelong residents alike, had never heard that story. On September 12 they collected it one stamp at a time.</p>
   </div>
 </section>
-
 
 <footer class="site-footer">
   <div class="footer-inner">
@@ -509,7 +979,77 @@
     &copy; 2026 Visit Watseka &middot; Downtown Watseka Farmers Market &middot; 501(c)(3) Nonprofit &middot; Watseka, Illinois
   </div>
 </footer>
+<div class="htd-lb" id="htd-lb" role="dialog" aria-modal="true" aria-label="Hubbard Trail Days photo viewer">
+  <button class="htd-lb-close" type="button" aria-label="Close photo viewer">&times;</button>
+  <button class="htd-lb-btn htd-lb-prev" type="button" aria-label="Previous photo">&#8249;</button>
+  <img id="htd-lb-img" src="" alt="">
+  <button class="htd-lb-btn htd-lb-next" type="button" aria-label="Next photo">&#8250;</button>
+  <div class="htd-lb-count" id="htd-lb-count"></div>
+</div>
 
 <script src="/js/main.js"></script>
+<script>
+(function () {
+  var SLUGS = ["htd-2026-01","htd-2026-02","htd-2026-03","htd-2026-04","htd-2026-05","htd-2026-06","htd-2026-07","htd-2026-08","htd-2026-09","htd-2026-10","htd-2026-11","htd-2026-12","htd-2026-13","htd-2026-14","htd-2026-15","htd-2026-16","htd-2026-17","htd-2026-18","htd-2026-19","htd-2026-20","htd-2026-21","htd-2026-22","htd-2026-23","htd-2026-24","htd-2026-25","htd-2026-26","htd-2026-27","htd-2026-28","htd-2026-29","htd-2026-30","htd-2026-31","htd-2026-32","htd-2026-33","htd-2026-34","htd-2026-35","htd-2026-36","htd-2026-37","htd-2026-38","htd-2026-39","htd-2026-40","htd-2026-41","htd-2026-42","htd-2026-43","htd-2026-44","htd-2026-45","htd-2026-46","htd-2026-47","htd-2026-48","htd-2026-49","htd-2026-50","htd-2026-51","htd-2026-52","htd-2026-53","htd-2026-54","htd-2026-55","htd-2026-56","htd-2026-57","htd-2026-58","htd-2026-59","htd-2026-60","htd-2026-61","htd-2026-62","htd-2026-63","htd-2026-64","htd-2026-65","htd-2026-66","htd-2026-67","htd-2026-68","htd-2026-69","htd-2026-70","htd-2026-71","htd-2026-72","htd-2026-73","htd-2026-74","htd-2026-75","htd-2026-76","htd-2026-77","htd-2026-78","htd-2026-79","htd-2026-80"];
+  var FULL  = '/images/htd-2026/full/';
+  var grid  = document.getElementById('htd-gallery');
+  var lb    = document.getElementById('htd-lb');
+  if (!grid || !lb) return;
+
+  /* ── lightbox ── */
+  var img   = document.getElementById('htd-lb-img');
+  var count = document.getElementById('htd-lb-count');
+  var i = 0;
+
+  function preload(n) {
+    if (n < 0 || n >= SLUGS.length) return;
+    var p = new Image(); p.src = FULL + SLUGS[n] + '.jpg';
+  }
+  function show(n) {
+    i = (n + SLUGS.length) % SLUGS.length;
+    img.src = FULL + SLUGS[i] + '.jpg';
+    img.alt = 'Hubbard Trail Days 2026 in Downtown Watseka, photo ' + (i + 1);
+    count.textContent = 'Photo ' + (i + 1) + ' of ' + SLUGS.length;
+    preload(i + 1); preload(i - 1);
+  }
+  function open(n) {
+    show(n);
+    lb.classList.add('show');
+    document.body.classList.add('htd-lb-open');
+    document.addEventListener('keydown', onKey);
+  }
+  function close() {
+    lb.classList.remove('show');
+    document.body.classList.remove('htd-lb-open');
+    document.removeEventListener('keydown', onKey);
+    var btn = grid.querySelector('[data-i="' + (i + 1) + '"]');
+    if (btn) btn.focus();
+  }
+  function onKey(e) {
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowRight') show(i + 1);
+    else if (e.key === 'ArrowLeft') show(i - 1);
+  }
+
+  grid.addEventListener('click', function (e) {
+    var btn = e.target.closest('.htd-shot');
+    if (btn) open(parseInt(btn.getAttribute('data-i'), 10) - 1);
+  });
+  lb.querySelector('.htd-lb-close').addEventListener('click', close);
+  lb.querySelector('.htd-lb-prev').addEventListener('click', function (e) { e.stopPropagation(); show(i - 1); });
+  lb.querySelector('.htd-lb-next').addEventListener('click', function (e) { e.stopPropagation(); show(i + 1); });
+  lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+
+  /* swipe */
+  var x0 = null;
+  lb.addEventListener('touchstart', function (e) { x0 = e.changedTouches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', function (e) {
+    if (x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 45) show(dx < 0 ? i + 1 : i - 1);
+    x0 = null;
+  }, { passive: true });
+})();
+</script>
 </body>
 </html>

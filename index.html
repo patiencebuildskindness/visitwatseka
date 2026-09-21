@@ -352,16 +352,11 @@
   .promo-modal-close:hover { background: #fff; }
 
   /* ── Video popup variant (Hubbard Trail Days promo) ── */
-  .htd-winners { padding: 2.6rem 2.4rem 2.4rem !important; }
-  .htd-winners h2 { font-size: clamp(2rem, 5vw, 2.9rem); }
-  .htd-winners-text { color: #CFE0C2; font-size: 15px; line-height: 1.65; margin-top: 1rem; max-width: 30rem; }
-  .htd-winners-text b { color: #E7C56E; }
-  .htd-winners-thanks { font-family: 'Playfair Display', serif; font-style: italic;
-    color: #E7C56E; font-size: 16px; margin-top: 1.1rem; }
-  .htd-winners-list { list-style: none; margin: 1.2rem 0 0; padding: 0; width: 100%; max-width: 30rem; }
-  .htd-winners-list li { display: flex; justify-content: space-between; gap: 1rem;
-    padding: .55rem 0; border-bottom: 1px solid rgba(231,197,110,.25); color: #F4F1E4; font-size: 15px; }
-  .htd-winners-list .tier { color: #E7C56E; font-weight: 700; }
+  /* Gallery popup (photo strip instead of a video frame) */
+  .htd-gal-shot { display: block; width: 100%; line-height: 0; flex-shrink: 0; background: #0C160A; }
+  .htd-gal-shot img { width: 100%; height: auto; display: block; }
+  .htd-gal-count { display: block; margin-top: .9rem; font-size: .74rem; font-weight: 700;
+    letter-spacing: .18em; text-transform: uppercase; color: #CFE0C2; }
   .promo-modal--video .promo-modal-card {
     flex-direction: column;
     max-width: 940px;
@@ -502,10 +497,10 @@
   </div>
 </nav>
 </header>
-<a class="htd-bar" href="/hubbard-trail-days.html">
+<a class="htd-bar" href="/hubbard-trail-days.html#gallery">
   <span class="htd-bar-title">Hubbard Trail Days</span>
-  <span class="htd-bar-when">Saturday, September 12 &middot; 11 AM &ndash; 5 PM &middot; Downtown Watseka</span>
-  <span class="htd-bar-cta">See Details</span>
+  <span class="htd-bar-when">September 12, 2026 &middot; The photos from the day are up</span>
+  <span class="htd-bar-cta">View Gallery</span>
 </a>
 
 
@@ -644,17 +639,20 @@
 </footer>
 
 <!-- ── PROMO POPUP (homepage — safe to remove after the campaign) ── -->
-<!-- ── HUBBARD TRAIL DAYS RAFFLE WINNERS POPUP ── -->
-<div id="htd-winners-popup" class="promo-modal promo-modal--video" role="dialog" aria-modal="true" aria-labelledby="htd-winners-title">
+<!-- ── HUBBARD TRAIL DAYS GALLERY POPUP ── -->
+<div id="htd-gallery-popup" class="promo-modal promo-modal--video" role="dialog" aria-modal="true" aria-labelledby="htd-gallery-title">
   <div class="promo-modal-card">
     <button class="promo-modal-close" aria-label="Close">&times;</button>
-    <div class="promo-modal-body htd-winners">
+    <a class="htd-gal-shot" href="/hubbard-trail-days.html#gallery">
+      <img src="/images/htd-2026/popup.jpg" width="1200" height="580" loading="lazy" decoding="async"
+           alt="Three photos from Hubbard Trail Days 2026: a child chasing bubbles in the Kids Zone, shoppers along Walnut Street, and a sidewalk flower stand.">
+    </a>
+    <div class="promo-modal-body">
       <span class="promo-modal-eyebrow">Hubbard Trail Days &middot; September 12, 2026</span>
-      <h2 id="htd-winners-title">Raffle Winners</h2>
-      <p class="promo-modal-sub">Being announced this week</p>
-      <p class="htd-winners-text">Hundreds of you walked the trail, and the drawings are happening now.
-      <b>Winners are contacted directly</b>, and the full list will be posted here and on our Facebook page.</p>
-      <p class="htd-winners-thanks">Thank you for filling our sidewalks. See you on the trail again.</p>
+      <h2 id="htd-gallery-title">The Photos Are Up</h2>
+      <p class="promo-modal-sub">Eighty photos, the full recap, and everyone who made it happen.</p>
+      <a href="/hubbard-trail-days.html#gallery" class="promo-modal-btn">View the Gallery</a>
+      <span class="htd-gal-count">Thank you for filling our sidewalks</span>
     </div>
   </div>
 </div>
@@ -707,7 +705,7 @@
     // Two popups share one slot. Hubbard Trail Days runs until the day after the
     // event, then the winter market promo takes over. They never both fire.
     var HTD_END     = new Date(2026, 8, 13);   // Sun Sep 13, 2026
-    var WINNERS_END = new Date(2026, 9, 5);    // Mon Oct 5, 2026
+    var GALLERY_END = new Date(2026, 9, 20);   // Tue Oct 20, 2026
     var WINTER_END  = new Date(2026, 10, 22);  // Sun Nov 22, 2026
     var now = new Date();
 
@@ -716,9 +714,9 @@
       modal = document.getElementById('htd-video-popup');
       KEY = 'promoPopupDismissed-2026-htd-video-v1';
       delay = 2500;
-    } else if (now < WINNERS_END) {
-      modal = document.getElementById('htd-winners-popup');
-      KEY = 'promoPopupDismissed-2026-htd-winners-v1';
+    } else if (now < GALLERY_END) {
+      modal = document.getElementById('htd-gallery-popup');
+      KEY = 'promoPopupDismissed-2026-htd-gallery-v1';
       delay = 2500;
     } else if (now < WINTER_END) {
       modal = document.getElementById('promo-popup');

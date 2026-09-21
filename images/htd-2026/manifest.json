@@ -1,0 +1,562 @@
+[
+ {
+  "slug": "htd-2026-01",
+  "src": "DSCF5602.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-02",
+  "src": "DSCF5606.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-03",
+  "src": "DSCF5611.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-04",
+  "src": "DSCF5615.jpg",
+  "w": 1200,
+  "h": 1800,
+  "portrait": true
+ },
+ {
+  "slug": "htd-2026-05",
+  "src": "DSCF5618.jpg",
+  "w": 1200,
+  "h": 1800,
+  "portrait": true
+ },
+ {
+  "slug": "htd-2026-06",
+  "src": "DSCF5619.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-07",
+  "src": "DSCF5621.jpg",
+  "w": 1200,
+  "h": 1800,
+  "portrait": true
+ },
+ {
+  "slug": "htd-2026-08",
+  "src": "DSCF5624.jpg",
+  "w": 1200,
+  "h": 1800,
+  "portrait": true
+ },
+ {
+  "slug": "htd-2026-09",
+  "src": "DSCF5625.jpg",
+  "w": 1200,
+  "h": 1800,
+  "portrait": true
+ },
+ {
+  "slug": "htd-2026-10",
+  "src": "DSCF5628.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-11",
+  "src": "DSCF5630.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-12",
+  "src": "DSCF5631.jpg",
+  "w": 1200,
+  "h": 1800,
+  "portrait": true
+ },
+ {
+  "slug": "htd-2026-13",
+  "src": "DSCF5632.jpg",
+  "w": 1200,
+  "h": 1800,
+  "portrait": true
+ },
+ {
+  "slug": "htd-2026-14",
+  "src": "DSCF5633.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-15",
+  "src": "DSCF5635.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-16",
+  "src": "DSCF5640.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-17",
+  "src": "DSCF5641.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-18",
+  "src": "DSCF5642.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-19",
+  "src": "DSCF5648.jpg",
+  "w": 1200,
+  "h": 1800,
+  "portrait": true
+ },
+ {
+  "slug": "htd-2026-20",
+  "src": "DSCF5649.jpg",
+  "w": 1800,
+  "h": 1211,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-21",
+  "src": "DSCF5650.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-22",
+  "src": "DSCF5655.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-23",
+  "src": "DSCF5656.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-24",
+  "src": "DSCF5659.jpg",
+  "w": 1200,
+  "h": 1800,
+  "portrait": true
+ },
+ {
+  "slug": "htd-2026-25",
+  "src": "DSCF5664.jpg",
+  "w": 1200,
+  "h": 1800,
+  "portrait": true
+ },
+ {
+  "slug": "htd-2026-26",
+  "src": "DSCF5667.jpg",
+  "w": 1200,
+  "h": 1800,
+  "portrait": true
+ },
+ {
+  "slug": "htd-2026-27",
+  "src": "DSCF5670.jpg",
+  "w": 1200,
+  "h": 1800,
+  "portrait": true
+ },
+ {
+  "slug": "htd-2026-28",
+  "src": "DSCF5672.jpg",
+  "w": 1200,
+  "h": 1800,
+  "portrait": true
+ },
+ {
+  "slug": "htd-2026-29",
+  "src": "DSCF5675.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-30",
+  "src": "DSCF5676.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-31",
+  "src": "DSCF5680.jpg",
+  "w": 1243,
+  "h": 1800,
+  "portrait": true
+ },
+ {
+  "slug": "htd-2026-32",
+  "src": "DSCF5682.jpg",
+  "w": 1800,
+  "h": 1209,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-33",
+  "src": "DSCF5683.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-34",
+  "src": "DSCF5685.jpg",
+  "w": 1800,
+  "h": 1246,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-35",
+  "src": "DSCF5690.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-36",
+  "src": "DSCF5701.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-37",
+  "src": "DSCF5706.jpg",
+  "w": 1303,
+  "h": 1800,
+  "portrait": true
+ },
+ {
+  "slug": "htd-2026-38",
+  "src": "DSCF5710.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-39",
+  "src": "DSCF5715.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-40",
+  "src": "DSCF5722.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-41",
+  "src": "DSCF5724.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-42",
+  "src": "DSCF5728.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-43",
+  "src": "DSCF5729.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-44",
+  "src": "DSCF5736.jpg",
+  "w": 1200,
+  "h": 1800,
+  "portrait": true
+ },
+ {
+  "slug": "htd-2026-45",
+  "src": "DSCF5737.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-46",
+  "src": "DSCF5738.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-47",
+  "src": "DSCF5743.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-48",
+  "src": "DSCF5745.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-49",
+  "src": "DSCF5749.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-50",
+  "src": "DSCF5753.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-51",
+  "src": "DSCF5756.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-52",
+  "src": "DSCF5761.jpg",
+  "w": 1200,
+  "h": 1800,
+  "portrait": true
+ },
+ {
+  "slug": "htd-2026-53",
+  "src": "DSCF5762.jpg",
+  "w": 1800,
+  "h": 1176,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-54",
+  "src": "DSCF5764.jpg",
+  "w": 1800,
+  "h": 1224,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-55",
+  "src": "DSCF5768.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-56",
+  "src": "DSCF5770.jpg",
+  "w": 1800,
+  "h": 1208,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-57",
+  "src": "DSCF5772.jpg",
+  "w": 1200,
+  "h": 1800,
+  "portrait": true
+ },
+ {
+  "slug": "htd-2026-58",
+  "src": "DSCF5773.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-59",
+  "src": "DSCF5775.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-60",
+  "src": "DSCF5777.jpg",
+  "w": 1177,
+  "h": 1800,
+  "portrait": true
+ },
+ {
+  "slug": "htd-2026-61",
+  "src": "DSCF5778.jpg",
+  "w": 1800,
+  "h": 1113,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-62",
+  "src": "DSCF5779.jpg",
+  "w": 1216,
+  "h": 1800,
+  "portrait": true
+ },
+ {
+  "slug": "htd-2026-63",
+  "src": "DSCF5780.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-64",
+  "src": "DSCF5781.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-65",
+  "src": "DSCF5783.jpg",
+  "w": 1227,
+  "h": 1800,
+  "portrait": true
+ },
+ {
+  "slug": "htd-2026-66",
+  "src": "DSCF5786.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-67",
+  "src": "DSCF5788.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-68",
+  "src": "DSCF5790.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-69",
+  "src": "DSCF5792.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-70",
+  "src": "DSCF5796.jpg",
+  "w": 1800,
+  "h": 1193,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-71",
+  "src": "DSCF5798.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-72",
+  "src": "DSCF5800.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-73",
+  "src": "DSCF5805.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-74",
+  "src": "DSCF5809.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-75",
+  "src": "DSCF5810.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-76",
+  "src": "DSCF5812.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-77",
+  "src": "DSCF5814.jpg",
+  "w": 1800,
+  "h": 1200,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-78",
+  "src": "DSCF5831.jpg",
+  "w": 1196,
+  "h": 1800,
+  "portrait": true
+ },
+ {
+  "slug": "htd-2026-79",
+  "src": "DSCF5832.jpg",
+  "w": 1800,
+  "h": 1217,
+  "portrait": false
+ },
+ {
+  "slug": "htd-2026-80",
+  "src": "DSCF5833.jpg",
+  "w": 1200,
+  "h": 1800,
+  "portrait": true
+ }
+]
