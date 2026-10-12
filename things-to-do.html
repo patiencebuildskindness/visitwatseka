@@ -6,12 +6,79 @@
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-<title>Things to Do — Visit Watseka, Illinois</title>
-<meta name="description" content="Discover things to do in Watseka, Illinois. Events, activities, and attractions in the heart of Iroquois County.">
+<title>Things to Do | Visit Watseka, Illinois</title>
+<meta name="description" content="Discover things to do in Watseka, Illinois. See upcoming community events around town or submit your own.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
+<style>
+  .ev-section { padding: 3rem 0 2rem; }
+  .ev-carousel { position: relative; }
+  .ev-status { text-align: center; color: var(--ink-muted); font-size: 15px; padding: 2.5rem 1rem; background: var(--paper); border: 1px dashed var(--border); border-radius: 12px; }
+  .ev-status[hidden], .ev-track[hidden], .ev-arrow[hidden] { display: none; }
+  .ev-track { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding: 0 4px; padding: 4px 4px 14px; scrollbar-width: thin; }
+  .ev-card { flex: 0 0 260px; scroll-snap-align: start; display: flex; flex-direction: column; text-align: left; background: var(--paper); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; padding: 0; cursor: pointer; font: inherit; color: inherit; box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: transform 0.15s, box-shadow 0.15s; }
+  .ev-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+  .ev-card:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
+  .ev-card-media { aspect-ratio: 4 / 5; background: var(--green-pale); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .ev-card-media img { width: 100%; height: 100%; object-fit: contain; }
+  .ev-card-noimg { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--green-dark); padding: 1rem; text-align: center; }
+  .ev-card-body { padding: 0.9rem 1rem 1.1rem; display: flex; flex-direction: column; gap: 3px; }
+  .ev-card-date { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--amber); }
+  .ev-card-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--green-dark); line-height: 1.3; }
+  .ev-card-meta { font-size: 13px; color: var(--ink-muted); line-height: 1.45; }
+  .ev-arrow { position: absolute; top: calc(50% - 40px); z-index: 2; width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--border); background: var(--paper); color: var(--green-dark); font-size: 28px; line-height: 1; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.12); }
+  .ev-arrow:hover:not(:disabled) { background: var(--green-dark); color: #fff; }
+  .ev-arrow:disabled { opacity: 0.35; cursor: default; }
+  .ev-prev { left: -14px; }
+  .ev-next { right: -14px; }
+  .ev-cta { text-align: center; margin-top: 1.25rem; color: var(--ink-muted); font-size: 14px; }
+  .ev-cta a { font-weight: 700; }
+
+  .ev-modal { position: fixed; inset: 0; background: rgba(26,26,24,0.6); display: none; align-items: center; justify-content: center; padding: 1rem; z-index: 1000; }
+  .ev-modal.open { display: flex; }
+  .ev-modal-dialog { position: relative; background: var(--cream); border-radius: 14px; width: 100%; max-width: 900px; max-height: 92vh; overflow-y: auto; display: grid; grid-template-columns: 1.1fr 1fr; box-shadow: 0 24px 60px rgba(0,0,0,0.35); }
+  .ev-modal-flyer { background: var(--green-pale); display: flex; align-items: center; justify-content: center; }
+  .ev-modal-flyer img { width: 100%; height: 100%; max-height: 92vh; object-fit: contain; }
+  .ev-modal-flyer[hidden] { display: none; }
+  .ev-modal-info { padding: 2rem 1.5rem 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; }
+  .ev-modal-when { font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--amber); padding-right: 40px; }
+  .ev-modal-title { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--green-dark); line-height: 1.25; }
+  .ev-modal-line { font-size: 14px; color: var(--ink); margin: 0; }
+  .ev-modal-line strong { display: inline-block; min-width: 52px; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-light); }
+  .ev-modal-line[hidden], .ev-modal-link[hidden] { display: none; }
+  .ev-modal-desc { font-size: 14.5px; color: var(--ink-muted); line-height: 1.75; white-space: pre-line; margin-top: 0.4rem; }
+  .ev-modal-link { align-self: flex-start; margin-top: auto; }
+  .ev-modal-close { position: absolute; top: 12px; right: 12px; z-index: 2; background: var(--paper); border: 1px solid var(--border); border-radius: 50%; width: 36px; height: 36px; font-size: 22px; line-height: 1; color: var(--ink-muted); cursor: pointer; }
+  .ev-modal-close:hover { background: var(--green-dark); color: #fff; border-color: var(--green-dark); }
+  .ev-modal-dialog:has(.ev-modal-flyer[hidden]) { grid-template-columns: 1fr; max-width: 560px; }
+
+  .ev-submit { background: var(--green-pale); padding: 3rem 0 4rem; }
+  .ev-submit .card { background: var(--paper); }
+  .ev-private { font-size: 13px; color: var(--ink-muted); margin-bottom: 1rem; }
+  .ev-flyer-preview[hidden] { display: none; }
+  .ev-flyer-preview img { max-height: 220px; width: auto; border-radius: 8px; border: 1px solid var(--border); margin-top: 6px; }
+  .ev-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .ev-agree { margin-top: 1.25rem; text-transform: none; font-weight: 400; letter-spacing: 0; }
+  .ev-form-error { margin-top: 1rem; color: var(--red); font-weight: 700; font-size: 14px; text-align: center; }
+  .ev-form-error[hidden], #event-form[hidden], .ev-thanks[hidden] { display: none; }
+  .ev-thanks { text-align: center; background: var(--paper); border: 1px solid var(--border); border-radius: 12px; padding: 2.5rem 1.5rem; }
+  .ev-thanks h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--green-dark); margin-bottom: 0.5rem; }
+  .ev-thanks p { color: var(--ink-muted); }
+  input[type="file"] { font-size: 14px; }
+  input[type="time"] { width: 100%; padding: 9px 12px; border: 1.5px solid var(--border); border-radius: 6px; font-family: 'Lato', sans-serif; font-size: 14px; color: var(--ink); background: #fff; }
+  input[type="time"]:focus { outline: none; border-color: var(--border-focus); box-shadow: 0 0 0 3px rgba(45,106,48,0.12); }
+
+  @media (max-width: 720px) {
+    .ev-card { flex-basis: 78%; }
+    .ev-arrow { display: none !important; }
+    .ev-modal { padding: 0; align-items: stretch; }
+    .ev-modal-dialog { grid-template-columns: 1fr; max-height: 100vh; border-radius: 0; }
+    .ev-modal-flyer img { max-height: 60vh; }
+    .ev-modal-close { position: fixed; top: 10px; right: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.25); }
+  }
+</style>
 </head>
 <body>
 
@@ -63,13 +130,140 @@
   <h2>Events, Activities & Attractions in Watseka</h2>
 </div>
 
-<div class="under-construction">
-  <span class="under-construction-icon">🚧</span>
-  <h2>Under Construction</h2>
-  <p>We're building out this page with all the great things to do in and around Watseka. Check back soon — there's always something happening in our community!</p>
-  <p style="font-size:13px; color:var(--ink-light);">In the meantime, visit our <a href="/farmers-market/">Farmers' Market page</a> or follow us on <a href="https://www.facebook.com/profile.php?id=61574346598973" target="_blank">Facebook</a> for updates.</p>
-  <a href="/" class="btn btn-secondary" style="margin-top:1rem;">Back to Home</a>
+<!-- ── UPCOMING EVENTS ── -->
+<section class="ev-section">
+  <div class="container">
+    <h2 class="section-title">Upcoming Community Events</h2>
+    <p class="section-subtitle">What's happening around Watseka. Tap an event to see the full flyer and details.</p>
+
+    <div class="ev-carousel" id="events-carousel">
+      <p class="ev-status">Loading events&hellip;</p>
+      <button type="button" class="ev-arrow ev-prev" aria-label="Previous events" hidden>&#8249;</button>
+      <div class="ev-track" hidden></div>
+      <button type="button" class="ev-arrow ev-next" aria-label="More events" hidden>&#8250;</button>
+    </div>
+
+    <p class="ev-cta">Hosting something in Watseka? <a href="#submit-event">Submit your event</a> and we'll add it to the list.</p>
+  </div>
+</section>
+
+<!-- ── EVENT DETAIL MODAL ── -->
+<div class="ev-modal" id="ev-modal" role="dialog" aria-modal="true" aria-labelledby="ev-modal-title">
+  <div class="ev-modal-dialog">
+    <button type="button" class="ev-modal-close" aria-label="Close">&times;</button>
+    <div class="ev-modal-flyer"><img src="" alt=""></div>
+    <div class="ev-modal-info">
+      <div class="ev-modal-when"></div>
+      <h3 class="ev-modal-title" id="ev-modal-title"></h3>
+      <p class="ev-modal-line ev-modal-time"><strong>Time</strong> <span></span></p>
+      <p class="ev-modal-line ev-modal-where"><strong>Where</strong> <span></span></p>
+      <p class="ev-modal-line ev-modal-host"><span></span></p>
+      <p class="ev-modal-desc"></p>
+      <a class="btn btn-primary ev-modal-link" href="#" target="_blank" rel="noopener">More Info</a>
+    </div>
+  </div>
 </div>
+
+<!-- ── SUBMIT AN EVENT ── -->
+<section class="ev-submit" id="submit-event">
+  <div class="container-narrow">
+    <h2 class="section-title">Submit an Event</h2>
+    <p class="section-subtitle">Share your event with the community. We review every submission before it goes up, usually within a few days.</p>
+
+    <form id="event-form" class="card">
+      <div class="card-body">
+        <div class="field-grid">
+          <div class="field span-2">
+            <label for="ev-title">Event Name <span class="req">*</span></label>
+            <input type="text" id="ev-title" name="title" maxlength="120" placeholder="e.g. Fall Craft Show" required>
+          </div>
+          <div class="field">
+            <label for="ev-start">Date <span class="req">*</span></label>
+            <input type="date" id="ev-start" name="startDate" required>
+          </div>
+          <div class="field">
+            <label for="ev-end">End Date <span class="hint">Only for events that run more than one day</span></label>
+            <input type="date" id="ev-end" name="endDate">
+          </div>
+          <div class="field">
+            <label for="ev-stime">Start Time</label>
+            <input type="time" id="ev-stime" name="startTime">
+          </div>
+          <div class="field">
+            <label for="ev-etime">End Time</label>
+            <input type="time" id="ev-etime" name="endTime">
+          </div>
+          <div class="field">
+            <label for="ev-loc">Location / Venue <span class="req">*</span></label>
+            <input type="text" id="ev-loc" name="location" maxlength="150" placeholder="e.g. Watseka Public Library" required>
+          </div>
+          <div class="field">
+            <label for="ev-addr">Address</label>
+            <input type="text" id="ev-addr" name="address" maxlength="200" placeholder="Street address, city">
+          </div>
+          <div class="field span-2">
+            <label for="ev-desc">Description <span class="req">*</span> <span class="hint">What should people know? Cost, who it's for, what to bring.</span></label>
+            <textarea id="ev-desc" name="description" rows="4" maxlength="1500" required></textarea>
+          </div>
+          <div class="field span-2">
+            <label for="ev-flyer">Flyer or Event Image <span class="req">*</span> <span class="hint">A photo or screenshot of your flyer works great.</span></label>
+            <input type="file" id="ev-flyer" name="flyer" accept="image/*" required>
+            <div class="ev-flyer-preview" hidden></div>
+          </div>
+          <div class="field span-2">
+            <label for="ev-link">Event Link <span class="hint">Facebook event, website, or ticket page (optional)</span></label>
+            <input type="url" id="ev-link" name="link" maxlength="500" placeholder="https://">
+          </div>
+          <div class="field span-2">
+            <label for="ev-host">Hosted By <span class="hint">Business, church, club, or organization</span></label>
+            <input type="text" id="ev-host" name="hostedBy" maxlength="120">
+          </div>
+        </div>
+
+        <div class="divider"></div>
+        <p class="ev-private">Your contact info is only for us, in case we have a question. It won't be shown on the site.</p>
+
+        <div class="field-grid">
+          <div class="field">
+            <label for="ev-cname">Your Name <span class="req">*</span></label>
+            <input type="text" id="ev-cname" name="contactName" maxlength="100" required>
+          </div>
+          <div class="field">
+            <label for="ev-cemail">Your Email <span class="req">*</span></label>
+            <input type="email" id="ev-cemail" name="contactEmail" maxlength="150" required>
+          </div>
+          <div class="field">
+            <label for="ev-cphone">Phone</label>
+            <input type="tel" id="ev-cphone" name="contactPhone" maxlength="40" placeholder="(815) 000-0000">
+          </div>
+          <div class="field">
+            <label for="ev-note">Anything else we should know?</label>
+            <input type="text" id="ev-note" name="note" maxlength="1000">
+          </div>
+        </div>
+        <div class="ev-hp" aria-hidden="true">
+          <label for="ev-website">Leave this empty</label>
+          <input type="text" id="ev-website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <label class="agree-item ev-agree">
+          <input type="checkbox" name="permission" required>
+          <span>I'm the organizer or have their permission to share this event and flyer on Visit Watseka.</span>
+        </label>
+
+        <p class="ev-form-error" role="alert" hidden></p>
+        <div style="text-align:center; margin-top:1.25rem;">
+          <button type="submit" class="btn-submit">Submit Event</button>
+        </div>
+      </div>
+    </form>
+
+    <div id="event-thanks" class="ev-thanks" hidden>
+      <h3>Thanks for sharing!</h3>
+      <p>Your event was sent for review. Once it's approved it will show up in the Upcoming Events list above.</p>
+    </div>
+  </div>
+</section>
 
 <footer class="site-footer">
   <div class="footer-inner">
@@ -117,5 +311,6 @@
 </footer>
 
 <script src="/js/main.js"></script>
+<script src="/js/events.js"></script>
 </body>
 </html>
